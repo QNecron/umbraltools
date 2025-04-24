@@ -30,3 +30,19 @@ body {
 [data-heading="4"] {
   --heading-font-size: var(--size-ml);
 }
+
+/* header */
+.header {
+  --header-background-color: var(--color-primary);
+  --header-background-image: var(--color-pattern-dots);
+  --header-background-size: var(--color-pattern-size);
+  --header-padding: var(--size-m);
+  
+  background-color: var(--header-background-color);
+  background-image: var(--header-background-image);
+  background-size: var(--header-background-size) var(--header-background-size);
+  padding: var(--header-padding) 0;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}

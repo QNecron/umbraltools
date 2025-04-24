@@ -8,6 +8,8 @@ import {
 
 import type { LinksFunction } from "@remix-run/node";
 
+import Header from "./components/header";
+
 import "./styles/tokens.css";
 import "./styles/reset.css";
 import "./styles/core.css";
@@ -26,6 +28,7 @@ export const links: LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  
   return (
     <html lang="en">
       <head>
@@ -35,12 +38,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <Header />
+        <main id="main" role="main">
+          {children}
+        </main>
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
   );
+  
 }
 
 export default function App() {

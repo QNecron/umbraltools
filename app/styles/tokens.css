@@ -14,10 +14,11 @@
   --color-secondary: var(--color-white-100);
   
   /* semantic : patterns */
-  --color-pattern-dots: radial-gradient(var(--color-white-80) .031rem, transparent 0);
+  --color-pattern-dots: radial-gradient(var(--color-white-08) .031rem, transparent 0);
+  --color-pattern-size: .313rem;
   
   /* semantic : shadows */
-  --layer-1-box: 0 1px .125rem rgba(0, 0, 0, .16), 0 .1875rem .25rem rgba(0, 0, 0, .32);
+  --shadow-box: 0 1px .125rem rgba(0, 0, 0, .16), 0 .1875rem .25rem rgba(0, 0, 0, .32);
   
   /* primitive : sizes */
   --size-02: .125rem;
