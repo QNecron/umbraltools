@@ -6,8 +6,10 @@
   --color-black-64: hsla(0, 0%, 7%, .64);
   --color-white-100: #eee;
   --color-white-88: hsla(0, 0%, 93%, .88);
+  --color-white-48: hsla(0, 0%, 93%, .48);
   --color-white-32: hsla(0, 0%, 93%, .32);
   --color-white-08: hsla(0, 0%, 93%, .08);
+  --color-white-0: hsla(0, 0%, 93%, 0);
   
   /* semantic : colors */
   --color-primary: var(--color-black-100);
@@ -43,6 +45,13 @@
   --size-xl: var(--size-40);
   --size-xxl: var(--size-48);
   --size-xxxl: var(--size-56);
+  
+  /* semantic : shadows */
+  --shadow-level-1: 0 1px .125rem rgba(0, 0, 0, .16), 0 .1875rem .25rem rgba(0, 0, 0, .32);
+  
+  /* semantic : timings */
+  --timing-basic: all .24s ease-in-out 0s;
+  --timing-display: display .48s allow-discrete, .48s cubic-bezier(.5,.25,0,1) 0s;
   
   /* primitive : fonts */
   --font-oswald: "Oswald", sans-serif;

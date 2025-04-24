@@ -3,7 +3,7 @@ interface propsWrapper {
   type: string;
 }
 
-export default function Wrapper({ children, type }: propsWrapper) {
+export default function Wrapper({children, type}: propsWrapper) {
 
   return(
     <div className="wrapper" wrapper={type}>

@@ -29,10 +29,19 @@ textarea {
   font: inherit;
 }
 
+a,
+button,
+input,
+select,
+textarea {
+  transition: var(--timing-basic);
+}
+
 button {
   background: transparent;
   border: none;
   border-radius: 0;
+  color: inherit;
   cursor: pointer;
   font-size: inherit;
   /* safari */
