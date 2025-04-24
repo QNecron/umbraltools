@@ -1,0 +1,32 @@
+body {
+  --body-background: var(--color-primary);
+  --body-font-color: var(--color-secondary);
+  
+  background: var(--body-background);
+  color: var(--body-font-color);
+}
+
+/* typography */
+[data-heading] {
+  --heading-font-family: var(--font-heading);
+  --heading-font-size: var(--size-xxxl);
+  --heading-font-weight: 300;
+  --heading-letting-spacing: var(--size-xxs);
+  
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size);
+  font-weight: var(--heading-font-weight);
+  letter-spacing: var(--heading-letting-spacing);
+}
+
+[data-heading="2"] {
+  --heading-font-size: var(--size-xl);
+}
+
+[data-heading="3"] {
+  --heading-font-size: var(--size-l);
+}
+
+[data-heading="4"] {
+  --heading-font-size: var(--size-ml);
+}

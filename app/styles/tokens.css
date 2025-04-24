@@ -1,0 +1,53 @@
+:root {
+
+  /* primitive : colors */
+  --color-black-100: #111;
+  --color-black-88: hsla(0, 0%, 7%, .88);
+  --color-black-64: hsla(0, 0%, 7%, .64);
+  --color-white-100: #eee;
+  --color-white-88: hsla(0, 0%, 93%, .88);
+  --color-white-32: hsla(0, 0%, 93%, .32);
+  --color-white-08: hsla(0, 0%, 93%, .08);
+  
+  /* semantic : colors */
+  --color-primary: var(--color-black-100);
+  --color-secondary: var(--color-white-100);
+  
+  /* semantic : patterns */
+  --color-pattern-dots: radial-gradient(var(--color-white-80) .031rem, transparent 0);
+  
+  /* semantic : shadows */
+  --layer-1-box: 0 1px .125rem rgba(0, 0, 0, .16), 0 .1875rem .25rem rgba(0, 0, 0, .32);
+  
+  /* primitive : sizes */
+  --size-02: .125rem;
+  --size-04: .25rem;
+  --size-08: .50rem;
+  --size-12: .75rem;
+  --size-16: 1rem;
+  --size-24: 1.5rem;
+  --size-32: 2rem;
+  --size-40: 2.5rem;
+  --size-48: 3rem;
+  --size-56: 3.5rem;
+  
+  /* semantic : sizes */
+  --size-xxs: var(--size-02);
+  --size-xs: var(--size-04);
+  --size-s: var(--size-08);
+  --size-ms: var(--size-12);
+  --size-m: var(--size-16);
+  --size-ml: var(--size-24);
+  --size-l: var(--size-32);
+  --size-xl: var(--size-40);
+  --size-xxl: var(--size-48);
+  --size-xxxl: var(--size-56);
+  
+  /* primitive : fonts */
+  --font-oswald: "Oswald", sans-serif;
+  
+  /* semantic : fonts */
+  --font-body: sans-serif;
+  --font-heading: var(--font-oswald);
+  
+}
