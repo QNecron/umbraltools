@@ -3,7 +3,7 @@ import Mobile from "../images/hero_mobile_9-16.webp";
 import Logo from "../images/logo-sd-white.webp";
 
 interface propsHero {
-  type?: string;
+  theme?: string;
   position?: string;
   imgDesktop?: string;
   imgDesktopHeight?: number;
@@ -19,7 +19,7 @@ interface propsHero {
 }
 
 export default function Hero({
-  type = "default", 
+  theme = "default", 
   position = "center", 
   imgDesktop = Desktop,
   imgDesktopHeight = 1080,
@@ -35,10 +35,9 @@ export default function Hero({
 }: propsHero) {
 
   const Title = heading === 1 ? "h1" : "h2";
-  const Animation = animation === true ? " hero__fun" : "";
   
   return(
-    <section className={"hero" + Animation} hero={type + " " + position}>
+    <section className="hero" hero={theme + " " + position}>
       <picture className="hero__asset" aria-hidden="true">
         <source srcSet={imgDesktop} height={imgDesktopHeight} width={imgDesktopWidth} media="(min-width: 768px)" />
         <img src={imgMobile} className="hero__asset-img" height={imgMobileHeight} width={imgMobileWidth} alt="" />

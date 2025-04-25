@@ -1,7 +1,9 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
 
+import Section from "../components/section";
 import Wrapper from "../components/wrapper";
+import Grid from "../components/grid";
+import Card from "../components/card";
 import Hero from "../components/hero";
 
 import CardData from "../data/home.json";
@@ -18,21 +20,30 @@ export default function Index() {
   return (
     <>
 
-    <Hero title="Umbral Tools" logo={true} animation={true} />
+    <Hero theme="muted animate" title="Umbral Tools" logo={true} animation={true} />
     
-    {/* @TODO - section + wrapper + grid + card component */}
-    <Wrapper>
-      {CardData.map((card, index) => {
-        return(
-          <div key={index}>
-            {/* <img src={card.image} /> */}
-            <div>{card.title}</div>
-            <div>{card.copy}</div>
-            <Link to={card.ctaUrl}>{card.ctaCopy}</Link>
-          </div>
-        );
-      })}
-    </Wrapper>
+    {/* @TODO - grid + card component */}
+    <Section>
+      <Wrapper>
+        <Grid>
+          {CardData.map((card, index) => {
+            return(
+              <Card 
+                key={index} 
+                theme="muted overlay"
+                image={card.image}
+                imageHeight={672} 
+                imageWidth={672} 
+                title={card.title} 
+                copy1={card.copy} 
+                ctaUrl={card.ctaUrl}
+                ctaCopy={card.ctaCopy} 
+              />
+            );
+          })}
+        </Grid>
+      </Wrapper>      
+    </Section>
 
     </>
   );
