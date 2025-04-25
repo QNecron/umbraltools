@@ -1,9 +1,9 @@
 interface propsWrapper {
   children: React.ReactNode;
-  type: string;
+  type?: string;
 }
 
-export default function Wrapper({children, type}: propsWrapper) {
+export default function Wrapper({children, type = "structure"}: propsWrapper) {
 
   return(
     <div className="wrapper" wrapper={type}>

@@ -1,0 +1,23 @@
+[
+  {
+    "image": "/app/images/card_desktop_1-1.webp",
+    "title": "Create Characters",
+    "copy": "Create, save, modify, and delete characters as needed. Planned or completely random.",
+    "ctaCopy": "Character Creator",
+    "ctaUrl": "/creator"
+  },
+  {
+    "image": "/app/images/card_desktop_1-1.webp",
+    "title": "Homebrew Rules",
+    "copy": "Homebrew rules for upcoming campaigns. Class changes, feats, spell changes, and more.",
+    "ctaCopy": "Umbral Codex",
+    "ctaUrl": "/codex"
+  },
+  {
+    "image": "/app/images/card_desktop_1-1.webp",
+    "title": "Combat Made Easy",
+    "copy": "Combat tools for generating Roll20 compatible macros with ease.",
+    "ctaCopy": "Combat Tools",
+    "ctaUrl": "/combat"
+  }
+]

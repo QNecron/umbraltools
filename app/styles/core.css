@@ -303,6 +303,11 @@ body {
 
 .hero__fun {
   
+  .hero__asset-img {
+    animation: 32s flicker infinite ease-in-out 0s;
+    transition: var(--timing-basic);
+  }
+  
   .hero__animation.one,
   .hero__animation.two,
   .hero__animation.two:before,
@@ -316,35 +321,35 @@ body {
   .hero__animation {
   
     &.one {
-      animation: 5s flicker infinite ease-in-out 0s;
-      background: orange;
-      box-shadow: var(--hero-animation-shadow) orange;
+      animation: 8s flicker infinite ease-in-out 0s;
+      background: white;
+      box-shadow: var(--hero-animation-shadow) white;
       top: 52%;
       left: 33.4%;
     }
     
     &.two {
-      animation: 5s flicker infinite ease-in-out .16s;
-      background: skyblue;
-      box-shadow: var(--hero-animation-shadow) skyblue;
+      animation: 4s flicker infinite ease-in-out .16s;
+      background: white;
+      box-shadow: var(--hero-animation-shadow) white;
       top: 63%;
       left: 35%;
       
       &:before,
       &:after {
         content: "";
-        background: violet;
-        box-shadow: var(--hero-animation-shadow) violet;      
+        background: white;
+        box-shadow: var(--hero-animation-shadow) white;      
       }
       
       &:before {
-        animation: 5s flicker infinite ease-in-out 0s;
+        animation: 12s flicker infinite ease-in-out 0s;
         top: -8px;
         left: 0px;
       }
       
       &:after {
-        animation: 5s flicker infinite ease-in-out .32s;
+        animation: 4s flicker infinite ease-in-out .32s;
         top: 8px;
         left: -4px;
       }
