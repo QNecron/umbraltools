@@ -11,10 +11,6 @@
   --color-white-08: hsla(0, 0%, 93%, .08);
   --color-white-0: hsla(0, 0%, 93%, 0);
   
-  /* semantic : colors */
-  --color-primary: var(--color-black-100);
-  --color-secondary: var(--color-white-100);
-  
   /* semantic : patterns */
   --color-pattern-dots: radial-gradient(var(--color-white-08) .031rem, transparent 0);
   --color-pattern-size: .313rem;

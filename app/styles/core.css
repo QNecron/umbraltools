@@ -1,6 +1,6 @@
 body {
-  --body-background: var(--color-primary);
-  --body-font-color: var(--color-secondary);
+  --body-background: var(--color-black-100);
+  --body-font-color: var(--color-white-100);
   
   background: var(--body-background);
   color: var(--body-font-color);
@@ -11,7 +11,7 @@ body {
   --button-background: var(--color-black-64);
   --button-border-color: var(--color-white-08);
   --button-box-shadow: var(--shadow-level-1);
-  --button-font-color: var(--color-secondary);
+  --button-font-color: var(--color-white-100);
   --button-font-family: var(--font-heading);
   --button-font-size: 14px;
   --button-padding: 0 var(--size-m);
@@ -59,14 +59,14 @@ body {
 
 [button~="secondary"] {
   --button-background: var(--color-white-88);
-  --button-border-color: var(--color-secondary);
-  --button-font-color: var(--color-primary);
+  --button-border-color: var(--color-white-100);
+  --button-font-color: var(--color-black-100);
   
   &:focus,
   &:hover,
   &[aria-selected="true"] {
     --button-background: var(--color-black-88);
-    --button-font-color: var(--color-secondary);
+    --button-font-color: var(--color-white-100);
     
     .icon {
       filter: invert(100%);
@@ -182,10 +182,10 @@ body {
 
 /* header */
 .header {
-  --header-background-color: var(--color-primary);
+  --header-background-color: var(--color-black-100);
   --header-background-image: var(--color-pattern-dots);
   --header-background-size: var(--color-pattern-size);
-  --header-font-color: var(--color-secondary);
+  --header-font-color: var(--color-white-100);
   --header-padding: var(--size-m);
   
   --header-nav-gap: var(--size-m);
@@ -207,6 +207,23 @@ body {
 
 .logo {
   filter: invert(100%);
+}
+
+/* footer */
+.footer {
+  --footer-background-color: var(--color-black-100);
+  --footer-background-image: var(--color-pattern-dots);
+  --footer-background-size: var(--color-pattern-size);
+  --footer-font-size: var(--size-ms);
+  
+  align-items: center;
+  background-color: var(--footer-background-color);
+  background-image: var(--footer-background-image);
+  background-size: var(--footer-background-size) var(--footer-background-size);  
+  display: flex;
+  font-size: var(--footer-font-size);
+  justify-content: center;
+  height: 4.5rem; /* 72px */
 }
 
 /* dialog */

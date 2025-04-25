@@ -9,6 +9,7 @@ import {
 import type { LinksFunction } from "@remix-run/node";
 
 import Header from "./components/header";
+import Footer from "./components/footer";
 
 import "./styles/tokens.css";
 import "./styles/reset.css";
@@ -42,6 +43,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <main id="main" role="main">
           {children}
         </main>
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>
