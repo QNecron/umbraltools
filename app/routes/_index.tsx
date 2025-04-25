@@ -1,5 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 
+import Hero from "../components/hero";
+
 export const meta: MetaFunction = () => {
   return [
     { title: "Umbral Tools" },
@@ -10,10 +12,14 @@ export const meta: MetaFunction = () => {
 export default function Index() {
 
   return (
-    <div className="">
-      <h1 heading="1">Hello World</h1>
+    <>
+    <Hero title="Umbral Tools" logo={true} animation={false} />
+    
+    <div>
+      <h2 heading="2">Hello World</h2>
       <p>This is a sentence to validate fonts.</p>
     </div>
+    </>
   );
 
 }

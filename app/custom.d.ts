@@ -6,6 +6,7 @@ declare module 'react' {
     button?: string;
     dialog?: string;
     heading?: string;
+    hero?: string;
     wrapper?: string;
   }
   
