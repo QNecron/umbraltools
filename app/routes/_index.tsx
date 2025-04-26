@@ -8,6 +8,8 @@ import Hero from "../components/hero";
 
 import CardData from "../data/home.json";
 
+import ContentCard from "../images/card_1-1.webp";
+
 export const meta: MetaFunction = () => {
   return [
     { title: "Umbral Tools" },
@@ -31,7 +33,7 @@ export default function Index() {
               <Card 
                 key={index} 
                 theme="muted overlay"
-                image={card.image}
+                image={ContentCard}
                 imageHeight={672} 
                 imageWidth={672} 
                 title={card.title} 
