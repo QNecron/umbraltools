@@ -78,6 +78,11 @@ a {
   color: inherit;
 }
 
+li,
+ol {
+  list-style: none;
+}
+
 summary {
   cursor: pointer;
   list-style: none;

@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Home",
+    "url": "/"
+  },
+  {
+    "title": "Codex",
+    "url": "/codex"
+  },
+  {
+    "title": "Creator",
+    "url": "/creator"
+  },
+  {
+    "title": "Feats",
+    "url": "/feats"
+  },
+  {
+    "title": "Spells",
+    "url": "/spells"
+  },
+  {
+    "title": "Items",
+    "url": "/items"
+  },
+  {
+    "title": "Bestiary",
+    "url": "/bestiary"
+  }
+]

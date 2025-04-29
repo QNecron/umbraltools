@@ -24,7 +24,6 @@ export default function Index() {
 
     <Hero theme="muted animate" title="Umbral Tools" logo={true} animation={true} />
     
-    {/* @TODO - grid + card component */}
     <Section>
       <Wrapper>
         <Grid>

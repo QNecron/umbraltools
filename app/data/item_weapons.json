@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Longsword",
+    "type": "Longsword",
+    "damage": "1d8",
+    "bonus": 0
+  },
+  {
+    "name": "+1 Longsword",
+    "type": "Longsword",
+    "damage": "1d8 + 1",
+    "bonus": 1
+  },
+  {
+    "name": "Flame Tongue",
+    "type": "Longsword",
+    "damage": "1d8 + 1 + 1d4 (Fire)",
+    "bonus": 1,
+    "benefit": "Deals an additional 1d4 fire damage.",
+    "additional": "You can cast Burning Hands once per day (+4 bonus)."
+  }
+]

@@ -1,6 +1,10 @@
+import { Link } from "@remix-run/react";
+
 import Wrapper from "./wrapper";
 import Icons from "./icons";
 import Dialog from "./dialog";
+
+import MenuData from "../data/menu.json";
 
 export default function Header() {
   
@@ -10,7 +14,17 @@ export default function Header() {
         <nav className="header__nav" aria-label="Site navigation" role="navigation">
           <Icons icon="logo" />
           <Dialog type="primary" triggerCopy="Menu" triggerButton="primary">
-            Hello World.
+            <ul className="nav">
+              {MenuData.map((menu, index) => { 
+                return(
+                  <li className="nav__item" key={index}>
+                    <Link to={menu.url} className="nav__link btn" button="primary">
+                      {menu.title}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
           </Dialog>
         </nav>
       </Wrapper>

@@ -29,6 +29,7 @@ body {
   display: inline-flex;
   font-family: var(--button-font-family);
   font-size: var(--button-font-size);
+  justify-content: center;
   letter-spacing: var(--button-letter-spacing);
   outline-color: var(--button-outline-color);
   outline-offset: var(--button-outline-offset);
@@ -209,17 +210,32 @@ body {
   filter: invert(100%);
 }
 
+/* nav */
+.nav {
+  --nav-gap: var(--size-s);
+  
+  display: flex;
+  flex-direction: column;
+  gap: var(--nav-gap);
+}
+
+.nav__link {
+  width: 100%;
+}
+
 /* footer */
 .footer {
   --footer-background-color: var(--color-black-100);
   --footer-background-image: var(--color-pattern-dots);
   --footer-background-size: var(--color-pattern-size);
+  --footer-border-color: var(--color-white-08);
   --footer-font-size: var(--size-ms);
   
   align-items: center;
   background-color: var(--footer-background-color);
   background-image: var(--footer-background-image);
   background-size: var(--footer-background-size) var(--footer-background-size);  
+  border-top: solid 1px var(--footer-border-color);
   display: flex;
   font-size: var(--footer-font-size);
   justify-content: center;
@@ -248,7 +264,7 @@ body {
   --dialog-close-transform: translate(50%, 0);
   
   backdrop-filter: var(--dialog-backdrop-filter);
-  background: rgba(var(--dialog-background-color), .8);
+  background: var(--dialog-background-color);
   border: 0;
   box-shadow: var(--dialog-box-shadow);
   color: var(--dialog-font-color);
