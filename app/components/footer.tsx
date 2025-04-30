@@ -6,9 +6,7 @@ export default function Footer() {
     <footer id="footer" className="footer" role="contentinfo">
       <Wrapper>
         <p className="footer__copy">
-          Umbral Tools is an independenmt product published under the Shadowdark RPG 
-          Thrid-Partry License and is not affiliated with The Arcane Library, LLC. 
-          Shadow RPG &copy; {(new Date().getFullYear())} The Arcane Library.  
+          Umbral Tools &copy; {(new Date().getFullYear())} 
         </p>
       </Wrapper>
     </footer>

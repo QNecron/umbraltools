@@ -3,6 +3,8 @@ import type { MetaFunction } from "@remix-run/node";
 
 import Hero from "../components/hero";
 import Section from "../components/section";
+import Wrapper from "../components/wrapper";
+import Grid from "../components/grid";
 import Input from "../components/input";
 
 import Desktop from "../images/hero_desktop_16-4-5.webp";
@@ -104,31 +106,48 @@ export default function Creator() {
     />
     
     <Section>
-      <div>{character.equipment.hands.name} {Weapons(WeaponData, character.equipment.hands.name)}</div>
-      <Input 
-        type="select" 
-        id="weapon1" 
-        label="Weapon"
-        change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
-          ...character,
-          equipment: {
-            ...character.equipment,
-            hands: {
-              ...character.equipment.hands,
-              name: event.target.value
-            }
-          }
-        })}
-      >
-        <option value="none">-</option>
-        {WeaponData.map((item, index) => {
-          return(
-            <option value={item.name} key={index}>
-              {item.name}
-            </option>
-          );
-        })}
-      </Input>
+      <Wrapper>
+        <Grid desktop={2} tablet={2}>
+          <div className="left">
+            <div className="block">
+              <Input 
+                type="select" 
+                id="weapon1" 
+                label="Weapon (A)"
+                change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
+                  ...character,
+                  equipment: {
+                    ...character.equipment,
+                    hands: {
+                      ...character.equipment.hands,
+                      name: event.target.value
+                    }
+                  }
+                })}
+              >
+                {/* @ TODO - filter core vs custom needed */}
+                <option value="None">-</option>
+                {WeaponData.map((item, index) => {
+                  if (item.source === "core") {
+                    return(
+                      <option value={item.name} key={index}>
+                        {item.name}
+                      </option>
+                    );
+                  }
+                })}
+              </Input>
+              <div className="block__item">{Weapons(WeaponData, character.equipment.hands.name, "type")}</div>
+              <div className="block__item">{Weapons(WeaponData, character.equipment.hands.name, "range")}</div>
+              <div className="block__item block__item--large">{Weapons(WeaponData, character.equipment.hands.name, "damage")}</div>
+              <div className="block__item block__item--small">{Weapons(WeaponData, character.equipment.hands.name, "properties")}</div>
+            </div>
+          </div>
+          <div className="right">
+            
+          </div>
+        </Grid>
+      </Wrapper>
     </Section>
     
     </>

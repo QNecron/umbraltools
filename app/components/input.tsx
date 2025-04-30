@@ -23,7 +23,7 @@ export default function Input({
 }: propsInput) {
   
   return(
-    <div className={"input-container input-" + type}>
+    <div className="input" input={type}>
       
       {type === "input" &&
         <input 
@@ -34,25 +34,30 @@ export default function Input({
           min={min}
           max={max}
           onChange={change}
-          className="input"
+          className="input__field"
           disabled={disabled} 
         />
       }
       
       {type === "select" &&
-        <select
-         id={id} 
-         value={value} 
-         autoComplete="off" 
-         onChange={change} 
-         className="input" 
-         disabled={disabled}
-        >
-          {children}  
-        </select>
+        <>
+          <select
+          id={id} 
+          value={value} 
+          autoComplete="off" 
+          onChange={change} 
+          className="input__field" 
+          disabled={disabled}
+          >
+            {children}  
+          </select>
+          <div className="input__icon">
+            &rsaquo;
+          </div>
+        </>
       }
       
-      <label htmlFor={id} className="label">
+      <label htmlFor={id} className="input__label">
         {label}
       </label>
       

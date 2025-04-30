@@ -8,6 +8,7 @@ declare module 'react' {
     dialog?: string;
     heading?: string;
     hero?: string;
+    input?: string;
     section?: string;
     wrapper?: string;
     // grid

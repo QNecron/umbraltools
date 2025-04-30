@@ -27,6 +27,9 @@ input,
 select,
 textarea {
   font: inherit;
+  /* safari */
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 a,

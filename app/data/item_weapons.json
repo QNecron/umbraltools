@@ -1,22 +1,153 @@
 [
   {
-    "name": "Longsword",
-    "type": "Longsword",
-    "damage": "1d8",
-    "bonus": 0
+    "name": "Bastard Sword",
+    "type": "M",
+    "range": "C",
+    "damage": "1d8/1d10",
+    "damage_1": "1d8",
+    "damage_2": "1d10",
+    "properties": "V, 2 slots",
+    "bonus": 0,
+    "source": "core"
   },
   {
-    "name": "+1 Longsword",
-    "type": "Longsword",
-    "damage": "1d8 + 1",
-    "bonus": 1
+    "name": "Club",
+    "type": "M",
+    "range": "C",
+    "damage": "1d4",
+    "properties": "-",
+    "bonus": 0,
+    "source": "core"
+  },
+  {
+    "name": "Crossbow",
+    "type": "R",
+    "range": "F",
+    "damage": "1d6",
+    "properties": "2H, L",
+    "bonus": 0,
+    "source": "core"
+  },
+  {
+    "name": "Dagger",
+    "type": "M/R",
+    "range": "C/N",
+    "damage": "1d4",
+    "properties": "F, Th",
+    "bonus": 0,
+    "source": "core"
+  },
+  {
+    "name": "Greataxe",
+    "type": "M",
+    "range": "C",
+    "damage": "1d8/1d10",
+    "damage_1": "1d8",
+    "damage_2": "1d10",    
+    "properties": "V, 2 slots",
+    "bonus": 0,
+    "source": "core"
+  },
+  {
+    "name": "Greatsword",
+    "type": "M",
+    "range": "C",
+    "damage": "1d12",
+    "properties": "2H, 2 slots",
+    "bonus": 0,
+    "source": "core"
+  },
+  {
+    "name": "Javelin",
+    "type": "M/R",
+    "range": "C/F",
+    "damage": "1d4",
+    "properties": "Th",
+    "bonus": 0,
+    "source": "core"
+  },
+  {
+    "name": "Longbow",
+    "type": "R",
+    "range": "F",
+    "damage": "1d8",
+    "properties": "2H",
+    "bonus": 0,
+    "source": "core"
+  },
+  {
+    "name": "Longsword",
+    "type": "M",
+    "range": "C",
+    "damage": "1d8",
+    "properties": "-",
+    "bonus": 0,
+    "source": "core"
+  },
+  {
+    "name": "Mace",
+    "type": "M",
+    "range": "C",
+    "damage": "1d6",
+    "properties": "-",
+    "bonus": 0,
+    "source": "core"
+  },
+  {
+    "name": "Shortbow",
+    "type": "R",
+    "range": "F",
+    "damage": "1d4",
+    "properties": "2H",
+    "bonus": 0,
+    "source": "core"
+  },
+  {
+    "name": "Shortsword",
+    "type": "M",
+    "range": "C",
+    "damage": "1d6",
+    "properties": "-",
+    "bonus": 0,
+    "source": "core"
+  },
+  {
+    "name": "Spear",
+    "type": "M/R",
+    "range": "C/N",
+    "damage": "1d6",
+    "properties": "Th",
+    "bonus": 0,
+    "source": "core"
+  },
+  {
+    "name": "Staff",
+    "type": "M",
+    "range": "C",
+    "damage": "1d4",
+    "properties": "2H",
+    "bonus": 0,
+    "source": "core"
+  },
+  {
+    "name": "Warhammer",
+    "type": "M",
+    "range": "C",
+    "damage": "1d10",
+    "properties": "2H",
+    "bonus": 0,
+    "source": "core"
   },
   {
     "name": "Flame Tongue",
-    "type": "Longsword",
-    "damage": "1d8 + 1 + 1d4 (Fire)",
+    "base": "Longsword",
+    "type": "M",
+    "range": "C",
+    "damage": "1d8 + 1 + 1d4",
+    "properties": "-",
     "bonus": 1,
     "benefit": "Deals an additional 1d4 fire damage.",
-    "additional": "You can cast Burning Hands once per day (+4 bonus)."
+    "additional": "You can cast Burning Hands once per day (+4 bonus).",
+    "source": "custom"
   }
 ]
