@@ -12,6 +12,7 @@ declare module 'react' {
     section?: string;
     wrapper?: string;
     // grid
+    gap?: number;
     desktop?: number;
     tablet?: number;
     mobile?: number;

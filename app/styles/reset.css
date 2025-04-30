@@ -40,6 +40,10 @@ textarea {
   transition: var(--timing-basic);
 }
 
+select {
+  cursor: pointer;
+}
+
 button {
   background: transparent;
   border: none;

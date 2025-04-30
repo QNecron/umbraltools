@@ -24,7 +24,7 @@ export default function Index() {
 
     <Hero theme="muted animate" title="Umbral Tools" logo={true} animation={true} />
     
-    <Section>
+    <Section padding="top">
       <Wrapper>
         <Grid>
           {CardData.map((card, index) => {
