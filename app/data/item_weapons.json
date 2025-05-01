@@ -146,6 +146,7 @@
     "damage": "1d8 + 1 + 1d4",
     "properties": "-",
     "bonus": 1,
+    "description": "A silvery blade that radiates a dull, comforting heat. It errupts into flames when drawn.",
     "benefit": "Deals an additional 1d4 fire damage.",
     "additional": "You can cast Burning Hands once per day (+4 bonus).",
     "source": "custom"

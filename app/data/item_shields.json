@@ -1,0 +1,31 @@
+[
+  {
+    "name": "Shield",
+    "ac": 2,
+    "properties": "Occupies one hand",
+    "bonus": 0,
+    "source": "core"
+  },
+  {
+    "name": "Sarenrae's Blessing",
+    "base": "Shield",
+    "ac": 2,
+    "properties": "Occupies one hand",
+    "bonus": 1,
+    "description": "The surface of this mystical shield is warm to the touch and grows hotter when tensions rise.",
+    "benefit": "Fire damage is reduced by 3 points.",
+    "additional": "Enemies within close take 1 point of fire damage per round.",
+    "source": "custom"
+  },
+  {
+    "name": "Irori's Devotion",
+    "base": "Shield",
+    "ac": 2,
+    "properties": "Occupies one hand",
+    "bonus": 0,
+    "description": "A large blue crystal surrounded by hardened steel forms a remarkable shield.",
+    "benefit": "Physical damage is reduced by 1 point.",
+    "additional": "When struck by a critical, you and your allies within near regain 1d6 hit points.",
+    "source": "custom"
+  }
+]

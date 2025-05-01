@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Leather",
+    "ac": 11,
+    "dex": true,
+    "properties": "-",
+    "bonus": 0,
+    "source": "core"
+  },
+  {
+    "name": "Chainmail",
+    "ac": 13,
+    "dex": true,
+    "properties": "Disadv on stealth, swim",
+    "bonus": 0,
+    "source": "core"
+  },
+  {
+    "name": "Plate mail",
+    "ac": 15,
+    "dex": false,
+    "properties": "Disadv on stealth, no swim",
+    "bonus": 0,
+    "source": "core"
+  },
+  {
+    "name": "Plate of Ill Payment",
+    "base": "Plate mail",
+    "ac": 15,
+    "dex": false,
+    "properties": "Disadv on stealth, no swim",
+    "bonus": 0,
+    "description": "This plate mail helps lash out to those who would harm the wearer.",
+    "benefit": "If hit within close you may counter attack once per round.",
+    "source": "custom"
+  }
+]

@@ -11,8 +11,10 @@ import Desktop from "../images/hero_desktop_16-4-5.webp";
 import Mobile from "../images/hero_mobile_1-1.webp";
 
 import WeaponData from "../data/item_weapons.json";
+import ArmorData from "../data/item_armors.json";
+import ShieldData from "../data/item_shields.json";
 
-import { Weapons } from "../utilities/items";
+import { ArmorClass, Weapons, Armors } from "../utilities/utilities";
 
 export const meta: MetaFunction = () => {
   return [
@@ -23,6 +25,8 @@ export const meta: MetaFunction = () => {
 
 export default function Creator() {
 
+  const [source, sourceUpdate] = useState("core");
+  
   // @TODO - functions to make
   // Trait(ancestry)
   // Title(alignment, class)
@@ -55,14 +59,11 @@ export default function Creator() {
       head: "",
       back: "",
       neck: "",
-      body: "",
+      armor: "none",
+      shield: "none",
       arms: "",
-      hands_primary: {
-        name: "none",
-      },
-      hands_secondary: {
-        name: "none",
-      },
+      hands_primary: "none",
+      hands_secondary: "none",
       waist: "",
       feet: "",
       accessory: "",
@@ -136,21 +137,92 @@ export default function Creator() {
             
           </Section>
           
-          {/* talents / spells */}
-          <Section padding="creator" title="Talents / Spells">
+          {/* talents / Feats */}
+          <Section padding="creator" title="Talents / Feats">
             
-            <div className="block">Talents and Spells</div>
+            <div className="block">Talents / Feats</div>
+            
+          </Section>
+          
+          {/* Spells */}
+          <Section padding="creator" title="Spells">
+            
+            <div className="block">Known spells</div>
             
           </Section>
             
         </div>
           
         <div className="page right">
-          
-          {/* armor */}
+
+          {/* armor + shield */}
           <Section padding="creator" title="Armor">
             
-            <div className="block">Armor and Shield</div>
+            <div className="block">
+              <Input 
+                type="select" 
+                id="armor" 
+                label="Armor"
+                change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
+                  ...character,
+                  equipment: {
+                    ...character.equipment,
+                    armor: event.target.value
+                  }
+                })}
+              >
+                <option value="None">-</option>
+                {ArmorData.map((item, index) => {
+                  if (item.source === source || source === "*") {
+                    return(
+                      <option value={item.name} key={index}>
+                        {item.name}
+                      </option>
+                    );
+                  }
+                })}
+              </Input>
+              <Input 
+                type="select" 
+                id="shield" 
+                label="Shield"
+                change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
+                  ...character,
+                  equipment: {
+                    ...character.equipment,
+                    shield: event.target.value
+                  }
+                })}
+              >
+                <option value="None">-</option>
+                {ShieldData.map((item, index) => {
+                  if (item.source === source || source === "*") {
+                    return(
+                      <option value={item.name} key={index}>
+                        {item.name}
+                      </option>
+                    );
+                  }
+                })}
+              </Input>
+            </div>
+            
+            {/* armor class */}
+            <div className="block">
+              <div className="block__item">
+                {ArmorClass(
+                  0, // modifier
+                  Armors(ArmorData, character.equipment.armor, "ac"), 
+                  Armors(ArmorData, character.equipment.armor, "dex"),
+                  Armors(ShieldData, character.equipment.shield, "ac"),
+                  0, // accessory
+                  0 // class
+                )}
+              </div>
+              <div className="block__item block__item--full">
+                {Armors(ArmorData, character.equipment.armor, "properties")}
+              </div>
+            </div>
             
           </Section>
           
@@ -161,23 +233,19 @@ export default function Creator() {
             <div className="block">
               <Input 
                 type="select" 
-                id="weapon1" 
+                id="weapon-primary" 
                 label="Weapon (A)"
                 change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
                   ...character,
                   equipment: {
                     ...character.equipment,
-                    hands_primary: {
-                      ...character.equipment.hands_primary,
-                      name: event.target.value
-                    }
+                    hands_primary: event.target.value
                   }
                 })}
               >
-                {/* @ TODO - filter core vs custom needed */}
                 <option value="None">-</option>
                 {WeaponData.map((item, index) => {
-                  if (item.source === "core") {
+                  if (item.source === source || source === "*") {
                     return(
                       <option value={item.name} key={index}>
                         {item.name}
@@ -186,30 +254,42 @@ export default function Creator() {
                   }
                 })}
               </Input>
-              <div className="block__item">{Weapons(WeaponData, character.equipment.hands_primary.name, "type")}</div>
-              <div className="block__item">{Weapons(WeaponData, character.equipment.hands_primary.name, "range")}</div>
-              <div className="block__item block__item--large">{Weapons(WeaponData, character.equipment.hands_primary.name, "damage")}</div>
-              <div className="block__item block__item--small">{Weapons(WeaponData, character.equipment.hands_primary.name, "properties")}</div>
+              <div className="block__item">
+                {Weapons(WeaponData, character.equipment.hands_primary, "type")}
+              </div>
+              <div className="block__item">
+                {Weapons(WeaponData, character.equipment.hands_primary, "range")}
+              </div>
+              <div className="block__item block__item--small">
+                {Weapons(WeaponData, character.equipment.hands_primary, "properties")}
+              </div>
+            </div>
+            
+            <div className="block">
+              {/*
+                Attack bonus: MOD + CLASS + ITEM + MISC
+                MOD = STR, unless "F" or "Th", then STR or DEX, whichever is higher
+              */}
+              <div className="block__item">0</div>
+              <div className="block__item block__item--full">
+                {Weapons(WeaponData, character.equipment.hands_primary, "damage")}
+              </div>
             </div>
               
             {/* weapon : secondary */}
             <div className="block">
               <Input 
                 type="select" 
-                id="weapon2" 
+                id="weapon-secondary" 
                 label="Weapon (B)"
                 change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
                   ...character,
                   equipment: {
                     ...character.equipment,
-                    hands_secondary: {
-                      ...character.equipment.hands_secondary,
-                      name: event.target.value
-                    }
+                    hands_secondary: event.target.value
                   }
                 })}
               >
-                {/* @ TODO - filter core vs custom needed */}
                 <option value="None">-</option>
                 {WeaponData.map((item, index) => {
                   if (item.source === "core") {
@@ -221,14 +301,26 @@ export default function Creator() {
                   }
                 })}
               </Input>
-              <div className="block__item">{Weapons(WeaponData, character.equipment.hands_secondary.name, "type")}</div>
-              <div className="block__item">{Weapons(WeaponData, character.equipment.hands_secondary.name, "range")}</div>
-              <div className="block__item block__item--large">{Weapons(WeaponData, character.equipment.hands_secondary.name, "damage")}</div>
-              <div className="block__item block__item--small">{Weapons(WeaponData, character.equipment.hands_secondary.name, "properties")}</div>
+              <div className="block__item">
+                {Weapons(WeaponData, character.equipment.hands_secondary, "type")}
+              </div>
+              <div className="block__item">
+                {Weapons(WeaponData, character.equipment.hands_secondary, "range")}
+              </div>
+              <div className="block__item block__item--small">
+                {Weapons(WeaponData, character.equipment.hands_secondary, "properties")}
+              </div>
+            </div>
+            
+            <div className="block">
+              <div className="block__item">0</div>
+              <div className="block__item block__item--full">
+                {Weapons(WeaponData, character.equipment.hands_secondary, "damage")}
+              </div>
             </div>
             
           </Section>
-          
+
           {/* equipment */}
           <Section padding="creator" title="Equipment">
             
