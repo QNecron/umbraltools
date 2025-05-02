@@ -152,6 +152,7 @@ body {
   color: var(--input-label-font-color);
   font-size: var(--input-label-font-size);
   padding: var(--input-label-padding);
+  text-transform: capitalize;
   position: var(--input-label-position);
   top: var(--input-label-top);
   left: var(--input-label-left);
@@ -164,18 +165,18 @@ body {
   --section-padding-top: 0;
   --section-padding-bottom: 0;
   
-  --section-title-border-color: var(--color-white-08);
-  --section-title-margin: var(--size-m);
-  --section-title-padding: var(--size-m);
+  --section-header-border-color: var(--color-white-08);
+  --section-header-margin: var(--size-m);
+  --section-header-padding: var(--size-m);
   
   padding-top: var(--section-padding-top);
   padding-bottom: var(--section-padding-bottom);
 }
 
-.section__title {
-  border-bottom: solid 1px var(--section-title-border-color);
-  margin-bottom: var(--section-title-margin);
-  padding-bottom: var(--section-title-padding);
+.section__header {
+  border-bottom: solid 1px var(--section-header-border-color);
+  margin-bottom: var(--section-header-margin);
+  padding-bottom: var(--section-header-padding);
 }
 
 [section~="both"] {
@@ -641,7 +642,7 @@ body {
 
 /* page */
 .block {
-  --block-gap: var(--size-s);
+  --block-gap: var(--size-m) var(--size-s);
   --block-margin: var(--size-m);
   
   --block-item-background: var(--color-white-02);
@@ -663,8 +664,6 @@ body {
   }
   
   @media only screen and (max-width: 767px) {
-    
-    --block-gap: var(--size-m)  var(--size-s);
     
     .input {
       min-width: 100%;

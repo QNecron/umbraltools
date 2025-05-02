@@ -22,10 +22,33 @@ export default function Input({
   label
 }: propsInput) {
   
-  return(
-    <div className="input" input={type}>
-      
-      {type === "input" &&
+  if (type == "select") {
+    return(
+      <div className="input" input={type}>
+        <>
+          <select
+            id={id} 
+            value={value} 
+            autoComplete="off" 
+            onChange={change} 
+            className="input__field" 
+            disabled={disabled}
+            >
+              {children}  
+          </select>
+          <div className="input__icon">
+            &rsaquo;
+          </div>
+        </>
+        <label htmlFor={id} className="input__label">
+          {label}
+        </label>
+      </div>
+    );
+  }
+  else {
+    return(
+      <div className="input" input={type}>
         <input 
           id={id}
           type={type}
@@ -37,31 +60,11 @@ export default function Input({
           className="input__field"
           disabled={disabled} 
         />
-      }
-      
-      {type === "select" &&
-        <>
-          <select
-          id={id} 
-          value={value} 
-          autoComplete="off" 
-          onChange={change} 
-          className="input__field" 
-          disabled={disabled}
-          >
-            {children}  
-          </select>
-          <div className="input__icon">
-            &rsaquo;
-          </div>
-        </>
-      }
-      
-      <label htmlFor={id} className="input__label">
-        {label}
-      </label>
-      
-    </div>
-  );
+        <label htmlFor={id} className="input__label">
+          {label}
+        </label>
+      </div>
+    );    
+  }
   
 }

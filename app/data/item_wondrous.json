@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Amulet of Vitality",
+    "description": "A gold amulet with a red ruby teardrop at its center.",
+    "benefit": "<strong>Benefit.</strong> Your Constitution stat becomes 18 (+4) while wearing this amulet.",
+    "source": "core",
+    "base": "neck",
+    "type": "Amulet"
+  },
+  {
+    "name": "Circlet of Wisdom",
+    "description": "A thin, silver circlet set with a shimmering, blue pearl.",
+    "benefit": "<strong>Benefit.</strong> Your Wisdom stat becomes 18 (+4) while wearing this circlet.",
+    "source": "core",
+    "base": "head",
+    "type": "Circlet"
+  },
+  {
+    "name": "Gloves of Agility",
+    "description": "Thin, leather gloves that seem to meld with the wearer's hands.",
+    "benefit": "<strong>Benefit.</strong> Your Dexterity stat becomes 18 (+4) while wearing these gloves.",
+    "source": "core",
+    "base": "arms",
+    "type": "Gloves"
+  },
+  {
+    "name": "Gauntlets of Might",
+    "description": "Heavy, bronze gauntlets with engravings of Herculean giants.",
+    "benefit": "<strong>Benefit.</strong> Your Strength stat becomes 18 (+4) while wearing these guantlets.",
+    "source": "core",
+    "base": "arms",
+    "type": "Gloves"
+  },
+  {
+    "name": "Hat of Intellect",
+    "description": "A floppy, pointed hat with a wide brim.",
+    "benefit": "<strong>Benefit.</strong> Your Intelligence stat becomes 18 (+4) while wearing this hat.",
+    "source": "core",
+    "base": "head",
+    "type": "Hat"
+  },
+  {
+    "name": "Necklace of Charm",
+    "description": "A gold, fishbone chain that shimmers with subtle beauty.",
+    "benefit": "<strong>Benefit.</strong> Your Charisma stat becomes 18 (+4) while wearing this Necklace.",
+    "source": "core",
+    "base": "neck",
+    "type": "Necklace"
+  },
+  {
+    "name": "Sigil of the Arcane",
+    "description": "A small emerald decorates this beautiful copper ring.",
+    "benefit": "<strong>Benefit.</strong> You fire an additional bolt with the Magic Missile spell.",
+    "source": "custom",
+    "base": "accessory",
+    "type": "Ring"
+  },
+  {
+    "name": "Killer's Work",
+    "description": "This rusted iron bangle is covered in dried blood.",
+    "benefit": "<strong>Benefit.</strong> You deal a critical hit if you roll a 19 or better on an attack roll with daggers.",
+    "source": "custom",
+    "base": "accessory",
+    "type": "Bangle"
+  },
+  {
+    "name": "Seal of Faith",
+    "description": "This thick iron band is dented, scratched, and studded with small pearls.",
+    "benefit": "<strong>Benefit.</strong> Add your level to healing done by the Cure Wounds spell.",
+    "source": "custom",
+    "base": "accessory",
+    "type": "Bracelet"
+  },
+  {
+    "name": "Ring of Toughness",
+    "description": "A large amethyst decorates this dark iron band.",
+    "benefit": "<strong>Benefit.</strong> Your maximum hit points are increased by 4 and you take 1 less damage from physical attacks.",
+    "source": "custom",
+    "base": "accessory",
+    "type": "Ring"
+  },
+  {
+    "name": "Bilestompers",
+    "description": "The edges of these leather boots show signs of corrosion.",
+    "benefit": "<strong>Benefit.</strong> Acid damage is reduced by 3 points.",
+    "additional": "Additionally you can walk on acidic surfaces without taking damage.",
+    "source": "custom",
+    "base": "feet",
+    "type": "Boots"
+  },
+  {
+    "name": "Dead Man Stands",
+    "description": "These thick leather boots show no sign of wear and tear.",
+    "benefit": "<strong>Benefit.</strong> Dying rolls reduced to 15 in order to stablize.",
+    "source": "custom",
+    "base": "feet",
+    "type": "Boots"
+  },
+  {
+    "name": "Trollhide Belt",
+    "description": "This belt has been crafted from the mossy hide of a forest troll with intertwined vines and leaves.",
+    "benefit": "<strong>Benefit.</strong> Regenerate 1 hit point each round of combat.",
+    "additional": "Taking acid or fire damage stops the regeneration effect for 10 rounds.",
+    "source": "custom",
+    "base": "waist",
+    "type": "Belt"
+  },
+  {
+    "name": "Berserker's Belt",
+    "description": "Multiple strong leather straps with crossed axes as buckles abdorn this belt.",
+    "benefit": "<strong>Benefit.</strong> Damage rolls with melee weapons increase by 1.",
+    "additional": "If hit in combat roll 1d4, on a 4 you enter a frenzy where the damage increases to 2 and your AC is reduced by 2. Frenzy lasts until the end of combat.",
+    "source": "custom",
+    "base": "waist",
+    "type": "Belt"
+  },
+  {
+    "name": "Mantle of Wreathing Flame",
+    "description": "This crimson red cloak with golden trim radiates warmth when worn.",
+    "benefit": "<strong>Benefit.</strong> Fire damage is reduced by 3 points.",
+    "additional": "Physical attacks deal an extra 1d4 fire damage.",
+    "source": "custom",
+    "base": "back",
+    "type": "Cloak"
+  },
+  {
+    "name": "Cloak of Minor Missiles",
+    "description": "While this cloak appears mudane, though a slight shimmer of blue and violet hint to something more.",
+    "benefit": "<strong>Benefit.</strong> Bows, crossbows, and the Magic Missile spell deal an additional 1 point of damage.",
+    "source": "custom",
+    "base": "back",
+    "type": "Cloak"
+  },
+  {
+    "name": "Ioun Stone, Garnet",
+    "description": "A strange gemstone the size of a pebble that resembles garnet.",
+    "benefit": "<strong>Benefit.</strong> Attack rolls increase by 1.",
+    "source": "custom",
+    "base": "misc",
+    "type": "Ioun stone"
+  },
+  {
+    "name": "Ioun Stone, Peridot",
+    "description": "A strange gemstone the size of a pebble that resembles peridot.",
+    "benefit": "<strong>Benefit.</strong> Armor increases by 1.",
+    "source": "custom",
+    "base": "misc",
+    "type": "Ioun stone"
+  },
+  {
+    "name": "Ioun Stone, Iolite",
+    "description": "A strange gemstone the size of a pebble that resembles iolite.",
+    "benefit": "<strong>Benefit.</strong> Spellcasting checks increase by 1.",
+    "source": "custom",
+    "base": "misc",
+    "type": "Ioun stone"
+  },
+  {
+    "name": "Apprentice's Tome",
+    "description": "This tome has minimal wear and tear.. only a few dried up splotches of blood on the cover.",
+    "benefit": "<strong>Benefit.</strong> The DC to learn spells from this spell book are reduce by 1.",
+    "additional": "You can learn or cast any of the spells contained as if they were scrolls.",
+    "curse": "Only useable by Wizards.",
+    "spells": [
+      {
+        "name": "Tier 1",
+        "description": "Detect Magic, Floating Disk, Light"
+      },
+      {
+        "name": "Tier 2",
+        "description": "Knock, Silence"
+      },
+      {
+        "name": "Tier 3",
+        "description": "Fabricate"
+      }
+    ],
+    "source": "custom",
+    "base": "misc",
+    "type": "Spell book"
+  }
+]

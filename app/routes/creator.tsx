@@ -13,6 +13,7 @@ import Mobile from "../images/hero_mobile_1-1.webp";
 import WeaponData from "../data/item_weapons.json";
 import ArmorData from "../data/item_armors.json";
 import ShieldData from "../data/item_shields.json";
+import WondrousData from "../data/item_wondrous.json";
 
 import { ArmorClass, Weapons, Armors } from "../utilities/utilities";
 
@@ -24,8 +25,14 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Creator() {
+  
+  const WondrousItems = ["head", "back", "arms", "neck", "waist", "feet", "accessory", "misc"];
 
-  const [source, sourceUpdate] = useState("core");
+  const InventorySlots = ["slot_1", "slot_2", "slot_3", "slot_4", "slot_5", "slot_6", "slot_7", "slot_8", "slot_9", "slot_10"];
+  
+  // InventorySlots.push(11, 12);
+  
+  const [source, sourceUpdate] = useState("*");
   
   // @TODO - functions to make
   // Trait(ancestry)
@@ -56,35 +63,30 @@ export default function Creator() {
       cp: 0
     },
     equipment: {
-      head: "",
-      back: "",
-      neck: "",
-      armor: "none",
-      shield: "none",
-      arms: "",
-      hands_primary: "none",
-      hands_secondary: "none",
-      waist: "",
-      feet: "",
-      accessory: "",
-      misc: ""
+      head: "None",
+      back: "None",
+      neck: "None",
+      armor: "None",
+      shield: "None",
+      arms: "None",
+      hands_primary: "None",
+      hands_secondary: "None",
+      waist: "None",
+      feet: "None",
+      accessory: "None",
+      misc: "None"
     },
     inventory: {
-      slot_01: "",
-      slot_02: "",
-      slot_03: "",
-      slot_04: "",
-      slot_05: "",
-      slot_06: "",
-      slot_07: "",
-      slot_08: "",
-      slot_09: "",
-      slot_10: "",
-      slot_11: "",
-      slot_12: "",
-      slot_13: "",
-      slot_14: "",
-      slot_15: "", 
+      slot_1: "None",
+      slot_2: "None",
+      slot_3: "None",
+      slot_4: "None",
+      slot_5: "None",
+      slot_6: "None",
+      slot_7: "None",
+      slot_8: "None",
+      slot_9: "None",
+      slot_10: "None"
     }
   });
   
@@ -324,14 +326,91 @@ export default function Creator() {
           {/* equipment */}
           <Section padding="creator" title="Equipment">
             
-            <div className="block">Head, Back, Neck, Arms, Accessory, Waist, Feet, and Misc</div>
-            
+            <div className="block">
+              {WondrousItems.map((item, index) => {
+
+                function Match(prop: string) {
+                  if (prop == "head") return character.equipment.head
+                  if (prop == "back") return character.equipment.back
+                  if (prop == "arms") return character.equipment.arms
+                  if (prop == "neck") return character.equipment.neck
+                  if (prop == "waist") return character.equipment.waist
+                  if (prop == "feet") return character.equipment.feet
+                  if (prop == "accessory") return character.equipment.accessory
+                  if (prop == "misc") return character.equipment.misc
+                }
+
+                return(
+                  <Input 
+                    key={index} 
+                    type="select" 
+                    id={item} 
+                    label={item}
+                    value={Match(item)}
+                    change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
+                      ...character,
+                      equipment: {
+                        ...character.equipment,
+                        [item]: event.target.value
+                      }
+                    })}
+                  >
+                    <option value="None">-</option>
+                    {WondrousData.map((wondrous, index) => {
+                      if (wondrous.base === item) {
+                        return(
+                          <option value={wondrous.name} key={index}>
+                            {wondrous.name}
+                          </option>
+                        );
+                      }
+                    })}
+                  </Input>
+                );
+                
+              })}
+            </div>
+
           </Section>
           
           {/* inventory */}
           <Section padding="creator" title="Inventory">
             
-            <div className="block">10 + CON modifier slots</div>
+            <div className="block">
+              {InventorySlots.map((slot, index) => {
+                
+                function Match(prop: string) {
+                  if (prop == "slot_1") return character.inventory.slot_1
+                  if (prop == "slot_2") return character.inventory.slot_2
+                  if (prop == "slot_3") return character.inventory.slot_3
+                  if (prop == "slot_4") return character.inventory.slot_4
+                  if (prop == "slot_5") return character.inventory.slot_5
+                  if (prop == "slot_6") return character.inventory.slot_6
+                  if (prop == "slot_7") return character.inventory.slot_7
+                  if (prop == "slot_8") return character.inventory.slot_8
+                  if (prop == "slot_9") return character.inventory.slot_9
+                  if (prop == "slot_10") return character.inventory.slot_10
+                }
+                
+                return(
+                  <Input 
+                    key={index} 
+                    type="text" 
+                    id={slot} 
+                    label={slot} 
+                    value={Match(slot)}
+                    change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                      ...character,
+                      inventory: {
+                        ...character.inventory,
+                        [slot]: event.target.value
+                      }
+                    })}
+                  />
+                );
+                
+              })}
+            </div>
             
           </Section>
           
