@@ -10,10 +10,13 @@ import Input from "../components/input";
 import Desktop from "../images/hero_desktop_16-4-5.webp";
 import Mobile from "../images/hero_mobile_1-1.webp";
 
+import EquipmentData from "../data/item_slots.json";
 import WeaponData from "../data/item_weapons.json";
 import ArmorData from "../data/item_armors.json";
 import ShieldData from "../data/item_shields.json";
 import WondrousData from "../data/item_wondrous.json";
+
+import Feats from "../data/feats.json";
 
 import { ArmorClass, Weapons, Armors } from "../utilities/utilities";
 
@@ -25,16 +28,10 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Creator() {
-  
-  const WondrousItems = ["head", "back", "arms", "neck", "waist", "feet", "accessory", "misc"];
-
-  const InventorySlots = ["slot_1", "slot_2", "slot_3", "slot_4", "slot_5", "slot_6", "slot_7", "slot_8", "slot_9", "slot_10"];
-  
-  // InventorySlots.push(11, 12);
-  
+    
   const [source, sourceUpdate] = useState("*");
   
-  // @TODO - functions to make
+  // @TODO - functions to make:
   // Trait(ancestry)
   // Title(alignment, class)
   // HitPoints(ancestry, class)
@@ -55,7 +52,8 @@ export default function Creator() {
       wis: 10,
       chr: 10
     },
-    talents_spells: "",
+    talents_feats: "",
+    spells: "",
     xp: 0,
     money: {
       gp: 0,
@@ -76,18 +74,7 @@ export default function Creator() {
       accessory: "None",
       misc: "None"
     },
-    inventory: {
-      slot_1: "None",
-      slot_2: "None",
-      slot_3: "None",
-      slot_4: "None",
-      slot_5: "None",
-      slot_6: "None",
-      slot_7: "None",
-      slot_8: "None",
-      slot_9: "None",
-      slot_10: "None"
-    }
+    inventory: ""
   });
   
   return (
@@ -109,7 +96,7 @@ export default function Creator() {
     <Wrapper>
       <Grid gap={32} desktop={2} tablet={2}>
           
-        <div className="page left">
+        <div className="grid__column">
 
           {/* character */}
           <Section padding="creator" title="Character">
@@ -142,20 +129,42 @@ export default function Creator() {
           {/* talents / Feats */}
           <Section padding="creator" title="Talents / Feats">
             
-            <div className="block">Talents / Feats</div>
+            <div className="block">
+              <Input 
+                type="textarea" 
+                id="talents_feats" 
+                label="Talents / Feats" 
+                value={character.talents_feats}
+                change={(event: ChangeEvent<HTMLTextAreaElement>) => characterUpdate({
+                  ...character,
+                  talents_feats: event.target.value
+                })}
+              />  
+            </div>
             
           </Section>
           
           {/* Spells */}
           <Section padding="creator" title="Spells">
             
-            <div className="block">Known spells</div>
+            <div className="block">
+              <Input 
+                type="textarea" 
+                id="spells" 
+                label="Spells" 
+                value={character.spells}
+                change={(event: ChangeEvent<HTMLTextAreaElement>) => characterUpdate({
+                  ...character,
+                  spells: event.target.value
+                })}
+              />  
+            </div>
             
           </Section>
             
         </div>
           
-        <div className="page right">
+        <div className="grid__column">
 
           {/* armor + shield */}
           <Section padding="creator" title="Armor">
@@ -164,7 +173,8 @@ export default function Creator() {
               <Input 
                 type="select" 
                 id="armor" 
-                label="Armor"
+                label="Armor" 
+                value={character.equipment.armor} 
                 change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
                   ...character,
                   equipment: {
@@ -187,7 +197,8 @@ export default function Creator() {
               <Input 
                 type="select" 
                 id="shield" 
-                label="Shield"
+                label="Shield" 
+                value={character.equipment.shield} 
                 change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
                   ...character,
                   equipment: {
@@ -236,7 +247,8 @@ export default function Creator() {
               <Input 
                 type="select" 
                 id="weapon-primary" 
-                label="Weapon (A)"
+                label="Weapon (A)" 
+                value={character.equipment.hands_primary} 
                 change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
                   ...character,
                   equipment: {
@@ -283,7 +295,8 @@ export default function Creator() {
               <Input 
                 type="select" 
                 id="weapon-secondary" 
-                label="Weapon (B)"
+                label="Weapon (B)" 
+                value={character.equipment.hands_secondary} 
                 change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
                   ...character,
                   equipment: {
@@ -294,7 +307,7 @@ export default function Creator() {
               >
                 <option value="None">-</option>
                 {WeaponData.map((item, index) => {
-                  if (item.source === "core") {
+                  if (item.source === source || source === "*") {
                     return(
                       <option value={item.name} key={index}>
                         {item.name}
@@ -327,7 +340,7 @@ export default function Creator() {
           <Section padding="creator" title="Equipment">
             
             <div className="block">
-              {WondrousItems.map((item, index) => {
+              {EquipmentData.map((item, index) => {
 
                 function Match(prop: string) {
                   if (prop == "head") return character.equipment.head
@@ -356,7 +369,7 @@ export default function Creator() {
                     })}
                   >
                     <option value="None">-</option>
-                    {WondrousData.map((wondrous, index) => {
+                    {WondrousData.sort((a, b) => a.name < b.name ? -1 : 1).map((wondrous, index) => {
                       if (wondrous.base === item) {
                         return(
                           <option value={wondrous.name} key={index}>
@@ -377,41 +390,18 @@ export default function Creator() {
           <Section padding="creator" title="Inventory">
             
             <div className="block">
-              {InventorySlots.map((slot, index) => {
-                
-                function Match(prop: string) {
-                  if (prop == "slot_1") return character.inventory.slot_1
-                  if (prop == "slot_2") return character.inventory.slot_2
-                  if (prop == "slot_3") return character.inventory.slot_3
-                  if (prop == "slot_4") return character.inventory.slot_4
-                  if (prop == "slot_5") return character.inventory.slot_5
-                  if (prop == "slot_6") return character.inventory.slot_6
-                  if (prop == "slot_7") return character.inventory.slot_7
-                  if (prop == "slot_8") return character.inventory.slot_8
-                  if (prop == "slot_9") return character.inventory.slot_9
-                  if (prop == "slot_10") return character.inventory.slot_10
-                }
-                
-                return(
-                  <Input 
-                    key={index} 
-                    type="text" 
-                    id={slot} 
-                    label={slot} 
-                    value={Match(slot)}
-                    change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
-                      ...character,
-                      inventory: {
-                        ...character.inventory,
-                        [slot]: event.target.value
-                      }
-                    })}
-                  />
-                );
-                
-              })}
+              <Input 
+                type="textarea" 
+                id="inventory" 
+                label="Inventory" 
+                value={character.inventory}
+                change={(event: ChangeEvent<HTMLTextAreaElement>) => characterUpdate({
+                  ...character,
+                  inventory: event.target.value
+                })}
+              />  
             </div>
-            
+
           </Section>
           
         </div>

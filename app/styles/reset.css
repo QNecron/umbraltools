@@ -44,6 +44,10 @@ select {
   cursor: pointer;
 }
 
+textarea {
+  line-height: 1;
+}
+
 button {
   background: transparent;
   border: none;

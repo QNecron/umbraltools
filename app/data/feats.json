@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Shield Block",
+    "description": "Reduces damage equal to your shield's AC.",
+    "action": "action",
+    "type": "combat",
+    "stacking": false
+  },
+  {
+    "name": "Shield Other",
+    "description": "Grants close ally AC equal to your shield, you lose the shield's AC.",
+    "action": "action",
+    "type": "combat",
+    "stacking": false
+  },
+  {
+    "name": "Cleaving Attack",
+    "description": "Attack close enemies in front of you with one swipe, -3 to damage roll.",
+    "action": "action",
+    "type": "combat",
+    "stacking": false
+  },
+  {
+    "name": "Precise Attack",
+    "description": "-1 to damage rolls, +1 to attack rolls.",
+    "action": "action",
+    "type": "combat",
+    "stacking": true
+  },
+  {
+    "name": "Power Attack",
+    "description": "-1 to attack tolls, +1 to damage rolls.",
+    "action": "action",
+    "type": "combat",
+    "stacking": true
+  },
+  {
+    "name": "Combat Casting",
+    "description": "+1 to caster level checks.",
+    "action": "passive",
+    "type": "magical",
+    "stacking": true
+  },
+  {
+    "name": "Empower Spell",
+    "description": "+1 DC to spell cast, +1 dice added to spell.",
+    "action": "action",
+    "type": "magical",
+    "stacking": false
+  },
+  {
+    "name": "Extend Spell",
+    "description": "+1 DC to spell cast, focused spells extend to one additional target.",
+    "action": "action",
+    "type": "magical",
+    "stacking": false
+  },
+  {
+    "name": "Maximize Spell",
+    "description": "+3 DC to spell cast, maximum dice rolls.",
+    "action": "action",
+    "type": "magical",
+    "stacking": false
+  },
+  {
+    "name": "Transform Spell",
+    "description": "+1 DC to spell cast, changes spell's elemental damage type to another.",
+    "action": "action",
+    "type": "magical",
+    "stacking": false
+  },
+  {
+    "name": "Lucky",
+    "description": "Grants a luck token at the beginning of each session.",
+    "action": "passive",
+    "type": "general",
+    "stacking": false
+  },
+  {
+    "name": "Toughness",
+    "description": "+3 maximum hit points.",
+    "action": "passive",
+    "type": "general",
+    "stacking": false
+  }
+]

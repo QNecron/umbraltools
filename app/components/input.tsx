@@ -4,6 +4,8 @@ interface propsInput {
   value?: string;
   min?: number;
   max?: number;
+  cols?: number;
+  rows?: number;
   change?: any;
   disabled?: boolean;
   children?: React.ReactNode;
@@ -16,6 +18,8 @@ export default function Input({
   value,
   min,
   max, 
+  cols,
+  rows = 10, 
   change,
   disabled,
   children,
@@ -40,6 +44,25 @@ export default function Input({
             &rsaquo;
           </div>
         </>
+        <label htmlFor={id} className="input__label">
+          {label}
+        </label>
+      </div>
+    );
+  }
+  else if (type == "textarea") {
+    return(
+      <div className="input" input={type}>
+        <textarea 
+          id={id} 
+          value={value} 
+          cols={cols} 
+          rows={rows} 
+          autoComplete="off" 
+          onChange={change} 
+          className="input__field" 
+          disabled={disabled}
+        />
         <label htmlFor={id} className="input__label">
           {label}
         </label>

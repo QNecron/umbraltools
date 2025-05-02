@@ -160,6 +160,11 @@ body {
   z-index: 1;
 }
 
+[input~="textarea"] {
+  --input-padding: var(--size-ms) var(--size-m);
+  --input-height: auto;
+}
+
 /* structure */
 .section {
   --section-padding-top: 0;
