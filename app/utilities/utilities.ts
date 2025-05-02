@@ -7,7 +7,6 @@ export const ArmorClass = (
   items: any,
   misc: any
 ) => {
-
   let ac = 0;
   
   if (!armor) armor = 10;
@@ -18,6 +17,71 @@ export const ArmorClass = (
     
   return ac;
   
+}
+
+export const HitDie = (role: string) => {
+  let die = "d4";
+  
+  switch (role) {
+    
+    case "Fighter":
+    case "Ranger":
+      die = "d8";
+    break;
+    
+    case "Priest":
+    case "Bard":
+    case "Vanguard":
+    case "Warlock":
+      die = "d6";
+    break;
+    
+    default: die = "d4";
+    
+  }
+
+  return die;
+  
+}
+
+// dice
+export const DiceRoll = (dice: string, count: number) => {
+  let die = 0;
+  let roll = 0;
+
+  if (count === 0) return 0;
+
+  if (dice === "d100") { die = 100; }
+  else if (dice === "d20") { die = 20; }
+  else if (dice === "d12") { die = 12; }
+  else if (dice === "d10") { die = 10; }
+  else if (dice === "d8") { die = 8; }
+  else if (dice === "d6") { die = 6; }
+  else if (dice === "d4") { die = 4; }
+  else if (dice === "d3") { die = 3; }
+  else if (dice === "d2") { die = 2; }
+  else {
+    console.log("No dice defined.");
+  }
+
+  while (count >=1) {
+    roll += 1 + Math.floor(Math.random() * Math.floor(die));
+    count--;
+  }
+
+  return roll;
+
+}
+
+// generic
+export const Total = (a: string, b: string, c: string, d: string) => {
+  let one = parseInt(a) ? parseInt(a) : 0;
+  let two = parseInt(b) ? parseInt(b) : 0;
+  let three = parseInt(c) ? parseInt(c) : 0;
+  let four = parseInt(d) ? parseInt(d) : 0;
+  const add = one + two + three + four;
+
+  return add.toString();
 }
 
 // items

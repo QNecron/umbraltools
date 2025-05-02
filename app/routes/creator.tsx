@@ -6,6 +6,7 @@ import Section from "../components/section";
 import Wrapper from "../components/wrapper";
 import Grid from "../components/grid";
 import Input from "../components/input";
+import Icon from "../components/icon";
 
 import Desktop from "../images/hero_desktop_16-4-5.webp";
 import Mobile from "../images/hero_mobile_1-1.webp";
@@ -18,7 +19,7 @@ import WondrousData from "../data/item_wondrous.json";
 
 import Feats from "../data/feats.json";
 
-import { ArmorClass, Weapons, Armors } from "../utilities/utilities";
+import { ArmorClass, HitDie, DiceRoll, Total, Weapons, Armors } from "../utilities/utilities";
 
 export const meta: MetaFunction = () => {
   return [
@@ -34,7 +35,6 @@ export default function Creator() {
   // @TODO - functions to make:
   // Trait(ancestry)
   // Title(alignment, class)
-  // HitPoints(ancestry, class)
   // Modifier(attribute)
   const [character, characterUpdate] = useState({
     name: "",
@@ -43,22 +43,23 @@ export default function Creator() {
     deity: "",
     alignment: "",
     class: "",
-    level: 0,
+    level: "0",
+    hit_points: "0",
     attributes: {
-      str: 10,
-      dex: 10,
-      con: 10,
-      int: 10,
-      wis: 10,
-      chr: 10
+      str: "10",
+      dex: "10",
+      con: "10",
+      int: "10",
+      wis: "10",
+      chr: "10"
     },
     talents_feats: "",
     spells: "",
-    xp: 0,
+    xp: "0",
     money: {
-      gp: 0,
-      sp: 0,
-      cp: 0
+      gp: "0",
+      sp: "0",
+      cp: "0"
     },
     equipment: {
       head: "None",
@@ -120,9 +121,50 @@ export default function Creator() {
           </Section>
           
           {/* hit points */}
-          <Section padding="creator" title="Hit Points">
+          <Section padding="creator hitpoints" title="Hit Points">
             
-            <div className="block">Hit Points</div>
+            <div className="block">
+              <div className="block__item">
+                {Total(
+                  "0", 
+                  character.hit_points, 
+                  character.ancestry === "Dwarf" ? "2" : "0", 
+                  "0"
+                )}
+              </div>
+              <Input 
+                type="number" 
+                id="level" 
+                label="Level" 
+                value={character.level} 
+                change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                  ...character,
+                  level: event.target.value
+                })}
+              />
+              {/*
+              <div className="block__item">
+                {HitDie(character.class)}
+              </div>
+              */}
+              <Input 
+                type="number" 
+                id="hitpoints" 
+                label="Hit Points" 
+                value={character.hit_points} 
+                change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                  ...character,
+                  hit_points: event.target.value
+                })}
+              />
+              <button className="btn" button="icon primary" onClick={(e) => characterUpdate({
+                ...character,
+                hit_points: DiceRoll(HitDie(character.class), parseInt(character.level)).toString()
+              })}>
+                <span className="srt">Roll dice</span>
+                <Icon type="dice" />
+              </button>
+            </div>
             
           </Section>
           
@@ -339,7 +381,7 @@ export default function Creator() {
           {/* equipment */}
           <Section padding="creator" title="Equipment">
             
-            <div className="block">
+            <div className="block block__wrap">
               {EquipmentData.map((item, index) => {
 
                 function Match(prop: string) {

@@ -55,7 +55,8 @@ body {
 }
 
 [button~="icon"] {
-  --button-padding: var(--size-s);
+  --button-padding: var(--size-s) 0;
+  max-width: var(--size-xl);
 }
 
 [button~="secondary"] {
@@ -90,6 +91,7 @@ body {
   --input-outline-offset: calc(-1 * var(--size-xs));
   --input-padding: 0 var(--size-m);
   --input-height: var(--size-xl);
+  --input-width: 100%;
   
   --input-label-background: var(--color-black-100);
   --input-label-font-color: var(--color-white-88);
@@ -120,6 +122,7 @@ body {
   outline-width: 1px;
   padding: var(--input-padding);
   height: var(--input-height);
+  width: var(--input-width);
   
   &:focus,
   &:hover {
@@ -163,6 +166,15 @@ body {
 [input~="textarea"] {
   --input-padding: var(--size-ms) var(--size-m);
   --input-height: auto;
+}
+
+/* icon */
+.icon {
+  --icon-invert: invert(100%);
+  --icon-padding: var(--size-s);
+  
+  filter: var(--icon-invert);
+  padding: var(--icon-padding);
 }
 
 /* structure */
@@ -647,6 +659,7 @@ body {
 
 /* page */
 .block {
+  --block-flex-wrap: initial;
   --block-gap: var(--size-m) var(--size-s);
   --block-margin: var(--size-m);
   
@@ -657,8 +670,12 @@ body {
   
   align-items: center;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: var(--block-flex-wrap);
   gap: var(--block-gap);
+  
+  &.block__wrap {
+    --block-flex-wrap: wrap;
+  }
   
   ~ .block {
     margin-top: var(--block-margin);
@@ -670,7 +687,9 @@ body {
   
   @media only screen and (max-width: 767px) {
     
-    .input {
+    --block-flex-wrap: wrap;
+    
+    .input:not([input="number"]) {
       min-width: 100%;
     }
     
