@@ -1,4 +1,15 @@
 // character
+export const Modifier = (a: string, b: string, c: string) => {
+  const add = parseInt(a) + parseInt(b) + parseInt(c);
+  const total = Math.floor((add - 10) / 2);
+  let modifier;
+
+  if (total >= 0) modifier = "+" + total.toString();
+  else if (total <= -1) modifier = total.toString();
+
+  return modifier;
+}
+
 export const ArmorClass = (
   modifier: number, 
   armor: any, 

@@ -6,7 +6,7 @@ import Section from "../components/section";
 import Wrapper from "../components/wrapper";
 import Grid from "../components/grid";
 import Input from "../components/input";
-import Icon from "../components/icons";
+import Icons from "../components/icons";
 
 import Desktop from "../images/hero_desktop_16-4-5.webp";
 import Mobile from "../images/hero_mobile_1-1.webp";
@@ -17,10 +17,11 @@ import ArmorData from "../data/item_armors.json";
 import ShieldData from "../data/item_shields.json";
 import WondrousData from "../data/item_wondrous.json";
 
+import AttributeData from "../data/attributes.json";
 import ClassesData from "../data/classes.json";
 import FeatsData from "../data/feats.json";
 
-import { ArmorClass, HitDie, DiceRoll, Total, Weapons, Armors } from "../utilities/utilities";
+import { Modifier, ArmorClass, HitDie, DiceRoll, Total, Weapons, Armors } from "../utilities/utilities";
 
 export const meta: MetaFunction = () => {
   return [
@@ -79,7 +80,7 @@ export default function Creator() {
     },
     inventory: ""
   });
-  
+    
   return (
     <>
     
@@ -110,8 +111,53 @@ export default function Creator() {
           
           {/* attributes */}
           <Section padding="creator" title="Attributes">
-            
-            <div className="block">STR, DEX, CON, INT, WIS, and CHR</div>
+                        
+            {AttributeData.map((stat, index) => {
+              
+              function Ability(stat: string) {
+                if (stat === "str") return character.attributes.str;
+                else if (stat === "dex") return character.attributes.dex;
+                else if (stat === "con") return character.attributes.con;
+                else if (stat === "int") return character.attributes.int;
+                else if (stat === "wis") return character.attributes.wis;
+                else if (stat === "chr") return character.attributes.chr;
+                else return "error";                
+              }
+    
+              return(
+                <div className="block" key={index}>
+                  <div className="block__item block__item--tiny" heading="5">{stat}</div>
+                  <div className="block__item">
+                    {Modifier(Ability(stat), "0", "0")}
+                  </div>
+                  <Input 
+                    type="number" 
+                    id={stat}
+                    label={stat} 
+                    minimal={true} 
+                    value={Ability(stat)} 
+                    change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                      ...character,
+                      attributes: {
+                        ...character.attributes,
+                        [stat]: event.target.value
+                      }
+                    })}
+                  />
+                  <button className="btn" button="icon primary" onClick={(e) => characterUpdate({
+                    ...character,
+                    attributes: {
+                      ...character.attributes,
+                      [stat]: DiceRoll("d6", 3).toString()
+                    }
+                  })}>
+                    <span className="srt">Roll 3d6 to determine {stat}</span>
+                    <Icons icon="dice" />
+                  </button>
+                </div>
+              );
+              
+            })}
             
           </Section>
           
@@ -192,8 +238,8 @@ export default function Creator() {
                 ...character,
                 hit_points: DiceRoll(HitDie(character.class), parseInt(character.level)).toString()
               })}>
-                <span className="srt">Roll dice</span>
-                <Icon icon="dice" />
+                <span className="srt">Roll hit die times level to determine hit points</span>
+                <Icons icon="dice" />
               </button>
             </div>
             
@@ -411,22 +457,23 @@ export default function Creator() {
 
           {/* equipment */}
           <Section padding="creator" title="Equipment">
-            
-            <div className="block block__wrap">
-              {EquipmentData.map((item, index) => {
 
-                function Match(prop: string) {
-                  if (prop == "head") return character.equipment.head
-                  if (prop == "back") return character.equipment.back
-                  if (prop == "arms") return character.equipment.arms
-                  if (prop == "neck") return character.equipment.neck
-                  if (prop == "waist") return character.equipment.waist
-                  if (prop == "feet") return character.equipment.feet
-                  if (prop == "accessory") return character.equipment.accessory
-                  if (prop == "misc") return character.equipment.misc
-                }
+            {EquipmentData.map((item, index) => {
 
-                return(
+              function Match(prop: string) {
+                if (prop == "head") return character.equipment.head;
+                else if (prop == "back") return character.equipment.back;
+                else if (prop == "arms") return character.equipment.arms;
+                else if (prop == "neck") return character.equipment.neck;
+                else if (prop == "waist") return character.equipment.waist;
+                else if (prop == "feet") return character.equipment.feet;
+                else if (prop == "accessory") return character.equipment.accessory;
+                else if (prop == "misc") return character.equipment.misc;
+                else return "error";
+              }
+
+              return(
+                <div className="block">
                   <Input 
                     key={index} 
                     type="select" 
@@ -452,11 +499,15 @@ export default function Creator() {
                       }
                     })}
                   </Input>
-                );
-                
-              })}
-            </div>
+                  <button className="btn" button="icon primary" onClick={(e) => null }>
+                    <span className="srt">Item information</span>
+                    <Icons icon="reader" />
+                  </button>
+                </div>
+              );
 
+            })}
+            
           </Section>
           
           {/* inventory */}

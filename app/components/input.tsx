@@ -10,6 +10,7 @@ interface propsInput {
   disabled?: boolean;
   children?: React.ReactNode;
   label: string;
+  minimal?: boolean;
 }
 
 export default function Input({
@@ -23,7 +24,8 @@ export default function Input({
   change,
   disabled,
   children,
-  label
+  label,
+  minimal
 }: propsInput) {
   
   if (type == "select") {
@@ -44,7 +46,7 @@ export default function Input({
             &rsaquo;
           </div>
         </>
-        <label htmlFor={id} className="input__label">
+        <label htmlFor={id} className={"input__label" + (minimal === true ? " srt" : "")}>
           {label}
         </label>
       </div>
@@ -63,7 +65,7 @@ export default function Input({
           className="input__field" 
           disabled={disabled}
         />
-        <label htmlFor={id} className="input__label">
+        <label htmlFor={id} className={"input__label" + (minimal === true ? " srt" : "")}>
           {label}
         </label>
       </div>
@@ -83,7 +85,7 @@ export default function Input({
           className="input__field"
           disabled={disabled} 
         />
-        <label htmlFor={id} className="input__label">
+        <label htmlFor={id} className={"input__label" + (minimal === true ? " srt" : "")}>
           {label}
         </label>
       </div>
