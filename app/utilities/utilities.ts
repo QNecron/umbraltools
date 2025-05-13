@@ -31,7 +31,7 @@ export const HitDie = (role: string) => {
     
     case "Priest":
     case "Bard":
-    case "Vanguard":
+    case "Cursed Knight":
     case "Warlock":
       die = "d6";
     break;

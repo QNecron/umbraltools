@@ -6,7 +6,7 @@ import Section from "../components/section";
 import Wrapper from "../components/wrapper";
 import Grid from "../components/grid";
 import Input from "../components/input";
-import Icon from "../components/icon";
+import Icon from "../components/icons";
 
 import Desktop from "../images/hero_desktop_16-4-5.webp";
 import Mobile from "../images/hero_mobile_1-1.webp";
@@ -17,7 +17,8 @@ import ArmorData from "../data/item_armors.json";
 import ShieldData from "../data/item_shields.json";
 import WondrousData from "../data/item_wondrous.json";
 
-import Feats from "../data/feats.json";
+import ClassesData from "../data/classes.json";
+import FeatsData from "../data/feats.json";
 
 import { ArmorClass, HitDie, DiceRoll, Total, Weapons, Armors } from "../utilities/utilities";
 
@@ -43,6 +44,7 @@ export default function Creator() {
     deity: "",
     alignment: "",
     class: "",
+    title: "",
     level: "0",
     hit_points: "0",
     attributes: {
@@ -113,10 +115,44 @@ export default function Creator() {
             
           </Section>
           
-          {/* class */}
+          {/* class + title */}
           <Section padding="creator" title="Class">
             
-            <div className="block">Class, Level, and Title</div>
+            <div className="block">
+              <div className="block__item">
+                {HitDie(character.class)}
+              </div>
+              <Input 
+                type="select" 
+                id="class" 
+                label="Class" 
+                value={character.class} 
+                change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
+                  ...character,
+                  class: event.target.value
+                })}
+              >
+                <option value="None">-</option>
+                {ClassesData.map((role, index) => {
+                  return(
+                    <option value={role.class} key={index}>
+                      {role.class}
+                    </option>
+                  );
+                })}
+              </Input>
+              <Input 
+                type="text" 
+                id="title" 
+                label="Title" 
+                value={character.title}
+                change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                  ...character,
+                  title: event.target.value
+                })}
+              />  
+              
+            </div>
             
           </Section>
           
@@ -142,11 +178,6 @@ export default function Creator() {
                   level: event.target.value
                 })}
               />
-              {/*
-              <div className="block__item">
-                {HitDie(character.class)}
-              </div>
-              */}
               <Input 
                 type="number" 
                 id="hitpoints" 
@@ -162,7 +193,7 @@ export default function Creator() {
                 hit_points: DiceRoll(HitDie(character.class), parseInt(character.level)).toString()
               })}>
                 <span className="srt">Roll dice</span>
-                <Icon type="dice" />
+                <Icon icon="dice" />
               </button>
             </div>
             

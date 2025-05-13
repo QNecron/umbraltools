@@ -21,9 +21,9 @@ export default function Dialog({children, type, triggerCopy, triggerButton}: pro
     
     <dialog ref={ref} className="dialog" dialog={type}>
       <div className="dialog__content">
-        <button className="btn dialog__close" button="icon secondary" onClick={() => ref.current?.close()}>
+        <button className="btn dialog__close" button="icon primary" onClick={() => ref.current?.close()}>
           <span className="srt">Close dialog</span>
-          <Icons icon="close" height={22} width={22} />
+          <Icons icon="close" />
         </button>
         {children}
       </div>

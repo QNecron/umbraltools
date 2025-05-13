@@ -143,7 +143,7 @@
     "base": "Longsword",
     "type": "M",
     "range": "C",
-    "damage": "1d8 + 1 + 1d4",
+    "damage": "1d8 + 1 + 1d4 (Fire)",
     "properties": "-",
     "bonus": 1,
     "description": "A silvery blade that radiates a dull, comforting heat. It errupts into flames when drawn.",

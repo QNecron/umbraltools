@@ -1,0 +1,38 @@
+[
+  {
+    "class": "Fighter",
+    "spellcaster": false
+  },
+  {
+    "class": "Priest",
+    "spellcaster": true
+  },
+  {
+    "class": "Thief",
+    "spellcaster": false
+  },
+  {
+    "class": "Wizard",
+    "spellcaster": true
+  },
+  {
+    "class": "Bard",
+    "spellcaster": false
+  },
+  {
+    "class": "Ranger",
+    "spellcaster": false
+  },
+  {
+    "class": "Cursed Knight",
+    "spellcaster": true
+  },
+  {
+    "class": "Warlock",
+    "spellcaster": false
+  },
+  {
+    "class": "Witch",
+    "spellcaster": true
+  }
+]

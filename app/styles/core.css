@@ -55,7 +55,8 @@ body {
 }
 
 [button~="icon"] {
-  --button-padding: var(--size-s) 0;
+  --button-padding: 0;
+  width: var(--size-xl);
   max-width: var(--size-xl);
 }
 
