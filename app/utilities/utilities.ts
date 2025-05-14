@@ -1,4 +1,15 @@
 // character
+export const AncestryBonus = (data: {}[], ancestry: string) => {
+  let bonus = "-";
+  
+  data.map((race: any) => {
+    if (race.ancestry === ancestry) bonus = race.trait.name;
+  });
+
+  return bonus;
+
+}
+
 export const Modifier = (a: string, b: string, c: string) => {
   const add = parseInt(a) + parseInt(b) + parseInt(c);
   const total = Math.floor((add - 10) / 2);

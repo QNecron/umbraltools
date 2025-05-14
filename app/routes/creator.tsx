@@ -17,11 +17,14 @@ import ArmorData from "../data/item_armors.json";
 import ShieldData from "../data/item_shields.json";
 import WondrousData from "../data/item_wondrous.json";
 
+import BackgroundData from "../data/backgrounds.json";
+import AncestryData from "../data/ancestries.json";
+import AlignmentData from "../data/alignments.json";
 import AttributeData from "../data/attributes.json";
 import ClassesData from "../data/classes.json";
 import FeatsData from "../data/feats.json";
 
-import { Modifier, ArmorClass, HitDie, DiceRoll, Total, Weapons, Armors } from "../utilities/utilities";
+import { AncestryBonus, Modifier, ArmorClass, HitDie, DiceRoll, Total, Weapons, Armors } from "../utilities/utilities";
 
 export const meta: MetaFunction = () => {
   return [
@@ -105,7 +108,94 @@ export default function Creator() {
           {/* character */}
           <Section padding="creator" title="Character">
             
-            <div className="block">Name, Ancestry, Ancestry Bonus, Background, Alignment, and Deity</div>
+            <div className="block">
+              <Input 
+                type="text" 
+                id="name" 
+                label="Name" 
+                value={character.name}
+                change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                  ...character,
+                  name: event.target.value
+                })}
+              />
+              <Input 
+                type="select" 
+                id="background" 
+                label="Background" 
+                value={character.background} 
+                change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
+                  ...character,
+                  background: event.target.value
+                })}
+              >
+                <option value="None">-</option>
+                {BackgroundData.map((background, index) => {
+                  return(
+                    <option value={background} key={index}>
+                      {background}
+                    </option>
+                  );
+                })}
+              </Input>
+            </div>
+            
+            <div className="block">
+              <Input 
+                type="select" 
+                id="ancestry" 
+                label="Ancestry" 
+                value={character.ancestry} 
+                change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
+                  ...character,
+                  ancestry: event.target.value
+                })}
+              >
+                <option value="None">-</option>
+                {AncestryData.map((race, index) => {
+                  return(
+                    <option value={race.ancestry} key={index}>
+                      {race.ancestry}
+                    </option>
+                  );
+                })}
+              </Input>
+              <div className="block__item block__item--full">
+                {AncestryBonus(AncestryData, character.ancestry)}
+              </div>
+            </div>
+            
+            <div className="block">
+              <Input 
+                type="select" 
+                id="alignment" 
+                label="Alignmeny" 
+                value={character.alignment} 
+                change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
+                  ...character,
+                  alignment: event.target.value
+                })}
+              >
+                <option value="None">-</option>
+                {AlignmentData.map((alignment, index) => {
+                  return(
+                    <option value={alignment} key={index}>
+                      {alignment}
+                    </option>
+                  );
+                })}
+              </Input>
+              <Input 
+                type="text" 
+                id="deity" 
+                label="Deity" 
+                value={character.deity}
+                change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                  ...character,
+                  deity: event.target.value
+                })}
+              />
+            </div>
             
           </Section>
           
@@ -196,7 +286,7 @@ export default function Creator() {
                   ...character,
                   title: event.target.value
                 })}
-              />  
+              />
               
             </div>
             

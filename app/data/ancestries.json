@@ -1,0 +1,50 @@
+[
+  {
+    "ancestry": "Dwarf",
+    "trait": {
+      "name": "Stout",
+      "description": "Start with +2 HP. Roll hit points per level with advantage."
+    },
+    "languages": "Common, Dwarvish"
+  },
+  {
+    "ancestry": "Elf",
+    "trait": {
+      "name": "Farsight",
+      "description": "You get a +1 bonus to attack rolls with ranged weapons or a +1 bonus to spellcasting checks."
+    },
+    "languages": "Common, Elvish, Sylvan"
+  },
+  {
+    "ancestry": "Goblin",
+    "trait": {
+      "name": "Keen Senses",
+      "description": "You can't be surprised."
+    },
+    "languages": "Common, Goblin"
+  },
+  {
+    "ancestry": "Half-orc",
+    "trait": {
+      "name": "Mighty",
+      "description": "You have a +1 bonus to attack and damage rolls with melee weapons."
+    },
+    "languages": "Common, Orcish"
+  },
+  {
+    "ancestry": "Halfling",
+    "trait": {
+      "name": "Stealthy",
+      "description": "Once per day, you can become invisible for 3 rounds."
+    },
+    "languages": "Common"
+  },
+  {
+    "ancestry": "Human",
+    "trait": {
+      "name": "Ambitious",
+      "description": "You gain one additional talent roll at 1st level."
+    },
+    "languages": "Common"
+  }
+]
