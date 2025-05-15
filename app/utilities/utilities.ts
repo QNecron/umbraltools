@@ -1,3 +1,31 @@
+// save + load
+export const SaveCharacter = (data: any, name: string) => {
+  let hero = name;
+
+  if (!hero) return
+
+  const saved = JSON.stringify(data);
+  const storage = window.localStorage;
+
+  storage.setItem(name, saved);
+
+}
+
+export const LoadCharacter = (name: string) => {
+  let data = [];  
+  const storage = window.localStorage;
+  const saved = storage.getItem(name);
+  
+  if (saved) {
+    data = JSON.parse(saved);
+    return data;
+  }
+  else {
+    console.log("No saved character data found.")
+  }
+  
+}
+
 // character
 export const AncestryBonus = (data: {}[], ancestry: string) => {
   let bonus = "-";

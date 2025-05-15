@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from "react";
+import { useState, useEffect, ChangeEvent } from "react";
 import type { MetaFunction } from "@remix-run/node";
 
 import Hero from "../components/hero";
@@ -24,7 +24,18 @@ import AttributeData from "../data/attributes.json";
 import ClassesData from "../data/classes.json";
 import FeatsData from "../data/feats.json";
 
-import { AncestryBonus, Modifier, ArmorClass, HitDie, DiceRoll, Total, Weapons, Armors } from "../utilities/utilities";
+import { 
+  SaveCharacter, 
+  LoadCharacter, 
+  AncestryBonus, 
+  Modifier, 
+  ArmorClass, 
+  HitDie, 
+  DiceRoll, 
+  Total, 
+  Weapons, 
+  Armors
+} from "../utilities/utilities";
 
 export const meta: MetaFunction = () => {
   return [
@@ -36,11 +47,7 @@ export const meta: MetaFunction = () => {
 export default function Creator() {
     
   const [source, sourceUpdate] = useState("*");
-  
-  // @TODO - functions to make:
-  // Trait(ancestry)
-  // Title(alignment, class)
-  // Modifier(attribute)
+
   const [character, characterUpdate] = useState({
     name: "",
     ancestry: "",
@@ -68,22 +75,92 @@ export default function Creator() {
       cp: "0"
     },
     equipment: {
-      head: "None",
-      back: "None",
-      neck: "None",
-      armor: "None",
-      shield: "None",
-      arms: "None",
-      hands_primary: "None",
-      hands_secondary: "None",
-      waist: "None",
-      feet: "None",
-      accessory: "None",
-      misc: "None"
+      head: "",
+      back: "",
+      neck: "",
+      armor: "",
+      shield: "",
+      arms: "",
+      hands_primary: "",
+      hands_secondary: "",
+      waist: "",
+      feet: "",
+      accessory: "",
+      misc: ""
     },
     inventory: ""
   });
+  
+  const [saved, savedUpdate] = useState<string[]>([]);
+  
+  const CreatorUpdate = (data: any) => {
+
+    console.log(data);
     
+    characterUpdate({
+      ...character,
+      name: data.name,
+      ancestry: data.ancestry,
+      background: data.background,
+      deity: data.deity,
+      alignment: data.alignment,
+      class: data.class,
+      title: data.title,
+      level: data.level,
+      hit_points: data.hit_points,
+      attributes: {
+        ...character.attributes,
+        str: data.attributes.str,
+        dex: data.attributes.dex,
+        con: data.attributes.con,
+        int: data.attributes.int,
+        wis: data.attributes.wis,
+        chr: data.attributes.chr,
+      },
+      talents_feats: data.talents_feats,
+      spells: data.spells,
+      xp: data.xp,
+      money: {
+        ...character.money,
+        gp: data.gp,
+        sp: data.sp,
+        cp: data.cp
+      },
+      equipment: {
+        ...character.equipment,
+        head: data.equipment.head,
+        back: data.equipment.back,
+        neck: data.equipment.neck,
+        armor: data.equipment.armor,
+        shield: data.equipment.shield,
+        arms: data.equipment.arms,
+        hands_primary: data.equipment.hands_primary,
+        hands_secondary: data.equipment.hands_secondary,
+        waist: data.equipment.waist,
+        feet: data.equipment.feet,
+        accessory: data.equipment.accessory,
+        misc: data.equipment.misc,
+      },
+      inventory: data.inventory
+    });
+    
+  }
+
+  useEffect(() => {
+
+    const storage = window.localStorage;
+    let characters = [];
+
+    for (var i = 0; i < storage.length; i++) {
+      let key = storage.key(i);
+      if (key !== "ally-supports-cache") characters.push(key);
+    }
+    
+    // console.log(characters);
+    // savedUpdate(characters);
+    
+  }, []);
+  
   return (
     <>
     
@@ -101,6 +178,21 @@ export default function Creator() {
     />
     
     <Wrapper>
+      
+      <nav className="">
+      
+        <button className="btn" button="icon primary" onClick={() => SaveCharacter(character, character.name)}>
+          <span className="srt">Save character</span>
+          <Icons icon="upload" />
+        </button>
+        
+        <button className="btn" button="icon primary" onClick={() => CreatorUpdate(LoadCharacter(character.name))}>
+          <span className="srt">Load character</span>
+          <Icons icon="download" />
+        </button>
+        
+      </nav>
+      
       <Grid gap={32} desktop={2} tablet={2}>
           
         <div className="grid__column">
@@ -379,6 +471,7 @@ export default function Creator() {
           <Section padding="creator" title="Armor">
             
             <div className="block">
+              
               <Input 
                 type="select" 
                 id="armor" 
@@ -393,11 +486,11 @@ export default function Creator() {
                 })}
               >
                 <option value="None">-</option>
-                {ArmorData.map((item, index) => {
-                  if (item.source === source || source === "*") {
+                {ArmorData.map((armor, index) => {
+                  if (armor.source === source || source === "*") {
                     return(
-                      <option value={item.name} key={index}>
-                        {item.name}
+                      <option value={armor.name} key={index}>
+                        {armor.name}
                       </option>
                     );
                   }
@@ -417,11 +510,11 @@ export default function Creator() {
                 })}
               >
                 <option value="None">-</option>
-                {ShieldData.map((item, index) => {
-                  if (item.source === source || source === "*") {
+                {ShieldData.map((shield, index) => {
+                  if (shield.source === source || source === "*") {
                     return(
-                      <option value={item.name} key={index}>
-                        {item.name}
+                      <option value={shield.name} key={index}>
+                        {shield.name}
                       </option>
                     );
                   }
@@ -563,9 +656,8 @@ export default function Creator() {
               }
 
               return(
-                <div className="block">
+                <div className="block" key={index}>
                   <Input 
-                    key={index} 
                     type="select" 
                     id={item} 
                     label={item}

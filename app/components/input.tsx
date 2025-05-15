@@ -31,21 +31,19 @@ export default function Input({
   if (type == "select") {
     return(
       <div className="input" input={type}>
-        <>
-          <select
-            id={id} 
-            value={value} 
-            autoComplete="off" 
-            onChange={change} 
-            className="input__field" 
-            disabled={disabled}
-            >
-              {children}  
-          </select>
-          <div className="input__icon">
-            &rsaquo;
-          </div>
-        </>
+        <select
+          id={id} 
+          value={value} 
+          autoComplete="off" 
+          onChange={change} 
+          className="input__field" 
+          disabled={disabled}
+          >
+            {children}  
+        </select>
+        <div className="input__icon">
+          &rsaquo;
+        </div>
         <label htmlFor={id} className={"input__label" + (minimal === true ? " srt" : "")}>
           {label}
         </label>
