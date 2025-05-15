@@ -26,6 +26,18 @@ export const LoadCharacter = (name: string) => {
   
 }
 
+export const DeleteCharacter = (name: string) => {
+  const storage = window.localStorage
+
+  if (!name) {
+    console.log("No saved character data found.");
+    return;
+  }
+  
+  storage.removeItem(name);
+
+}
+
 // character
 export const AncestryBonus = (data: {}[], ancestry: string) => {
   let bonus = "-";
@@ -40,30 +52,27 @@ export const AncestryBonus = (data: {}[], ancestry: string) => {
 
 export const Modifier = (a: string, b: string, c: string) => {
   const add = parseInt(a) + parseInt(b) + parseInt(c);
-  const total = Math.floor((add - 10) / 2);
-  let modifier;
+  const attribute = Math.floor((add - 10) / 2);
 
-  if (total >= 0) modifier = "+" + total.toString();
-  else if (total <= -1) modifier = total.toString();
-
-  return modifier;
+  return attribute.toString();
 }
 
 export const ArmorClass = (
-  modifier: number, 
-  armor: any, 
-  dex: any, 
-  shield: any, 
-  items: any,
-  misc: any
+  modifier: string, 
+  armor: string, 
+  dex: string, 
+  shield: string, 
+  items: number,
+  misc: number
 ) => {
   let ac = 0;
+  let mod = 0;
   
-  if (!armor) armor = 10;
+  if (!armor) ac += 10;
   
-  if (!dex) modifier = 0;
+  if (dex === "true") mod += parseInt(modifier);
     
-  ac =+ modifier + armor + shield + items + misc;
+  ac =+ parseInt(armor) + parseInt(shield) + mod + items + misc;
     
   return ac;
   
@@ -91,6 +100,39 @@ export const HitDie = (role: string) => {
   }
 
   return die;
+  
+}
+
+export const Attack = (
+  str: string, 
+  dex: string, 
+  data: {}[], 
+  name: string,
+  type: string, 
+  role: string, 
+  level: string
+) => {
+  let bonus = 0;
+  let posneg = "+";
+  let attribute = str;
+  let fighter = 1;
+  
+  if (type === "R") attribute = dex;
+  else if (type === "M/R") attribute = dex > str ? dex : str;
+  else attribute = str;
+  
+
+  if (role === "Fighter") fighter = Math.floor(((parseInt(level) + 1) / 2));
+
+  data.map((weapon: any) => {
+    if (weapon.name === name) bonus += weapon.bonus;
+  });
+  
+  bonus += parseInt(attribute) + fighter;
+  
+  if (bonus < 0) posneg = "";
+  
+  return posneg + bonus.toString();
   
 }
 
@@ -149,9 +191,10 @@ export const Weapons = (data: {}[], item: string, returned: string) => {
   });
   
   if (returned == "type") return type;
-  if (returned == "range") return range;
-  if (returned == "damage") return damage;
-  if (returned == "properties") return properties;
+  else if (returned == "range") return range;
+  else if (returned == "damage") return damage;
+  else if (returned == "properties") return properties;
+  else return "error";
   
 }
 
@@ -168,8 +211,9 @@ export const Armors = (data: {}[], item: string, returned: string) => {
     if (armor.name === item) properties = armor.properties
   });
 
-  if (returned == "ac") return ac + bonus;
-  if (returned == "dex") return dex;
-  if (returned == "properties") return properties;
+  if (returned == "ac") return (ac + bonus).toString();
+  else if (returned == "dex") return dex.toString();
+  else if (returned == "properties") return properties;
+  else return "error";
   
 }

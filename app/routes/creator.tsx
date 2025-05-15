@@ -7,6 +7,7 @@ import Wrapper from "../components/wrapper";
 import Grid from "../components/grid";
 import Input from "../components/input";
 import Icons from "../components/icons";
+import Dialog from "../components/dialog";
 
 import Desktop from "../images/hero_desktop_16-4-5.webp";
 import Mobile from "../images/hero_mobile_1-1.webp";
@@ -22,15 +23,17 @@ import AncestryData from "../data/ancestries.json";
 import AlignmentData from "../data/alignments.json";
 import AttributeData from "../data/attributes.json";
 import ClassesData from "../data/classes.json";
-import FeatsData from "../data/feats.json";
+// import FeatsData from "../data/feats.json";
 
 import { 
   SaveCharacter, 
   LoadCharacter, 
+  DeleteCharacter, 
   AncestryBonus, 
   Modifier, 
   ArmorClass, 
   HitDie, 
+  Attack, 
   DiceRoll, 
   Total, 
   Weapons, 
@@ -91,11 +94,9 @@ export default function Creator() {
     inventory: ""
   });
   
-  const [saved, savedUpdate] = useState<string[]>([]);
-  
+  const [characterSaved, characterSavedUpdate] = useState<any[]>([]);
+    
   const CreatorUpdate = (data: any) => {
-
-    console.log(data);
     
     characterUpdate({
       ...character,
@@ -145,19 +146,23 @@ export default function Creator() {
     });
     
   }
-
-  useEffect(() => {
-
+  
+  const CharacterList = () => {
     const storage = window.localStorage;
-    let characters = [];
+    let list = [];
 
     for (var i = 0; i < storage.length; i++) {
       let key = storage.key(i);
-      if (key !== "ally-supports-cache") characters.push(key);
-    }
+      list.push(key);
+    };
     
-    // console.log(characters);
-    // savedUpdate(characters);
+    characterSavedUpdate(list);
+    
+  }
+
+  useEffect(() => {
+    
+    CharacterList();
     
   }, []);
   
@@ -179,17 +184,51 @@ export default function Creator() {
     
     <Wrapper>
       
-      <nav className="">
+      {/* @TODO - abstract to component */}
+      <nav className="filters" aria-label="Manage characters" role="navigation">
       
-        <button className="btn" button="icon primary" onClick={() => SaveCharacter(character, character.name)}>
+        <button 
+          className="btn" 
+          button="icon primary" 
+          onClick={() => {
+            SaveCharacter(character, character.name);
+            CharacterList();
+          }}
+        >
           <span className="srt">Save character</span>
           <Icons icon="upload" />
         </button>
         
-        <button className="btn" button="icon primary" onClick={() => CreatorUpdate(LoadCharacter(character.name))}>
-          <span className="srt">Load character</span>
-          <Icons icon="download" />
-        </button>
+        <Dialog type="secondary" triggerCopy="Characters" triggerButton="primary">
+  
+          <ul>
+            {characterSaved.map((name, index) => (
+              <li className="block" key={index}>
+                
+                <button className="btn" button="icon primary" onClick={() => CreatorUpdate(LoadCharacter(name))}>
+                  <span className="srt">Load character {name}</span>
+                  <Icons icon="download" />
+                </button>
+                
+                <div className="block__item block__item--full">{name}</div>
+                
+                <button 
+                  className="btn" 
+                  button="icon primary" 
+                  onClick={() => {
+                    DeleteCharacter(name);
+                    CharacterList();
+                  }}
+                >
+                  <span className="srt">Delete character {name}</span>
+                  <Icons icon="delete" />
+                </button>
+                
+              </li>
+            ))}
+          </ul>
+ 
+        </Dialog>
         
       </nav>
       
@@ -385,7 +424,7 @@ export default function Creator() {
           </Section>
           
           {/* hit points */}
-          <Section padding="creator hitpoints" title="Hit Points">
+          <Section padding="creator" title="Hit Points">
             
             <div className="block">
               <div className="block__item">
@@ -471,7 +510,6 @@ export default function Creator() {
           <Section padding="creator" title="Armor">
             
             <div className="block">
-              
               <Input 
                 type="select" 
                 id="armor" 
@@ -524,9 +562,10 @@ export default function Creator() {
             
             {/* armor class */}
             <div className="block">
+              <div className="block__item block__item--tiny" heading="5">AC</div>
               <div className="block__item">
                 {ArmorClass(
-                  0, // modifier
+                  Modifier(character.attributes.dex, "0", "0"),
                   Armors(ArmorData, character.equipment.armor, "ac"), 
                   Armors(ArmorData, character.equipment.armor, "dex"),
                   Armors(ShieldData, character.equipment.shield, "ac"),
@@ -582,11 +621,19 @@ export default function Creator() {
             </div>
             
             <div className="block">
-              {/*
-                Attack bonus: MOD + CLASS + ITEM + MISC
-                MOD = STR, unless "F" or "Th", then STR or DEX, whichever is higher
-              */}
-              <div className="block__item">0</div>
+              <div className="block__item block__item--tiny" heading="5">Atk</div>
+              <div className="block__item">
+                {Attack(
+                  Modifier(character.attributes.str, "0", "0"), 
+                  Modifier(character.attributes.dex, "0", "0"), 
+                  WeaponData, 
+                  character.equipment.hands_primary, 
+                  Weapons(WeaponData, character.equipment.hands_primary, "type"), 
+                  character.class, 
+                  character.level
+                )}
+              </div>
+              <div className="block__item block__item--tiny" heading="5">Dmg</div>
               <div className="block__item block__item--full">
                 {Weapons(WeaponData, character.equipment.hands_primary, "damage")}
               </div>
@@ -630,7 +677,19 @@ export default function Creator() {
             </div>
             
             <div className="block">
-              <div className="block__item">0</div>
+              <div className="block__item block__item--tiny" heading="5">Atk</div>
+              <div className="block__item">
+                {Attack(
+                  Modifier(character.attributes.str, "0", "0"), 
+                  Modifier(character.attributes.dex, "0", "0"), 
+                  WeaponData, 
+                  character.equipment.hands_secondary, 
+                  Weapons(WeaponData, character.equipment.hands_secondary, "type"), 
+                  character.class, 
+                  character.level
+                )}
+              </div>
+              <div className="block__item block__item--tiny" heading="5">Dmg</div>
               <div className="block__item block__item--full">
                 {Weapons(WeaponData, character.equipment.hands_secondary, "damage")}
               </div>
@@ -681,10 +740,6 @@ export default function Creator() {
                       }
                     })}
                   </Input>
-                  <button className="btn" button="icon primary" onClick={(e) => null }>
-                    <span className="srt">Item information</span>
-                    <Icons icon="reader" />
-                  </button>
                 </div>
               );
 

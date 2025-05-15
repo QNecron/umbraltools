@@ -1,5 +1,13 @@
 [
   {
+    "name": "Robe",
+    "ac": 10,
+    "dex": true,
+    "properties": "-",
+    "bonus": 0,
+    "source": "core"
+  },
+  {
     "name": "Leather",
     "ac": 11,
     "dex": true,
