@@ -1,4 +1,4 @@
-import { useState, useEffect, ChangeEvent } from "react";
+import { useState, useEffect, ChangeEvent, Fragment } from "react";
 import type { MetaFunction } from "@remix-run/node";
 
 import Hero from "../components/hero";
@@ -23,7 +23,7 @@ import AncestryData from "../data/ancestries.json";
 import AlignmentData from "../data/alignments.json";
 import AttributeData from "../data/attributes.json";
 import ClassesData from "../data/classes.json";
-// import FeatsData from "../data/feats.json";
+import FeatsData from "../data/feats.json";
 
 import { 
   SaveCharacter, 
@@ -59,7 +59,7 @@ export default function Creator() {
     alignment: "",
     class: "",
     title: "",
-    level: "0",
+    level: "1",
     hit_points: "0",
     attributes: {
       str: "10",
@@ -69,7 +69,18 @@ export default function Creator() {
       wis: "10",
       chr: "10"
     },
-    talents_feats: "",
+    talents_feats: {
+      level_1: " ",
+      level_2: " ",
+      level_3: " ",
+      level_4: " ",
+      level_5: " ",
+      level_6: " ",
+      level_7: " ",
+      level_8: " ",
+      level_9: " ",
+      level_10: " "
+    },
     spells: "",
     xp: "0",
     money: {
@@ -118,7 +129,19 @@ export default function Creator() {
         wis: data.attributes.wis,
         chr: data.attributes.chr,
       },
-      talents_feats: data.talents_feats,
+      talents_feats: {
+        ...character.talents_feats,
+        level_1: data.talents_feats.level_1,
+        level_2: data.talents_feats.level_2,
+        level_3: data.talents_feats.level_3,
+        level_4: data.talents_feats.level_4,
+        level_5: data.talents_feats.level_5,
+        level_6: data.talents_feats.level_6,
+        level_7: data.talents_feats.level_7,
+        level_8: data.talents_feats.level_8,
+        level_9: data.talents_feats.level_9,
+        level_10: data.talents_feats.level_10,
+      },
       spells: data.spells,
       xp: data.xp,
       money: {
@@ -159,10 +182,23 @@ export default function Creator() {
     characterSavedUpdate(list);
     
   }
+  
+  const CharacterLevel = (level: string) => {
+    let count = parseInt(level);
+    let levels = [];
+    
+    for (count; count >= 0; count--) {
+      if (count !== 0) levels.push(count);
+    }
+    
+    return levels.reverse();
+
+  }
 
   useEffect(() => {
     
     CharacterList();
+    CharacterLevel("10");
     
   }, []);
   
@@ -444,6 +480,7 @@ export default function Creator() {
                   ...character,
                   level: event.target.value
                 })}
+                max={10}
               />
               <Input 
                 type="number" 
@@ -469,21 +506,95 @@ export default function Creator() {
           {/* talents / Feats */}
           <Section padding="creator" title="Talents / Feats">
             
-            <div className="block">
-              <Input 
-                type="textarea" 
-                id="talents_feats" 
-                label="Talents / Feats" 
-                value={character.talents_feats}
-                change={(event: ChangeEvent<HTMLTextAreaElement>) => characterUpdate({
-                  ...character,
-                  talents_feats: event.target.value
-                })}
-              />  
+            <div className="block block__wrap">
+              
+              {CharacterLevel(character.level).map((index) => {
+                
+                const isEven = (i: number) => {
+                  if (i % 2 == 0) return true;
+                  else return false;
+                }
+                
+                const Level = (i: number) => {
+                  if (i == 1) return character.talents_feats.level_1;
+                  else if (i == 2) return character.talents_feats.level_2;
+                  else if (i == 3) return character.talents_feats.level_3;
+                  else if (i == 4) return character.talents_feats.level_4;
+                  else if (i == 5) return character.talents_feats.level_5;
+                  else if (i == 6) return character.talents_feats.level_6;
+                  else if (i == 7) return character.talents_feats.level_7;
+                  else if (i == 8) return character.talents_feats.level_8;
+                  else if (i == 9) return character.talents_feats.level_9;
+                  else return character.talents_feats.level_10;
+                }
+                
+                const Properties = (i: number) => {
+                  if (i == 1) return "level_1";
+                  else if (i == 2) return "level_2";
+                  else if (i == 3) return "level_3";
+                  else if (i == 4) return "level_4";
+                  else if (i == 5) return "level_5";
+                  else if (i == 6) return "level_6";
+                  else if (i == 7) return "level_7";
+                  else if (i == 8) return "level_8";
+                  else if (i == 9) return "level_9";
+                  else return "level_10";
+                }
+                
+                let props = Properties(index);
+                
+                return(
+                  <Fragment key={index}>
+                    {!isEven(index) && (
+                      <Input 
+                        key={index} 
+                        type="text" 
+                        id={"trait_" + index} 
+                        label={"Trait " + "(" + index + ")"} 
+                        value={Level(index)}
+                        change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                          ...character,
+                          talents_feats: {
+                            ...character.talents_feats,
+                            level_1: event.target.value
+                          }
+                        })}
+                      />
+                    )}
+                    {isEven(index) && (
+                      <Input 
+                        key={index} 
+                        type="select" 
+                        id={"feat_" + index} 
+                        label={"Feat " + "(" + index + ")"}
+                        value={Level(index)}
+                        change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
+                          ...character,
+                          talents_feats: {
+                            ...character.talents_feats,
+                            [props]: event.target.value
+                          }
+                        })}
+                      >
+                        <option value="None">-</option>
+                        {FeatsData.sort((a, b) => a.name < b.name ? -1 : 1).map((feat, index) => {
+                          return(
+                            <option value={feat.name} key={index}>
+                              {feat.name}
+                            </option>
+                          );
+                        })}
+                      </Input>
+                    )}
+                  </Fragment>
+                );
+
+              })}
+            
             </div>
             
           </Section>
-          
+
           {/* Spells */}
           <Section padding="creator" title="Spells">
             
@@ -501,7 +612,7 @@ export default function Creator() {
             </div>
             
           </Section>
-            
+          
         </div>
           
         <div className="grid__column">
@@ -700,23 +811,25 @@ export default function Creator() {
           {/* equipment */}
           <Section padding="creator" title="Equipment">
 
-            {EquipmentData.map((item, index) => {
+            <div className="block block__wrap">
+              
+              {EquipmentData.map((item, index) => {
 
-              function Match(prop: string) {
-                if (prop == "head") return character.equipment.head;
-                else if (prop == "back") return character.equipment.back;
-                else if (prop == "arms") return character.equipment.arms;
-                else if (prop == "neck") return character.equipment.neck;
-                else if (prop == "waist") return character.equipment.waist;
-                else if (prop == "feet") return character.equipment.feet;
-                else if (prop == "accessory") return character.equipment.accessory;
-                else if (prop == "misc") return character.equipment.misc;
-                else return "error";
-              }
+                function Match(prop: string) {
+                  if (prop == "head") return character.equipment.head;
+                  else if (prop == "back") return character.equipment.back;
+                  else if (prop == "arms") return character.equipment.arms;
+                  else if (prop == "neck") return character.equipment.neck;
+                  else if (prop == "waist") return character.equipment.waist;
+                  else if (prop == "feet") return character.equipment.feet;
+                  else if (prop == "accessory") return character.equipment.accessory;
+                  else if (prop == "misc") return character.equipment.misc;
+                  else return "error";
+                }
 
-              return(
-                <div className="block" key={index}>
+                return(
                   <Input 
+                    key={index} 
                     type="select" 
                     id={item} 
                     label={item}
@@ -740,10 +853,11 @@ export default function Creator() {
                       }
                     })}
                   </Input>
-                </div>
-              );
+                );
 
-            })}
+              })}
+            
+            </div>
             
           </Section>
           

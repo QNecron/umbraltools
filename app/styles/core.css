@@ -109,6 +109,11 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  
+  &:has(input[disabled]) {
+    --input-background: var(--color-white-02);
+    pointer-events: none;
+  }
 }
 
 .input__field {
@@ -695,6 +700,11 @@ body {
   
   &.block__wrap {
     --block-flex-wrap: wrap;
+    
+    > .input {
+      max-width: calc(50% - var(--size-xs));
+    }
+    
   }
   
   ~ .block {

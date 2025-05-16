@@ -8,7 +8,7 @@
   },
   {
     "name": "Shield Other",
-    "description": "Grants close ally AC equal to your shield, you lose the shield's AC.",
+    "description": "Grants close ally a bonus to AC equal to your shield for one round.",
     "action": "action",
     "type": "combat",
     "stacking": false
@@ -78,7 +78,7 @@
   },
   {
     "name": "Toughness",
-    "description": "+3 maximum hit points.",
+    "description": "+4 maximum hit points.",
     "action": "passive",
     "type": "general",
     "stacking": false

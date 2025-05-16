@@ -115,7 +115,7 @@ export const Attack = (
   let bonus = 0;
   let posneg = "+";
   let attribute = str;
-  let fighter = 1;
+  let fighter = 0;
   
   if (type === "R") attribute = dex;
   else if (type === "M/R") attribute = dex > str ? dex : str;
