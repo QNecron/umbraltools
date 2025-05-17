@@ -61,7 +61,7 @@ export default function Creator() {
     class: "",
     title: "",
     level: "1",
-    hit_points: "0",
+    hit_points: "1",
     attributes: {
       str: "10",
       dex: "10",
@@ -71,16 +71,16 @@ export default function Creator() {
       chr: "10"
     },
     talents_feats: {
-      level_1: " ",
-      level_2: " ",
-      level_3: " ",
-      level_4: " ",
-      level_5: " ",
-      level_6: " ",
-      level_7: " ",
-      level_8: " ",
-      level_9: " ",
-      level_10: " "
+      level_1: "",
+      level_2: "",
+      level_3: "",
+      level_4: "",
+      level_5: "",
+      level_6: "",
+      level_7: "",
+      level_8: "",
+      level_9: "",
+      level_10: ""
     },
     spells: "",
     xp: "0",
@@ -147,9 +147,9 @@ export default function Creator() {
       xp: data.xp,
       money: {
         ...character.money,
-        gp: data.gp,
-        sp: data.sp,
-        cp: data.cp
+        gp: data.money.gp,
+        sp: data.money.sp,
+        cp: data.money.cp
       },
       equipment: {
         ...character.equipment,
@@ -199,7 +199,6 @@ export default function Creator() {
   useEffect(() => {
     
     CharacterList();
-    CharacterLevel("10");
     
   }, []);
   
@@ -550,18 +549,33 @@ export default function Creator() {
                     {!isEven(index) && (
                       <Input 
                         key={index} 
-                        type="text" 
+                        type="select" 
                         id={"trait_" + index} 
                         label={"Trait " + "(" + index + ")"} 
                         value={Level(index)}
-                        change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                        change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
                           ...character,
                           talents_feats: {
                             ...character.talents_feats,
-                            level_1: event.target.value
+                            [props]: event.target.value
                           }
                         })}
-                      />
+                      >
+                        <option value="None">-</option>
+                        {ClassesData.map((role) => {
+                          if (role.class === character.class) {
+                            return(
+                              <Fragment key={index}>
+                                <option value={role.talents.talent_1}>{role.talents.talent_1}</option>
+                                <option value={role.talents.talent_2}>{role.talents.talent_2}</option>
+                                <option value={role.talents.talent_3}>{role.talents.talent_3}</option>
+                                <option value={role.talents.talent_4}>{role.talents.talent_4}</option>
+                                <option value={role.talents.talent_5}>{role.talents.talent_5}</option>
+                              </Fragment>
+                            );
+                          }
+                        })}
+                      </Input>
                     )}
                     {isEven(index) && (
                       <Input 
@@ -605,6 +619,7 @@ export default function Creator() {
                 type="textarea" 
                 id="spells" 
                 label="Spells" 
+                minimal={true} 
                 value={character.spells}
                 change={(event: ChangeEvent<HTMLTextAreaElement>) => characterUpdate({
                   ...character,
@@ -866,11 +881,63 @@ export default function Creator() {
           {/* inventory */}
           <Section padding="creator" title="Inventory">
             
+            <div className="block block__tripple">
+
+              <div className="block__item" heading="5">GP</div>
+              <Input 
+                type="number" 
+                id="money_gp"
+                label="GP" 
+                minimal={true} 
+                value={character.money.gp} 
+                change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                  ...character,
+                  money: {
+                    ...character.money,
+                    gp: event.target.value
+                  }
+                })}
+              />
+              
+              <div className="block__item" heading="5">SP</div>
+              <Input 
+                type="number" 
+                id="money_sp"
+                label="SP" 
+                minimal={true} 
+                value={character.money.sp} 
+                change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                  ...character,
+                  money: {
+                    ...character.money,
+                    sp: event.target.value
+                  }
+                })}
+              />
+              
+              <div className="block__item" heading="5">CP</div>
+              <Input 
+                type="number" 
+                id="money_cp"
+                label="CP" 
+                minimal={true} 
+                value={character.money.cp} 
+                change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                  ...character,
+                  money: {
+                    ...character.money,
+                    cp: event.target.value
+                  }
+                })}
+              />
+            </div>
+            
             <div className="block">
               <Input 
                 type="textarea" 
                 id="inventory" 
                 label="Inventory" 
+                minimal={true} 
                 value={character.inventory}
                 change={(event: ChangeEvent<HTMLTextAreaElement>) => characterUpdate({
                   ...character,

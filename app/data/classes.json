@@ -1,38 +1,101 @@
 [
   {
     "class": "Fighter",
-    "spellcaster": false
+    "spellcaster": false,
+    "talents": {
+      "talent_1": "Gain Weapon Mastery with one additional weapon type",
+      "talent_2": "+1 to melee and ranged attacks",
+      "talent_3": "+2 to Strength, Dexterity, or Constitution stat",
+      "talent_4": "Choose one kind of armor. You get +1 AC from that armor",
+      "talent_5": "Choose a talent or +2 points to distribute to stats"
+    }
   },
   {
     "class": "Priest",
-    "spellcaster": true
+    "spellcaster": true,
+    "talents": {
+      "talent_1": "Gain advantage on casting one spell you know",
+      "talent_2": "+1 to melee or ranged attacks",
+      "talent_3": "+1 to priest spellcasting checks",
+      "talent_4": "+2 to Strength or Wisdom stat",
+      "talent_5": "Choose a talent or +2 points to distribute to stats"      
+    }
   },
   {
     "class": "Thief",
-    "spellcaster": false
+    "spellcaster": false,
+    "talents": {
+      "talent_1": "Gain advantage on initiative rolls (reroll if duplicate)",
+      "talent_2": "Your Backstab deals +1 dice of damage",
+      "talent_3": "+2 to Strength, Dexterity, or Charisma stat",
+      "talent_4": "+1 to melee and ranged attacks",
+      "talent_5": "Choose a talent or +2 points to distribute to stats"
+    }
   },
   {
     "class": "Wizard",
-    "spellcaster": true
+    "spellcaster": true,
+    "talents": {
+      "talent_1": "Make 1 random magic item of a type you choose (pg. 282)",
+      "talent_2": "+2 to Intelligence stat or +1 to wizard spellcasting checks",
+      "talent_3": "Gain advantage on casting one spell you know",
+      "talent_4": "Learn one additional wizard spell of any tier you know",
+      "talent_5": "Choose a talent or +2 points to distribute to stats"
+    }
   },
   {
     "class": "Bard",
-    "spellcaster": false
+    "spellcaster": false,
+    "talents": {
+      "talent_1": "You find a random priest or wizard wand (you choose)",
+      "talent_2": "+1 to melee and ranged attacks or +1 to Magical Dabbler rolls",
+      "talent_3": "+2 points to distribute to any stats",
+      "talent_4": "Reduce the DC of your Presence effects by 3 each",
+      "talent_5": "Choose a talent"
+    }
   },
   {
     "class": "Ranger",
-    "spellcaster": false
+    "spellcaster": false,
+    "talents": {
+      "talent_1": "You deal d12 damage with one weapon type you choose",
+      "talent_2": "+1 to melee or ranged attacks and damage",
+      "talent_3": "+2 to Strength, Dexterity, or Intelligence stat",
+      "talent_4": "You gain ADV on Herbalism checks for a remedy you choose",
+      "talent_5": "Choose a talent or +2 points to distribute to stats"
+    }
   },
   {
     "class": "Cursed Knight",
-    "spellcaster": true
+    "spellcaster": true,
+    "talents": {
+      "talent_1": "Your Demonic Possession bonus increases by 1 point",
+      "talent_2": "+1 to melee or ranged attacks",
+      "talent_3": "+2 to Strength, Dexterity, or Constitution stat",
+      "talent_4": "+2 to Charisma stat or +1 to witch spellcasting checks",
+      "talent_5": "Choose a talent or +2 points to distribute to stats"
+    }
   },
   {
     "class": "Warlock",
-    "spellcaster": false
+    "spellcaster": false,
+    "talents": {
+      "talent_1": "Roll a Patron Boon from any patron; an unexplained gift",
+      "talent_2": "Add +1 point to two stats (they must be different)",
+      "talent_3": "+1 to melee or ranged attacks",
+      "talent_4": "Roll two Patron Boons and choose one to keep",
+      "talent_5": "Choose a talent or +2 points to distribute to stats"
+    }
   },
   {
     "class": "Witch",
-    "spellcaster": true
+    "spellcaster": true,
+    "talents": {
+      "talent_1": "1/day, teleport to your familiar's location as a move",
+      "talent_2": "+2 to Charisma stat or +1 to witch spellcasting checks",
+      "talent_3": "Gain advantage on casting one spell you know",
+      "talent_4": "Learn an additional witch spell of any tier you can cast",
+      "talent_5": "Choose a talent or +2 points to distribute to stats"
+    }
   }
 ]
