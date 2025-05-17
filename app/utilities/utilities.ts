@@ -68,11 +68,11 @@ export const ArmorClass = (
   let ac = 0;
   let mod = 0;
   
-  if (!armor) ac += 10;
+  if (armor === "0") ac = 10;
   
   if (dex === "true") mod += parseInt(modifier);
     
-  ac =+ parseInt(armor) + parseInt(shield) + mod + items + misc;
+  ac += parseInt(armor) + parseInt(shield) + mod + items + misc;
     
   return ac;
   
@@ -136,6 +136,19 @@ export const Attack = (
   
 }
 
+export const HitPoints = (data: {}) => {
+  let bonus = 0;
+  
+  // @TODO - not sure I liked this..
+  Object.entries(data).map(([key, value]) => (
+    value === "Toughness" ? bonus += 4 : 0,
+    value === "Ring of Toughness" ? bonus += 4: 0
+  ));
+  
+  return bonus.toString();
+  
+}
+
 // dice
 export const DiceRoll = (dice: string, count: number) => {
   let die = 0;
@@ -166,12 +179,13 @@ export const DiceRoll = (dice: string, count: number) => {
 }
 
 // generic
-export const Total = (a: string, b: string, c: string, d: string) => {
+export const Total = (a: string, b: string, c: string, d: string, e?: any) => {
   let one = parseInt(a) ? parseInt(a) : 0;
   let two = parseInt(b) ? parseInt(b) : 0;
   let three = parseInt(c) ? parseInt(c) : 0;
   let four = parseInt(d) ? parseInt(d) : 0;
-  const add = one + two + three + four;
+  let five = parseInt(e) ? parseInt(e) : 0;
+  const add = one + two + three + four + five;
 
   return add.toString();
 }

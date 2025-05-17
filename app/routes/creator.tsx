@@ -34,6 +34,7 @@ import {
   ArmorClass, 
   HitDie, 
   Attack, 
+  HitPoints, 
   DiceRoll, 
   Total, 
   Weapons, 
@@ -336,7 +337,7 @@ export default function Creator() {
               <Input 
                 type="select" 
                 id="alignment" 
-                label="Alignmeny" 
+                label="Alignment" 
                 value={character.alignment} 
                 change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
                   ...character,
@@ -465,10 +466,11 @@ export default function Creator() {
             <div className="block">
               <div className="block__item">
                 {Total(
-                  "0", 
+                  Modifier(character.attributes.con, "0", "0"), 
                   character.hit_points, 
                   character.ancestry === "Dwarf" ? "2" : "0", 
-                  "0"
+                  HitPoints(character.talents_feats), 
+                  HitPoints(character.equipment)
                 )}
               </div>
               <Input 
