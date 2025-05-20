@@ -550,8 +550,8 @@ export default function Creator() {
                       <Input 
                         key={index} 
                         type="select" 
-                        id={"trait_" + index} 
-                        label={"Trait " + "(" + index + ")"} 
+                        id={"talent_" + index} 
+                        label={"Talent " + "(" + index + ")"} 
                         value={Level(index)}
                         change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
                           ...character,
