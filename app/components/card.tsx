@@ -51,7 +51,7 @@ export default function Wrapper({
       <div className="card__content">
         <h2 className="card__title" heading="3">{title}</h2>
         {badge && <div className="card__badge">{badge}</div>}
-        {copy1 && <div className="card__copy card__copy-1">{copy1}</div>}
+        {copy1 && <p className="card__copy card__copy-1">{copy1}</p>}
         {copy2 && <div className="card__copy card__copy-2">{copy2}</div>}
         {copy3 && <div className="card__copy card__copy-3">{copy3}</div>}
         {copy4 && <div className="card__copy card__copy-4">{copy4}</div>}

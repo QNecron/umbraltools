@@ -18,7 +18,7 @@ export default function Header() {
               {MenuData.map((menu, index) => { 
                 return(
                   <li className="nav__item" key={index}>
-                    <Link to={menu.url} className="nav__link btn" button="primary">
+                    <Link to={menu.url} reloadDocument className="nav__link btn" button="primary">
                       {menu.title}
                     </Link>
                   </li>

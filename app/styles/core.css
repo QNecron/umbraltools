@@ -658,21 +658,31 @@ body {
 
 /* card */
 .card {
+  --card-border: none;
+  
+  --card-content-flex-direction: column;
   --card-content-gap: var(--size-s);
   --card-content-padding: var(--size-l) 0;
   --card-content-position: static;
   
+  --card-title-padding: var(--size-s);
+  
+  border: var(--card-border);
   overflow: hidden;
   position: relative;
 }
 
 .card__content {
   display: flex;
-  flex-direction: column;
+  flex-direction: var(--card-content-flex-direction);
   gap: var(--card-content-gap);
   padding: var(--card-content-padding);
   position: var(--card-content-position);
   z-index: 1;
+}
+
+.card__title {
+  padding-bottom: var(--card-title-padding);
 }
 
 [card~="overlay"] {
@@ -694,6 +704,37 @@ body {
     opacity: .32;
   }
   
+}
+
+[card~="feats"] {
+  --card-border: solid 1px var(--color-white-08);
+  --card-content-flex-direction: row;
+  --card-content-padding: var(--size-m);
+  
+  .card__content {
+    flex-wrap: wrap;
+  }
+  
+  .card__title,
+  .card__copy-1 {
+    flex: 1 0 100%;
+  }
+  
+  .card__copy-1 {
+    border-bottom: var(--card-border);
+    padding-bottom: var(--size-xs);
+  }
+  
+  .card__copy-2,
+  .card__copy-3,
+  .card__copy-4 {
+    border: var(--card-border);
+    font-size: var(--size-ms);
+    font-weight: 700;
+    padding: var(--size-s) var(--size-ms);
+    text-transform: capitalize;
+  }
+
 }
 
 /* page */

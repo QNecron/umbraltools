@@ -29,7 +29,7 @@
   },
   {
     "name": "Power Attack",
-    "description": "-1 to attack tolls, +1 to damage rolls.",
+    "description": "-1 to attack rolls, +1 to damage rolls.",
     "action": "action",
     "type": "combat",
     "stacking": true
