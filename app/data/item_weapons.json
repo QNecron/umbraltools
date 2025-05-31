@@ -176,7 +176,7 @@
     "damage_2": "1d10",
     "properties": "V, 2 slots",
     "bonus": 1,
-    "description": "A dark iron greataxe that weighs twice that of other greataxes. Loose pebbles begind to levitate when drawn.",
+    "description": "A dark iron greataxe that weighs twice that of other greataxes. Distortions appear around the wielder when drawn.",
     "benefit": "On critical you cast Disguise Self (automatic) on yourself.",
     "additional": "You can cast Color Spray once per day (+4 bonus).",
     "source": "custom"
