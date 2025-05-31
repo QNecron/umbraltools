@@ -95,8 +95,8 @@
   {
     "name": "Berserker's Belt",
     "description": "Multiple strong leather straps with crossed axes as buckles abdorn this belt.",
-    "benefit": "Damage rolls with melee weapons increase by 1.",
-    "additional": "If hit in combat, roll 1d4. On a 4 you enter a frenzy where the damage increases to 2 and your AC is reduced by 2. Frenzy lasts until the end of combat.",
+    "benefit": "Damage rolls with melee weapons increase by 2.",
+    "additional": "If hit in combat, roll 1d4. On a 4 you enter a frenzy where the damage increases to 4 and your AC is reduced by 2. Frenzy lasts until the end of combat.",
     "source": "custom",
     "base": "waist"
   },

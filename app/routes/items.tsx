@@ -49,7 +49,7 @@ export default function Feats() {
 
     <Section>
       <Wrapper>
-        <Grid desktop={2} tablet={2}>
+        <Grid>
           {ItemsData.sort((a, b) => a.name < b.name ? -1 : 1).map((item, index) => { 
             
             let alphaFilter = item.name.charAt(0);
