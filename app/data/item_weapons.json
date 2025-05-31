@@ -146,9 +146,52 @@
     "damage": "1d8 + 1 + 1d4 (Fire)",
     "properties": "-",
     "bonus": 1,
-    "description": "A silvery blade that radiates a dull, comforting heat. It errupts into flames when drawn.",
+    "description": "A silvery longsword that radiates a dull, comforting heat. It errupts into flames when drawn.",
     "benefit": "Deals an additional 1d4 fire damage.",
     "additional": "You can cast Burning Hands once per day (+4 bonus).",
+    "source": "custom"
+  },
+  {
+    "name": "Frost Brand",
+    "base": "Bastard Sword",
+    "type": "M",
+    "range": "C",
+    "damage": "1d8/1d10 + 1 + 1d4 (Cold)",
+    "damage_1": "1d8",
+    "damage_2": "1d10",
+    "properties": "V, 2 slots",
+    "bonus": 1,
+    "description": "This dark iron bastard sword is cool to the touch. It freezes the surrounding air when drawn.",
+    "benefit": "Deals an additional 1d4 cold damage.",
+    "additional": "You can cast Chilling Touch once per day (+4 bonus).",
+    "source": "custom"
+  },
+  {
+    "name": "Edge of Reason",
+    "base": "Greataxe",
+    "type": "M",
+    "range": "C",
+    "damage": "1d8/1d10 + 1",
+    "damage_1": "1d8",
+    "damage_2": "1d10",
+    "properties": "V, 2 slots",
+    "bonus": 1,
+    "description": "A dark iron greataxe that weighs twice that of other greataxes. Loose pebbles begind to levitate when drawn.",
+    "benefit": "On critical you cast Disguise Self (automatic) on yourself.",
+    "additional": "You can cast Color Spray once per day (+4 bonus).",
+    "source": "custom"
+  },
+  {
+    "name": "Stormcaller",
+    "base": "Shortbow",
+    "type": "R",
+    "range": "F",
+    "damage": "1d4 + 1 + 1d4 (Electical)",
+    "properties": "2H",
+    "bonus": 1,
+    "description": "This pearl white wooden bow radiates energy. The air crackles with electricity when drawn.",
+    "benefit": "Deals an additional 1d4 electical damage.",
+    "additional": "You can cast Shocking Grasp once per day (+4 bonus).",
     "source": "custom"
   }
 ]

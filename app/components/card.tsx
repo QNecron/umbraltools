@@ -9,10 +9,10 @@ interface propsCard {
   badge?: string;
   copy1?: string;
   copy2?: string;
-  copy3?: string;
-  copy4?: string;
-  copy5?: string;
-  copy6?: string;
+  copy3?: any;
+  copy4?: any;
+  copy5?: any;
+  copy6?: any;
   ctaUrl?: string;
   ctaCopy?: string;
 }

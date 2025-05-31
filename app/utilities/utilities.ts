@@ -62,17 +62,24 @@ export const ArmorClass = (
   armor: string, 
   dex: string, 
   shield: string, 
-  items: number,
-  misc: number
+  items?: {}
 ) => {
+  let bonus = 0;
   let ac = 0;
   let mod = 0;
   
   if (armor === "0") ac = 10;
   
   if (dex === "true") mod += parseInt(modifier);
-    
-  ac += parseInt(armor) + parseInt(shield) + mod + items + misc;
+  
+  // @TODO - not sure I like this..
+  if (items) {
+    Object.entries(items).map(([key, value]) => (
+      value === "Ioun Stone, Peridot" ? bonus += 1 : 0
+    ));
+  }
+  
+  ac += parseInt(armor) + parseInt(shield) + mod + bonus;
     
   return ac;
   
@@ -106,27 +113,34 @@ export const HitDie = (role: string) => {
 export const Attack = (
   str: string, 
   dex: string, 
-  data: {}[], 
-  name: string,
-  type: string, 
+  weapons: {}[], 
+  weapon_name: string,
+  weapon_type: string, 
   role: string, 
-  level: string
+  level: string,
+  items?: {}
 ) => {
   let bonus = 0;
   let posneg = "+";
   let attribute = str;
   let fighter = 0;
   
-  if (type === "R") attribute = dex;
-  else if (type === "M/R") attribute = dex > str ? dex : str;
+  if (weapon_type === "R") attribute = dex;
+  else if (weapon_type === "M/R") attribute = dex > str ? dex : str;
   else attribute = str;
   
-
   if (role === "Fighter") fighter = Math.floor(((parseInt(level) + 1) / 2));
 
-  data.map((weapon: any) => {
-    if (weapon.name === name) bonus += weapon.bonus;
+  weapons.map((weapon: any) => {
+    if (weapon.name === weapon_name) bonus += weapon.bonus;
   });
+  
+  // @TODO - not sure I like this..
+  if (items) {
+    Object.entries(items).map(([key, value]) => (
+      value === "Ioun Stone, Garnet" ? bonus += 1 : 0
+    ));
+  }
   
   bonus += parseInt(attribute) + fighter;
   
@@ -139,7 +153,7 @@ export const Attack = (
 export const HitPoints = (data: {}) => {
   let bonus = 0;
   
-  // @TODO - not sure I liked this..
+  // @TODO - not sure I like this..
   Object.entries(data).map(([key, value]) => (
     value === "Toughness" ? bonus += 4 : 0,
     value === "Ring of Toughness" ? bonus += 4: 0

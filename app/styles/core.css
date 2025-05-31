@@ -706,10 +706,21 @@ body {
   
 }
 
-[card~="feats"] {
+[card~="feats"],
+[card~="items"] {
   --card-border: solid 1px var(--color-white-08);
-  --card-content-flex-direction: row;
   --card-content-padding: var(--size-m);
+  
+  .card__copy-1 {
+    border-bottom: var(--card-border);
+    font-style: italic;
+    padding-bottom: var(--size-s);
+  }
+  
+}
+
+[card~="feats"] {
+  --card-content-flex-direction: row;
   
   .card__content {
     flex-wrap: wrap;
@@ -718,11 +729,6 @@ body {
   .card__title,
   .card__copy-1 {
     flex: 1 0 100%;
-  }
-  
-  .card__copy-1 {
-    border-bottom: var(--card-border);
-    padding-bottom: var(--size-xs);
   }
   
   .card__copy-2,

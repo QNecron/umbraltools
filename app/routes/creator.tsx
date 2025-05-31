@@ -697,8 +697,7 @@ export default function Creator() {
                   Armors(ArmorData, character.equipment.armor, "ac"), 
                   Armors(ArmorData, character.equipment.armor, "dex"),
                   Armors(ShieldData, character.equipment.shield, "ac"),
-                  0, // accessory
-                  0 // class
+                  character.equipment
                 )}
               </div>
               <div className="block__item block__item--full">
@@ -758,7 +757,8 @@ export default function Creator() {
                   character.equipment.hands_primary, 
                   Weapons(WeaponData, character.equipment.hands_primary, "type"), 
                   character.class, 
-                  character.level
+                  character.level,
+                  character.equipment
                 )}
               </div>
               <div className="block__item block__item--tiny" heading="5">Dmg</div>

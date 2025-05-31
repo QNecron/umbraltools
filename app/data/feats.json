@@ -71,7 +71,7 @@
   },
   {
     "name": "Lucky",
-    "description": "Grants a luck token at the beginning of each session.",
+    "description": "Roll with advantage once per day, increases to twice per day at level 5.",
     "action": "passive",
     "type": "general",
     "stacking": false
