@@ -50,8 +50,6 @@ export const meta: MetaFunction = () => {
 
 export default function Creator() {
     
-  const [source, sourceUpdate] = useState("*");
-
   const [character, characterUpdate] = useState({
     name: "",
     ancestry: "",
@@ -653,13 +651,11 @@ export default function Creator() {
               >
                 <option value="None">-</option>
                 {ArmorData.map((armor, index) => {
-                  if (armor.source === source || source === "*") {
-                    return(
-                      <option value={armor.name} key={index}>
-                        {armor.name}
-                      </option>
-                    );
-                  }
+                  return(
+                    <option value={armor.name} key={index}>
+                      {armor.name}
+                    </option>
+                  );
                 })}
               </Input>
               <Input 
@@ -677,13 +673,11 @@ export default function Creator() {
               >
                 <option value="None">-</option>
                 {ShieldData.map((shield, index) => {
-                  if (shield.source === source || source === "*") {
-                    return(
-                      <option value={shield.name} key={index}>
-                        {shield.name}
-                      </option>
-                    );
-                  }
+                  return(
+                    <option value={shield.name} key={index}>
+                      {shield.name}
+                    </option>
+                  );
                 })}
               </Input>
             </div>
@@ -727,13 +721,11 @@ export default function Creator() {
               >
                 <option value="None">-</option>
                 {WeaponData.map((item, index) => {
-                  if (item.source === source || source === "*") {
-                    return(
-                      <option value={item.name} key={index}>
-                        {item.name}
-                      </option>
-                    );
-                  }
+                  return(
+                    <option value={item.name} key={index}>
+                      {item.name}
+                    </option>
+                  );
                 })}
               </Input>
               <div className="block__item">
@@ -784,13 +776,11 @@ export default function Creator() {
               >
                 <option value="None">-</option>
                 {WeaponData.map((item, index) => {
-                  if (item.source === source || source === "*") {
-                    return(
-                      <option value={item.name} key={index}>
-                        {item.name}
-                      </option>
-                    );
-                  }
+                  return(
+                    <option value={item.name} key={index}>
+                      {item.name}
+                    </option>
+                  );
                 })}
               </Input>
               <div className="block__item">
