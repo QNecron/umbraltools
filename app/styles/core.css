@@ -707,9 +707,14 @@ body {
 }
 
 [card~="feats"],
-[card~="items"] {
+[card~="items"],
+[card~="spells"] {
   --card-border: solid 1px var(--color-white-08);
   --card-content-padding: var(--size-m);
+}
+
+[card~="feats"],
+[card~="items"] {
   
   .card__copy-1 {
     border-bottom: var(--card-border);
@@ -739,6 +744,47 @@ body {
     font-weight: 700;
     padding: var(--size-s) var(--size-ms);
     text-transform: capitalize;
+  }
+
+}
+
+[card~="spells"] {
+  
+  .card__badge,
+  .card__badge:before {
+    height: var(--size-ml);
+    width: var(--size-ml);
+    position: absolute;
+  }
+  
+  .card__badge {
+    align-items: center;
+    display: flex;
+    font-size: var(--size-ms);
+    justify-content: center;
+    top: var(--size-m);
+    right: var(--size-m);    
+  }
+  
+  .card__badge:before {
+    content: "";
+    background: var(--color-white-02);
+    border: var(--card-border);
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    transform: rotate(45deg);
+  }
+  
+  .card__copy-1,
+  .card__copy-2,
+  .card__copy-3 {
+    font-size: var(--size-ms);
+  }
+  
+  .card__copy-3 {
+    border-bottom: var(--card-border);
+    padding-bottom: var(--size-s);
   }
 
 }

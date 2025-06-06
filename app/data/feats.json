@@ -15,7 +15,7 @@
   },
   {
     "name": "Cleaving Attack",
-    "description": "Attack close enemies in front of you with one swipe, -3 to damage roll.",
+    "description": "Attack close enemies in front of you.",
     "action": "action",
     "type": "combat",
     "stacking": false

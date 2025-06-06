@@ -1,0 +1,367 @@
+[
+  {
+    "name": "Divine Favor",
+    "tier": 1,
+    "class": "Priest",
+    "duration": "Instant",
+    "range": "Near",
+    "description_1": "You grant the favor of your god to a target within near. The target gain advantage on their next damage roll.",
+    "source": "custom"
+  },
+  {
+    "name": "Purify Food and Drink",
+    "tier": 1,
+    "class": "Priest",
+    "duration": "Instant",
+    "range": "Close",
+    "description_1": "With a touch, food and drink becomes consumable again to grant nurishment. Removes poison, disease, and rot from food and drink.",
+    "source": "custom"
+  },
+  {
+    "name": "Inflict Wounds",
+    "tier": 1,
+    "class": "Priest",
+    "duration": "Instant",
+    "range": "Close",
+    "description_1": "Your malevolent touch destroys life.",
+    "description_2": "Roll a number of d6s equal to 1 + half your level (rounded down). One living target you touch is dealt that much damage.",
+    "source": "custom"
+  },
+  {
+    "name": "Command Undead",
+    "tier": 1,
+    "class": "Priest",
+    "duration": "Instant",
+    "range": "Near",
+    "description_1": "You command undead creatures, forcing your will upon them. You must present a holy symbol to cast this spell.",
+    "description_2": "Undead creatures within near of you must make a CHA check vs. your spellcasting check. If a creature fails by 10+ points and is equal to or less than your level, it is now under your command. Otherwise, on a fail, it is stunned for 5 rounds.",
+    "source": "custom"
+  },
+  {
+    "name": "Aid",
+    "tier": 2,
+    "class": "Priest",
+    "duration": "10 rounds",
+    "range": "Near",
+    "description_1": "You bolster the resolve of a target within near. For the spell's duration the target gains 4 temporary hitpoints and advantage on morale checks.",
+    "source": "custom"
+  },
+  {
+    "name": "Prayer",
+    "tier": 2,
+    "class": "Priest",
+    "duration": "Instant",
+    "range": "Near",
+    "description_1": "Upon citing a prayer to your god grants blessings to you and your allies while also condemning those who stand against you.",
+    "description_2": "Allies within near gain advantage on their next attack roll or spell check.",
+    "description_3": "Enemies within near gain disadvantage on their next attack roll or spell check.",
+    "source": "custom"
+  },
+  {
+    "name": "Heroism",
+    "tier": 2,
+    "class": "Priest",
+    "duration": "3 rounds",
+    "range": "Near",
+    "description_1": "You impart heroic inspiration to a target within near. For the spell's duration they are immune to morale checks and have advantage on attack rolls.",
+    "source": "custom"
+  },
+  {
+    "name": "Spiritual Weapon",
+    "tier": 2,
+    "class": "Priest",
+    "duration": "Focus ",
+    "range": "Self",
+    "description_1": "You manifest a magical melee weapon of your choice in your hand made of spiritual energy.",
+    "description_2": "This is a +1 weapon that increases to +2 at LVL 6.",
+    "description_3": "It has advantage on damage rolls against Fiends, Outsiders, and Undead.",
+    "source": "custom"
+  },
+  {
+    "name": "Smite",
+    "tier": 2,
+    "class": "Priest",
+    "duration": "Instant",
+    "range": "Near",
+    "description_1": "You call down punishing flames on a creature you can see within range. It takes 2d6 damage.",
+    "source": "custom"
+  },
+  {
+    "name": "Curse",
+    "tier": 3,
+    "class": "Priest",
+    "duration": "Focus",
+    "range": "Near",
+    "description_1": "Uttering words of damnation, you target a enemy creature and curse them. As long as the spell is maintained they have disadvantage on all attack and spellcasting checks.",
+    "source": "custom"
+  },
+  {
+    "name": "Mantle of Hope",
+    "tier": 3,
+    "class": "Priest",
+    "duration": "3 rounds",
+    "range": "Self",
+    "description_1": "Holy light baths you as you're filled with hope. Each successful attack or spell cast by you or an ally heals 1 hit point within near.",
+    "source": "custom"
+  },
+  {
+    "name": "Mass Inflict",
+    "tier": 3,
+    "class": "Priest",
+    "duration": "Instant",
+    "range": "Near",
+    "description_1": "All living enemies within near range of you take 2d6 damage.",
+    "source": "custom"
+  },
+  {
+    "name": "Righteous Fevor",
+    "tier": 3,
+    "class": "Priest",
+    "duration": "Focus",
+    "range": "Near",
+    "description_1": "You instill an overwhelming righteousness into a target. For the spells duraction, each successful attack on an enemy increases your attack roll by 1 against that target.",
+    "description_2": "Should you miss the bonus is reset to 0.",
+    "source": "custom"
+  },
+  {
+    "name": "Flamestrike",
+    "tier": 4,
+    "class": "Priest",
+    "duration": "Instant",
+    "range": "Far",
+    "description_1": "You call down a holy pillar of fire, immolating one creature you can see within range. The target takes 3d6 damage.",
+    "source": "custom"    
+  },
+  {
+    "name": "Adhesive",
+    "tier": 1,
+    "class": "Wizard",
+    "duration": "3 rounds",
+    "range": "Near",
+    "description_1": "You conjure forth a thick, sticky substance covering half a near sized surface.",
+    "description_2": "All creatures inside the target area must make a DC11 dexterity check or be unable to move for the spell's duration.",
+    "source": "custom"
+  },
+  {
+    "name": "Chilling Touch",
+    "tier": 1,
+    "class": "Wizard",
+    "duration": "3 rounds",
+    "range": "Close",
+    "description_1": "Your hand forms a layer of ice as you reach out. The target takes 1d4 damage and they must make a DC11 constitution check or become weakened.",
+    "source": "custom"
+  },
+  {
+    "name": "Color Spray",
+    "tier": 1,
+    "class": "Wizard",
+    "duration": "1 round",
+    "range": "Close",
+    "description_1": "You spread your fingers with thumbs touching, unleashing a prismatic circle that blasts up to a close area around where you stand.",
+    "description_2": "Creatures within the area of effect are either blinded, stunned, or put to sleep for spell's duration. Roll 1d3 to determine the effect.",
+    "source": "custom"
+  },
+  {
+    "name": "Disguise Self",
+    "tier": 1,
+    "class": "Wizard",
+    "duration": "Focus",
+    "range": "Self",
+    "description_1": "You take on the appearance of someone you've recently seen. Small or medium humanoids only.",
+    "description_2": "You've must have seen their face and most of their body, whether it be from a painting, drawing, or in person.",
+    "source": "custom"
+  },
+  {
+    "name": "Good Berry",
+    "tier": 1,
+    "class": "Wizard",
+    "duration": "Instant",
+    "range": "Close",
+    "description_1": "You target a bush or shurb and cause it to grow 1d4 plump berries.",
+    "description_2": "Each berry consumed cures 1d4 hit points, this increases to 2d4 at LVL 6.",
+    "description_3": "You may only consume one berry per rest.",
+    "source": "custom"
+  },
+  {
+    "name": "Grease",
+    "tier": 1,
+    "class": "Wizard",
+    "duration": "3 rounds",
+    "range": "Near",
+    "description_1": "You conjure forth a thick, slick substance covering half a near sized surface.",
+    "description_2": "All creatures inside the target area must make a DC11 dexterity check or fall prone.",
+    "source": "custom"
+  },
+  {
+    "name": "Shocking Grasp",
+    "tier": 1,
+    "class": "Wizard",
+    "duration": "Instant",
+    "range": "Close",
+    "description_1": "Electrical discharge forms around your hand as you reach out. The target takes 1d4 damage, the damage is increased to 2d4 if the target is heavily armored.",
+    "source": "custom"
+  },
+  {
+    "name": "Thorn Whip",
+    "tier": 1,
+    "class": "Wizard",
+    "duration": "Instant",
+    "range": "Near",
+    "description_1": "You conjure a thorny vine and lash out at a creature within near. The target takes 1d4 damage and must make a STR check vs. your spell casting check or be pulled a close distance towards you.",
+    "source": "custom"
+  },
+  {
+    "name": "Air Walk",
+    "tier": 2,
+    "class": "Wizard",
+    "duration": "Focus",
+    "range": "Close",
+    "description_1": "You begin to walk on air as if it's solid as the ground. You walk at half speed and are unable to run while the spell is maintained.",
+    "source": "custom"
+  },
+  {
+    "name": "Barkskin",
+    "tier": 2,
+    "class": "Wizard",
+    "duration": "10 rounds",
+    "range": "Near",
+    "description_1": "The target creature's skin hardens and appears to be made of wood, non-magical weapon damage have disadvantage against the target.",
+    "source": "custom"
+  },
+  {
+    "name": "Call Lightning",
+    "tier": 2,
+    "class": "Wizard",
+    "duration": "Focus",
+    "range": "Near",
+    "description_1": "You summon a crackling thunder cloud overhead that unleashes a lightning bolt that deals 1d6 damage.",
+    "description_2": "As long as focus is maintained you may summon a lightning bolt at a target creature.",
+    "source": "custom"
+  },
+  {
+    "name": "False Life",
+    "tier": 2,
+    "class": "Wizard",
+    "duration": "10 rounds",
+    "range": "Self",
+    "description_1": "Incantations bolster your physical form. Roll a number of d4s equal to half your level (rounded down) and apply that as temporary hit points for the spell's duration.",
+    "source": "custom"
+  },
+  {
+    "name": "Gust of Wind",
+    "tier": 2,
+    "class": "Wizard",
+    "duration": "Instant",
+    "range": "Self",
+    "description_1": "A whirlwind form around you. Creature within one-half of near must make a STR check vs your spell casting check or be pushed to near distance and knocked prone.",
+    "source": "custom"
+  },
+  {
+    "name": "Ice Slick",
+    "tier": 2,
+    "class": "Wizard",
+    "duration": "3 rounds",
+    "range": "Near",
+    "description_1": "You conjure forth a snap freeze that deals 1d6 damage and creates a thick sheet of ice covering half a near sized surface.",
+    "description_2": "All creatures inside the target area must make a DC12 dexterity check or fall prone.",
+    "source": "custom"
+  },
+  {
+    "name": "Scorching Ray",
+    "tier": 2,
+    "class": "Wizard",
+    "duration": "Instant",
+    "range": "Far",
+    "description_1": "A flaming ray shoots from your finger and scorches a creature dealing 1d6 damage.",
+    "description_2": "On a spell check of 19+ the damage is doubled.",
+    "source": "custom"
+  },
+  {
+    "name": "Touch of Idiocy",
+    "tier": 2,
+    "class": "Wizard",
+    "duration": "3 rounds",
+    "range": "Close",
+    "description_1": "Your hand glows an eerie green hue as you reach out. The target creature's spell checks and spell damage have disadvantage for the duration of the spell.",
+    "source": "custom"
+  },
+  {
+    "name": "Haste",
+    "tier": 3,
+    "class": "Wizard",
+    "duration": "3 rounds",
+    "range": "Near",
+    "description_1": "You change the flow of time, speeding up a creature within near range. Target gains one additional action for the spell's duration.",
+    "description_2": "While hasted you may attack twice, cast two spells, or move twice.",
+    "source": "custom"
+  },
+  {
+    "name": "Slow",
+    "tier": 3,
+    "class": "Wizard",
+    "duration": "3 rounds",
+    "range": "Near",
+    "description_1": "You change the flow of time, slowing down a creature within near range. Target loses one action for the spell's duration.",
+    "description_2": "While slowed you may only perform one action; be it attack, cast a spell, or move.",
+    "source": "custom"
+  },
+  {
+    "name": "Burst of Nettles",
+    "tier": 3,
+    "class": "Wizard",
+    "duration": "Instant",
+    "range": "Close",
+    "description_1": "You release a burst of barbed nettles in near circle around you. Creatures within the area take 2d6 damage.",
+    "description_2": "For the next 3 rounds creatures hit take an additional 1d4 damage on their turn.",
+    "source": "custom"
+  },
+  {
+    "name": "Deep Slumber",
+    "tier": 3,
+    "class": "Wizard",
+    "duration": "Instant",
+    "range": "Near",
+    "description_1": "You weave a powerful lulling spell that fills a near-sized cube extending from you. Living creatures in the area of effect fall into a deep sleep if they are LV 4 or less.",
+    "description_2": "Vigorous shaking or being injured wakes them.",
+    "source": "custom"
+  },
+  {
+    "name": "Thorny Entanglement",
+    "tier": 3,
+    "class": "Wizard",
+    "duration": "3 rounds",
+    "range": "Near",
+    "description_1": "Touching the ground you conjure fourth grasping vines covered in thorns that covers a near sized surface.",
+    "description_2": "Creatures caught in the vines have their movement halfed and take 1d6 damage.",
+    "source": "custom"
+  },
+  {
+    "name": "Thunderclap",
+    "tier": 3,
+    "class": "Wizard",
+    "duration": "Instant",
+    "range": "Close",
+    "description_1": "You slam the ground with your hands, unleashing a thunderous wave that errupts out to a double close area from where you stand.",
+    "description_2": "Creatures within the area of effect take 2d6 damage, and are thrown close range landing prone.",
+    "source": "custom"
+  },
+  {
+    "name": "Vampiric Touch",
+    "tier": 3,
+    "class": "Wizard",
+    "duration": "Instant",
+    "range": "Close",
+    "description_1": "Your hand glows a sinister red hue as you reach out. The target takes 2d6 damage, and you heal an amount equal to the damage dealt.",
+    "source": "custom"
+  },
+  {
+    "name": "Witness",
+    "tier": 3,
+    "class": "Wizard",
+    "duration": "Focus",
+    "range": "Far",
+    "description_1": "You psychically meld with another creatures mind, through this connection you can see and hear as they do for the duration of the spell.",
+    "description_2": "When the spell ends the creature makes a DC13 WIS check to know they've been targeted.",
+    "source": "custom"
+  }
+]
