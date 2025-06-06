@@ -31,7 +31,7 @@ export default function Spells() {
       imgMobile={Mobile} 
       imgMobileHeight={1080} 
       imgMobileWidth={1080} 
-      title="Feats" 
+      title="Spells" 
       logo={false} 
       animation={false} 
     />
