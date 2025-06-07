@@ -41,7 +41,8 @@
     "description": "This fine robe has a large symbol made of six dull-colored veils tied end-to-end on the chest.",
     "benefit": "You're able to see through the effects of the Mirror Image spell.",
     "additional": "You can cast Mirror Image once per day (+4 bonus).",
-    "source": "custom"
+    "source": "custom",
+    "filter": "armors"
   },
   {
     "name": "Rebel's Call",
@@ -53,7 +54,8 @@
     "description": "With a golden bell emblem on the chest, this reinforced leather armor has heavy wear and tear.",
     "benefit": "For every ally within half near deal an additional 1 point of damage.",
     "additional": "You can cast Shield of Faith once per day (+4 bonus).",
-    "source": "custom"
+    "source": "custom",
+    "filter": "armors"
   },
   {
     "name": "Iridescent Chainmail",
@@ -64,7 +66,8 @@
     "bonus": 0,
     "description": "This chainmail shifts hues of green, blue, white, and red in the light.",
     "benefit": "Elemental damage is reduced by 3 points.",
-    "source": "custom"
+    "source": "custom",
+    "filter": "armors"
   },
   {
     "name": "Plate of Ill Payment",
@@ -75,6 +78,7 @@
     "bonus": 0,
     "description": "This plate mail helps lash out to those who would harm the wearer.",
     "benefit": "If hit within close you may counter attack once per round.",
-    "source": "custom"
+    "source": "custom",
+    "filter": "armors"
   }
 ]

@@ -425,6 +425,8 @@ body {
   --dialog-close-left: auto;
   --dialog-close-transform: translate(50%, 0);
   
+  --dialog-content-margin: var(--size-ms);
+  
   backdrop-filter: var(--dialog-backdrop-filter);
   background: var(--dialog-background-color);
   border: 0;
@@ -481,6 +483,7 @@ body {
 }
 
 .dialog__content {
+  margin-top: var(--dialog-content-margin);
   
   /* media */
   @media screen and (max-width: 767px) {
@@ -519,6 +522,44 @@ body {
   
   --dialog-close-top: var(--size-m);
   --dialog-close-right: var(--size-m);
+}
+
+/* tabs */
+.tabs {
+  --tabs-display: flex;
+  --tabs-gap: var(--size-s);
+  --tabs-padding: var(--size-l);
+
+  --tab-size: 33%;
+  
+  display: var(--tabs-display);
+  flex-wrap: wrap;
+  gap: var(--tabs-gap);
+  padding-bottom: var(--tabs-padding);
+  
+  &.condensed {
+    --tabs-gap: var(--size-xs);
+    --tab-size: 15%;
+    
+    > * {
+      max-width: var(--tab-size);
+    }
+    
+  }
+  
+  > * {
+    flex: 1 0 var(--tab-size);
+  }
+  
+}
+
+.tabs__title {
+  --tabs-title-border: solid 1px var(--color-white-08);
+  --tabs-title-spacing: var(--size-m);
+  
+  border-bottom: var(--tabs-title-border);
+  margin-bottom: var(--tabs-title-spacing);
+  padding-bottom: var(--tabs-title-spacing);
 }
 
 /* hero */

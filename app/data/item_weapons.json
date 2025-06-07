@@ -149,7 +149,8 @@
     "description": "A silvery longsword that radiates a dull, comforting heat. It errupts into flames when drawn.",
     "benefit": "Deals an additional 1d4 fire damage.",
     "additional": "You can cast Burning Hands once per day (+4 bonus).",
-    "source": "custom"
+    "source": "custom",
+    "filter": "weapons"
   },
   {
     "name": "Frost Brand",
@@ -164,7 +165,8 @@
     "description": "This dark iron bastard sword is cool to the touch. It freezes the surrounding air when drawn.",
     "benefit": "Deals an additional 1d4 cold damage.",
     "additional": "You can cast Chilling Touch once per day (+4 bonus).",
-    "source": "custom"
+    "source": "custom",
+    "filter": "weapons"
   },
   {
     "name": "Edge of Reason",
@@ -179,7 +181,8 @@
     "description": "A dark iron greataxe that weighs twice that of other greataxes. Distortions appear around the wielder when drawn.",
     "benefit": "On critical you cast Disguise Self (automatic) on yourself.",
     "additional": "You can cast Color Spray once per day (+4 bonus).",
-    "source": "custom"
+    "source": "custom",
+    "filter": "weapons"
   },
   {
     "name": "Stormcaller",
@@ -192,6 +195,21 @@
     "description": "This pearl white wooden bow radiates energy. The air crackles with electricity when drawn.",
     "benefit": "Deals an additional 1d4 electical damage.",
     "additional": "You can cast Shocking Grasp once per day (+4 bonus).",
-    "source": "custom"
+    "source": "custom",
+    "filter": "weapons"
+  },
+  {
+    "name": "The Spine of Thicket Green",
+    "base": "Staff",
+    "type": "M",
+    "range": "C",
+    "damage": "1d4 + 1",
+    "properties": "2H",
+    "bonus": 1,
+    "description": "This gnarled staff is heavy, owed to an entwined length of amber running down its core.",
+    "benefit": "Increases armor by 1.",
+    "additional": "You can cast Thorn Whip and Burst of Nettles three times per day (+4 bonus).",
+    "source": "custom",
+    "filter": "weapons"
   }
 ]

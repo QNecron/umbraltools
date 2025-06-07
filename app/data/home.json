@@ -15,9 +15,9 @@
   },
   {
     "image": "/assets/card_1-1.webp",
-    "title": "Combat Made Easy",
-    "copy": "Combat tools for generating Roll20 compatible macros with ease.",
-    "ctaCopy": "Combat Tools",
-    "ctaUrl": "/combat"
+    "title": "Magical Items",
+    "copy": "Items that can be found throughout our custom campaigns, or crafted.",
+    "ctaCopy": "Magic Items",
+    "ctaUrl": "/items"
   }
 ]
