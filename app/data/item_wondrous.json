@@ -132,6 +132,14 @@
     "filter": "accessory"
   },
   {
+    "name": "Finality's Claim",
+    "description": "A large onyx in the shape of a skull decorates this golden band.",
+    "benefit": "You gain a +4 to your death timer roll. If you roll a 19+ you rise with 1 hit point.",
+    "source": "custom",
+    "base": "accessory",
+    "filter": "accessory"
+  },
+  {
     "name": "Bilestompers",
     "description": "The edges of these leather boots show signs of corrosion.",
     "benefit": "Acid damage is reduced by 3 points.",
@@ -249,6 +257,29 @@
       {
         "tier": "3",
         "list": "Fabricate"
+      }
+    ],
+    "source": "custom",
+    "base": "misc",
+    "filter": "misc"
+  },
+  {
+    "name": "Acolyte's Primer",
+    "description": "The cover appears to be made of mummified skin, covered in dust and dried blood.",
+    "additional": "You can cast any of the spells contained as if they were scrolls.",
+    "curse": "Only useable by Priests.",
+    "spells": [
+      {
+        "tier": "1",
+        "list": "Command Undead, Inflict Wounds, (Un)Holy Weapon"
+      },
+      {
+        "tier": "2",
+        "list": "Aid, Prayer"
+      },
+      {
+        "tier": "3",
+        "list": "Mass Inflict"
       }
     ],
     "source": "custom",

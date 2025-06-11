@@ -23,7 +23,7 @@ import ItemWondrous from "../data/item_wondrous.json";
 export const meta: MetaFunction = () => {
   return [
     { title: "Magic Items | Umbral Tools" },
-    { name: "description", content: "Toolset for the ShadowDark TTRPG." },
+    { name: "description", content: "Custom magic items for Umbral Tools games." },
   ];
 };
 
@@ -104,7 +104,6 @@ export default function Feats() {
             }
             
             let ItemBenefit = <> <strong>Benefit.</strong> {item.benefit} </>;
-            
             let ItemAdditional = <> <strong>Additional.</strong> {item.additional} </>;
             
             return(

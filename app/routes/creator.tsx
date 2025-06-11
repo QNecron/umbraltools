@@ -44,7 +44,7 @@ import {
 export const meta: MetaFunction = () => {
   return [
     { title: "Creator | Umbral Tools" },
-    { name: "description", content: "Toolset for the ShadowDark TTRPG." },
+    { name: "description", content: "Character creator Umbral Tools games." },
   ];
 };
 

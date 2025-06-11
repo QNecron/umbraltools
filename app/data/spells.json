@@ -3,9 +3,9 @@
     "name": "Divine Favor",
     "tier": 1,
     "class": "Priest",
-    "duration": "Instant",
+    "duration": "5 rounds",
     "range": "Near",
-    "description_1": "You grant the favor of your god to a target within near. The target gain advantage on their next damage roll.",
+    "description_1": "You grant the favor of your god to a target within near. The target gains +1 damage rolls.",
     "source": "custom"
   },
   {
@@ -53,8 +53,8 @@
     "duration": "Instant",
     "range": "Near",
     "description_1": "Upon citing a prayer to your god grants blessings to you and your allies while also condemning those who stand against you.",
-    "description_2": "Allies within near gain advantage on their next attack roll or spell check.",
-    "description_3": "Enemies within near gain disadvantage on their next attack roll or spell check.",
+    "description_2": "Allies within near gain advantage on their next attack roll or spellcasting check.",
+    "description_3": "Enemies within near gain disadvantage on their next attack roll or spellcasting check.",
     "source": "custom"
   },
   {
@@ -74,7 +74,7 @@
     "range": "Self",
     "description_1": "You manifest a magical melee weapon of your choice in your hand made of spiritual energy.",
     "description_2": "This is a +1 weapon that increases to +2 at LVL 6.",
-    "description_3": "It has advantage on damage rolls against Fiends, Outsiders, and Undead.",
+    "description_3": "It deals an additional 1d4 damage against Fiends, Outsiders, and Undead.",
     "source": "custom"
   },
   {
@@ -118,9 +118,9 @@
     "tier": 3,
     "class": "Priest",
     "duration": "Focus",
-    "range": "Near",
-    "description_1": "You instill an overwhelming righteousness into a target. For the spells duraction, each successful attack on an enemy increases your attack roll by 1 against that target.",
-    "description_2": "Should you miss the bonus is reset to 0.",
+    "range": "Self",
+    "description_1": "You're filled with an overwhelming righteousness. For the spells duraction you gain a bonus to attacks rolls equal to your level.",
+    "description_2": "",
     "source": "custom"
   },
   {
@@ -224,8 +224,8 @@
     "tier": 2,
     "class": "Wizard",
     "duration": "10 rounds",
-    "range": "Near",
-    "description_1": "The target creature's skin hardens and appears to be made of wood, non-magical weapon damage have disadvantage against the target.",
+    "range": "Close",
+    "description_1": "The target creature's skin hardens and appears to be made of wood. You gain resistance to non-magical physical attacks.",
     "source": "custom"
   },
   {

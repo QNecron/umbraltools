@@ -208,7 +208,7 @@
     "bonus": 1,
     "description": "This gnarled staff is heavy, owed to an entwined length of amber running down its core.",
     "benefit": "Increases armor by 1.",
-    "additional": "You can cast Thorn Whip and Burst of Nettles three times per day (+4 bonus).",
+    "additional": "You can cast Thorn Whip, Barkskin, and Burst of Nettles once per day (+4 bonus).",
     "source": "custom",
     "filter": "weapons"
   }

@@ -14,7 +14,7 @@ import FeatsData from "../data/feats.json";
 export const meta: MetaFunction = () => {
   return [
     { title: "Feats | Umbral Tools" },
-    { name: "description", content: "Toolset for the ShadowDark TTRPG." },
+    { name: "description", content: "Custom feats for Umbral Tools games." },
   ];
 };
 
