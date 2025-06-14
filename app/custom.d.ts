@@ -3,6 +3,7 @@ import * as React from 'react';
 declare module 'react' {
   
   interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
+    accordion?: string;
     button?: string;
     card?: string;
     dialog?: string;

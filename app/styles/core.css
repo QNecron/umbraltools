@@ -14,11 +14,14 @@ body {
   --button-font-color: var(--color-white-100);
   --button-font-family: var(--font-heading);
   --button-font-size: 14px;
+  --button-justify-content: center;
   --button-padding: 0 var(--size-m);
   --button-letter-spacing: 2px;
+  --button-text-align: center;
   --button-height: var(--size-xl);
   --button-outline-color: var(--color-white-0);
   --button-outline-offset: calc(-1 * var(--size-xs));
+  --button-width: initial;
   
   align-items: center;
   align-self: flex-start;
@@ -29,17 +32,18 @@ body {
   display: inline-flex;
   font-family: var(--button-font-family);
   font-size: var(--button-font-size);
-  justify-content: center;
+  justify-content: var(--button-justify-content);
   letter-spacing: var(--button-letter-spacing);
   outline-color: var(--button-outline-color);
   outline-offset: var(--button-outline-offset);
   outline-style: dashed;
   outline-width: 1px;
   padding: var(--button-padding);
-  text-align: center;
+  text-align: var(--button-text-align);
   text-decoration: none;
   text-transform: capitalize;
   height: var(--button-height);
+  width: var(--button-width);
   
   &:focus,
   &:hover,
@@ -60,6 +64,12 @@ body {
   max-width: var(--size-xl);
 }
 
+[button~="full"] {
+  --button-justify-content: flex-start;
+  --button-text-align: left;
+  --button-width: 100%;
+}
+
 [button~="secondary"] {
   --button-background: var(--color-white-88);
   --button-border-color: var(--color-white-100);
@@ -77,10 +87,6 @@ body {
     
   }
   
-}
-
-.icon {
-  transition: var(--timing-basic);
 }
 
 /* input + select */
@@ -190,6 +196,75 @@ body {
   --icon-invert: invert(100%);
   
   filter: var(--icon-invert);
+  transition: var(--timing-basic);
+}
+
+/* accordion */
+.accordion {
+  --accordion-margin: var(--size-s);
+  
+  --accordion-icon-background-color: var(--color-white-08);
+  --accordion-icon-height: var(--size-s);
+  --accordion-icon-width: var(--size-s);
+  --accordion-icon-right: var(--size-m);
+  --accordion-icon-top: 50%;
+  --accordion-icon-transform: translateY(-50%) rotate(45deg);
+  
+  --accordion-content-background-color: var(--color-white-02);
+  --accordion-content-padding: var(--size-l);
+  
+  margin-bottom: var(--accordion-margin);
+  
+  &:open .accordion__title:before {
+    --accordion-icon-background-color: var(--color-white-100);
+  }
+  
+}
+
+.accordion__title {
+  position: relative;
+  
+  &:before {
+    content: "";
+    background: var(--accordion-icon-background-color);
+    height: var(--accordion-icon-height);
+    width: var(--accordion-icon-width);
+    position: absolute;
+    top: var(--accordion-icon-top);
+    right: var(--accordion-icon-right);
+    transform: var(--accordion-icon-transform);
+    transition: var(--timing-basic);
+  }
+
+}
+
+.accordion__content {
+  background: var(--accordion-content-background-color);
+  padding: var(--accordion-content-padding);
+}
+
+[accordion="codex"] {
+  
+  strong {
+    font-size: var(--size-12);
+    letter-spacing: 1px;
+    opacity: .64;
+    text-transform: uppercase;
+  }
+  
+  p {
+    margin-bottom: var(--size-s);
+  }
+  
+  ul ~ p {
+    margin-top: var(--size-ml);
+  }
+  
+  li {
+    list-style: square;
+    margin: var(--size-xxs) var(--size-l);
+  }
+  
 }
 
 /* structure */

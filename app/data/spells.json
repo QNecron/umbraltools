@@ -87,7 +87,7 @@
     "source": "custom"
   },
   {
-    "name": "Curse",
+    "name": "Censure",
     "tier": 3,
     "class": "Priest",
     "duration": "Focus",
@@ -362,6 +362,205 @@
     "range": "Far",
     "description_1": "You psychically meld with another creatures mind, through this connection you can see and hear as they do for the duration of the spell.",
     "description_2": "When the spell ends the creature makes a DC13 WIS check to know they've been targeted.",
+    "source": "custom"
+  },
+  {
+    "name": "Telekinesis",
+    "tier": 1,
+    "class": "Cipher",
+    "duration": "Focus",
+    "range": "Near",
+    "description_1": "You lift a creature or object with your mind. Choose a target that weighs (150 x spell tier) pounds or less. You can move it a near distance in any direction and hold it in place.",
+    "description_2": "Cipher only. Can be cast as a tier 1-5 spell.",
+    "source": "custom"
+  },
+  {
+    "name": "Eyestrike",
+    "tier": 1,
+    "class": "Cipher",
+    "duration": "Instant",
+    "range": "Near",
+    "description_1": "Targeted creature's eyes become dull white, blinding them for 3 rounds.",
+    "source": "custom"
+  },
+  {
+    "name": "Mind Blast",
+    "tier": 1,
+    "class": "Cipher",
+    "duration": "Instant",
+    "range": "Near",
+    "description_1": "Projecting a mental wave you deal 1d4 damage to a target and push them away close distance.",
+    "source": "custom"
+  },
+  {
+    "name": "Phychic Shockwave",
+    "tier": 1,
+    "class": "Cipher",
+    "duration": "Instant",
+    "range": "Near",
+    "description_1": "Amplifying the target creature's mental state you cause 1d4 damage to all creatures within close of the target.",
+    "source": "custom"
+  },
+  {
+    "name": "Whisper of Treason",
+    "tier": 1,
+    "class": "Cipher",
+    "duration": "Focus",
+    "range": "Near",
+    "description_1": "Warping reality for the target creature, you're able to confuse it for the spell's duration.",
+    "source": "custom"
+  },
+  {
+    "name": "Amplified Thrust",
+    "tier": 2,
+    "class": "Cipher",
+    "duration": "Instant",
+    "range": "Near",
+    "description_1": "A focused wave of mental energy strikes a target creature for 1d6 damage, from there choose another creature within near range as the energy is redirected to it dealing 1d12 damage.",
+    "source": "custom"
+  },
+  {
+    "name": "Mental Binding",
+    "tier": 2,
+    "class": "Cipher",
+    "duration": "Focus",
+    "range": "Near",
+    "description_1": "A mental stasis is put in place, all enemy creaures within near that are LVL 4 and below are paralyzed for the spell's duration.",
+    "description_2": "Creatures LVL 5 an above and held in place and unable to use move actions unless they pass an opposing DC12 WIS check.",
+    "source": "custom"
+  },
+  {
+    "name": "Mind Blades",
+    "tier": 2,
+    "class": "Cipher",
+    "duration": "Instant",
+    "range": "Near",
+    "description_1": "You project psionic blades at a target creature dealing 1d4 damage, from that creature the blades redirect to a new one within far range dealing 1d4 damage.",
+    "description_2": "Blades can be redirected up to 5 times, they cannot strike the same target.",
+    "source": "custom"
+  },
+  {
+    "name": "Psychovampiric Shield",
+    "tier": 2,
+    "class": "Cipher",
+    "duration": "Focus",
+    "range": "Near",
+    "description_1": "You drain a target creature of it's mental fortitude dealing 2d4 points of damage.",
+    "description_2": "The damage dealt is then converted and added to your AC for the spell's duration.",
+    "source": "custom"
+  },
+  {
+    "name": "Fractured Volition",
+    "tier": 3,
+    "class": "Cipher",
+    "duration": "Instant",
+    "range": "Near",
+    "description_1": "Tricking the target creature's mind into beliving it's weaker than it actually is you weaken it for 3 rounds.",
+    "description_2": "Weakened creature deal 50% less physical damage and it's movement is halved.",
+    "source": "custom"
+  },
+  {
+    "name": "Pain Link",
+    "tier": 3,
+    "class": "Cipher",
+    "duration": "Instant",
+    "range": "Near",
+    "description_1": "You're able to sync mental waves with an ally to distribute damage taken between the both of you for 5 rounds.",
+    "description_2": "Damage taken to either is split 50/50 among the two that are linked, rounding up.",
+    "source": "custom"
+  },
+  {
+    "name": "Puppet Master",
+    "tier": 3,
+    "class": "Cipher",
+    "duration": "Focus",
+    "range": "Near",
+    "description_1": "Breaking the mental fortitude of a target creature to the point of domination, you're able to control their every move for the spell's duration.",
+    "description_2": "While you don't know what the target creature is capable of specifically, you're able to generalize. Try to cast a damaging spell, try to heal my ally, attack your old leader, etc.",
+    "source": "custom"
+  },
+  {
+    "name": "Soul Ignition",
+    "tier": 3,
+    "class": "Cipher",
+    "duration": "Focus",
+    "range": "Near",
+    "description_1": "You cause an overbearing mental strain on a traget creature, as their mind begins to overheat you deal 3d4 points of damage every round for the spell's duration.",
+    "source": "custom"
+  },
+  {
+    "name": "Mind Lance",
+    "tier": 4,
+    "class": "Cipher",
+    "duration": "Instant",
+    "range": "Far",
+    "description_1": "Focusing your will on a single devistating attack you deal 4d6 damage to a target creature.",
+    "source": "custom"
+  },
+  {
+    "name": "Pain Block",
+    "tier": 4,
+    "class": "Cipher",
+    "duration": "Focus",
+    "range": "Near",
+    "description_1": "You reach into a creature's mind and sooth their pain, dulling their pain receptors they gain resistance to all damage for the spell's duration.",
+    "source": "custom"
+  },
+  {
+    "name": "Silent Scream",
+    "tier": 4,
+    "class": "Cipher",
+    "duration": "Instant",
+    "range": "Near",
+    "description_1": "You choose a weak willed creature, breaking them utterly they try to scream but nothing can be heard. Targeted creature and those within close take 2d6 points of damage and are stunned for 1 round.",
+    "source": "custom"
+  },
+  {
+    "name": "Wild Leech",
+    "tier": 4,
+    "class": "Cipher",
+    "duration": "Instant",
+    "range": "Near",
+    "description_1": "You siphon off the pure essence of being from a target creature dealing 2d4 points of damage.",
+    "description_2": "The damage dealt is then converted and added to your CHR for 5 rounds. You may exceed 20 points in CHR with this spell.",
+    "source": "custom"
+  },
+  {
+    "name": "Amplified Wave",
+    "tier": 5,
+    "class": "Cipher",
+    "duration": "Instant",
+    "range": "Far",
+    "description_1": "You focus all your will through a single target creature within far distance, the resulting energy wave deals 2d12 points of damage to all enemy creatures within near.",
+    "description_2": "Creatures hit must make a DC15 DEX check or be knocked prone for 3 rounds.",
+    "source": "custom"
+  },
+  {
+    "name": "Defensive Mind-Web",
+    "tier": 5,
+    "class": "Cipher",
+    "duration": "Instant",
+    "range": "Near",
+    "description_1": "Melding the minds of you and you allies you create a protective barrier against mental attacks. All allies, including yourself, gain advantage to INT, WIS, and CHR checks vs spells for 5 rounds.",
+    "source": "custom"
+  },
+  {
+    "name": "Mind Plague",
+    "tier": 5,
+    "class": "Cipher",
+    "duration": "Instant",
+    "range": "Near",
+    "description_1": "Through sheer force of will you create a plague of the mind, targeted creature becomes confused for 3 rounds.",
+    "description_2": "After the first creature's turn of confusion the plague jumps to a new host. The plague jumps up to 5 times.",
+    "source": "custom"
+  },
+  {
+    "name": "Time Parasite",
+    "tier": 5,
+    "class": "Cipher",
+    "duration": "Focus",
+    "range": "Near",
+    "description_1": "You sap the mental energy from a target creature within near, for the spell's duration they are slowed and you are hasted.",
     "source": "custom"
   }
 ]
