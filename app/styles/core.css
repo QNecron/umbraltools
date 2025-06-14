@@ -906,6 +906,14 @@ body {
 }
 
 /* page */
+.page {
+  
+  p ~ p {
+    margin-top: var(--size-ml);
+  }
+  
+}
+
 .block {
   --block-flex-wrap: initial;
   --block-gap: var(--size-m) var(--size-s);
@@ -971,4 +979,33 @@ body {
     --block-item-width: auto;
   }
   
+}
+
+/* table */
+.table {
+  --table-border: solid 1px var(--color-white-32);
+  --table-font-size: 14px;
+  --table-margin: var(--size-ml);
+  --table-padding: var(--size-xs);
+  
+  border: var(--table-border);
+  border-collapse: collapse;
+  empty-cells: show;
+  font-size: var(--table-font-size);
+  margin-top: var(--table-margin);
+  table-layout: fixed;
+  width: 100%;
+  
+  th,
+  tr,
+  td {
+    border: var(--table-border);
+    padding: var(--table-padding);
+    text-align: center;
+  }
+  
+}
+
+.table__header {
+  width: 16.6666%;
 }
