@@ -126,7 +126,7 @@
   {
     "name": "Ring of Toughness",
     "description": "A large amethyst decorates this dark iron band.",
-    "benefit": "Your maximum hit points are increased by 4 and you take 1 less damage from physical attacks.",
+    "benefit": "Your maximum hit points are increased by 3 and you take 1 less damage from physical attacks.",
     "source": "custom",
     "base": "accessory",
     "filter": "accessory"
@@ -218,7 +218,7 @@
   {
     "name": "Ioun Stone, Alexandrite",
     "description": "A strangly shaped gemstone the size of a pebble that resembles alexandrite.",
-    "benefit": "Hit points increased by 2.",
+    "benefit": "Hit points increased by 3.",
     "source": "custom",
     "base": "misc",
     "filter": "misc"

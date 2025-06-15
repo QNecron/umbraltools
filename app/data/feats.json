@@ -1,14 +1,14 @@
 [
   {
     "name": "Shield Block",
-    "description": "Reduces damage equal to your shield's AC.",
+    "description": "Reduces physical damage equal to your shield's AC + STR modifier for one round.",
     "action": "action",
     "type": "combat",
     "stacking": false
   },
   {
     "name": "Shield Other",
-    "description": "Grants close ally a bonus to AC equal to your shield for one round.",
+    "description": "Grants close ally a bonus to AC equal to your shield's AC for one round.",
     "action": "action",
     "type": "combat",
     "stacking": false
@@ -50,7 +50,7 @@
   },
   {
     "name": "Extend Spell",
-    "description": "+1 DC to spell cast, focused spells extend to one additional target.",
+    "description": "+2 DC to spell cast, single target focus spells extend to one additional target.",
     "action": "action",
     "type": "magical",
     "stacking": false
@@ -78,9 +78,30 @@
   },
   {
     "name": "Toughness",
-    "description": "+4 maximum hit points.",
+    "description": "+3 maximum hit points.",
     "action": "passive",
     "type": "general",
     "stacking": false
+  },
+  {
+    "name": "Resiliant",
+    "description": "+1 to all saving throws.",
+    "action": "passive",
+    "type": "general",
+    "stacking": false
+  },
+  {
+    "name": "Diehard",
+    "description": "+3 rounds to your death timer when ununconscious.",
+    "action": "passive",
+    "type": "general",
+    "stacking": false
+  },
+  {
+    "name": "Polygot",
+    "description": "+1 common language known.",
+    "action": "passive",
+    "type": "general",
+    "stacking": true
   }
 ]

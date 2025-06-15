@@ -155,9 +155,9 @@ export const HitPoints = (data: {}) => {
   
   // @TODO - not sure I like this..
   Object.entries(data).map(([key, value]) => (
-    value === "Toughness" ? bonus += 4 : 0,
-    value === "Ring of Toughness" ? bonus += 4 : 0,
-    value === "Ioun Stone, Alexandrite" ? bonus += 2 : 0
+    value === "Toughness" ? bonus += 3 : 0,
+    value === "Ring of Toughness" ? bonus += 3 : 0,
+    value === "Ioun Stone, Alexandrite" ? bonus += 3 : 0
   ));
   
   return bonus.toString();
