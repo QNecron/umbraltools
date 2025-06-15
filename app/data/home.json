@@ -15,9 +15,30 @@
   },
   {
     "image": "/assets/card_1-1.webp",
+    "title": "Cipher Class",
+    "copy": "Bring psonics to bear with the new Cipher class, insired by Pillars of Eternity.",
+    "ctaCopy": "Try the Cipher",
+    "ctaUrl": "/codex/cipher"
+  },
+  {
+    "image": "/assets/card_1-1.webp",
     "title": "Magical Items",
     "copy": "Items that can be found throughout our custom campaigns, or crafted.",
-    "ctaCopy": "Magic Items",
+    "ctaCopy": "See all Items",
     "ctaUrl": "/items"
+  },
+  {
+    "image": "/assets/card_1-1.webp",
+    "title": "Magic Spells",
+    "copy": "A litany of new spells for Priest, Wizard, and Cipher classes. More to come.",
+    "ctaCopy": "See All Spells",
+    "ctaUrl": "/spells"
+  },
+  {
+    "image": "/assets/card_1-1.webp",
+    "title": "Feats",
+    "copy": "Custom feats to further enhance your character's combat or magic prowess.",
+    "ctaCopy": "See All Feats",
+    "ctaUrl": "/feats"
   }
 ]
