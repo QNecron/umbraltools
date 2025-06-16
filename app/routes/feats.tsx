@@ -94,7 +94,7 @@ export default function Feats() {
                 copy1={feat.description} 
                 copy2={feat.action} 
                 copy3={feat.type} 
-                copy4={feat.stacking === true ? "Stacks : True" : "Stacks : False"}
+                copy4={feat.stacking === true ? "Stacks : Yes" : "Stacks : No"}
               />
             );
             
