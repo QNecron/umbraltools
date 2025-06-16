@@ -97,5 +97,16 @@
       "talent_4": "Learn an additional witch spell of any tier you can cast",
       "talent_5": "Choose a talent or +2 points to distribute to stats"
     }
+  },
+  {
+    "class": "Cipher",
+    "spellcaster": true,
+    "talents": {
+      "talent_1": "Gain advantage on casting one spell you know",
+      "talent_2": "+1 focus at the beginning of combat and +1 hit point",
+      "talent_3": "+2 to Strength, Dexterity, or Charisma stat",
+      "talent_4": "+1 to cipher spellcasting checks",
+      "talent_5": "Choose a talent or +2 points to distribute to stats"
+    }
   }
 ]
