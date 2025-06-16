@@ -34,6 +34,7 @@ import {
   ArmorClass, 
   HitDie, 
   Attack, 
+  Damage, 
   HitPoints, 
   DiceRoll, 
   Total, 
@@ -755,7 +756,15 @@ export default function Creator() {
               </div>
               <div className="block__item block__item--tiny" heading="5">Dmg</div>
               <div className="block__item block__item--full">
-                {Weapons(WeaponData, character.equipment.hands_primary, "damage")}
+                {Damage(
+                  character.class, 
+                  character.level, 
+                  Weapons(WeaponData, character.equipment.hands_primary, "name"),
+                  Weapons(WeaponData, character.equipment.hands_primary, "base"),
+                  Weapons(WeaponData, character.equipment.hands_primary, "damage"),
+                  character.equipment
+                )}
+                {/* {Weapons(WeaponData, character.equipment.hands_primary, "damage")} */}
               </div>
             </div>
               

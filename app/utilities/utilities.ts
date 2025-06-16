@@ -123,13 +123,15 @@ export const Attack = (
   let bonus = 0;
   let posneg = "+";
   let attribute = str;
-  let fighter = 0;
+  let profession = 0;
   
   if (weapon_type === "R") attribute = dex;
   else if (weapon_type === "M/R") attribute = dex > str ? dex : str;
   else attribute = str;
   
-  if (role === "Fighter") fighter = Math.floor(((parseInt(level) + 1) / 2));
+  if (role === "Fighter") profession = Math.floor(((parseInt(level) + 1) / 2));
+  
+  if (role === "Cipher") profession = Math.floor(((parseInt(level) + 1) / 2));
 
   weapons.map((weapon: any) => {
     if (weapon.name === weapon_name) bonus += weapon.bonus;
@@ -142,11 +144,57 @@ export const Attack = (
     ));
   }
   
-  bonus += parseInt(attribute) + fighter;
+  bonus += parseInt(attribute) + profession;
   
   if (bonus < 0) posneg = "";
   
   return posneg + bonus.toString();
+  
+}
+
+export const Damage = ( 
+  role: string, 
+  level: string, 
+  weaponName: string, 
+  weaponBase: string, 
+  weaponDamage: string,
+  data: {}
+) => {
+
+  let damageTotal = weaponDamage;
+  let damageBonus = "";
+  let isRanged = false;
+  let profession = 0;
+  
+  if (role === "Fighter") {
+    profession = Math.floor(((parseInt(level) + 1) / 2));
+    damageBonus += " + " + profession.toString();
+  }
+  
+  if (
+    weaponName === "Crossbow" || 
+    weaponName === "Longbow" ||
+    weaponName === "Shortbow"  
+  ) isRanged = true;
+  else if (
+    weaponBase === "Crossbow" ||
+    weaponBase === "Longbow" ||
+    weaponBase === "Shortbow"     
+  ) isRanged = true;
+  else {
+    // weapon not found
+  }
+  
+  Object.entries(data).map(([key, value]) => (
+    value === "Executioner's Hood" ? damageBonus += " + 1" : "",
+    value === "Boltcatchers" ? damageBonus += " + 1d4 (Electrical)" : "",
+    value === "Corroded Vambraces" && isRanged === false ? damageBonus += " + 1 (Acid)" : "",
+    value === "Mantle of Wreathing Flame" ? damageBonus += " + 1d4 (Fire)" : "",
+    value === "Cloak of Minor Missiles" && isRanged === true ? damageBonus += " + 1" : "",
+    value === "Ioun Stone, Amber" ? damageBonus += " + 1" : "" 
+  ));
+  
+  return damageTotal + damageBonus;
   
 }
 
@@ -157,7 +205,8 @@ export const HitPoints = (data: {}) => {
   Object.entries(data).map(([key, value]) => (
     value === "Toughness" ? bonus += 3 : 0,
     value === "Ring of Toughness" ? bonus += 3 : 0,
-    value === "Ioun Stone, Alexandrite" ? bonus += 3 : 0
+    value === "Ioun Stone, Alexandrite" ? bonus += 3 : 0,
+    value === "+1 focus at the beginning of combat and +1 hit point" ? bonus += 1 : 0
   ));
   
   return bonus.toString();
