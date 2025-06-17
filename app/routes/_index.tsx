@@ -22,7 +22,12 @@ export default function Index() {
   return (
     <>
 
-    <Hero theme="muted animate" title="Umbral Tools" logo={true} animation={true} />
+    <Hero 
+      theme="muted animate" 
+      title="Umbral Tools" 
+      logo={true} 
+      animation={false} 
+    />
     
     <Section padding="top">
       <Wrapper>
