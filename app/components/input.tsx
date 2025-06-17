@@ -20,7 +20,7 @@ export default function Input({
   min,
   max, 
   cols,
-  rows = 10, 
+  rows = 8, 
   change,
   disabled,
   children,

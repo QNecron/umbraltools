@@ -104,7 +104,8 @@ export default function Creator() {
       accessory: "",
       misc: ""
     },
-    inventory: ""
+    inventory: "",
+    notes: ""
   });
   
   const [characterSaved, characterSavedUpdate] = useState<any[]>([]);
@@ -167,7 +168,8 @@ export default function Creator() {
         accessory: data.equipment.accessory,
         misc: data.equipment.misc,
       },
-      inventory: data.inventory
+      inventory: data.inventory,
+      notes: data.notes
     });
     
   }
@@ -963,6 +965,25 @@ export default function Creator() {
               />  
             </div>
 
+          </Section>
+          
+          {/* Notes */}
+          <Section padding="creator" title="Notes">
+            
+            <div className="block">
+              <Input 
+                type="textarea" 
+                id="notes" 
+                label="Notes" 
+                minimal={true} 
+                value={character.notes}
+                change={(event: ChangeEvent<HTMLTextAreaElement>) => characterUpdate({
+                  ...character,
+                  notes: event.target.value
+                })}
+              />  
+            </div>
+            
           </Section>
           
         </div>
