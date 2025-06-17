@@ -302,7 +302,7 @@ body {
 [section~="creator"] {
   
   &:not(:first-of-type) {
-    --section-padding-top: var(--size-xl);
+    --section-padding-top: var(--size-l);
   }
 }
 
@@ -340,7 +340,7 @@ body {
     --grid-gap: var(--size-l);
   }
   @media only screen and (max-width: 767px) {
-    --grid-gap: 0;
+    --grid-gap: var(--size-l) 0;
   }
   
 }
@@ -973,6 +973,10 @@ body {
   
   &.block__item--small {
     --block-item-width: 7rem; /* 112px */
+  }
+  
+  &.block__item--medium {
+    --block-item-width: 8rem; /* 128px */
   }
   
   &.block__item--full {

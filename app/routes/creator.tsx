@@ -35,6 +35,8 @@ import {
   HitDie, 
   Attack, 
   Damage, 
+  Spellcasting, 
+  IsCaster, 
   HitPoints, 
   DiceRoll, 
   Total, 
@@ -611,23 +613,39 @@ export default function Creator() {
           </Section>
 
           {/* Spells */}
-          <Section padding="creator" title="Spells">
-            
-            <div className="block">
-              <Input 
-                type="textarea" 
-                id="spells" 
-                label="Spells" 
-                minimal={true} 
-                value={character.spells}
-                change={(event: ChangeEvent<HTMLTextAreaElement>) => characterUpdate({
-                  ...character,
-                  spells: event.target.value
-                })}
-              />  
-            </div>
-            
-          </Section>
+          {IsCaster(character.class) &&
+          
+            <Section padding="creator" title="Spells">
+              
+              <div className="block">
+                <Input 
+                  type="textarea" 
+                  id="spells" 
+                  label="Spells" 
+                  minimal={true} 
+                  value={character.spells}
+                  change={(event: ChangeEvent<HTMLTextAreaElement>) => characterUpdate({
+                    ...character,
+                    spells: event.target.value
+                  })}
+                />  
+              </div>
+              
+              <div className="block">
+                <div className="block__item block__item--full" heading="5">Spellcasting Check</div>
+                <div className="block__item">
+                  {Spellcasting(
+                    character.class,
+                    character.attributes,
+                    character.talents_feats,
+                    character.equipment
+                  )}
+                </div>
+              </div>
+              
+            </Section>
+          
+          }
           
         </div>
           

@@ -213,6 +213,55 @@ export const HitPoints = (data: {}) => {
   
 }
 
+export const Spellcasting = (
+  role: string, 
+  attributes: any, 
+  talents: {}, 
+  items: {}
+) => {
+  let attribute = 10;
+  let bonus = 0;
+  let modifier = "0";
+  let total = 0;
+  
+  if (role === "Priest") attribute = attributes.wis;
+  if (role === "Wizard") attribute = attributes.int;
+  if (role === "Cursed Knight") attribute = attributes.chr;
+  if (role === "Witch") attribute = attributes.chr;
+  if (role === "Cipher") attribute = attributes.chr;
+  
+  Object.entries(talents).map(([key, value]) => (
+    value === "+1 to priest spellcasting checks" ? bonus += 1 : 0,
+    value === "+2 to Intelligence stat or +1 to wizard spellcasting checks" && attribute >= 18 ? bonus += 1 : 0,
+    value === "+2 to Charisma stat or +1 to witch spellcasting checks" && attribute >= 18 ? bonus += 1 : 0,
+    value === "+1 to cipher spellcasting checks" ? bonus += 1 : 0,
+    value === "Combat Casting" ? bonus += 1 : 0
+  ));
+  
+  Object.entries(items).map(([key, value]) => (
+    value === "Ioun Stone, Iolite" ? bonus += 1 : 0
+  ));
+  
+  modifier = Modifier(attribute.toString(), "0", "0");
+  
+  total = parseInt(modifier) + bonus;
+  
+  return "+" + total.toString();
+}
+
+export const IsCaster = (role: string) => {
+  let caster = false;
+  
+  if (role === "Priest") caster = true;
+  if (role === "Wizard") caster = true;
+  if (role === "Cursed Knight") caster = true;
+  if (role === "Witch") caster = true;
+  if (role === "Cipher") caster = true;
+  
+  return caster;
+  
+}
+
 // dice
 export const DiceRoll = (dice: string, count: number) => {
   let die = 0;
