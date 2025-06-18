@@ -139,6 +139,145 @@
     "source": "core"
   },
   {
+    "name": "+1 Bastard Sword",
+    "type": "M",
+    "range": "C",
+    "damage": "1d8/1d10 + 1",
+    "damage_1": "1d8",
+    "damage_2": "1d10",
+    "properties": "V, 2 slots",
+    "bonus": 1,
+    "source": "core"
+  },
+  {
+    "name": "+1 Club",
+    "type": "M",
+    "range": "C",
+    "damage": "1d4 + 1",
+    "properties": "-",
+    "bonus": 1,
+    "source": "core"
+  },
+  {
+    "name": "+1 Crossbow",
+    "type": "R",
+    "range": "F",
+    "damage": "1d6 + 1",
+    "properties": "2H, L",
+    "bonus": 1,
+    "source": "core"
+  },
+  {
+    "name": "+1 Dagger",
+    "type": "M/R",
+    "range": "C/N",
+    "damage": "1d4 + 1",
+    "properties": "F, Th",
+    "bonus": 1,
+    "source": "core"
+  },
+  {
+    "name": "+1 Greataxe",
+    "type": "M",
+    "range": "C",
+    "damage": "1d8/1d10 + 1",
+    "damage_1": "1d8",
+    "damage_2": "1d10",    
+    "properties": "V, 2 slots",
+    "bonus": 1,
+    "source": "core"
+  },
+  {
+    "name": "+1 Greatsword",
+    "type": "M",
+    "range": "C",
+    "damage": "1d12 + 1",
+    "properties": "2H, 2 slots",
+    "bonus": 1,
+    "source": "core"
+  },
+  {
+    "name": "+1 Javelin",
+    "type": "M/R",
+    "range": "C/F",
+    "damage": "1d4 + 1",
+    "properties": "Th",
+    "bonus": 1,
+    "source": "core"
+  },
+  {
+    "name": "+1 Longbow",
+    "type": "R",
+    "range": "F",
+    "damage": "1d8 + 1",
+    "properties": "2H",
+    "bonus": 1,
+    "source": "core"
+  },
+  {
+    "name": "+1 Longsword",
+    "type": "M",
+    "range": "C",
+    "damage": "1d8 + 1",
+    "properties": "-",
+    "bonus": 1,
+    "source": "core"
+  },
+  {
+    "name": "+1 Mace",
+    "type": "M",
+    "range": "C",
+    "damage": "1d6 + 1",
+    "properties": "-",
+    "bonus": 1,
+    "source": "core"
+  },
+  {
+    "name": "+1 Shortbow",
+    "type": "R",
+    "range": "F",
+    "damage": "1d4 + 1",
+    "properties": "2H",
+    "bonus": 1,
+    "source": "core"
+  },
+  {
+    "name": "+1 Shortsword",
+    "type": "M",
+    "range": "C",
+    "damage": "1d6 + 1",
+    "properties": "-",
+    "bonus": 1,
+    "source": "core"
+  },
+  {
+    "name": "+1 Spear",
+    "type": "M/R",
+    "range": "C/N",
+    "damage": "1d6 + 1",
+    "properties": "Th",
+    "bonus": 1,
+    "source": "core"
+  },
+  {
+    "name": "+1 Staff",
+    "type": "M",
+    "range": "C",
+    "damage": "1d4 + 1",
+    "properties": "2H",
+    "bonus": 1,
+    "source": "core"
+  },
+  {
+    "name": "+1 Warhammer",
+    "type": "M",
+    "range": "C",
+    "damage": "1d10 + 1",
+    "properties": "2H",
+    "bonus": 1,
+    "source": "core"
+  },
+  {
     "name": "Flame Tongue",
     "base": "Longsword",
     "type": "M",

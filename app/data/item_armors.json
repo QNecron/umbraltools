@@ -32,6 +32,38 @@
     "source": "core"
   },
   {
+    "name": "+1 Robe",
+    "ac": 10,
+    "dex": true,
+    "properties": "-",
+    "bonus": 1,
+    "source": "custom"
+  },
+  {
+    "name": "+1 Leather",
+    "ac": 11,
+    "dex": true,
+    "properties": "-",
+    "bonus": 1,
+    "source": "custom"
+  },
+  {
+    "name": "+1 Chainmail",
+    "ac": 13,
+    "dex": true,
+    "properties": "Disadv on stealth, swim",
+    "bonus": 1,
+    "source": "custom"
+  },
+  {
+    "name": "+1 Plate mail",
+    "ac": 15,
+    "dex": false,
+    "properties": "Disadv on stealth, no swim",
+    "bonus": 1,
+    "source": "custom"
+  },
+  {
     "name": "Raiment of the Seventh Veil",
     "base": "Robe",
     "ac": 10,

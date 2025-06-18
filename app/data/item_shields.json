@@ -7,6 +7,13 @@
     "source": "core"
   },
   {
+    "name": "+1 Shield",
+    "ac": 2,
+    "properties": "Occupies one hand",
+    "bonus": 1,
+    "source": "custom"
+  },
+  {
     "name": "Sarenrae's Blessing",
     "base": "Shield",
     "ac": 2,

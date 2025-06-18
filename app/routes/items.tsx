@@ -94,7 +94,7 @@ export default function Feats() {
             if (sourceFilter !== source && source !== "*") return null;
 
             // base filter
-            if (baseFilter.toLowerCase() !== base && base !== "*") return null;
+            if (baseFilter !== base && base !== "*") return null;
             
             // @TODO - might rethink how I determine what's an armor/shield/weapon vs others.
             let ItemBonus = "";
