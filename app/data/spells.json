@@ -47,6 +47,15 @@
     "source": "custom"
   },
   {
+    "name": "Bless",
+    "tier": 2,
+    "class": "Priest",
+    "duration": "3 rounds",
+    "range": "Near",
+    "description_1": "Uttering a small prayer you bless everyone within near granting them a +1 to attack rolls and spellcasting checks for 3 rounds.",
+    "source": "custom"
+  },
+  {
     "name": "Prayer",
     "tier": 2,
     "class": "Priest",

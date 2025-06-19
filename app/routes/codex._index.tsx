@@ -65,6 +65,7 @@ export default function Codex() {
           <p>Changes to core spells:</p>
                 
           <ul>
+            <li>Bless: Now grants +1 to attack and spellcasting checks for 3 rounds.</li>
             <li>Smite: Now deals 2d6 damage, up from 1d6.</li>
             <li>Flamestrike: Now deals 3d6 damage, up from 2d6.</li>
             <li>New: Additional Priest and Wizard <Link className="link" reloadDocument to="/spells">Spells</Link>.</li>
