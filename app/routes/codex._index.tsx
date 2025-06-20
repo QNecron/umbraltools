@@ -59,7 +59,6 @@ export default function Codex() {
           <ul>
             <li>Arrows: Are now interchangable with Bolts.</li>
             <li>Bolts: Are now interchangable with Arrows.</li>
-            <li>Shortsword: Now has the <strong>Finese</strong> property.</li>
           </ul>
                 
           <p>Changes to core spells:</p>
