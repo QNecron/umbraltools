@@ -11,7 +11,7 @@
     "ac": 2,
     "properties": "Occupies one hand",
     "bonus": 1,
-    "source": "custom"
+    "source": "core"
   },
   {
     "name": "Sarenrae's Blessing",
@@ -33,7 +33,30 @@
     "bonus": 0,
     "description": "A large blue crystal surrounded by hardened steel forms a remarkable shield.",
     "benefit": "Physical damage is reduced by 1 point.",
-    "additional": "When struck by a critical, you and your allies within near regain 1d6 hit points.",
+    "additional": "When struck by a critical, you and your allies within near heal 1d6 hit points.",
+    "source": "custom",
+    "filter": "shields"
+  },
+  {
+    "name": "Black Sanctuary",
+    "base": "Shield",
+    "ac": 2,
+    "properties": "Occupies one hand",
+    "bonus": 0,
+    "description": "A heavy dark iron shield reinforced with magical runes grants the wielder exraordinary protection.",
+    "benefit": "Elemental damage is reduced by 1 point.",
+    "additional": "You can cast Mirror Image once per day (+4 bonus).",
+    "source": "custom",
+    "filter": "shields"
+  },
+  {
+    "name": "Outworn Shield",
+    "base": "Shield",
+    "ac": 2,
+    "properties": "Occupies one hand",
+    "bonus": 1,
+    "description": "This simple wooden shield far from ordinary, the shield is in fact thousands of years old.",
+    "benefit": "When wielded by a Priest or Ranger the shield grants +1 to all saving throws.",
     "source": "custom",
     "filter": "shields"
   }

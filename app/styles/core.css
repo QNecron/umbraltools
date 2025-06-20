@@ -446,6 +446,7 @@ body {
 .filters {
   --filters-gap: var(--size-s);
   --filters-margin: var(--size-l) 0 var(--size-l) auto;
+  --filters-width: 50%;
   --filters-top: var(--size-m);
   
   align-items: center;
@@ -453,6 +454,7 @@ body {
   gap: var(--filters-gap);
   justify-content: flex-end;
   margin: var(--filters-margin);
+  width: var(--filters-width);
   position: sticky;
   top: var(--filters-top);
   z-index: 9;
