@@ -72,6 +72,11 @@ export default function Codex() {
             <p>Each time you gain a level, you choose new cipher spells to learn 
             according to the Cipher Spells Known table below.</p>
             
+            <p><strong>Psychic Leech.</strong> Your attacks generate focus, hitting 
+            or afflicting an enemy generates 1 focus point. You begin combat with half 
+            your level (minimum of 1) focus points. You receive a bonus to melee and 
+            ranged attack rolls equal to half your level (minimum of 1).</p>
+            
           </div>
           
         </Grid>
