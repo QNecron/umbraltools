@@ -655,8 +655,15 @@ body {
   --hero-animation-shadow: 0 0 var(--size-xs) var(--size-xs);
   
   border-bottom: solid 1px var(--hero-border-color);
+  max-height: 80dvh;
   overflow: hidden;
   position: relative;
+}
+
+.hero__asset-img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .hero__grid {
