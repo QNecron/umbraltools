@@ -77,6 +77,7 @@ export const ArmorClass = (
     Object.entries(items).map(([key, value]) => (
       value === "Steadfast" ? bonus += 1 : 0,
       value === "The Spine of Thicket Green" ? bonus += 1 : 0,
+      value === "Cape of Withdrawl" ? bonus += 1 : 0,
       value === "Ioun Stone, Peridot" ? bonus += 1 : 0
     ));
   }
@@ -143,6 +144,7 @@ export const Attack = (
   if (items) {
     Object.entries(items).map(([key, value]) => (
       value === "Prey Maker" ? bonus += 2 : 0,
+      value === "Stag Helm" ? bonus += 1 : 0,
       value === "Ioun Stone, Garnet" ? bonus += 1 : 0
     ));
   }
@@ -192,6 +194,7 @@ export const Damage = (
     value === "Executioner's Hood" ? damageBonus += " + 1" : "",
     value === "Boltcatchers" ? damageBonus += " + 1d4 (Electrical)" : "",
     value === "Corroded Vambraces" && isRanged === false ? damageBonus += " + 1 (Acid)" : "",
+    value === "Berserker's Belt" && isRanged === false ? damageBonus += " + 2" : "",
     value === "Mantle of Wreathing Flame" ? damageBonus += " + 1d4 (Fire)" : "",
     value === "Cloak of Minor Missiles" && isRanged === true ? damageBonus += " + 1" : "",
     value === "Ioun Stone, Amber" ? damageBonus += " + 1" : "" 
@@ -207,6 +210,7 @@ export const HitPoints = (data: {}) => {
   // @TODO - not sure I like this..
   Object.entries(data).map(([key, value]) => (
     value === "Toughness" ? bonus += 3 : 0,
+    value === "Wyrmwull" ? bonus += 3 : 0,
     value === "Warding Staff" ? bonus += 3 : 0,
     value === "Ring of Toughness" ? bonus += 3 : 0,
     value === "Ioun Stone, Alexandrite" ? bonus += 3 : 0,
@@ -243,6 +247,7 @@ export const Spellcasting = (
   ));
   
   Object.entries(items).map(([key, value]) => (
+    value === "High Harbinger's Robes" ? bonus += 1 : 0,
     value === "Ioun Stone, Iolite" ? bonus += 1 : 0
   ));
   

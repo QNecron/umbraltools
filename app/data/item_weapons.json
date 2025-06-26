@@ -304,7 +304,7 @@
     "properties": "V, 2 slots",
     "bonus": 1,
     "description": "This single-edged blade has a recurved guard in the shape of opposing waves, the guard and base of the blade are stained a brillant blue.",
-    "benefit": "Increases armor by 1.",
+    "benefit": "Armor increased by 1.",
     "additional": "You have advantage on wisdom saving throws against mental affects.",
     "source": "custom",
     "filter": "weapons"
@@ -357,7 +357,7 @@
     "properties": "2H, L",
     "bonus": 1,
     "description": "This crossbow was the prized possession of a pair of thieves that tormented the nobility throughout eastern Ustlav.",
-    "benefit": "+1 to attack rolls if attacking the same creature as an ally.",
+    "benefit": "Attack rolls increased by 1 if attacking the same creature as an ally.",
     "source": "custom",
     "filter": "weapons"
   },
@@ -383,7 +383,7 @@
     "properties": "F, Th",
     "bonus": 1,
     "description": "It's said this blade could slip so easily and effectively into a sleeping man's spine that he would stumble into a new life none the wiser.",
-    "benefit": "Gain advantage on attack rolls against prone and stunned creatures.",
+    "benefit": "Attack rolls against prone and stunned creatures gain advantage.",
     "source": "custom",
     "filter": "weapons"
   },
@@ -441,7 +441,7 @@
     "bonus": 1,
     "description": "The edges of this blade are constantly coated in acid, this not only deals additional damage but keeps the blade extremely sharp.",
     "benefit": "Deals an additional 1d4 acid damage.",
-    "additional": "You deal a critical hit if you roll a 19 or better on attack rolls.",
+    "additional": "Attack rolls crit on a 19 or better.",
     "source": "custom",
     "filter": "weapons"
   },
@@ -576,7 +576,7 @@
     "properties": "2H",
     "bonus": 1,
     "description": "Fangs, claws, teeth and bones can be seen interlocking throughout the weapon's blood stained structure.",
-    "benefit": "Increases attack rolls by 2.",
+    "benefit": "Attack rolls increased by 2.",
     "source": "custom",
     "filter": "weapons"
   },
@@ -589,7 +589,7 @@
     "properties": "-",
     "bonus": 2,
     "description": "This adamantine blade was forged into a weapon that struck hard and true, woe to those who seek to supress the masses.",
-    "benefit": "You deal a critical hit if you roll a 19 or better on attack rolls.",
+    "additional": "Attack rolls crit on a 19 or better.",
     "source": "custom",
     "filter": "weapons"
   },
@@ -641,7 +641,7 @@
     "properties": "2H",
     "bonus": 1,
     "description": "This gnarled staff is heavy, owed to an entwined length of amber running down its core.",
-    "benefit": "Increases armor by 1.",
+    "benefit": "Armor increased by 1.",
     "additional": "You can cast Thorn Whip, Barkskin, and Burst of Nettles once per day (+4 bonus).",
     "source": "custom",
     "filter": "weapons"

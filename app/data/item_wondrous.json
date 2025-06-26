@@ -17,6 +17,15 @@
     "filter": "head"
   },
   {
+    "name": "Stag Helm",
+    "description": "This large helm is forged in the shape of a stag's head, complete with antlers of gleaming silver.",
+    "benefit": "Attack rolls increased by 1.",
+    "additional": "Immune to Web.",
+    "source": "custom",
+    "base": "head",
+    "filter": "head"
+  },
+  {
     "name": "Amulet of Summer Solstice",
     "description": "This bronze amulet depicts an embossed sun emblem emanating rays of light.",
     "benefit": "Fire damage is reduced by 3 points.",
@@ -29,6 +38,15 @@
     "name": "Rotward Amulet",
     "description": "A large peridot adorns this amulet, a feeling of heightened vigor is felt while wearing it.",
     "benefit": "You have advantage on saving throws vs Poison and Disease.",
+    "source": "custom",
+    "base": "neck",
+    "filter": "neck"
+  },
+  {
+    "name": "Milani's Tear",
+    "description": "This blood-red garnet in the shape of a tear hangs from a rune enscribed golden necklace.",
+    "benefit": "Healing spells remove the entangled, stuck, and paralyzed afflictions.",
+    "additional": "Upon your death you cast Cure Mass (automatic).",
     "source": "custom",
     "base": "neck",
     "filter": "neck"
@@ -47,6 +65,14 @@
     "description": "Crafted from the disgarded carapace of a large crustacean, these vambraces provide remarkable protection while oozing acid.",
     "benefit": "Acid damage is reduced by 3 points.",
     "additional": "Melee weapons deal an additonal 1 point of acid damage.",
+    "source": "custom",
+    "base": "arms",
+    "filter": "arms"
+  },
+  {
+    "name": "Healing Hands",
+    "description": "These well made leather gloves have a rose symbol on their palms, even when cleaned they appear as if stained by blood.",
+    "benefit": "Healing spell restore and addition 3 hit points.",
     "source": "custom",
     "base": "arms",
     "filter": "arms"
@@ -93,7 +119,7 @@
   },
   {
     "name": "Bilestompers",
-    "description": "The edges of these leather boots show signs of corrosion.",
+    "description": "The edges of these leather boots show signs of corrosion, but not enough to have damaged them.",
     "benefit": "Acid damage is reduced by 3 points.",
     "additional": "Additionally you can walk on acidic surfaces without taking damage.",
     "source": "custom",
@@ -102,8 +128,16 @@
   },
   {
     "name": "Dead Man Stands",
-    "description": "These thick leather boots show no sign of wear and tear.",
+    "description": "These thick leather boots oddly show no sign of wear and tear or stains.",
     "benefit": "Dying rolls reduced to 15 in order to stablize.",
+    "source": "custom",
+    "base": "feet",
+    "filter": "feet"
+  },
+  {
+    "name": "Fenwalkers",
+    "description": "These comfortable, close-fitting boots are ideal for traversing difficult terrain. Each buckle is etched with protective runes.",
+    "benefit": "You have advantage on saving throws vs Entangle, Stuck, and Paralyze.",
     "source": "custom",
     "base": "feet",
     "filter": "feet"
@@ -127,6 +161,15 @@
     "filter": "waist"
   },
   {
+    "name": "Nature's Embrace",
+    "description": "This belt is made of thin, interwoven vines, forming a sturdy and elegant loop imbued with protective magic.",
+    "benefit": "Cold and fire damage is reduced by 3 points.",
+    "additional": "You can cast Barkskin once per day (+4 bonus).",
+    "source": "custom",
+    "base": "waist",
+    "filter": "waist"
+  },
+  {
     "name": "Mantle of Wreathing Flame",
     "description": "This crimson red cloak with golden trim radiates warmth when worn.",
     "benefit": "Fire damage is reduced by 3 points.",
@@ -139,6 +182,15 @@
     "name": "Cloak of Minor Missiles",
     "description": "While this cloak appears mudane, though a slight shimmer of blue and violet hint to something more.",
     "benefit": "Bows, crossbows, and the Magic Missile spell deal an additional 1 point of damage.",
+    "source": "custom",
+    "base": "back",
+    "filter": "back"
+  },
+  {
+    "name": "Cape of Withdrawl",
+    "description": "This cape mimics the appearance of fog, both substantial and insubstantial simultaneously.",
+    "benefit": "Armor increased by 1.",
+    "additional": "You can cast Misty Step once per day (+4 bonus).",
     "source": "custom",
     "base": "back",
     "filter": "back"

@@ -77,6 +77,19 @@
     "filter": "armors"
   },
   {
+    "name": "High Harbinger's Robes",
+    "base": "Robe",
+    "ac": 10,
+    "dex": true,
+    "properties": "-",
+    "bonus": 1,
+    "description": "These blood stained robes bear a putrid stench that hangs about them like an aura of death.",
+    "benefit": "Spellcasting checks increased by 1.",
+    "additional": "You may cast two Tier 1 spells with one action.",
+    "source": "custom",
+    "filter": "armors"
+  },
+  {
     "name": "Rebel's Call",
     "base": "Leather",
     "ac": 11,
@@ -84,8 +97,21 @@
     "properties": "-",
     "bonus": 1,
     "description": "With a golden bell emblem on the chest, this reinforced leather armor has heavy wear and tear.",
-    "benefit": "For every ally within half near deal an additional 1 point of damage.",
+    "benefit": "Damage rolls increased by 1 for every ally within half near.",
     "additional": "You can cast Shield of Faith once per day (+4 bonus).",
+    "source": "custom",
+    "filter": "armors"
+  },
+  {
+    "name": "Fleshmender",
+    "base": "Leather",
+    "ac": 11,
+    "dex": true,
+    "properties": "-",
+    "bonus": 1,
+    "description": "This armor is made of cured deer leather of a most peculiar variety, a pure white buck with no visible wounds or scarring.",
+    "benefit": "Physical damage is reduced by 1 point.",
+    "additional": "You can cast Cure Wounds once per day (+4 bonus).",
     "source": "custom",
     "filter": "armors"
   },
@@ -95,9 +121,22 @@
     "ac": 13,
     "dex": true,
     "properties": "Disadv on stealth, swim",
-    "bonus": 0,
-    "description": "This chainmail shifts hues of green, blue, white, and red in the light.",
+    "bonus": 1,
+    "description": "This chainmail shifts hues of green, blue, white, and red that hint to powerful protective magic.",
     "benefit": "Elemental damage is reduced by 3 points.",
+    "source": "custom",
+    "filter": "armors"
+  },
+  {
+    "name": "Wyrmwull",
+    "base": "Chainmail",
+    "ac": 13,
+    "dex": true,
+    "properties": "Disadv on stealth, swim",
+    "bonus": 1,
+    "description": "A dragon hunter in Urgir commissioned this armor to protect himself from slashing claws and fiery breath. Sadly, he was killed by marauding orcs.",
+    "benefit": "Hit points increased by 3.",
+    "additional": "Slashing and fire damage is reduced by 3 points.",
     "source": "custom",
     "filter": "armors"
   },
@@ -107,9 +146,22 @@
     "ac": 15,
     "dex": false,
     "properties": "Disadv on stealth, no swim",
-    "bonus": 0,
-    "description": "This plate mail helps lash out to those who would harm the wearer.",
+    "bonus": 1,
+    "description": "This plate mail helps lash out to those who would harm the wearer, enabling quick counter strikes.",
     "benefit": "If hit within close you may counter attack once per round.",
+    "source": "custom",
+    "filter": "armors"
+  },
+  {
+    "name": "Sanguine Plate",
+    "base": "Plate mail",
+    "ac": 15,
+    "dex": false,
+    "properties": "Disadv on stealth, no swim",
+    "bonus": 1,
+    "description": "Despite popular assumption, this plate was not named for its blood-spattered appearance. It derives from the lust of bloodshed needed to satiate the wearer.",
+    "benefit": "Dealing damage with melee weapons restores 1 hit point.",
+    "additional": "You can cast Vampiric Touch once per day (+4 bonus).",
     "source": "custom",
     "filter": "armors"
   }
