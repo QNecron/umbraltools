@@ -75,6 +75,8 @@ export const ArmorClass = (
   // @TODO - not sure I like this..
   if (items) {
     Object.entries(items).map(([key, value]) => (
+      value === "Steadfast" ? bonus += 1 : 0,
+      value === "The Spine of Thicket Green" ? bonus += 1 : 0,
       value === "Ioun Stone, Peridot" ? bonus += 1 : 0
     ));
   }
@@ -140,6 +142,7 @@ export const Attack = (
   // @TODO - not sure I like this..
   if (items) {
     Object.entries(items).map(([key, value]) => (
+      value === "Prey Maker" ? bonus += 2 : 0,
       value === "Ioun Stone, Garnet" ? bonus += 1 : 0
     ));
   }
@@ -204,6 +207,7 @@ export const HitPoints = (data: {}) => {
   // @TODO - not sure I like this..
   Object.entries(data).map(([key, value]) => (
     value === "Toughness" ? bonus += 3 : 0,
+    value === "Warding Staff" ? bonus += 3 : 0,
     value === "Ring of Toughness" ? bonus += 3 : 0,
     value === "Ioun Stone, Alexandrite" ? bonus += 3 : 0,
     value === "+1 focus at the beginning of combat and +1 hit point" ? bonus += 1 : 0
