@@ -78,7 +78,9 @@ export const ArmorClass = (
       value === "Steadfast" ? bonus += 1 : 0,
       value === "The Spine of Thicket Green" ? bonus += 1 : 0,
       value === "Cape of Withdrawl" ? bonus += 1 : 0,
-      value === "Ioun Stone, Peridot" ? bonus += 1 : 0
+      value === "Ioun Stone, Peridot" ? bonus += 1 : 0,
+      value === "Cloak of Protection" ? bonus += 1 : 0,
+      value === "Ring of Protection" ? bonus += 1 : 0
     ));
   }
   
@@ -214,6 +216,7 @@ export const HitPoints = (data: {}) => {
     value === "Warding Staff" ? bonus += 3 : 0,
     value === "Ring of Toughness" ? bonus += 3 : 0,
     value === "Ioun Stone, Alexandrite" ? bonus += 3 : 0,
+    value === "Amulet of Vitality" ? bonus += 3 : 0,
     value === "+1 focus at the beginning of combat and +1 hit point" ? bonus += 1 : 0
   ));
   

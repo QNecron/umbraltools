@@ -1,5 +1,29 @@
 [
   {
+    "name": "Amulet of Vitality",
+    "description": "A small ruby pendant that glows ever so slightly on a beautiful silver chain.",
+    "benefit": "Hit points increased by 3.",
+    "source": "custom",
+    "base": "neck",
+    "filter": "neck"
+  },
+  {
+    "name": "Ring of Protection",
+    "description": "Widely available and sought after, these magical rings impart magical protection on to the wearer.",
+    "benefit": "Armor and saving throws increased by increased by 1.",
+    "source": "custom",
+    "base": "accessory",
+    "filter": "accessory"
+  },
+  {
+    "name": "Cloak of Protection",
+    "description": "Widely available and sought after, these magical cloaks impart magical protection on to the wearer.",
+    "benefit": "Armor and saving throws increased by increased by 1.",
+    "source": "custom",
+    "base": "back",
+    "filter": "back"
+  },
+  {
     "name": "Executioner's Hood",
     "description": "Covered in dried blood and soot, this hood strikes fear into all sentient creatures.",
     "benefit": "Damage rolls increased by 1.",
@@ -104,7 +128,7 @@
   {
     "name": "Ring of Toughness",
     "description": "A large amethyst decorates this dark iron band.",
-    "benefit": "Your maximum hit points are increased by 3 and you take 1 less damage from physical attacks.",
+    "benefit": "Hit points increased by 3 and you take 1 less damage from physical attacks.",
     "source": "custom",
     "base": "accessory",
     "filter": "accessory"
