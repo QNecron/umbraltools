@@ -10,7 +10,7 @@
   {
     "name": "Ring of Protection",
     "description": "Widely available and sought after, these magical rings impart magical protection on to the wearer.",
-    "benefit": "Armor and saving throws increased by increased by 1.",
+    "benefit": "Armor and saving throws increased by 1.",
     "source": "custom",
     "base": "accessory",
     "filter": "accessory"
@@ -18,7 +18,7 @@
   {
     "name": "Cloak of Protection",
     "description": "Widely available and sought after, these magical cloaks impart magical protection on to the wearer.",
-    "benefit": "Armor and saving throws increased by increased by 1.",
+    "benefit": "Armor and saving throws increased by 1.",
     "source": "custom",
     "base": "back",
     "filter": "back"
