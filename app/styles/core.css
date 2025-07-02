@@ -501,9 +501,7 @@ body {
   --dialog-close-right: 0;
   --dialog-close-left: auto;
   --dialog-close-transform: translate(50%, 0);
-  
-  --dialog-content-margin: var(--size-ms);
-  
+    
   backdrop-filter: var(--dialog-backdrop-filter);
   background: var(--dialog-background-color);
   border: 0;
@@ -560,7 +558,6 @@ body {
 }
 
 .dialog__content {
-  margin-top: var(--dialog-content-margin);
   
   /* media */
   @media screen and (max-width: 767px) {

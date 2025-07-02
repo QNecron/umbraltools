@@ -198,6 +198,16 @@ export default function Creator() {
     return levels.reverse();
 
   }
+  
+  const CharacterSave = (name: string, content: any) => {
+    const file = new Blob([JSON.stringify(content)], {type: "text/plain"});
+    const url = URL.createObjectURL(file);
+    const link = document.createElement("a");
+    link.download = name.replace(/ /g,'').toLowerCase() + ".json";
+    link.href = url;
+    link.click();
+    link.remove();
+  }
 
   useEffect(() => {
     
@@ -242,27 +252,49 @@ export default function Creator() {
   
           <ul>
             {characterSaved.map((name, index) => (
-              <li className="block" key={index}>
+              <li key={index}>
                 
-                <button className="btn" button="icon primary" onClick={() => CreatorUpdate(LoadCharacter(name))}>
-                  <span className="srt">Load character {name}</span>
-                  <Icons icon="download" />
-                </button>
+                <div className="block">
+                  <div className="block__item block__item--full">{name}</div>
+                </div>
                 
-                <div className="block__item block__item--full">{name}</div>
-                
-                <button 
-                  className="btn" 
-                  button="icon primary" 
-                  onClick={() => {
-                    DeleteCharacter(name);
-                    CharacterList();
-                  }}
-                >
-                  <span className="srt">Delete character {name}</span>
-                  <Icons icon="delete" />
-                </button>
-                
+                <div className="block">
+                  
+                  <button 
+                    className="btn" 
+                    button="icon primary" 
+                    onClick={() => CreatorUpdate(LoadCharacter(name))}
+                  >
+                    <span className="srt">Load character {name}</span>
+                    <Icons icon="download" />
+                  </button>
+                  
+                  <button 
+                    className="btn" 
+                    button="icon primary" 
+                    onClick={() => CharacterSave(character.name, character)}
+                  >
+                    <span className="srt">Backup character {name}</span>
+                    <Icons icon="save" />
+                  </button>
+                  
+                  {/* @TODO - placeholder for other actions */}
+                  <div>&nbsp;</div>
+                                  
+                  <button 
+                    className="btn" 
+                    button="icon primary" 
+                    onClick={() => {
+                      DeleteCharacter(name);
+                      CharacterList();
+                    }}
+                  >
+                    <span className="srt">Delete character {name}</span>
+                    <Icons icon="delete" />
+                  </button>
+                    
+                </div>
+
               </li>
             ))}
           </ul>
@@ -989,6 +1021,7 @@ export default function Creator() {
         </div>
 
       </Grid>
+
     </Wrapper>
     
     </>

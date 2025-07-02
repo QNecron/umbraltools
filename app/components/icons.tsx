@@ -5,7 +5,8 @@ import Copy from "../images/copy.svg";
 import Dice from "../images/dice.svg";
 import Download from "../images/cloud-download.svg";
 import Upload from "../images/cloud-upload.svg";
-import Flame from "../images/flame.svg";;
+import Flame from "../images/flame.svg";
+import Save from "../images/save.svg";
 import Delete from "../images/skull.svg";
 import Search from "../images/search.svg";
 import Reader from "../images/reader.svg";
@@ -33,6 +34,7 @@ export default function Icons({icon, height, width}: propsIcons) {
     if (icon === "search") url = Search
     if (icon === "flame") url = Flame
     if (icon === "reader") url = Reader
+    if (icon === "save") url = Save
     
     return url;
     
