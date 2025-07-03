@@ -8,6 +8,7 @@ import Grid from "../components/grid";
 import Input from "../components/input";
 import Icons from "../components/icons";
 import Dialog from "../components/dialog";
+import Accordion from "../components/accordion";
 
 import Desktop from "../images/hero_desktop_16-4-5.webp";
 import Mobile from "../images/hero_mobile_1-1.webp";
@@ -203,7 +204,10 @@ export default function Creator() {
     const file = new Blob([JSON.stringify(content)], {type: "text/plain"});
     const url = URL.createObjectURL(file);
     const link = document.createElement("a");
-    link.download = name.replace(/ /g,'').toLowerCase() + ".json";
+    let date = new Date();
+    let time = date.toISOString().split("T")[0];
+    
+    link.download = name.replace(/ /g,'').toLowerCase() + "-" + time + ".json";
     link.href = url;
     link.click();
     link.remove();
@@ -303,6 +307,22 @@ export default function Creator() {
               </li>
             ))}
           </ul>
+ 
+          <Accordion
+            id="updates"
+            open={false}
+            accordion="updates"
+            title="Change Log"
+            button="full primary"
+          >
+            
+            <p>Save character added (as JSON), must load character first.</p>
+            
+            <p>Some talents accounted for in stats (ATK, AC, etc), but not all - yet.</p>
+            
+            <p>More magical and mundane items added.</p>
+            
+          </Accordion>
  
         </Dialog>
         

@@ -201,7 +201,7 @@ body {
 
 /* accordion */
 .accordion {
-  --accordion-margin: var(--size-s);
+  --accordion-margin: 0 0 var(--size-s) 0;
   
   --accordion-icon-background-color: var(--color-white-08);
   --accordion-icon-height: var(--size-s);
@@ -213,7 +213,7 @@ body {
   --accordion-content-background-color: var(--color-white-02);
   --accordion-content-padding: var(--size-l);
   
-  margin-bottom: var(--accordion-margin);
+  margin: var(--accordion-margin);
   
   &:open .accordion__title:before {
     --accordion-icon-background-color: var(--color-white-100);
@@ -263,6 +263,20 @@ body {
   li {
     list-style: square;
     margin: var(--size-xxs) var(--size-l);
+  }
+  
+}
+
+[accordion="updates"] {
+  --accordion-margin: var(--size-m) 0 0 0;
+  --accordion-content-padding: var(--size-m);
+  
+  p {
+    font-size: var(--size-12);
+  }
+  
+  p ~ p {
+    margin-top: var(--size-m);
   }
   
 }
