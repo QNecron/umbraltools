@@ -269,14 +269,19 @@ export default function Creator() {
                     <Icons icon="download" />
                   </button>
                   
-                  <button 
-                    className="btn" 
-                    button="icon primary" 
-                    onClick={() => CharacterSave(character.name, character)}
-                  >
-                    <span className="srt">Backup character {name}</span>
-                    <Icons icon="save" />
-                  </button>
+                  {/* only show save if the character is loaded */}
+                  {character.name === name &&
+                  
+                    <button 
+                      className="btn" 
+                      button="icon primary" 
+                      onClick={() => CharacterSave(character.name, character)}
+                    >
+                      <span className="srt">Backup character {name}</span>
+                      <Icons icon="save" />
+                    </button>
+                  
+                  }
                   
                   {/* @TODO - placeholder for other actions */}
                   <div>&nbsp;</div>
@@ -744,7 +749,8 @@ export default function Creator() {
                   Armors(ArmorData, character.equipment.armor, "ac"), 
                   Armors(ArmorData, character.equipment.armor, "dex"),
                   Armors(ShieldData, character.equipment.shield, "ac"),
-                  character.equipment
+                  character.equipment,
+                  character.talents_feats
                 )}
               </div>
               <div className="block__item block__item--full">
@@ -803,7 +809,8 @@ export default function Creator() {
                   Weapons(WeaponData, character.equipment.hands_primary, "type"), 
                   character.class, 
                   character.level,
-                  character.equipment
+                  character.equipment,
+                  character.talents_feats
                 )}
               </div>
               <div className="block__item block__item--tiny" heading="5">Dmg</div>
@@ -816,7 +823,6 @@ export default function Creator() {
                   Weapons(WeaponData, character.equipment.hands_primary, "damage"),
                   character.equipment
                 )}
-                {/* {Weapons(WeaponData, character.equipment.hands_primary, "damage")} */}
               </div>
             </div>
               
@@ -865,12 +871,21 @@ export default function Creator() {
                   character.equipment.hands_secondary, 
                   Weapons(WeaponData, character.equipment.hands_secondary, "type"), 
                   character.class, 
-                  character.level
+                  character.level,
+                  character.equipment,
+                  character.talents_feats
                 )}
               </div>
               <div className="block__item block__item--tiny" heading="5">Dmg</div>
               <div className="block__item block__item--full">
-                {Weapons(WeaponData, character.equipment.hands_secondary, "damage")}
+                {Damage(
+                  character.class, 
+                  character.level, 
+                  Weapons(WeaponData, character.equipment.hands_secondary, "name"),
+                  Weapons(WeaponData, character.equipment.hands_secondary, "base"),
+                  Weapons(WeaponData, character.equipment.hands_secondary, "damage"),
+                  character.equipment
+                )}
               </div>
             </div>
             

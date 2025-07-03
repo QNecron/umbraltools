@@ -62,7 +62,8 @@ export const ArmorClass = (
   armor: string, 
   dex: string, 
   shield: string, 
-  items?: {}
+  items?: {},
+  talents?: {}
 ) => {
   let bonus = 0;
   let ac = 0;
@@ -81,6 +82,12 @@ export const ArmorClass = (
       value === "Ioun Stone, Peridot" ? bonus += 1 : 0,
       value === "Cloak of Protection" ? bonus += 1 : 0,
       value === "Ring of Protection" ? bonus += 1 : 0
+    ));
+  }
+  
+  if (talents) {
+    Object.entries(talents).map(([key, value]) => (
+      value === "Choose one kind of armor. You get +1 AC from that armor" ? bonus += 1 : 0
     ));
   }
   
@@ -123,7 +130,8 @@ export const Attack = (
   weapon_type: string, 
   role: string, 
   level: string,
-  items?: {}
+  items?: {},
+  talents?: {}
 ) => {
   let bonus = 0;
   let posneg = "+";
@@ -148,6 +156,12 @@ export const Attack = (
       value === "Prey Maker" ? bonus += 2 : 0,
       value === "Stag Helm" ? bonus += 1 : 0,
       value === "Ioun Stone, Garnet" ? bonus += 1 : 0
+    ));
+  }
+  
+  if (talents) {
+    Object.entries(talents).map(([key, value]) => (
+      value === "+1 to melee and ranged attacks" ? bonus += 1 : 0
     ));
   }
   
