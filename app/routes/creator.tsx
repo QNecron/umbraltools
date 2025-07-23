@@ -319,9 +319,9 @@ export default function Creator() {
             button="full primary"
           >
             
-            <p>Save character added (as JSON), must load character first.</p>
+            <p>Downloading character added (as JSON), must load character first.</p>
             
-            <p>UpLoading character added, still in testing.</p>
+            <p>Uploading character added, still in testing.</p>
             
             <p>Some talents accounted for in stats (ATK, AC, etc), but not all - yet.</p>
             
@@ -336,7 +336,7 @@ export default function Creator() {
             change={async (event: ChangeEvent<HTMLInputElement>) => {
               if (event.target.files) {
                 const parseData = await LoadFile(event.target.files[0]);
-                // @ts-ignore: define state object vs imported, need to think on this
+                // @ts-ignore: defined state object vs imported, need to think on this
                 characterUpdate(parseData);
               }
             }}
