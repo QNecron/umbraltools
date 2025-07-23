@@ -964,9 +964,13 @@ body {
 
 /* saved characters */
 .character-list {
+  --character-list-gap: var(--size-m);
   --character-list-margin: 0 0 var(--size-xl) 0;
   
-  margin: var(--character-list-margin);  
+  display: flex;
+  flex-direction: column;
+  gap: var(--character-list-gap);
+  margin: var(--character-list-margin);
 }
 
 

@@ -74,6 +74,7 @@ export default function Creator() {
       chr: "10"
     },
     talents_feats: {
+      level_0: "",
       level_1: "",
       level_2: "",
       level_3: "",
@@ -136,6 +137,7 @@ export default function Creator() {
       },
       talents_feats: {
         ...character.talents_feats,
+        level_0: data.talents_feats.level_0,
         level_1: data.talents_feats.level_1,
         level_2: data.talents_feats.level_2,
         level_3: data.talents_feats.level_3,
@@ -584,6 +586,42 @@ export default function Creator() {
           
           {/* talents / Feats */}
           <Section padding="creator" title="Talents / Feats">
+            
+            {character.ancestry === "Human" && 
+              <div className="block block__wrap">
+                <div className="block__item block__item--full">
+                  {AncestryBonus(AncestryData, character.ancestry)}
+                </div>
+                <Input  
+                  type="select" 
+                  id={"talent_ancestry"} 
+                  label={"Additional Talent"} 
+                  value={character.talents_feats.level_0}
+                  change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
+                    ...character,
+                    talents_feats: {
+                      ...character.talents_feats,
+                      level_0: event.target.value
+                    }
+                    })}
+                  >
+                  <option value="None">-</option>
+                  {ClassesData.map((role, index) => {
+                    if (role.class === character.class) {
+                      return(
+                        <Fragment key={index}>
+                          <option value={role.talents.talent_1}>{role.talents.talent_1}</option>
+                          <option value={role.talents.talent_2}>{role.talents.talent_2}</option>
+                          <option value={role.talents.talent_3}>{role.talents.talent_3}</option>
+                          <option value={role.talents.talent_4}>{role.talents.talent_4}</option>
+                          <option value={role.talents.talent_5}>{role.talents.talent_5}</option>
+                        </Fragment>
+                      );
+                    }
+                  })}
+                </Input>
+              </div>
+            }
             
             <div className="block block__wrap">
               
