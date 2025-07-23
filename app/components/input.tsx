@@ -1,6 +1,7 @@
 interface propsInput {
   id: string;
   type: string;
+  accept?: string;
   value?: string;
   min?: number;
   max?: number;
@@ -16,6 +17,7 @@ interface propsInput {
 export default function Input({
   id,
   type,
+  accept,
   value,
   min,
   max, 
@@ -74,7 +76,8 @@ export default function Input({
       <div className="input" input={type}>
         <input 
           id={id}
-          type={type}
+          type={type} 
+          accept={accept}
           value={value} 
           autoComplete="off" 
           min={min}

@@ -42,7 +42,8 @@ import {
   DiceRoll, 
   Total, 
   Weapons, 
-  Armors
+  Armors,
+  LoadFile
 } from "../utilities/utilities";
 
 export const meta: MetaFunction = () => {
@@ -254,60 +255,62 @@ export default function Creator() {
         
         <Dialog type="secondary" triggerCopy="Characters" triggerButton="primary">
   
-          <ul>
-            {characterSaved.map((name, index) => (
-              <li key={index}>
-                
-                <div className="block">
-                  <div className="block__item block__item--full">{name}</div>
-                </div>
-                
-                <div className="block">
+          {characterSaved.length !== 0  && 
+            <ul className="character-list">
+              {characterSaved.map((name, index) => (
+                <li className="character-list__saved" key={index}>
                   
-                  <button 
-                    className="btn" 
-                    button="icon primary" 
-                    onClick={() => CreatorUpdate(LoadCharacter(name))}
-                  >
-                    <span className="srt">Load character {name}</span>
-                    <Icons icon="download" />
-                  </button>
+                  <div className="block">
+                    <div className="block__item block__item--full">{name}</div>
+                  </div>
                   
-                  {/* only show save if the character is loaded */}
-                  {character.name === name &&
-                  
+                  <div className="block">
+                    
                     <button 
                       className="btn" 
                       button="icon primary" 
-                      onClick={() => CharacterSave(character.name, character)}
+                      onClick={() => CreatorUpdate(LoadCharacter(name))}
                     >
-                      <span className="srt">Backup character {name}</span>
-                      <Icons icon="save" />
+                      <span className="srt">Load character {name}</span>
+                      <Icons icon="download" />
                     </button>
-                  
-                  }
-                  
-                  {/* @TODO - placeholder for other actions */}
-                  <div>&nbsp;</div>
-                                  
-                  <button 
-                    className="btn" 
-                    button="icon primary" 
-                    onClick={() => {
-                      DeleteCharacter(name);
-                      CharacterList();
-                    }}
-                  >
-                    <span className="srt">Delete character {name}</span>
-                    <Icons icon="delete" />
-                  </button>
                     
-                </div>
+                    {/* only show save if the character is loaded */}
+                    {character.name === name &&
+                    
+                      <button 
+                        className="btn" 
+                        button="icon primary" 
+                        onClick={() => CharacterSave(character.name, character)}
+                      >
+                        <span className="srt">Backup character {name}</span>
+                        <Icons icon="save" />
+                      </button>
+                    
+                    }
+                    
+                    {/* @TODO - placeholder for other actions */}
+                    <div>&nbsp;</div>
+                                    
+                    <button 
+                      className="btn" 
+                      button="icon primary" 
+                      onClick={() => {
+                        DeleteCharacter(name);
+                        CharacterList();
+                      }}
+                    >
+                      <span className="srt">Delete character {name}</span>
+                      <Icons icon="delete" />
+                    </button>
+                      
+                  </div>
 
-              </li>
-            ))}
-          </ul>
- 
+                </li>
+              ))}
+            </ul>
+          }
+           
           <Accordion
             id="updates"
             open={false}
@@ -318,11 +321,26 @@ export default function Creator() {
             
             <p>Save character added (as JSON), must load character first.</p>
             
+            <p>UpLoading character added, still in testing.</p>
+            
             <p>Some talents accounted for in stats (ATK, AC, etc), but not all - yet.</p>
             
-            <p>More magical and mundane items added.</p>
-            
           </Accordion>
+          
+          <Input 
+            type="file" 
+            accept=".json,application/json" 
+            id="upload" 
+            label="Upload" 
+            minimal={true} 
+            change={async (event: ChangeEvent<HTMLInputElement>) => {
+              if (event.target.files) {
+                const parseData = await LoadFile(event.target.files[0]);
+                // @ts-ignore: define state object vs imported, need to think on this
+                characterUpdate(parseData);
+              }
+            }}
+          />
  
         </Dialog>
         

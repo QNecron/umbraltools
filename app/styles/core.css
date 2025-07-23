@@ -191,6 +191,25 @@ body {
   
 }
 
+/* @TODO - clean this up a little.. need to look into what can be styled nowadays */
+[input~="file"] {
+  margin-top: var(--size-m);
+  
+  .input__field {
+    padding: 0;
+  }
+  
+  .input__field::file-selector-button {
+    background: var(--color-white-02);
+    border: 0;
+    color: var(--input-font-color);
+    padding: var(--input-padding);
+    height: var(--input-height);
+    transition: var(--timing-basic);
+  }
+  
+}
+
 /* icon */
 .icon {
   --icon-invert: invert(100%);
@@ -268,7 +287,7 @@ body {
 }
 
 [accordion="updates"] {
-  --accordion-margin: var(--size-m) 0 0 0;
+  --accordion-margin: 0;
   --accordion-content-padding: var(--size-m);
   
   p {
@@ -942,6 +961,15 @@ body {
   }
   
 }
+
+/* saved characters */
+.character-list {
+  --character-list-margin: 0 0 var(--size-xl) 0;
+  
+  margin: var(--character-list-margin);  
+}
+
+
 
 /* table */
 .table {
