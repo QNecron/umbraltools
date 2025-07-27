@@ -119,7 +119,8 @@ export default function Spells() {
                 copy2={spellDuration}
                 copy3={spellRange}
                 copy4={spell.description_1} 
-                copy5={spell.description_2}
+                copy5={spell.description_2} 
+                copy6={spell.description_3}
               />
             );
           })}
