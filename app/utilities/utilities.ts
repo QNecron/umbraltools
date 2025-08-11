@@ -238,6 +238,19 @@ export const HitPoints = (data: {}) => {
   
 }
 
+export const SavingThrows = (data: {}) => {
+  let bonus = 0;
+  
+  // @TODO - not sure I like this..
+  Object.entries(data).map(([key, value]) => (
+    value === "Cloak of Protection" ? bonus += 1 : 0,
+    value === "Ring of Protection" ? bonus += 1 : 0
+  ));
+  
+  return bonus.toString();
+  
+}
+
 export const Spellcasting = (
   role: string, 
   attributes: any, 

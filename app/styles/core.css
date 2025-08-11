@@ -943,6 +943,7 @@ body {
   height: var(--block-item-height);
   min-width: var(--block-item-width);
   max-width: var(--block-item-width);
+  position: relative;
   
   &.block__item--tiny {
     --block-item-width: var(--size-xxxl);
@@ -960,6 +961,28 @@ body {
     --block-item-width: auto;
   }
   
+}
+
+.block__label {
+  --block-label-background: transparent;
+  --block-label-font-color: var(--color-white-88);
+  --block-label-font-size: var(--size-s);
+  --block-label-padding: 0 var(--size-xs);
+  --block-label-position: absolute;
+  --block-label-top: 0;
+  --block-label-left: 50%;
+  --block-label-transform: translate(-50%, -50%);  
+  
+  background: var(--block-label-background);
+  color: var(--block-label-font-color);
+  font-size: var(--block-label-font-size);
+  padding: var(--block-label-padding);
+  text-transform: capitalize;
+  position: var(--block-label-position);
+  top: var(--block-label-top);
+  left: var(--block-label-left);
+  transform: var(--block-label-transform);
+  z-index: 1;
 }
 
 /* saved characters */

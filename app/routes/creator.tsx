@@ -39,6 +39,7 @@ import {
   Spellcasting, 
   IsCaster, 
   HitPoints, 
+  SavingThrows,
   DiceRoll, 
   Total, 
   Weapons, 
@@ -463,9 +464,8 @@ export default function Creator() {
     
               return(
                 <div className="block" key={index}>
-                  <div className="block__item block__item--tiny" heading="5">{stat}</div>
-                  <div className="block__item">
-                    {Modifier(Ability(stat), "0", "0")}
+                  <div className="block__item block__item--tiny" heading="5">
+                    {stat}
                   </div>
                   <Input 
                     type="number" 
@@ -481,6 +481,20 @@ export default function Creator() {
                       }
                     })}
                   />
+                  <div className="block__item">
+                    <span className="block__label">Mod</span>
+                    {Modifier(Ability(stat), "0", "0")}
+                  </div>
+                  <div className="block__item">
+                    <span className="block__label">Sav</span>
+                    {Total(
+                      Modifier(Ability(stat), "0", "0"),
+                      SavingThrows(character.equipment),
+                      "0",
+                      "0",
+                      "0",
+                    )}
+                  </div>
                   <button className="btn" button="icon primary" onClick={(e) => characterUpdate({
                     ...character,
                     attributes: {
