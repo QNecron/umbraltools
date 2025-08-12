@@ -238,11 +238,13 @@ export const HitPoints = (data: {}) => {
   
 }
 
-export const SavingThrows = (data: {}) => {
+export const SavingThrows = (role: string, items: {}) => {
   let bonus = 0;
   
   // @TODO - not sure I like this..
-  Object.entries(data).map(([key, value]) => (
+  Object.entries(items).map(([key, value]) => (
+    value === "Outworn Shield" && role === "Priest" ? bonus += 1 : 0,
+    value === "Outworn Shield" && role === "Ranger" ? bonus += 1 : 0,
     value === "Cloak of Protection" ? bonus += 1 : 0,
     value === "Ring of Protection" ? bonus += 1 : 0
   ));

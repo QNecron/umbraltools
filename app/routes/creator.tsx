@@ -316,7 +316,7 @@ export default function Creator() {
            
           <Accordion
             id="updates"
-            open={false}
+            open={true}
             accordion="updates"
             title="Change Log"
             button="full primary"
@@ -489,7 +489,7 @@ export default function Creator() {
                     <span className="block__label">Sav</span>
                     {Total(
                       Modifier(Ability(stat), "0", "0"),
-                      SavingThrows(character.equipment),
+                      SavingThrows(character.class, character.equipment),
                       "0",
                       "0",
                       "0",

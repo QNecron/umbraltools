@@ -305,7 +305,7 @@
     "bonus": 1,
     "description": "This single-edged blade has a recurved guard in the shape of opposing waves, the guard and base of the blade are stained a brillant blue.",
     "benefit": "Armor increased by 1.",
-    "additional": "You have advantage on wisdom saving throws against mental affects.",
+    "additional": "You have advantage on saving throws against mental affects.",
     "source": "custom",
     "filter": "weapons"
   },
