@@ -11,12 +11,15 @@ import type { LinksFunction } from "@remix-run/node";
 import Header from "./components/header";
 import Footer from "./components/footer";
 
-import "./styles/tokens.css";
-import "./styles/reset.css";
-import "./styles/core.css";
+import styleTokens from "./styles/tokens.css";
+import styleReset from "./styles/reset.css";
+import styleCore from "./styles/core.css";
 
 export const links: LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  { 
+    rel: "preconnect", 
+    href: "https://fonts.googleapis.com" 
+  },
   {
     rel: "preconnect",
     href: "https://fonts.gstatic.com",
@@ -25,6 +28,18 @@ export const links: LinksFunction = () => [
   {
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css?family=Oswald:300&display=swap",
+  },
+  { 
+    rel: "stylesheet", 
+    href: styleTokens 
+  },
+  { 
+    rel: "stylesheet", 
+    href: styleReset 
+  },
+  { 
+    rel: "stylesheet", 
+    href: styleCore 
   },
 ];
 

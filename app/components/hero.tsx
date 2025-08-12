@@ -40,7 +40,14 @@ export default function Hero({
     <section className="hero" hero={theme + " " + position}>
       <picture className="hero__asset" aria-hidden="true">
         <source srcSet={imgDesktop} height={imgDesktopHeight} width={imgDesktopWidth} media="(min-width: 768px)" />
-        <img src={imgMobile} className="hero__asset-img" height={imgMobileHeight} width={imgMobileWidth} alt="" />
+        <img 
+          src={imgMobile} 
+          className="hero__asset-img" 
+          height={imgMobileHeight} 
+          width={imgMobileWidth} 
+          fetchPriority="high" 
+          alt="" 
+        />
       </picture>
       {animation && <div className="hero__animation one"></div>}
       {animation && <div className="hero__animation two"></div>}
