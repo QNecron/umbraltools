@@ -11,9 +11,13 @@ import type { LinksFunction } from "@remix-run/node";
 import Header from "./components/header";
 import Footer from "./components/footer";
 
-import styleTokens from "./styles/tokens.css";
-import styleReset from "./styles/reset.css";
-import styleCore from "./styles/core.css";
+// import "./styles/tokens.css";
+// import "./styles/reset.css";
+// import "./styles/core.css";
+
+import tokensCSS from "~/styles/tokens.css";
+import resetCSS from "~/styles/reset.css";
+import coreCSS from "~/styles/core.css";
 
 export const links: LinksFunction = () => [
   { 
@@ -29,18 +33,18 @@ export const links: LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css?family=Oswald:300&display=swap",
   },
-  { 
-    rel: "stylesheet", 
-    href: styleTokens 
+  {
+    rel: "stylesheet",
+    href: tokensCSS,
   },
-  { 
-    rel: "stylesheet", 
-    href: styleReset 
+  {
+    rel: "stylesheet",
+    href: resetCSS,
   },
-  { 
-    rel: "stylesheet", 
-    href: styleCore 
-  },
+  {
+    rel: "stylesheet",
+    href: coreCSS,
+  }
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
