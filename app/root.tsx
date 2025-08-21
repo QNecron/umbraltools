@@ -15,9 +15,9 @@ import Footer from "./components/footer";
 // import "./styles/reset.css";
 // import "./styles/core.css";
 
-import tokensCSS from "~/styles/tokens.css";
-import resetCSS from "~/styles/reset.css";
-import coreCSS from "~/styles/core.css";
+import tokensCSS from "~/styles/tokens.css?url";
+import resetCSS from "~/styles/reset.css?url";
+import coreCSS from "~/styles/core.css?url";
 
 export const links: LinksFunction = () => [
   { 
