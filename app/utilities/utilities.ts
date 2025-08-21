@@ -210,6 +210,7 @@ export const Damage = (
     value === "Executioner's Hood" ? damageBonus += " + 1" : "",
     value === "Boltcatchers" ? damageBonus += " + 1d4 (Electrical)" : "",
     value === "Corroded Vambraces" && isRanged === false ? damageBonus += " + 1 (Acid)" : "",
+    value === "Forgemaster's Gloves" && isRanged === false ? damageBonus += " + 1 (Fire)" : "",
     value === "Berserker's Belt" && isRanged === false ? damageBonus += " + 2" : "",
     value === "Mantle of Wreathing Flame" ? damageBonus += " + 1d4 (Fire)" : "",
     value === "Cloak of Minor Missiles" && isRanged === true ? damageBonus += " + 1" : "",
@@ -228,6 +229,7 @@ export const HitPoints = (data: {}) => {
     value === "Toughness" ? bonus += 3 : 0,
     value === "Wyrmwull" ? bonus += 3 : 0,
     value === "Warding Staff" ? bonus += 3 : 0,
+    value === "Cloak of Comfort" ? bonus += 3 : 0,
     value === "Ring of Toughness" ? bonus += 3 : 0,
     value === "Ioun Stone, Alexandrite" ? bonus += 3 : 0,
     value === "Amulet of Vitality" ? bonus += 3 : 0,
@@ -246,7 +248,8 @@ export const SavingThrows = (role: string, items: {}) => {
     value === "Outworn Shield" && role === "Priest" ? bonus += 1 : 0,
     value === "Outworn Shield" && role === "Ranger" ? bonus += 1 : 0,
     value === "Cloak of Protection" ? bonus += 1 : 0,
-    value === "Ring of Protection" ? bonus += 1 : 0
+    value === "Ring of Protection" ? bonus += 1 : 0,
+    value === "Tempered Helm" ? bonus += 1 : 0
   ));
   
   return bonus.toString();

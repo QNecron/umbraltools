@@ -527,6 +527,20 @@
     "filter": "weapons"
   },
   {
+    "name": "Whispers of Shutterwood",
+    "base": "Longsword",
+    "type": "M",
+    "range": "C",
+    "damage": "1d8 + 2 + 1d6 (vs Incorporeal)",
+    "properties": "-",
+    "bonus": 2,
+    "description": "This black blade is covered in ancient runes, all who've wielded it report hearing eerie whispers when alone.",
+    "benefit": "Misses still deal the enhancement bonus in damage.",
+    "additional": "Deals an additional 1d6 damage to incorporeal creatures.",
+    "source": "custom",
+    "filter": "weapons"
+  },
+  {
     "name": "Ravenwing",
     "base": "Mace",
     "type": "M",

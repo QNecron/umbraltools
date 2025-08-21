@@ -45,7 +45,7 @@ export default function Hero({
           className="hero__asset-img" 
           height={imgMobileHeight} 
           width={imgMobileWidth} 
-          fetchPriority="high" 
+          fetchpriority="high" 
           alt="" 
         />
       </picture>

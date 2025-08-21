@@ -24,10 +24,26 @@
     "filter": "back"
   },
   {
+    "name": "Blunting Belt",
+    "description": "This belt is comprised of several layers of leather, wound around small round pieces of metal. The resulting effect is not unlike brigandine.",
+    "benefit": "Physical damage is reduced by 1 point.",
+    "source": "custom",
+    "base": "waist",
+    "filter": "waist"
+  },
+  {
+    "name": "Boots of Speed",
+    "description": "Lighter than a single feather, these boots allow amazing feats of movement with a simple click of the heels.",
+    "benefit": "Your movement can be doubled 3 times per day.",
+    "source": "custom",
+    "base": "feet",
+    "filter": "feet"
+  },
+  {
     "name": "Executioner's Hood",
     "description": "Covered in dried blood and soot, this hood strikes fear into all sentient creatures.",
     "benefit": "Damage rolls increased by 1.",
-    "additional": "If wielding an axe, damage rolls increased by 2 instead of 1.",
+    "additional": "If wielding an axe, damage rolls increased by 2.",
     "source": "custom",
     "base": "head",
     "filter": "head"
@@ -50,6 +66,15 @@
     "filter": "head"
   },
   {
+    "name": "Tempered Helm",
+    "description": "This helm is dented and scratched - it looks like it's seen plenty of rough use. When you put it on you feel a powerful rage start to descend on you.",
+    "benefit": "Melee damage increased by 1 for every kill for 3 rounds. Enemies must be a resonable challenge in order to receive the bonus.",
+    "additional": "Saving throws increased by 1.",
+    "source": "custom",
+    "base": "head",
+    "filter": "head"
+  },
+  {
     "name": "Amulet of Summer Solstice",
     "description": "This bronze amulet depicts an embossed sun emblem emanating rays of light.",
     "benefit": "Fire damage is reduced by 3 points.",
@@ -67,10 +92,18 @@
     "filter": "neck"
   },
   {
-    "name": "Milani's Tear",
+    "name": "Milani's Tears",
     "description": "This blood-red garnet in the shape of a tear hangs from a rune enscribed golden necklace.",
     "benefit": "Healing spells remove the entangled, stuck, and paralyzed afflictions.",
-    "additional": "Upon your death you cast Cure Mass (automatic).",
+    "additional": "Upon your death you cast Mass Cure (automatic).",
+    "source": "custom",
+    "base": "neck",
+    "filter": "neck"
+  },
+  {
+    "name": "The Third Eye",
+    "description": "No mere ostentation, the amethyst at the icon's center acts as a kind of lens, revealing signs of weaknesses and secrets of those viewed through its facets.",
+    "benefit": "You deal a critical hit if you roll a 19 or better on an attack roll.",
     "source": "custom",
     "base": "neck",
     "filter": "neck"
@@ -101,6 +134,15 @@
     "base": "arms",
     "filter": "arms"
   },
+  {
+    "name": "Forgemaster's Gloves",
+    "description": "These gloves are made of a thick, flame-retardant leather that can protect the wearer's hands from the heat of the forge. They're warm to the touch.",
+    "benefit": "Fire damage is reduced by 3 points.",
+    "additional": "Melee weapons deal an additonal 1 point of fire damage.",
+    "source": "custom",
+    "base": "arms",
+    "filter": "arms"
+  },  
   {
     "name": "Sigil of the Arcane",
     "description": "A small emerald decorates this beautiful copper ring.",
@@ -136,7 +178,15 @@
   {
     "name": "Finality's Claim",
     "description": "A large onyx in the shape of a skull decorates this golden band.",
-    "benefit": "You gain a +4 to your death timer roll. If you roll a 19+ you rise with 1 hit point.",
+    "benefit": "You gain a +4 to your death timer roll. If you roll a 19 or better you rise with 1 hit point.",
+    "source": "custom",
+    "base": "accessory",
+    "filter": "accessory"
+  },
+  {
+    "name": "Ring of Eternal Funding",
+    "description": "This plain silver band contains a power that belies its simple appearance, it allows the wearer to pursue special interests without being tied to a particular patron.",
+    "benefit": "At the beginning of each day gain 2d6 silver pieces. Ring must be worn for the previous 24 hours in order to grant the benefit.",
     "source": "custom",
     "base": "accessory",
     "filter": "accessory"
@@ -167,10 +217,19 @@
     "filter": "feet"
   },
   {
+    "name": "Boots of Stability",
+    "description": "These heavy boots are extremely comfortable and will not tip over, no matter how hard one tries to do so.",
+    "benefit": "Immune to being knocked down.",
+    "additional": "You have advantage on skill checks for balancing.",
+    "source": "custom",
+    "base": "feet",
+    "filter": "feet"
+  },
+  {
     "name": "Trollhide Belt",
     "description": "This belt has been crafted from the mossy hide of a forest troll with intertwined vines and leaves.",
     "benefit": "Regenerate 1 hit point each round of combat.",
-    "additional": "Taking acid or fire damage stops the regeneration effect for 10 rounds.",
+    "additional": "Taking acid or fire damage stops the regeneration effect for 5 rounds.",
     "source": "custom",
     "base": "waist",
     "filter": "waist"
@@ -189,6 +248,14 @@
     "description": "This belt is made of thin, interwoven vines, forming a sturdy and elegant loop imbued with protective magic.",
     "benefit": "Cold and fire damage is reduced by 3 points.",
     "additional": "You can cast Barkskin once per day (+4 bonus).",
+    "source": "custom",
+    "base": "waist",
+    "filter": "waist"
+  },
+  {
+    "name": "Girdle of Mortal Protection",
+    "description": "Though a simple band of dark leather, this particular girdle provides defense against otherwise deadly blows.",
+    "benefit": "Once per day you may choose to lesson a critical blow to a normal attack.",
     "source": "custom",
     "base": "waist",
     "filter": "waist"
@@ -219,6 +286,15 @@
     "base": "back",
     "filter": "back"
   },
+  {
+    "name": "Cloak of Comfort",
+    "description": "Magical runes line the inside of this rather simple looking heavy cloak.",
+    "benefit": "Hit points increased by 3.",
+    "additional": "Physical damage is reduced by 1 point.",
+    "source": "custom",
+    "base": "back",
+    "filter": "back"
+  },  
   {
     "name": "Ioun Stone, Garnet",
     "description": "A strangly shaped gemstone the size of a pebble that resembles garnet.",

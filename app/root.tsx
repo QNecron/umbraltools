@@ -20,6 +20,18 @@ import resetCSS from "~/styles/reset.css?url";
 import coreCSS from "~/styles/core.css?url";
 
 export const links: LinksFunction = () => [
+  {
+    rel: "stylesheet",
+    href: tokensCSS,
+  },
+  {
+    rel: "stylesheet",
+    href: resetCSS,
+  },
+  {
+    rel: "stylesheet",
+    href: coreCSS,
+  },
   { 
     rel: "preconnect", 
     href: "https://fonts.googleapis.com" 
@@ -32,18 +44,6 @@ export const links: LinksFunction = () => [
   {
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css?family=Oswald:300&display=swap",
-  },
-  {
-    rel: "stylesheet",
-    href: tokensCSS,
-  },
-  {
-    rel: "stylesheet",
-    href: resetCSS,
-  },
-  {
-    rel: "stylesheet",
-    href: coreCSS,
   }
 ];
 
