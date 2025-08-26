@@ -11,10 +11,6 @@ import type { LinksFunction } from "@remix-run/node";
 import Header from "./components/header";
 import Footer from "./components/footer";
 
-// import "./styles/tokens.css";
-// import "./styles/reset.css";
-// import "./styles/core.css";
-
 import tokensCSS from "~/styles/tokens.css?url";
 import resetCSS from "~/styles/reset.css?url";
 import coreCSS from "~/styles/core.css?url";
