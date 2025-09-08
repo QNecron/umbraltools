@@ -89,6 +89,7 @@ export default function Creator() {
     },
     spells: "",
     xp: "0",
+    luck_tokens: "0",
     money: {
       gp: "0",
       sp: "0",
@@ -152,6 +153,7 @@ export default function Creator() {
       },
       spells: data.spells,
       xp: data.xp,
+      luck_tokens: data.luck_tokens,
       money: {
         ...character.money,
         gp: data.money.gp,
@@ -1037,7 +1039,20 @@ export default function Creator() {
           {/* inventory */}
           <Section padding="creator" title="Inventory">
             
-            <div className="block block__tripple">
+            <div className="block">
+
+              <div className="block__item" heading="5">LT</div>
+              <Input 
+                type="number" 
+                id="luck_tokens"
+                label="LT" 
+                minimal={true} 
+                value={character.luck_tokens} 
+                change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                  ...character,
+                  luck_tokens: event.target.value
+                })}
+              />
 
               <div className="block__item" heading="5">GP</div>
               <Input 
