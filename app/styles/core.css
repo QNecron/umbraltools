@@ -287,7 +287,6 @@ body {
 }
 
 [accordion="updates"] {
-  --accordion-margin: 0;
   --accordion-content-padding: var(--size-m);
   
   p {
@@ -479,7 +478,7 @@ body {
 .filters {
   --filters-gap: var(--size-s);
   --filters-margin: var(--size-l) 0 var(--size-l) auto;
-  --filters-width: 50%;
+  --filters-width: 70%;
   --filters-top: var(--size-m);
   
   align-items: center;

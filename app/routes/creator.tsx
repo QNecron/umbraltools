@@ -44,13 +44,14 @@ import {
   Total, 
   Weapons, 
   Armors,
+  ItemInformation,
   LoadFile
 } from "../utilities/utilities";
 
 export const meta: MetaFunction = () => {
   return [
     { title: "Creator | Umbral Tools" },
-    { name: "description", content: "Character creator Umbral Tools games." },
+    { name: "description", content: "Character creator for Umbral Tools games." },
   ];
 };
 
@@ -179,7 +180,7 @@ export default function Creator() {
       notes: data.notes
     });
     
-  }
+  };
   
   const CharacterList = () => {
     const storage = window.localStorage;
@@ -192,7 +193,7 @@ export default function Creator() {
     
     characterSavedUpdate(list);
     
-  }
+  };
   
   const CharacterLevel = (level: string) => {
     let count = parseInt(level);
@@ -204,7 +205,7 @@ export default function Creator() {
     
     return levels.reverse();
 
-  }
+  };
   
   const CharacterSave = (name: string, content: any) => {
     const file = new Blob([JSON.stringify(content)], {type: "text/plain"});
@@ -217,7 +218,7 @@ export default function Creator() {
     link.href = url;
     link.click();
     link.remove();
-  }
+  };
 
   useEffect(() => {
     
@@ -258,6 +259,122 @@ export default function Creator() {
           <Icons icon="upload" />
         </button>
         
+        <Dialog type="secondary" triggerCopy="Items" triggerButton="primary">
+          
+          {character.equipment.head && 
+            <Accordion
+              id="equipment_head"
+              open={false}
+              accordion="updates"
+              title={character.equipment.head}
+              button="full primary"
+            >
+              <p>{ItemInformation(WondrousData, character.equipment.head, "description")}</p>
+              <p>{ItemInformation(WondrousData, character.equipment.head, "benefit")}&nbsp;
+              {ItemInformation(WondrousData, character.equipment.head, "additional")}</p>
+            </Accordion>
+          }
+          
+          {character.equipment.back && 
+            <Accordion
+              id="equipment_back"
+              open={false}
+              accordion="updates"
+              title={character.equipment.back}
+              button="full primary"
+            >
+              <p>{ItemInformation(WondrousData, character.equipment.back, "description")}</p>
+              <p>{ItemInformation(WondrousData, character.equipment.back, "benefit")}&nbsp;
+              {ItemInformation(WondrousData, character.equipment.back, "additional")}</p>
+            </Accordion>
+          }
+
+          {character.equipment.neck && 
+            <Accordion
+              id="equipment_neck"
+              open={false}
+              accordion="updates"
+              title={character.equipment.neck}
+              button="full primary"
+            >
+              <p>{ItemInformation(WondrousData, character.equipment.neck, "description")}</p>
+              <p>{ItemInformation(WondrousData, character.equipment.neck, "benefit")}&nbsp;
+              {ItemInformation(WondrousData, character.equipment.neck, "additional")}</p>
+            </Accordion>
+          }
+          
+          {character.equipment.arms && 
+            <Accordion
+              id="equipment_arms"
+              open={false}
+              accordion="updates"
+              title={character.equipment.arms}
+              button="full primary"
+            >
+              <p>{ItemInformation(WondrousData, character.equipment.arms, "description")}</p>
+              <p>{ItemInformation(WondrousData, character.equipment.arms, "benefit")}&nbsp;
+              {ItemInformation(WondrousData, character.equipment.arms, "additional")}</p>
+            </Accordion>
+          }
+          
+          {character.equipment.waist && 
+            <Accordion
+              id="equipment_waist"
+              open={false}
+              accordion="updates"
+              title={character.equipment.waist}
+              button="full primary"
+            >
+              <p>{ItemInformation(WondrousData, character.equipment.waist, "description")}</p>
+              <p>{ItemInformation(WondrousData, character.equipment.waist, "benefit")}&nbsp;
+              {ItemInformation(WondrousData, character.equipment.waist, "additional")}</p>
+            </Accordion>
+          }
+          
+          {character.equipment.feet && 
+            <Accordion
+              id="equipment_feet"
+              open={false}
+              accordion="updates"
+              title={character.equipment.feet}
+              button="full primary"
+            >
+              <p>{ItemInformation(WondrousData, character.equipment.feet, "description")}</p>
+              <p>{ItemInformation(WondrousData, character.equipment.feet, "benefit")}&nbsp;
+              {ItemInformation(WondrousData, character.equipment.feet, "additional")}</p>
+            </Accordion>
+          }
+          
+          {character.equipment.accessory && 
+            <Accordion
+              id="equipment_accessory"
+              open={false}
+              accordion="updates"
+              title={character.equipment.accessory}
+              button="full primary"
+            >
+              <p>{ItemInformation(WondrousData, character.equipment.accessory, "description")}</p>
+              <p>{ItemInformation(WondrousData, character.equipment.accessory, "benefit")}&nbsp;
+              {ItemInformation(WondrousData, character.equipment.accessory, "additional")}</p>
+            </Accordion>
+          }
+          
+          {character.equipment.misc && 
+            <Accordion
+              id="equipment_misc"
+              open={false}
+              accordion="updates"
+              title={character.equipment.misc}
+              button="full primary"
+            >
+              <p>{ItemInformation(WondrousData, character.equipment.misc, "description")}</p>
+              <p>{ItemInformation(WondrousData, character.equipment.misc, "benefit")}&nbsp;
+              {ItemInformation(WondrousData, character.equipment.misc, "additional")}</p>
+            </Accordion>
+          }
+          
+        </Dialog>
+        
         <Dialog type="secondary" triggerCopy="Characters" triggerButton="primary">
   
           {characterSaved.length !== 0  && 
@@ -291,7 +408,7 @@ export default function Creator() {
                         <span className="srt">Backup character {name}</span>
                         <Icons icon="save" />
                       </button>
-                    
+
                     }
                     
                     {/* @TODO - placeholder for other actions */}
@@ -993,8 +1110,8 @@ export default function Creator() {
                 function Match(prop: string) {
                   if (prop == "head") return character.equipment.head;
                   else if (prop == "back") return character.equipment.back;
-                  else if (prop == "arms") return character.equipment.arms;
                   else if (prop == "neck") return character.equipment.neck;
+                  else if (prop == "arms") return character.equipment.arms;
                   else if (prop == "waist") return character.equipment.waist;
                   else if (prop == "feet") return character.equipment.feet;
                   else if (prop == "accessory") return character.equipment.accessory;
