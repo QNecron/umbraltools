@@ -75,6 +75,14 @@
     "filter": "head"
   },
   {
+    "name": "Pilgrims Lasting Vigil",
+    "description": "This helmet bears a sunburst emblem similar to that of Sarenrae's sun halo.",
+    "benefit": "Armor and attack rolls increased by 1.",
+    "source": "custom",
+    "base": "head",
+    "filter": "head"
+  },
+  {
     "name": "Amulet of Summer Solstice",
     "description": "This bronze amulet depicts an embossed sun emblem emanating rays of light.",
     "benefit": "Fire damage is reduced by 3 points.",
@@ -109,6 +117,14 @@
     "filter": "neck"
   },
   {
+    "name": "Soulward Amulet",
+    "description": "This brilliant bloodstone amulet has a strange aura about it. Holding it close to your ear you think you hear a soft, calming voice.",
+    "benefit": "Drain abilities can be resisted with a constitution saving throw of DC15.",
+    "source": "custom",
+    "base": "neck",
+    "filter": "neck"
+  },
+  {
     "name": "Boltcatchers",
     "description": "Iron bracers forged with multiple lightning strikes, creating something beautiful and powerful.",
     "benefit": "Electrical damage is reduced by 3 points.",
@@ -129,7 +145,7 @@
   {
     "name": "Healing Hands",
     "description": "These well made leather gloves have a rose symbol on their palms, even when cleaned they appear as if stained by blood.",
-    "benefit": "Healing spell restore and addition 3 hit points.",
+    "benefit": "Healing spell restores and additional 3 hit points.",
     "source": "custom",
     "base": "arms",
     "filter": "arms"
@@ -142,7 +158,15 @@
     "source": "custom",
     "base": "arms",
     "filter": "arms"
-  },  
+  },
+  {
+    "name": "Desna's Vambraces",
+    "description": "Vambraces blessed by Desna's herald, The Night Monarch. These vambraces are fashonied from black leather and bear Dena's symbol.",
+    "benefit": "Scoring a critical hit grants 1 Luck Token.",
+    "source": "custom",
+    "base": "arms",
+    "filter": "arms"
+  },
   {
     "name": "Sigil of the Arcane",
     "description": "A small emerald decorates this beautiful copper ring.",
@@ -186,7 +210,25 @@
   {
     "name": "Ring of Eternal Funding",
     "description": "This plain silver band contains a power that belies its simple appearance, it allows the wearer to pursue special interests without being tied to a particular patron.",
-    "benefit": "At the beginning of each day gain 2d6 silver pieces. Ring must be worn for the previous 24 hours in order to grant the benefit.",
+    "benefit": "At the beginning of each day gain 2d8 silver pieces. Ring must be worn for the previous 24 hours in order to grant the benefit.",
+    "source": "custom",
+    "base": "accessory",
+    "filter": "accessory"
+  },
+  {
+    "name": "Ring of Frigid Claim",
+    "description": "This ring is heavy and rough-hewn. It looks like it was cast from a poorly-refined lump of silver.",
+    "benefit": "You deal an additonal 1 point of cold damage with weapons and spells.",
+    "additional": "Fire damage is reduced by 3 points.",
+    "source": "custom",
+    "base": "accessory",
+    "filter": "accessory"
+  },
+  {
+    "name": "Ring of Searing Flames",
+    "description": "This ring is light and fine-hewn. It looks like it was cast from fine copper with no impurities.",
+    "benefit": "You deal an additonal 1 point of fire damage with weapons and spells.",
+    "additional": "Cold damage is reduced by 3 points.",
     "source": "custom",
     "base": "accessory",
     "filter": "accessory"
@@ -221,6 +263,15 @@
     "description": "These heavy boots are extremely comfortable and will not tip over, no matter how hard one tries to do so.",
     "benefit": "Immune to being knocked down.",
     "additional": "You have advantage on skill checks for balancing.",
+    "source": "custom",
+    "base": "feet",
+    "filter": "feet"
+  },
+  {
+    "name": "Greenstained Boots",
+    "description": "These leather boots were deeply stained with green dye to give them their distinctive appearance.",
+    "benefit": "Immune to flora entanglement.",
+    "additional": "You can cast Good Berry once per day (+4 bonus).",
     "source": "custom",
     "base": "feet",
     "filter": "feet"
@@ -261,6 +312,14 @@
     "filter": "waist"
   },
   {
+    "name": "Spellkeeper",
+    "description": "The creator of this belt imbued it with shifting magical properties; the arcane or the divine.",
+    "benefit": "At the beginning of each day gain a random level 1 spell scroll from the Priest's or Wizard's spell list.",
+    "source": "custom",
+    "base": "waist",
+    "filter": "waist"
+  },
+  {
     "name": "Mantle of Wreathing Flame",
     "description": "This crimson red cloak with golden trim radiates warmth when worn.",
     "benefit": "Fire damage is reduced by 3 points.",
@@ -291,6 +350,14 @@
     "description": "Magical runes line the inside of this rather simple looking heavy cloak.",
     "benefit": "Hit points increased by 3.",
     "additional": "Physical damage is reduced by 1 point.",
+    "source": "custom",
+    "base": "back",
+    "filter": "back"
+  },
+  {
+    "name": "Cloak of Many Feathers",
+    "description": "A few silver pinions are scattered among the red, black, and brown feathers of the cloak. The overall pattern brings to mind autumn foliage.",
+    "benefit": "You have the magical benefits of the spell Feather Fall at all times.",
     "source": "custom",
     "base": "back",
     "filter": "back"

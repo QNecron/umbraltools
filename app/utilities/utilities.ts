@@ -78,6 +78,7 @@ export const ArmorClass = (
     Object.entries(items).map(([key, value]) => (
       value === "Steadfast" ? bonus += 1 : 0,
       value === "The Spine of Thicket Green" ? bonus += 1 : 0,
+      value === "Pilgrims Lasting Vigil" ? bonus += 1 : 0,
       value === "Cape of Withdrawl" ? bonus += 1 : 0,
       value === "Ioun Stone, Peridot" ? bonus += 1 : 0,
       value === "Cloak of Protection" ? bonus += 1 : 0,
@@ -155,6 +156,7 @@ export const Attack = (
     Object.entries(items).map(([key, value]) => (
       value === "Prey Maker" ? bonus += 2 : 0,
       value === "Stag Helm" ? bonus += 1 : 0,
+      value === "Pilgrims Lasting Vigil" ? bonus += 1 : 0,
       value === "Ioun Stone, Garnet" ? bonus += 1 : 0
     ));
   }
@@ -211,6 +213,8 @@ export const Damage = (
     value === "Boltcatchers" ? damageBonus += " + 1d4 (Electrical)" : "",
     value === "Corroded Vambraces" && isRanged === false ? damageBonus += " + 1 (Acid)" : "",
     value === "Forgemaster's Gloves" && isRanged === false ? damageBonus += " + 1 (Fire)" : "",
+    value === "Ring of Frigid Claim" ? damageBonus += " + 1 (Cold)" :"",
+    value === "Ring of Searing Flames" ? damageBonus += " + 1 (Fire)" :"",
     value === "Berserker's Belt" && isRanged === false ? damageBonus += " + 2" : "",
     value === "Mantle of Wreathing Flame" ? damageBonus += " + 1d4 (Fire)" : "",
     value === "Cloak of Minor Missiles" && isRanged === true ? damageBonus += " + 1" : "",
