@@ -260,6 +260,66 @@ export default function Creator() {
         </button>
         
         <Dialog type="secondary" triggerCopy="Items" triggerButton="primary">
+
+          {character.equipment.hands_primary && 
+            <Accordion
+              id="equipment_hands_primary"
+              open={false}
+              accordion="updates"
+              title={character.equipment.hands_primary}
+              button="full primary"
+            >
+              <p>{ItemInformation(WeaponData, character.equipment.hands_primary, "base")}</p>
+              <p>{ItemInformation(WeaponData, character.equipment.hands_primary, "description")}</p>
+              <p>{ItemInformation(WeaponData, character.equipment.hands_primary, "benefit")}&nbsp;
+              {ItemInformation(WeaponData, character.equipment.hands_primary, "additional")}</p>
+            </Accordion>
+          }
+          
+          {character.equipment.hands_secondary && 
+            <Accordion
+              id="equipment_hands_secondary"
+              open={false}
+              accordion="updates"
+              title={character.equipment.hands_secondary}
+              button="full primary"
+            >
+              <p>{ItemInformation(WeaponData, character.equipment.hands_secondary, "base")}</p>
+              <p>{ItemInformation(WeaponData, character.equipment.hands_secondary, "description")}</p>
+              <p>{ItemInformation(WeaponData, character.equipment.hands_secondary, "benefit")}&nbsp;
+              {ItemInformation(WeaponData, character.equipment.hands_secondary, "additional")}</p>
+            </Accordion>
+          }
+          
+          {character.equipment.armor && 
+            <Accordion
+              id="equipment_armor"
+              open={false}
+              accordion="updates"
+              title={character.equipment.armor}
+              button="full primary"
+            >
+              <p>{ItemInformation(ArmorData, character.equipment.armor, "base")}</p>
+              <p>{ItemInformation(ArmorData, character.equipment.armor, "description")}</p>
+              <p>{ItemInformation(ArmorData, character.equipment.armor, "benefit")}&nbsp;
+              {ItemInformation(ArmorData, character.equipment.armor, "additional")}</p>
+            </Accordion>
+          }
+          
+          {character.equipment.shield && 
+            <Accordion
+              id="equipment_shield"
+              open={false}
+              accordion="updates"
+              title={character.equipment.shield}
+              button="full primary"
+            >
+              <p>{ItemInformation(ShieldData, character.equipment.shield, "base")}</p>
+              <p>{ItemInformation(ShieldData, character.equipment.shield, "description")}</p>
+              <p>{ItemInformation(ShieldData, character.equipment.shield, "benefit")}&nbsp;
+              {ItemInformation(ShieldData, character.equipment.shield, "additional")}</p>
+            </Accordion>
+          }
           
           {character.equipment.head && 
             <Accordion

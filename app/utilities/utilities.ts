@@ -391,19 +391,24 @@ export const Armors = (data: {}[], item: string, returned: string) => {
 
 export const ItemInformation = (data: {}[], equipped: string, info: string) => {
   
+  let base = "";
   let description = "";
   let benefit = "";
   let additional = "";
   
   data.map((item: any) => {
     if (item.name === equipped) {
+      base = "+" + item.bonus + " " + item.base;
       description = item.description;
       benefit = item.benefit;
       additional = item.additional;
     }
   });
   
-  if (info === "description") {
+  if (info === "base") {
+    return base;
+  }
+  else if (info === "description") {
     return description;
   }
   else if (info === "benefit") {
