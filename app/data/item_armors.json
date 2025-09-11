@@ -90,6 +90,19 @@
     "filter": "armors"
   },
   {
+    "name": "Spider Silk Robe",
+    "base": "Robe",
+    "ac": 10,
+    "dex": true,
+    "properties": "-",
+    "bonus": 1,
+    "description": "Woven from the silk of the dreaded phase spider, it's miraculous creation baffles even the most seasoned tailors.",
+    "benefit": "Physical damage is reduced by 1 point.",
+    "additional": "Immune to Web.",
+    "source": "custom",
+    "filter": "armors"
+  },
+  {
     "name": "Rebel's Call",
     "base": "Leather",
     "ac": 11,
@@ -112,6 +125,19 @@
     "description": "This armor is made of cured deer leather of a most peculiar variety, a pure white buck with no visible wounds or scarring.",
     "benefit": "Physical damage is reduced by 1 point.",
     "additional": "You can cast Cure Wounds once per day (+4 bonus).",
+    "source": "custom",
+    "filter": "armors"
+  },
+  {
+    "name": "Cabalist's Gambeson",
+    "base": "Leather",
+    "ac": 11,
+    "dex": true,
+    "properties": "-",
+    "bonus": 1,
+    "description": "In the company of ruthless wizards, this enchanted gambeson offered a measure of security.",
+    "benefit": "Spellcasting checks increased by 1.",
+    "additional": "Elemental damage is reduced by 3 point.",
     "source": "custom",
     "filter": "armors"
   },
@@ -141,6 +167,19 @@
     "filter": "armors"
   },
   {
+    "name": "The Bloody Links",
+    "base": "Chainmail",
+    "ac": 13,
+    "dex": true,
+    "properties": "Disadv on stealth, swim",
+    "bonus": 1,
+    "description": "This suit of mail seems to constrict and relax with the rhythm of a heartbeat. The armor has been worn by numerous warriors in countless battles.",
+    "benefit": "Dealing damage with melee weapons restores 1 hit point.",
+    "additional": "You can cast False Life once per day (+4 bonus).",
+    "source": "custom",
+    "filter": "armors"
+  },
+  {
     "name": "Plate of Ill Payment",
     "base": "Plate mail",
     "ac": 15,
@@ -162,6 +201,19 @@
     "description": "Despite popular assumption, this plate was not named for its blood-spattered appearance. It derives from the lust of bloodshed needed to satiate the wearer.",
     "benefit": "Dealing damage with melee weapons restores 1 hit point.",
     "additional": "You can cast Vampiric Touch once per day (+4 bonus).",
+    "source": "custom",
+    "filter": "armors"
+  },
+  {
+    "name": "Blackend Plate",
+    "base": "Plate mail",
+    "ac": 15,
+    "dex": false,
+    "properties": "Disadv on stealth, no swim",
+    "bonus": 1,
+    "description": "This dark steel suit of armor looks eerily familiar. It bears a strange maker's mark resembling a jawless skull.",
+    "benefit": "All damage is reduced by 1 point.",
+    "additional": "When struck by a critical, you and your allies within near heal 1d6 hit points.",
     "source": "custom",
     "filter": "armors"
   }

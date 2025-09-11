@@ -59,5 +59,16 @@
     "benefit": "When wielded by a Priest or Ranger the shield grants +1 to all saving throws.",
     "source": "custom",
     "filter": "shields"
+  },
+  {
+    "name": "Redfield",
+    "base": "Shield",
+    "ac": 2,
+    "properties": "Occupies one hand",
+    "bonus": 1,
+    "description": "This battered shield saw use in one of the bloodiest battles of the The Shining Crusade. Despite this the shield retains its vibrant crimson hue.",
+    "benefit": "Physical damage is reduced by 3 points.",
+    "source": "custom",
+    "filter": "shields"
   }
 ]
