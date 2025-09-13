@@ -35,6 +35,13 @@
     "stacking": true
   },
   {
+    "name": "Improved Critical",
+    "description": "Crit on 19+ with a chosen weapon.",
+    "action": "passive",
+    "type": "combat",
+    "stacking": false
+  },
+  {
     "name": "Combat Casting",
     "description": "+1 to caster level checks.",
     "action": "passive",
@@ -70,6 +77,13 @@
     "stacking": false
   },
   {
+    "name": "Practiced Spellcaster",
+    "description": "+1 spell known of appropriate caster level.",
+    "action": "passive",
+    "type": "magical",
+    "stacking": true
+  },
+  {
     "name": "Lucky",
     "description": "Roll with advantage once per day, increases to twice per day at level 5.",
     "action": "passive",
@@ -103,5 +117,12 @@
     "action": "passive",
     "type": "general",
     "stacking": true
+  },
+  {
+    "name": "Complex Person",
+    "description": "+1 background experienced, cannot conflict with existing background.",
+    "action": "passive",
+    "type": "general",
+    "stacking": false
   }
 ]
