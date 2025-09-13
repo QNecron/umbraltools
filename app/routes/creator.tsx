@@ -219,6 +219,8 @@ export default function Creator() {
     link.click();
     link.remove();
   };
+  
+  const EquipmentDataFull = ["hands_primary", "hands_secondary", "armor", "shield"].concat(EquipmentData);
 
   useEffect(() => {
     
@@ -260,178 +262,62 @@ export default function Creator() {
         </button>
         
         <Dialog type="secondary" triggerCopy="Items" triggerButton="primary">
-
-          {character.equipment.hands_primary && 
-            <Accordion
-              id="equipment_hands_primary"
-              open={false}
-              accordion="updates"
-              title={character.equipment.hands_primary}
-              button="full primary"
-            >
-              <p>{ItemInformation(WeaponData, character.equipment.hands_primary, "base")}</p>
-              <p>{ItemInformation(WeaponData, character.equipment.hands_primary, "description")}</p>
-              <p>{ItemInformation(WeaponData, character.equipment.hands_primary, "benefit")}&nbsp;
-              {ItemInformation(WeaponData, character.equipment.hands_primary, "additional")}</p>
-            </Accordion>
-          }
           
-          {character.equipment.hands_secondary && 
-            <Accordion
-              id="equipment_hands_secondary"
-              open={false}
-              accordion="updates"
-              title={character.equipment.hands_secondary}
-              button="full primary"
-            >
-              <p>{ItemInformation(WeaponData, character.equipment.hands_secondary, "base")}</p>
-              <p>{ItemInformation(WeaponData, character.equipment.hands_secondary, "description")}</p>
-              <p>{ItemInformation(WeaponData, character.equipment.hands_secondary, "benefit")}&nbsp;
-              {ItemInformation(WeaponData, character.equipment.hands_secondary, "additional")}</p>
-            </Accordion>
-          }
-          
-          {character.equipment.armor && 
-            <Accordion
-              id="equipment_armor"
-              open={false}
-              accordion="updates"
-              title={character.equipment.armor}
-              button="full primary"
-            >
-              <p>{ItemInformation(ArmorData, character.equipment.armor, "base")}</p>
-              <p>{ItemInformation(ArmorData, character.equipment.armor, "description")}</p>
-              <p>{ItemInformation(ArmorData, character.equipment.armor, "benefit")}&nbsp;
-              {ItemInformation(ArmorData, character.equipment.armor, "additional")}</p>
-            </Accordion>
-          }
-          
-          {character.equipment.shield && 
-            <Accordion
-              id="equipment_shield"
-              open={false}
-              accordion="updates"
-              title={character.equipment.shield}
-              button="full primary"
-            >
-              <p>{ItemInformation(ShieldData, character.equipment.shield, "base")}</p>
-              <p>{ItemInformation(ShieldData, character.equipment.shield, "description")}</p>
-              <p>{ItemInformation(ShieldData, character.equipment.shield, "benefit")}&nbsp;
-              {ItemInformation(ShieldData, character.equipment.shield, "additional")}</p>
-            </Accordion>
-          }
-          
-          {character.equipment.head && 
-            <Accordion
-              id="equipment_head"
-              open={false}
-              accordion="updates"
-              title={character.equipment.head}
-              button="full primary"
-            >
-              <p>{ItemInformation(WondrousData, character.equipment.head, "description")}</p>
-              <p>{ItemInformation(WondrousData, character.equipment.head, "benefit")}&nbsp;
-              {ItemInformation(WondrousData, character.equipment.head, "additional")}</p>
-            </Accordion>
-          }
-          
-          {character.equipment.back && 
-            <Accordion
-              id="equipment_back"
-              open={false}
-              accordion="updates"
-              title={character.equipment.back}
-              button="full primary"
-            >
-              <p>{ItemInformation(WondrousData, character.equipment.back, "description")}</p>
-              <p>{ItemInformation(WondrousData, character.equipment.back, "benefit")}&nbsp;
-              {ItemInformation(WondrousData, character.equipment.back, "additional")}</p>
-            </Accordion>
-          }
-
-          {character.equipment.neck && 
-            <Accordion
-              id="equipment_neck"
-              open={false}
-              accordion="updates"
-              title={character.equipment.neck}
-              button="full primary"
-            >
-              <p>{ItemInformation(WondrousData, character.equipment.neck, "description")}</p>
-              <p>{ItemInformation(WondrousData, character.equipment.neck, "benefit")}&nbsp;
-              {ItemInformation(WondrousData, character.equipment.neck, "additional")}</p>
-            </Accordion>
-          }
-          
-          {character.equipment.arms && 
-            <Accordion
-              id="equipment_arms"
-              open={false}
-              accordion="updates"
-              title={character.equipment.arms}
-              button="full primary"
-            >
-              <p>{ItemInformation(WondrousData, character.equipment.arms, "description")}</p>
-              <p>{ItemInformation(WondrousData, character.equipment.arms, "benefit")}&nbsp;
-              {ItemInformation(WondrousData, character.equipment.arms, "additional")}</p>
-            </Accordion>
-          }
-          
-          {character.equipment.waist && 
-            <Accordion
-              id="equipment_waist"
-              open={false}
-              accordion="updates"
-              title={character.equipment.waist}
-              button="full primary"
-            >
-              <p>{ItemInformation(WondrousData, character.equipment.waist, "description")}</p>
-              <p>{ItemInformation(WondrousData, character.equipment.waist, "benefit")}&nbsp;
-              {ItemInformation(WondrousData, character.equipment.waist, "additional")}</p>
-            </Accordion>
-          }
-          
-          {character.equipment.feet && 
-            <Accordion
-              id="equipment_feet"
-              open={false}
-              accordion="updates"
-              title={character.equipment.feet}
-              button="full primary"
-            >
-              <p>{ItemInformation(WondrousData, character.equipment.feet, "description")}</p>
-              <p>{ItemInformation(WondrousData, character.equipment.feet, "benefit")}&nbsp;
-              {ItemInformation(WondrousData, character.equipment.feet, "additional")}</p>
-            </Accordion>
-          }
-          
-          {character.equipment.accessory && 
-            <Accordion
-              id="equipment_accessory"
-              open={false}
-              accordion="updates"
-              title={character.equipment.accessory}
-              button="full primary"
-            >
-              <p>{ItemInformation(WondrousData, character.equipment.accessory, "description")}</p>
-              <p>{ItemInformation(WondrousData, character.equipment.accessory, "benefit")}&nbsp;
-              {ItemInformation(WondrousData, character.equipment.accessory, "additional")}</p>
-            </Accordion>
-          }
-          
-          {character.equipment.misc && 
-            <Accordion
-              id="equipment_misc"
-              open={false}
-              accordion="updates"
-              title={character.equipment.misc}
-              button="full primary"
-            >
-              <p>{ItemInformation(WondrousData, character.equipment.misc, "description")}</p>
-              <p>{ItemInformation(WondrousData, character.equipment.misc, "benefit")}&nbsp;
-              {ItemInformation(WondrousData, character.equipment.misc, "additional")}</p>
-            </Accordion>
-          }
+          {EquipmentDataFull.map((item, index) => {
+            
+            function MatchProp(prop: string) {
+              if (prop == "hands_primary") return character.equipment.hands_primary;
+              else if (prop == "hands_secondary") return character.equipment.hands_secondary;
+              else if (prop == "armor") return character.equipment.armor;
+              else if (prop == "head") return character.equipment.head;
+              else if (prop == "back") return character.equipment.back;
+              else if (prop == "neck") return character.equipment.neck;
+              else if (prop == "arms") return character.equipment.arms;
+              else if (prop == "waist") return character.equipment.waist;
+              else if (prop == "feet") return character.equipment.feet;
+              else if (prop == "accessory") return character.equipment.accessory;
+              else if (prop == "misc") return character.equipment.misc;
+              else return "";
+            }
+            
+            function MatchData(prop: string) {
+              switch (prop) {
+                case "armor": 
+                  return ArmorData;
+                break;
+                case "shield": 
+                  return ShieldData;
+                break;
+                case "hands_primary":
+                case "hands_secondary": 
+                  return WeaponData;
+                break;
+                default:
+                  return WondrousData;
+                break;
+              }
+            }            
+            
+            return(
+              <Fragment key={index}>
+                {MatchProp(item) &&
+                  <Accordion
+                    id={"equipment_" + item}
+                    open={false}
+                    accordion="updates"
+                    title={MatchProp(item)}
+                    button="full primary"
+                  >
+                    <p>{ItemInformation(MatchData(item), MatchProp(item), "base")}</p>
+                    <p>{ItemInformation(MatchData(item), MatchProp(item), "description")}</p>
+                    <p>{ItemInformation(MatchData(item), MatchProp(item), "benefit")}&nbsp;
+                    {ItemInformation(MatchData(item), MatchProp(item), "additional")}</p>
+                  </Accordion>
+                }
+              </Fragment>
+            );
+            
+          })}
           
         </Dialog>
         
