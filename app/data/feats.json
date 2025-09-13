@@ -120,7 +120,7 @@
   },
   {
     "name": "Complex Person",
-    "description": "+1 background experienced, cannot conflict with existing background.",
+    "description": "+1 background experience, cannot conflict with existing background.",
     "action": "passive",
     "type": "general",
     "stacking": false
