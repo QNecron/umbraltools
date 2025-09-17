@@ -16,6 +16,15 @@
     "filter": "accessory"
   },
   {
+    "name": "Ring of Spell Storing",
+    "description": "This brass double-ring is covered in small runes.",
+    "benefit": "Stores one spell of any level cast upon it up to 24 hours. A simple command word casts the spell as an action.",
+    "additional": "Spells requiring focus fail after one round.",
+    "source": "custom",
+    "base": "accessory",
+    "filter": "accessory"
+  },
+  {
     "name": "Cloak of Protection",
     "description": "Widely available and sought after, these magical cloaks impart magical protection on to the wearer.",
     "benefit": "Armor and saving throws increased by 1.",
@@ -169,7 +178,7 @@
   },
   {
     "name": "Sigil of the Arcane",
-    "description": "A small emerald decorates this beautiful copper ring.",
+    "description": "A small emerald decorates this beautifully crafted copper ring.",
     "benefit": "You fire an additional bolt with the Magic Missile spell.",
     "source": "custom",
     "base": "accessory",

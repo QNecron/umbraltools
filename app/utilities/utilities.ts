@@ -286,6 +286,7 @@ export const Spellcasting = (
   ));
   
   Object.entries(items).map(([key, value]) => (
+    value === "Cabalist's Gambeson" ? bonus += 1 : 0,
     value === "High Harbinger's Robes" ? bonus += 1 : 0,
     value === "Ioun Stone, Iolite" ? bonus += 1 : 0
   ));
