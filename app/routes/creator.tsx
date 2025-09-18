@@ -296,7 +296,12 @@ export default function Creator() {
                   return WondrousData;
                 break;
               }
-            }            
+            }
+            
+            let itemBase = ItemInformation(MatchData(item), MatchProp(item), "base");
+            let itemDescription = ItemInformation(MatchData(item), MatchProp(item), "description");
+            let itemBenefit = ItemInformation(MatchData(item), MatchProp(item), "benefit");
+            let itemAdditional = ItemInformation(MatchData(item), MatchProp(item), "additional");
             
             return(
               <Fragment key={index}>
@@ -308,10 +313,10 @@ export default function Creator() {
                     title={MatchProp(item)}
                     button="full primary"
                   >
-                    <p>{ItemInformation(MatchData(item), MatchProp(item), "base")}</p>
-                    <p>{ItemInformation(MatchData(item), MatchProp(item), "description")}</p>
-                    <p>{ItemInformation(MatchData(item), MatchProp(item), "benefit")}&nbsp;
-                    {ItemInformation(MatchData(item), MatchProp(item), "additional")}</p>
+                    {itemBase.includes("undefined") === true ? null : (<p><em>{itemBase}</em></p>)}
+                    {itemDescription ? (<p>{itemDescription}</p>) : null}
+                    {itemBenefit ? (<p>{itemBenefit}</p>) : null}
+                    {itemAdditional ? (<p>{itemAdditional}</p>) : null}
                   </Accordion>
                 }
               </Fragment>
