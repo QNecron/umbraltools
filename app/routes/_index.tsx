@@ -23,7 +23,7 @@ export default function Index() {
     <>
 
     <Hero 
-      theme="muted animate" 
+      theme="muted" 
       title="Umbral Tools" 
       logo={true} 
       animation={false} 

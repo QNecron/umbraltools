@@ -465,5 +465,38 @@
     "source": "custom",
     "base": "misc",
     "filter": "misc"
+  },
+  {
+    "name": "Vambraces of Focused Strikes",
+    "description": "Once equipped these vambraces appear ethereal and resonate with psionic energies.",
+    "benefit": "Three times per day you may expend up to 3 focus points on your next successful weapon attack.",
+    "source": "custom",
+    "base": "arms",
+    "filter": "arms"
+  },
+  {
+    "name": "Cloak Devious Withdrawal",
+    "description": "Once donned the cloak creates a magical darkness that shrouds the wearer's shoulders.",
+    "benefit": "Three times per day after a successful backstab you may choose to become invisible for 1 round.",
+    "source": "custom",
+    "base": "back",
+    "filter": "back"
+  },
+  {
+    "name": "Lord in Iron's Banner Cape",
+    "description": "After donning the cape your armor begins to grow fearsome looking spikes.",
+    "benefit": "Three times per day you grant allies within near +1 weapon damage and 1d4 temporary hit points for 3 rounds.",
+    "additional": "Enemy morale checks reduced to DC12 within near.",
+    "source": "custom",
+    "base": "back",
+    "filter": "back"
+  },
+  {
+    "name": "Circlet of Fading Life",
+    "description": "Once this silver circlet is placed on your head your eyes begin glowing a beautiful and soothing blue hue.",
+    "benefit": "Three times per day allies within near are healed 3d4 hit points if they're below 50% life. Allies above 50% life regenerate 1 hit point for 3 rounds.",
+    "source": "custom",
+    "base": "head",
+    "filter": "head"
   }
 ]
