@@ -5,7 +5,7 @@
     "class": "Priest",
     "duration": "5 rounds",
     "range": "Near",
-    "description_1": "You grant the favor of your god to a target within near. The target gains +1 damage rolls.",
+    "description_1": "You grant the favor of your god to a target within near. The target gains +1 to damage rolls.",
     "source": "custom"
   },
   {
