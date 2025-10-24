@@ -32,7 +32,7 @@ module.exports = {
       extends: [
         "plugin:react/recommended",
         "plugin:react/jsx-runtime",
-        "plugin:react-hooks/recommended",
+        "plugin:react-hWooks/recommended",
         "plugin:jsx-a11y/recommended",
       ],
       settings: {
@@ -47,6 +47,9 @@ module.exports = {
         "import/resolver": {
           typescript: {},
         },
+      },
+      rules: {
+        "no-undef": "off",
       },
     },
 

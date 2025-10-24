@@ -7,7 +7,7 @@ interface propsInput {
   max?: number;
   cols?: number;
   rows?: number;
-  change?: any;
+  change?: () => void;
   disabled?: boolean;
   children?: React.ReactNode;
   label: string;
@@ -20,28 +20,28 @@ export default function Input({
   accept,
   value,
   min,
-  max, 
+  max,
   cols,
-  rows = 8, 
+  rows = 8,
   change,
   disabled,
   children,
   label,
   minimal
 }: propsInput) {
-  
+
   if (type == "select") {
     return(
       <div className="input" input={type}>
         <select
-          id={id} 
-          value={value} 
-          autoComplete="off" 
-          onChange={change} 
-          className="input__field" 
+          id={id}
+          value={value}
+          autoComplete="off"
+          onChange={change}
+          className="input__field"
           disabled={disabled}
           >
-            {children}  
+            {children}
         </select>
         <div className="input__icon">
           &rsaquo;
@@ -55,14 +55,14 @@ export default function Input({
   else if (type == "textarea") {
     return(
       <div className="input" input={type}>
-        <textarea 
-          id={id} 
-          value={value} 
-          cols={cols} 
-          rows={rows} 
-          autoComplete="off" 
-          onChange={change} 
-          className="input__field" 
+        <textarea
+          id={id}
+          value={value}
+          cols={cols}
+          rows={rows}
+          autoComplete="off"
+          onChange={change}
+          className="input__field"
           disabled={disabled}
         />
         <label htmlFor={id} className={"input__label" + (minimal === true ? " srt" : "")}>
@@ -74,23 +74,23 @@ export default function Input({
   else {
     return(
       <div className="input" input={type}>
-        <input 
+        <input
           id={id}
-          type={type} 
+          type={type}
           accept={accept}
-          value={value} 
-          autoComplete="off" 
+          value={value}
+          autoComplete="off"
           min={min}
           max={max}
           onChange={change}
           className="input__field"
-          disabled={disabled} 
+          disabled={disabled}
         />
         <label htmlFor={id} className={"input__label" + (minimal === true ? " srt" : "")}>
           {label}
         </label>
       </div>
-    );    
+    );
   }
-  
+
 }

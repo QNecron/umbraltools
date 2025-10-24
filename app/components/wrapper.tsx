@@ -11,4 +11,4 @@ export default function Wrapper({children, type = "structure"}: propsWrapper) {
     </div>
   );
   
-};
+}

@@ -6,13 +6,13 @@ interface propsCard {
   imageHeight?: number;
   imageWidth?: number;
   title: string;
-  badge?: any;
-  copy1?: any;
-  copy2?: any;
-  copy3?: any;
-  copy4?: any;
-  copy5?: any;
-  copy6?: any;
+  badge?: string;
+  copy1?: string;
+  copy2?: string;
+  copy3?: string;
+  copy4?: string;
+  copy5?: string;
+  copy6?: string;
   ctaUrl?: string;
   ctaCopy?: string;
 }
@@ -66,4 +66,4 @@ export default function Wrapper({
     </article>
   );
   
-};
+}

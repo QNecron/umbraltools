@@ -15,7 +15,6 @@ interface propsHero {
   title: string;
   copy?: string;
   logo?: boolean;
-  animation?: boolean;
 }
 
 export default function Hero({
@@ -30,8 +29,7 @@ export default function Hero({
   heading = 1,
   title,
   copy,
-  logo,
-  animation = false
+  logo
 }: propsHero) {
 
   const Title = heading === 1 ? "h1" : "h2";
@@ -39,7 +37,12 @@ export default function Hero({
   return(
     <section className="hero" hero={theme + " " + position}>
       <picture className="hero__asset">
-        <source srcSet={imgDesktop} height={imgDesktopHeight} width={imgDesktopWidth} media="(min-width: 768px)" />
+        <source
+          srcSet={imgDesktop}
+          height={imgDesktopHeight}
+          width={imgDesktopWidth}
+          media="(min-width: 768px)"
+        />
         <img
           src={imgMobile}
           className="hero__asset-img"
@@ -50,16 +53,23 @@ export default function Hero({
           alt=""
         />
       </picture>
-      {animation && <div className="hero__animation one"></div>}
-      {animation && <div className="hero__animation two"></div>}
       <div className="hero__grid wrapper" wrapper="stucture">
         <div className="hero__content">
           <Title className="hero__title" heading="1">{title}</Title>
-          {copy && <p className="hero__copy">{copy}</p>}
-          {logo && <img src={Logo} className="hero__logo" height="211" width="512" alt="Designed for use with ShadowDark" />}
+          {copy &&
+            <p className="hero__copy">{copy}</p>
+          }
+          {logo &&
+            <img
+              src={Logo}
+              className="hero__logo"
+              height="211"
+              width="512"
+              alt="Designed for use with ShadowDark"
+            />}
         </div>
       </div>
     </section>
   );
 
-};
+}

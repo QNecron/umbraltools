@@ -22,33 +22,32 @@ export default function Index() {
   return (
     <>
 
-    <Hero 
-      theme="muted" 
-      title="Umbral Tools" 
-      logo={true} 
-      animation={false} 
+    <Hero
+      theme="muted"
+      title="Umbral Tools"
+      logo={true}
     />
-    
+
     <Section padding="top">
       <Wrapper>
         <Grid>
           {CardData.map((card, index) => {
             return(
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 theme="muted overlay"
                 image={ContentCard}
-                imageHeight={672} 
-                imageWidth={672} 
-                title={card.title} 
-                copy1={card.copy} 
+                imageHeight={672}
+                imageWidth={672}
+                title={card.title}
+                copy1={card.copy}
                 ctaUrl={card.ctaUrl}
-                ctaCopy={card.ctaCopy} 
+                ctaCopy={card.ctaCopy}
               />
             );
           })}
         </Grid>
-      </Wrapper>      
+      </Wrapper>
     </Section>
 
     </>

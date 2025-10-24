@@ -54,4 +54,4 @@ export default function Icons({
       aria-hidden="true" />
   );
 
-};
+}

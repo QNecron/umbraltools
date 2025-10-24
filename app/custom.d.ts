@@ -1,7 +1,7 @@
-import * as React from 'react';
+import 'react';
 
 declare module 'react' {
-  
+
   interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
     accordion?: string;
     button?: string;
@@ -18,7 +18,7 @@ declare module 'react' {
     tablet?: number;
     mobile?: number;
   }
-  
+
 }
 
 declare module 'react' {
@@ -27,4 +27,4 @@ declare module 'react' {
     fetchpriority?: 'high' | 'low' | 'auto';
   }
 
-};
+}

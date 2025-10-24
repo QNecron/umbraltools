@@ -1,9 +1,9 @@
 interface propsTabs {
   children?: React.ReactNode;
   classes?: string;
-  data: any;
-  state: any;
-  update: any;
+  data: ({})[];
+  state: string;
+  update: (item: string) => void;
 }
 
 export default function Tabs({
@@ -20,7 +20,7 @@ export default function Tabs({
     {children}
     
     <div className={classes ? "tabs " + classes : "tabs"}>
-      {data.map((info: any, index: any) =>
+      {data.map((info: any, index: number) =>
         <button
           className="btn"
           button="tab primary"
@@ -36,4 +36,4 @@ export default function Tabs({
     </>
   );
   
-};
+}

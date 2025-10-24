@@ -31,4 +31,4 @@ export default function Dialog({children, type, triggerCopy, triggerButton}: pro
     </>
   );
   
-};
+}

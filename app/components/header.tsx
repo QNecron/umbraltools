@@ -7,7 +7,7 @@ import Dialog from "./dialog";
 import MenuData from "../data/menu.json";
 
 export default function Header() {
-  
+
   return(
     <header id="header" className="header" role="banner">
       <Wrapper type="structure">
@@ -15,7 +15,7 @@ export default function Header() {
           <Icons icon="logo" height={40} width={40} />
           <Dialog type="primary" triggerCopy="Menu" triggerButton="primary">
             <ul className="nav">
-              {MenuData.map((menu, index) => { 
+              {MenuData.map((menu, index) => {
                 return(
                   <li className="nav__item" key={index}>
                     <Link to={menu.url} reloadDocument className="nav__link btn" button="primary">
@@ -30,5 +30,5 @@ export default function Header() {
       </Wrapper>
     </header>
   );
-  
-};
+
+}
