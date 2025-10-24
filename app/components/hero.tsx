@@ -19,34 +19,35 @@ interface propsHero {
 }
 
 export default function Hero({
-  theme = "default", 
-  position = "center", 
+  theme = "default",
+  position = "center",
   imgDesktop = Desktop,
   imgDesktopHeight = 1080,
   imgDesktopWidth = 1920,
   imgMobile = Mobile,
   imgMobileHeight = 1080,
   imgMobileWidth = 608,
-  heading = 1, 
-  title, 
+  heading = 1,
+  title,
   copy,
   logo,
   animation = false
 }: propsHero) {
 
   const Title = heading === 1 ? "h1" : "h2";
-  
+
   return(
     <section className="hero" hero={theme + " " + position}>
-      <picture className="hero__asset" aria-hidden="true">
+      <picture className="hero__asset">
         <source srcSet={imgDesktop} height={imgDesktopHeight} width={imgDesktopWidth} media="(min-width: 768px)" />
-        <img 
-          src={imgMobile} 
-          className="hero__asset-img" 
-          height={imgMobileHeight} 
-          width={imgMobileWidth} 
-          fetchpriority="high" 
-          alt="" 
+        <img
+          src={imgMobile}
+          className="hero__asset-img"
+          height={imgMobileHeight}
+          width={imgMobileWidth}
+          fetchpriority="high"
+          aria-hidden="true"
+          alt=""
         />
       </picture>
       {animation && <div className="hero__animation one"></div>}
@@ -60,5 +61,5 @@ export default function Hero({
       </div>
     </section>
   );
-  
+
 };

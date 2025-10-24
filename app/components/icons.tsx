@@ -17,37 +17,41 @@ interface propsIcons {
   width?: number;
 }
 
-export default function Icons({icon, height, width}: propsIcons) {
+export default function Icons({
+  icon,
+  height,
+  width
+}: propsIcons) {
 
   const iconType = (type: string) => {
-    
+
     let url = "error";
-    
-    if (icon === "logo") url = Logo;
-    if (icon === "clipboard") url = Clipboard
-    if (icon === "close") url = Close
-    if (icon === "copy") url = Copy
-    if (icon === "dice") url = Dice
-    if (icon === "download") url = Download
-    if (icon === "upload") url = Upload
-    if (icon === "delete") url = Delete
-    if (icon === "search") url = Search
-    if (icon === "flame") url = Flame
-    if (icon === "reader") url = Reader
-    if (icon === "save") url = Save
-    
+
+    if (type === "logo") url = Logo;
+    if (type === "clipboard") url = Clipboard
+    if (type === "close") url = Close
+    if (type === "copy") url = Copy
+    if (type === "dice") url = Dice
+    if (type === "download") url = Download
+    if (type === "upload") url = Upload
+    if (type === "delete") url = Delete
+    if (type === "search") url = Search
+    if (type === "flame") url = Flame
+    if (type === "reader") url = Reader
+    if (type === "save") url = Save
+
     return url;
-    
+
   }
-  
+
   return(
-    <img 
-      src={iconType(icon)} 
-      className={`icon ` + icon} 
-      height={height || 24} 
-      width={width || 24} 
-      alt="" 
+    <img
+      src={iconType(icon)}
+      className={`icon ` + icon}
+      height={height || 24}
+      width={width || 24}
+      alt=""
       aria-hidden="true" />
   );
-  
+
 };
