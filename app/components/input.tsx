@@ -7,7 +7,7 @@ interface propsInput {
   max?: number;
   cols?: number;
   rows?: number;
-  change?: () => void;
+  change?: (e: any) => void;
   disabled?: boolean;
   children?: React.ReactNode;
   label: string;

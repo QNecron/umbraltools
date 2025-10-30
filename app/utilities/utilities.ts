@@ -311,6 +311,18 @@ export const IsCaster = (role: string) => {
   
 }
 
+export const HasRitual = (rituals: {}) => {
+  let caster = "";
+
+  for (const [key, value] of Object.entries(rituals)) {
+    if (value === "Demonology") caster = value;
+    if (value === "Hemotheurgy") caster = value;
+  }
+    
+  return caster;
+  
+}
+
 // dice
 export const DiceRoll = (dice: string, count: number) => {
   let die = 0;

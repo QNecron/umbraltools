@@ -25,6 +25,7 @@ import AlignmentData from "../data/alignments.json";
 import AttributeData from "../data/attributes.json";
 import ClassesData from "../data/classes.json";
 import FeatsData from "../data/feats.json";
+import RitualData from "../data/rituals.json";
 
 import { 
   SaveCharacter, 
@@ -38,6 +39,7 @@ import {
   Damage, 
   Spellcasting, 
   IsCaster, 
+  HasRitual,
   HitPoints, 
   SavingThrows,
   DiceRoll, 
@@ -89,6 +91,10 @@ export default function Creator() {
       level_10: ""
     },
     spells: "",
+    rituals: {
+      ritual_0: "",
+      ritual_1: ""
+    },
     xp: "0",
     luck_tokens: "0",
     money: {
@@ -153,6 +159,10 @@ export default function Creator() {
         level_10: data.talents_feats.level_10,
       },
       spells: data.spells,
+      rituals: {
+        ritual_0: data.rituals.ritual_0,
+        ritual_1: data.rituals.ritual_1
+      },
       xp: data.xp,
       luck_tokens: data.luck_tokens,
       money: {
@@ -241,7 +251,6 @@ export default function Creator() {
       imgMobileWidth={1080} 
       title="Creator" 
       logo={false} 
-      animation={false} 
     />
     
     <Wrapper>
@@ -811,7 +820,7 @@ export default function Creator() {
             
           </Section>
 
-          {/* Spells */}
+          {/* spells */}
           {IsCaster(character.class) &&
           
             <Section padding="creator" title="Spells">
@@ -845,6 +854,59 @@ export default function Creator() {
             </Section>
           
           }
+          
+          {/* rituals
+          <Section padding="creator" title="Rituals">
+            
+            <div className="block">
+              <Input 
+                type="select" 
+                id="ritual1" 
+                label="Ritual (1)" 
+                value={character.rituals.ritual_0} 
+                change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
+                  ...character,
+                  rituals: {
+                    ...character.rituals,
+                    ritual_0: event.target.value
+                  }
+                })}
+              >
+                <option value="None">-</option>
+                {RitualData.map((ritual, index) => {
+                  return(
+                    <option value={ritual} key={index}>
+                      {ritual}
+                    </option>
+                  );
+                })}
+              </Input>
+              <Input 
+                type="select" 
+                id="ritual2" 
+                label="Ritual (2)" 
+                value={character.rituals.ritual_1} 
+                change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
+                  ...character,
+                  rituals: {
+                    ...character.rituals,
+                    ritual_1: event.target.value
+                  }
+                })}
+              >
+                <option value="None">-</option>
+                {RitualData.map((ritual, index) => {
+                  return(
+                    <option value={ritual} key={index}>
+                      {ritual}
+                    </option>
+                  );
+                })}
+              </Input>
+            </div>
+            
+          </Section>
+          */}
           
         </div>
           
