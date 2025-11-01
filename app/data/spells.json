@@ -573,30 +573,30 @@
     "source": "custom"
   },
   {
-    "name": "Blood Siphon",
+    "name": "Sanguis Depletion",
     "tier": 1,
     "class": "Any",
     "duration": "5 rounds",
     "range": "Self",
     "description_1": "Your weapons siphons the life force from living creatures, each successful weapon attack heals 1 hit point.",
-    "source": "custom"    
+    "source": "custom"
   },
   {
-    "name": "Blood Rage",
+    "name": "Sanguis Fervor",
     "tier": 2,
     "class": "Any",
     "duration": "5 rounds",
     "range": "Self",
     "description_1": "The mere presence of wasted blood enrages you, each time you take damage your weapon damage is increased by +1 to a maximum of +5.",
-    "source": "custom"    
+    "source": "custom"
   },
   {
-    "name": "Blood Blaze",
+    "name": "Sanguis Conflagration",
     "tier": 3,
     "class": "Any",
     "duration": "5 rounds",
     "range": "Self",
     "description_1": "You cause the presence of blood to ignite into flames. Creatures within near that take weapon damage are dealt an additional 1d4 damage.",
-    "source": "custom"    
+    "source": "custom"
   }
 ]
