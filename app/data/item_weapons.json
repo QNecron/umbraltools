@@ -603,7 +603,7 @@
     "properties": "-",
     "bonus": 2,
     "description": "This adamantine blade was forged into a weapon that struck hard and true, woe to those who seek to supress the masses.",
-    "additional": "Attack rolls crit on a 19 or better.",
+    "benefit": "Attack rolls crit on a 19 or better.",
     "source": "custom",
     "filter": "weapons"
   },
