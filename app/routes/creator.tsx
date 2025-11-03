@@ -91,10 +91,6 @@ export default function Creator() {
       level_10: ""
     },
     spells: "",
-    rituals: {
-      ritual_0: "",
-      ritual_1: ""
-    },
     xp: "0",
     luck_tokens: "0",
     money: {
@@ -159,10 +155,6 @@ export default function Creator() {
         level_10: data.talents_feats.level_10,
       },
       spells: data.spells,
-      rituals: {
-        ritual_0: data.rituals.ritual_0,
-        ritual_1: data.rituals.ritual_1
-      },
       xp: data.xp,
       luck_tokens: data.luck_tokens,
       money: {
