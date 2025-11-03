@@ -435,7 +435,7 @@
     "duration": "Focus",
     "range": "Near",
     "description_1": "A mental stasis is put in place, all enemy creaures within near that are LVL 4 and below are paralyzed for the spell's duration.",
-    "description_2": "Creatures LVL 5 an above and held in place and unable to use move actions unless they pass an opposing DC12 WIS check.",
+    "description_2": "Creatures LVL 5 an above and held in place and unable to use move actions unless they pass an opposing DC12 CHR check.",
     "source": "custom"
   },
   {

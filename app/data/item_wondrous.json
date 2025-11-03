@@ -485,7 +485,7 @@
   {
     "name": "Lord in Iron's Banner Cape",
     "description": "After donning the cape your armor begins to grow fearsome looking spikes.",
-    "benefit": "Three times per day you grant allies within near +1 weapon damage and 1d4 temporary hit points for 3 rounds.",
+    "benefit": "Three times per day you grant yourself and allies within near +1 weapon damage and 1d4 temporary hit points for 3 rounds.",
     "additional": "Enemy morale checks reduced to DC12 within near.",
     "source": "custom",
     "base": "back",
@@ -494,7 +494,7 @@
   {
     "name": "Circlet of Fading Life",
     "description": "Once this silver circlet is placed on your head your eyes begin glowing a beautiful and soothing blue hue.",
-    "benefit": "Three times per day allies within near are healed 3d4 hit points if they're below 50% life. Allies above 50% life regenerate 1 hit point for 3 rounds.",
+    "benefit": "Three times per day you and your allies within near are healed 3d4 hit points if they're below 50% life. Allies above 50% life regenerate 1 hit point for 3 rounds.",
     "source": "custom",
     "base": "head",
     "filter": "head"
