@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1ac",
+    "name": "+1 armor class",
+    "armor": 1,
+    "type": "augmentation"
+  },
+  {
+    "id": "2con",
+    "name": "+2 constitution",
+    "attributes": {
+      "con": 2
+    },
+    "type": "augmentation"
+  }
+]

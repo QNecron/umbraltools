@@ -39,8 +39,8 @@ import {
   Damage, 
   Spellcasting, 
   IsCaster, 
-  HasRitual,
   HitPoints, 
+  Augmentations,
   SavingThrows,
   DiceRoll, 
   Total, 
@@ -530,7 +530,7 @@ export default function Creator() {
                 else if (stat === "int") return character.attributes.int;
                 else if (stat === "wis") return character.attributes.wis;
                 else if (stat === "chr") return character.attributes.chr;
-                else return "error";                
+                else return "E";                
               }
     
               return(
@@ -554,16 +554,13 @@ export default function Creator() {
                   />
                   <div className="block__item">
                     <span className="block__label">Mod</span>
-                    {Modifier(Ability(stat), "0", "0")}
+                    {Modifier(Ability(stat))}
                   </div>
                   <div className="block__item">
-                    <span className="block__label">Sav</span>
+                    <span className="block__label">Save</span>
                     {Total(
-                      Modifier(Ability(stat), "0", "0"),
-                      SavingThrows(character.class, character.equipment),
-                      "0",
-                      "0",
-                      "0",
+                      Modifier(Ability(stat)),
+                      SavingThrows(character.class, character.equipment)
                     )}
                   </div>
                   <button className="btn" button="icon primary" onClick={(e) => characterUpdate({
@@ -630,7 +627,7 @@ export default function Creator() {
             <div className="block">
               <div className="block__item">
                 {Total(
-                  Modifier(character.attributes.con, "0", "0"), 
+                  Modifier(character.attributes.con), 
                   character.hit_points, 
                   character.ancestry === "Dwarf" ? "2" : "0", 
                   HitPoints(character.talents_feats), 
@@ -847,59 +844,6 @@ export default function Creator() {
           
           }
           
-          {/* rituals
-          <Section padding="creator" title="Rituals">
-            
-            <div className="block">
-              <Input 
-                type="select" 
-                id="ritual1" 
-                label="Ritual (1)" 
-                value={character.rituals.ritual_0} 
-                change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
-                  ...character,
-                  rituals: {
-                    ...character.rituals,
-                    ritual_0: event.target.value
-                  }
-                })}
-              >
-                <option value="None">-</option>
-                {RitualData.map((ritual, index) => {
-                  return(
-                    <option value={ritual} key={index}>
-                      {ritual}
-                    </option>
-                  );
-                })}
-              </Input>
-              <Input 
-                type="select" 
-                id="ritual2" 
-                label="Ritual (2)" 
-                value={character.rituals.ritual_1} 
-                change={(event: ChangeEvent<HTMLSelectElement>) => characterUpdate({
-                  ...character,
-                  rituals: {
-                    ...character.rituals,
-                    ritual_1: event.target.value
-                  }
-                })}
-              >
-                <option value="None">-</option>
-                {RitualData.map((ritual, index) => {
-                  return(
-                    <option value={ritual} key={index}>
-                      {ritual}
-                    </option>
-                  );
-                })}
-              </Input>
-            </div>
-            
-          </Section>
-          */}
-          
         </div>
           
         <div className="grid__column">
@@ -959,7 +903,7 @@ export default function Creator() {
               <div className="block__item block__item--tiny" heading="5">AC</div>
               <div className="block__item">
                 {ArmorClass(
-                  Modifier(character.attributes.dex, "0", "0"),
+                  Modifier(character.attributes.dex),
                   Armors(ArmorData, character.equipment.armor, "ac"), 
                   Armors(ArmorData, character.equipment.armor, "dex"),
                   Armors(ShieldData, character.equipment.shield, "ac"),
@@ -1016,8 +960,8 @@ export default function Creator() {
               <div className="block__item block__item--tiny" heading="5">Atk</div>
               <div className="block__item">
                 {Attack(
-                  Modifier(character.attributes.str, "0", "0"), 
-                  Modifier(character.attributes.dex, "0", "0"), 
+                  Modifier(character.attributes.str), 
+                  Modifier(character.attributes.dex), 
                   WeaponData, 
                   character.equipment.hands_primary, 
                   Weapons(WeaponData, character.equipment.hands_primary, "type"), 
@@ -1079,8 +1023,8 @@ export default function Creator() {
               <div className="block__item block__item--tiny" heading="5">Atk</div>
               <div className="block__item">
                 {Attack(
-                  Modifier(character.attributes.str, "0", "0"), 
-                  Modifier(character.attributes.dex, "0", "0"), 
+                  Modifier(character.attributes.str), 
+                  Modifier(character.attributes.dex), 
                   WeaponData, 
                   character.equipment.hands_secondary, 
                   Weapons(WeaponData, character.equipment.hands_secondary, "type"), 

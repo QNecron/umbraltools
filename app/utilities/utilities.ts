@@ -50,8 +50,12 @@ export const AncestryBonus = (data: {}[], ancestry: string) => {
 
 }
 
-export const Modifier = (a: string, b: string, c: string) => {
-  const add = parseInt(a) + parseInt(b) + parseInt(c);
+export const Modifier = (a: string, b?: string, c?: string) => {
+  let one = a ? parseInt(a) : 0;
+  let two = b ? parseInt(b) : 0;
+  let three = c ? parseInt(c) : 0;
+  
+  const add = one + two + three;
   const attribute = Math.floor((add - 10) / 2);
 
   return attribute.toString();
@@ -243,6 +247,13 @@ export const HitPoints = (data: {}) => {
   
 }
 
+export const Augmentations = (data: {}, augs: {}, bonus: string) => { 
+  console.log(data);
+  console.log(augs);
+  console.log(bonus);
+  return "0";
+}
+
 export const SavingThrows = (role: string, items: {}) => {
   let bonus = 0;
   
@@ -310,18 +321,6 @@ export const IsCaster = (role: string) => {
   
 }
 
-export const HasRitual = (rituals: {}) => {
-  let caster = "";
-
-  for (const [key, value] of Object.entries(rituals)) {
-    if (value === "Demonology") caster = value;
-    if (value === "Hemotheurgy") caster = value;
-  }
-    
-  return caster;
-  
-}
-
 // dice
 export const DiceRoll = (dice: string, count: number) => {
   let die = 0;
@@ -352,12 +351,12 @@ export const DiceRoll = (dice: string, count: number) => {
 }
 
 // generic
-export const Total = (a: string, b: string, c: string, d: string, e?: any) => {
-  let one = parseInt(a) ? parseInt(a) : 0;
-  let two = parseInt(b) ? parseInt(b) : 0;
-  let three = parseInt(c) ? parseInt(c) : 0;
-  let four = parseInt(d) ? parseInt(d) : 0;
-  let five = parseInt(e) ? parseInt(e) : 0;
+export const Total = (a: string, b: string, c?: string, d?: string, e?: string) => {
+  let one = a ? parseInt(a) : 0;
+  let two = b ? parseInt(b) : 0;
+  let three = c ? parseInt(c) : 0;
+  let four = d ? parseInt(d) : 0;
+  let five = e ? parseInt(e) : 0;
   const add = one + two + three + four + five;
 
   return add.toString();

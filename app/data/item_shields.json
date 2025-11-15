@@ -74,7 +74,7 @@
   {
     "name": "Scâth Gwannek",
     "base": "Shield",
-    "ac": 1,
+    "ac": 2,
     "properties": "Occupies one hand",
     "bonus": 1,
     "description": "The Scâth Gwannek, or \"Winter Shield\", once belonged to a dwarf lord during the Quest for Sky and was thought to be lost.",
