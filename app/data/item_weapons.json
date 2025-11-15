@@ -1,6 +1,7 @@
 [
   {
     "name": "Bastard Sword",
+    "base": "Bastard Sword",
     "type": "M",
     "range": "C",
     "damage": "1d8/1d10",
@@ -12,6 +13,7 @@
   },
   {
     "name": "Club",
+    "base": "Club",
     "type": "M",
     "range": "C",
     "damage": "1d4",
@@ -21,6 +23,7 @@
   },
   {
     "name": "Crossbow",
+    "base": "Crossbow",
     "type": "R",
     "range": "F",
     "damage": "1d6",
@@ -30,6 +33,7 @@
   },
   {
     "name": "Dagger",
+    "base": "Dagger",
     "type": "M/R",
     "range": "C/N",
     "damage": "1d4",
@@ -39,6 +43,7 @@
   },
   {
     "name": "Greataxe",
+    "base": "Greataxe",
     "type": "M",
     "range": "C",
     "damage": "1d8/1d10",
@@ -50,6 +55,7 @@
   },
   {
     "name": "Greatsword",
+    "base": "Greatsword",
     "type": "M",
     "range": "C",
     "damage": "1d12",
@@ -59,6 +65,7 @@
   },
   {
     "name": "Javelin",
+    "base": "Javelin",
     "type": "M/R",
     "range": "C/F",
     "damage": "1d4",
@@ -68,6 +75,7 @@
   },
   {
     "name": "Longbow",
+    "base": "Longbow",
     "type": "R",
     "range": "F",
     "damage": "1d8",
@@ -77,6 +85,7 @@
   },
   {
     "name": "Longsword",
+    "base": "Longsword",
     "type": "M",
     "range": "C",
     "damage": "1d8",
@@ -86,6 +95,7 @@
   },
   {
     "name": "Mace",
+    "base": "Mace",
     "type": "M",
     "range": "C",
     "damage": "1d6",
@@ -95,6 +105,7 @@
   },
   {
     "name": "Shortbow",
+    "base": "Shortbow",
     "type": "R",
     "range": "F",
     "damage": "1d4",
@@ -104,6 +115,7 @@
   },
   {
     "name": "Shortsword",
+    "base": "Shortsword",
     "type": "M",
     "range": "C",
     "damage": "1d6",
@@ -113,6 +125,7 @@
   },
   {
     "name": "Spear",
+    "base": "Spear",
     "type": "M/R",
     "range": "C/N",
     "damage": "1d6",
@@ -122,6 +135,7 @@
   },
   {
     "name": "Staff",
+    "base": "Staff",
     "type": "M",
     "range": "C",
     "damage": "1d4",
@@ -131,6 +145,7 @@
   },
   {
     "name": "Warhammer",
+    "base": "Warhammer",
     "type": "M",
     "range": "C",
     "damage": "1d10",
@@ -140,6 +155,7 @@
   },
   {
     "name": "+1 Bastard Sword",
+    "base": "Bastard Sword",
     "type": "M",
     "range": "C",
     "damage": "1d8/1d10 + 1",
@@ -151,6 +167,7 @@
   },
   {
     "name": "+1 Club",
+    "base": "Club",
     "type": "M",
     "range": "C",
     "damage": "1d4 + 1",
@@ -160,6 +177,7 @@
   },
   {
     "name": "+1 Crossbow",
+    "base": "Crossbow",
     "type": "R",
     "range": "F",
     "damage": "1d6 + 1",
@@ -169,6 +187,7 @@
   },
   {
     "name": "+1 Dagger",
+    "base": "Dagger",
     "type": "M/R",
     "range": "C/N",
     "damage": "1d4 + 1",
@@ -178,6 +197,7 @@
   },
   {
     "name": "+1 Greataxe",
+    "base": "Greataxe",
     "type": "M",
     "range": "C",
     "damage": "1d8/1d10 + 1",
@@ -189,6 +209,7 @@
   },
   {
     "name": "+1 Greatsword",
+    "base": "Greatsword",
     "type": "M",
     "range": "C",
     "damage": "1d12 + 1",
@@ -198,6 +219,7 @@
   },
   {
     "name": "+1 Javelin",
+    "base": "Javelin",
     "type": "M/R",
     "range": "C/F",
     "damage": "1d4 + 1",
@@ -207,6 +229,7 @@
   },
   {
     "name": "+1 Longbow",
+    "base": "Longbow",
     "type": "R",
     "range": "F",
     "damage": "1d8 + 1",
@@ -216,6 +239,7 @@
   },
   {
     "name": "+1 Longsword",
+    "base": "Longsword",
     "type": "M",
     "range": "C",
     "damage": "1d8 + 1",
@@ -225,6 +249,7 @@
   },
   {
     "name": "+1 Mace",
+    "base": "Mace",
     "type": "M",
     "range": "C",
     "damage": "1d6 + 1",
@@ -234,6 +259,7 @@
   },
   {
     "name": "+1 Shortbow",
+    "base": "Shortbow",
     "type": "R",
     "range": "F",
     "damage": "1d4 + 1",
@@ -243,6 +269,7 @@
   },
   {
     "name": "+1 Shortsword",
+    "base": "Shortsword",
     "type": "M",
     "range": "C",
     "damage": "1d6 + 1",
@@ -252,6 +279,7 @@
   },
   {
     "name": "+1 Spear",
+    "base": "Spear",
     "type": "M/R",
     "range": "C/N",
     "damage": "1d6 + 1",
@@ -261,6 +289,7 @@
   },
   {
     "name": "+1 Staff",
+    "base": "Staff",
     "type": "M",
     "range": "C",
     "damage": "1d4 + 1",
@@ -270,6 +299,7 @@
   },
   {
     "name": "+1 Warhammer",
+    "base": "Warhammer",
     "type": "M",
     "range": "C",
     "damage": "1d10 + 1",

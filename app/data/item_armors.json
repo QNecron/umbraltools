@@ -103,6 +103,18 @@
     "filter": "armors"
   },
   {
+    "name": "Starlit Robe",
+    "base": "Robe",
+    "ac": 10,
+    "dex": true,
+    "properties": "-",
+    "bonus": 1,
+    "description": "This somber set of robes is flecked with bright, shimmering points of white, in imitation of a starry night sky.",
+    "benefit": "Hostile spells targeting the wearer are DC13 (minimum) to cast.",
+    "source": "custom",
+    "filter": "armors"
+  },
+  {
     "name": "Rebel's Call",
     "base": "Leather",
     "ac": 11,
@@ -138,6 +150,19 @@
     "description": "In the company of ruthless wizards, this enchanted gambeson offered a measure of security.",
     "benefit": "Spellcasting checks increased by 1.",
     "additional": "Elemental damage is reduced by 3 point.",
+    "source": "custom",
+    "filter": "armors"
+  },
+  {
+    "name": "Wayfarer's Cuirass",
+    "base": "Leather",
+    "ac": 11,
+    "dex": true,
+    "properties": "-",
+    "bonus": 1,
+    "description": "Comissioned by a dwarven explorer, this cuirass enhances the wearer's stamina and allows swift movement in times of need.",
+    "benefit": "Regenerate 1 hit point each round of combat.",
+    "additional": "You can cast Haste once per day (+4 bonus).",
     "source": "custom",
     "filter": "armors"
   },
@@ -180,6 +205,18 @@
     "filter": "armors"
   },
   {
+    "name": "Hearth Defender's Mail",
+    "base": "Chainmail",
+    "ac": 13,
+    "dex": true,
+    "properties": "Disadv on stealth, swim",
+    "bonus": 0,
+    "description": "This magnificent chainmail is in remarkable shape, once the wearer speaks the name of those closest to them a magical bond is formed.",
+    "benefit": "All damage is reduced by 1 for every ally (spoken) within half of near.",
+    "source": "custom",
+    "filter": "armors"
+  },
+  {
     "name": "Plate of Ill Payment",
     "base": "Plate mail",
     "ac": 15,
@@ -214,6 +251,19 @@
     "description": "This dark steel suit of armor looks eerily familiar. It bears a strange maker's mark resembling a jawless skull.",
     "benefit": "All damage is reduced by 1 point.",
     "additional": "When struck by a critical, you and your allies within near heal 1d6 hit points.",
+    "source": "custom",
+    "filter": "armors"
+  },
+  {
+    "name": "One Dozen Stood",
+    "base": "Plate mail",
+    "ac": 15,
+    "dex": false,
+    "properties": "Disadv on stealth, no swim",
+    "bonus": 1,
+    "description": "Blackened and scored, this heavy plate bears the mark of a master metalworker. Flames grace the breastplate and pauldrons.",
+    "benefit": "Melee weapons deal an additional 1d4 fire damage.",
+    "additional": "Enemies within double close must succeed a DC12 strength check in order to pass you.",
     "source": "custom",
     "filter": "armors"
   }

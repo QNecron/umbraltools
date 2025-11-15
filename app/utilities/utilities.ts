@@ -183,23 +183,20 @@ export const Damage = (
   weaponDamage: string,
   data: {}
 ) => {
-
+  
   let damageTotal = weaponDamage;
   let damageBonus = "";
   let isRanged = false;
   let profession = 0;
   
+  console.log(weaponBase);
+    
   if (role === "Fighter") {
     profession = Math.floor(((parseInt(level) + 1) / 2));
     damageBonus += " + " + profession.toString();
   }
   
   if (
-    weaponName === "Crossbow" || 
-    weaponName === "Longbow" ||
-    weaponName === "Shortbow"  
-  ) isRanged = true;
-  else if (
     weaponBase === "Crossbow" ||
     weaponBase === "Longbow" ||
     weaponBase === "Shortbow"     
@@ -210,11 +207,13 @@ export const Damage = (
   
   Object.entries(data).map(([key, value]) => (
     value === "Executioner's Hood" ? damageBonus += " + 1" : "",
+    value === "One Dozen Stood" && isRanged === false ? damageBonus += " + 1d4 (Fire)" : "",
+    value === "Scâth Gwannek" && isRanged === false ? damageBonus += " + 1d4 (Cold)" : "",
     value === "Boltcatchers" ? damageBonus += " + 1d4 (Electrical)" : "",
     value === "Corroded Vambraces" && isRanged === false ? damageBonus += " + 1 (Acid)" : "",
     value === "Forgemaster's Gloves" && isRanged === false ? damageBonus += " + 1 (Fire)" : "",
-    value === "Ring of Frigid Claim" ? damageBonus += " + 1 (Cold)" :"",
-    value === "Ring of Searing Flames" ? damageBonus += " + 1 (Fire)" :"",
+    value === "Ring of Frigid Claim" ? damageBonus += " + 1 (Cold)" : "",
+    value === "Ring of Searing Flames" ? damageBonus += " + 1 (Fire)" : "",
     value === "Berserker's Belt" && isRanged === false ? damageBonus += " + 2" : "",
     value === "Mantle of Wreathing Flame" ? damageBonus += " + 1d4 (Fire)" : "",
     value === "Cloak of Minor Missiles" && isRanged === true ? damageBonus += " + 1" : "",
@@ -366,23 +365,32 @@ export const Total = (a: string, b: string, c: string, d: string, e?: any) => {
 
 // items
 export const Weapons = (data: {}[], item: string, returned: string) => {
+  let base = "-";
   let type = "-";
   let range = "-";
   let damage = "-";
   let properties = "-";
+  let final = "-";
 
   data.map((weapon: any) => {
-    if (weapon.name === item) type = weapon.type
-    if (weapon.name === item) range = weapon.range
-    if (weapon.name === item) damage = weapon.damage
-    if (weapon.name === item) properties = weapon.properties
+    
+    if (item === weapon.name) {
+      base = weapon.base;
+      type = weapon.type;
+      range = weapon.range;
+      damage = weapon.damage;
+      properties = weapon.properties;
+    }
+
   });
+
+  if (returned == "base") final = base;
+  if (returned == "type") final = type;
+  if (returned == "range") final = range;
+  if (returned == "damage") final = damage;
+  if (returned == "properties") final = properties;
   
-  if (returned == "type") return type;
-  else if (returned == "range") return range;
-  else if (returned == "damage") return damage;
-  else if (returned == "properties") return properties;
-  else return "error";
+  return final;
   
 }
 
@@ -391,18 +399,24 @@ export const Armors = (data: {}[], item: string, returned: string) => {
   let dex = true;
   let bonus = 0;
   let properties = "-";
+  let final = "-";
   
   data.map((armor: any) => {
-    if (armor.name === item) ac = armor.ac
-    if (armor.name === item) dex = armor.dex
-    if (armor.name === item) bonus = armor.bonus
-    if (armor.name === item) properties = armor.properties
+    
+    if (item === armor.name) { 
+      ac = armor.ac;
+      dex = armor.dex;
+      bonus = armor.bonus;
+      properties = armor.properties;
+    }
+    
   });
-
-  if (returned == "ac") return (ac + bonus).toString();
-  else if (returned == "dex") return dex.toString();
-  else if (returned == "properties") return properties;
-  else return "error";
+  
+  if (returned == "ac") final = (ac + bonus).toString();
+  if (returned == "dex") final = dex.toString();
+  if (returned == "properties") final = properties;
+  
+  return final;
   
 }
 

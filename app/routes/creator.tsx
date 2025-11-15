@@ -1032,7 +1032,7 @@ export default function Creator() {
                 {Damage(
                   character.class, 
                   character.level, 
-                  Weapons(WeaponData, character.equipment.hands_primary, "name"),
+                  character.equipment.hands_primary,
                   Weapons(WeaponData, character.equipment.hands_primary, "base"),
                   Weapons(WeaponData, character.equipment.hands_primary, "damage"),
                   character.equipment
@@ -1095,7 +1095,7 @@ export default function Creator() {
                 {Damage(
                   character.class, 
                   character.level, 
-                  Weapons(WeaponData, character.equipment.hands_secondary, "name"),
+                  character.equipment.hands_secondary,
                   Weapons(WeaponData, character.equipment.hands_secondary, "base"),
                   Weapons(WeaponData, character.equipment.hands_secondary, "damage"),
                   character.equipment

@@ -70,5 +70,17 @@
     "benefit": "Physical damage is reduced by 3 points.",
     "source": "custom",
     "filter": "shields"
+  },
+  {
+    "name": "Scâth Gwannek",
+    "base": "Shield",
+    "ac": 1,
+    "properties": "Occupies one hand",
+    "bonus": 1,
+    "description": "The Scâth Gwannek, or \"Winter Shield\", once belonged to a dwarf lord during the Quest for Sky and was thought to be lost.",
+    "benefit": "Cold damage is reduced by 3 points.",
+    "additional": "Melee weapons deal an additional 1d4 cold damage.",
+    "source": "custom",
+    "filter": "shields"
   }
 ]
