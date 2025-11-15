@@ -192,9 +192,7 @@ export const Damage = (
   let damageBonus = "";
   let isRanged = false;
   let profession = 0;
-  
-  console.log(weaponBase);
-    
+      
   if (role === "Fighter") {
     profession = Math.floor(((parseInt(level) + 1) / 2));
     damageBonus += " + " + profession.toString();
