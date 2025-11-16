@@ -1,6 +1,7 @@
 [
   {
     "name": "Shield",
+    "base": "Shield",
     "ac": 2,
     "properties": "Occupies one hand",
     "bonus": 0,
@@ -8,6 +9,7 @@
   },
   {
     "name": "+1 Shield",
+    "base": "Shield",
     "ac": 2,
     "properties": "Occupies one hand",
     "bonus": 1,

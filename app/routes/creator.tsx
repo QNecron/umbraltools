@@ -270,6 +270,7 @@ export default function Creator() {
               if (prop == "hands_primary") return character.equipment.hands_primary;
               else if (prop == "hands_secondary") return character.equipment.hands_secondary;
               else if (prop == "armor") return character.equipment.armor;
+              else if (prop == "shield") return character.equipment.shield;
               else if (prop == "head") return character.equipment.head;
               else if (prop == "back") return character.equipment.back;
               else if (prop == "neck") return character.equipment.neck;
@@ -277,8 +278,7 @@ export default function Creator() {
               else if (prop == "waist") return character.equipment.waist;
               else if (prop == "feet") return character.equipment.feet;
               else if (prop == "accessory") return character.equipment.accessory;
-              else if (prop == "misc") return character.equipment.misc;
-              else return "";
+              else return character.equipment.misc;
             }
             
             function MatchData(prop: string) {
