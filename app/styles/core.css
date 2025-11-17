@@ -100,10 +100,11 @@ body {
   --input-height: var(--size-xl);
   --input-width: 100%;
   
-  --input-label-background: var(--color-black-100);
+  --input-label-background: transparent;
   --input-label-font-color: var(--color-white-88);
   --input-label-font-size: var(--size-ms);
   --input-label-padding: 0 var(--size-xs);
+  --input-label-text-shadow: 0 0 var(--size-xxs) var(--color-black-100);
   --input-label-position: absolute;
   --input-label-top: 0;
   --input-label-left: var(--size-ms);
@@ -167,6 +168,7 @@ body {
   color: var(--input-label-font-color);
   font-size: var(--input-label-font-size);
   padding: var(--input-label-padding);
+  text-shadow: var(--input-label-text-shadow);
   text-transform: capitalize;
   position: var(--input-label-position);
   top: var(--input-label-top);

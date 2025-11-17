@@ -25,7 +25,6 @@ import AlignmentData from "../data/alignments.json";
 import AttributeData from "../data/attributes.json";
 import ClassesData from "../data/classes.json";
 import FeatsData from "../data/feats.json";
-import RitualData from "../data/rituals.json";
 
 import { 
   SaveCharacter, 
@@ -113,7 +112,14 @@ export default function Creator() {
       misc: ""
     },
     inventory: "",
-    notes: ""
+    notes: "",
+    temporary: {
+      hit_points: "0",
+      ac: "0",
+      attack: "0",
+      damage: "0",
+      spellcheck: "0"
+    }
   });
   
   const [characterSaved, characterSavedUpdate] = useState<any[]>([]);
@@ -179,7 +185,14 @@ export default function Creator() {
         misc: data.equipment.misc,
       },
       inventory: data.inventory,
-      notes: data.notes
+      notes: data.notes,
+      temporary: {
+        hit_points: data.hit_points,
+        ac: data.ac,
+        attack: data.attack,
+        damage: data.damage,
+        spellcheck: data.spellcheck
+      }
     });
     
   };
@@ -262,7 +275,12 @@ export default function Creator() {
           <Icons icon="upload" />
         </button>
         
-        <Dialog type="secondary" triggerCopy="Items" triggerButton="primary">
+        <Dialog 
+          type="secondary" 
+          triggerIcon="items" 
+          triggerCopy="Items" 
+          triggerButton="icon primary"
+        >
           
           {EquipmentDataFull.map((item, index) => {
             
@@ -327,7 +345,12 @@ export default function Creator() {
           
         </Dialog>
         
-        <Dialog type="secondary" triggerCopy="Characters" triggerButton="primary">
+        <Dialog 
+          type="secondary" 
+          triggerIcon="characters" 
+          triggerCopy="Characters" 
+          triggerButton="icon primary"
+        >
   
           {characterSaved.length !== 0  && 
             <ul className="character-list">
@@ -416,6 +439,106 @@ export default function Creator() {
             }}
           />
  
+        </Dialog>
+        
+        <Dialog 
+          type="secondary" 
+          triggerIcon="temporary" 
+          triggerCopy="Temporary Buffs/Debuffs" 
+          triggerButton="icon primary"
+        >
+          
+          <div className="block">
+            <div className="block__item block__item--full" heading="5">Temporary</div>
+          </div>
+          
+          <div className="block">
+            <Input 
+              type="number" 
+              id="temphitpoints" 
+              label="Hit Points" 
+              value={character.temporary.hit_points} 
+              change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                ...character,
+                temporary: {
+                  ...character.temporary,
+                  hit_points: event.target.value
+                }
+              })}
+              min={0}
+            />
+          </div>
+          
+          <div className="block">
+            <Input 
+              type="number" 
+              id="temparmor" 
+              label="Armor Bonus" 
+              value={character.temporary.ac} 
+              change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                ...character,
+                temporary: {
+                  ...character.temporary,
+                  ac: event.target.value
+                }
+              })}
+              min={0}
+            />
+          </div>
+          
+          <div className="block">
+            <Input 
+              type="number" 
+              id="tempattack" 
+              label="Attack Bonus" 
+              value={character.temporary.attack} 
+              change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                ...character,
+                temporary: {
+                  ...character.temporary,
+                  attack: event.target.value
+                }
+              })}
+              min={0}
+            />
+          </div>
+          
+          <div className="block">
+            <Input 
+              type="number" 
+              id="tempdamage" 
+              label="Damage Bonus" 
+              value={character.temporary.damage} 
+              change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                ...character,
+                temporary: {
+                  ...character.temporary,
+                  damage: event.target.value
+                }
+              })}
+              min={0}
+            />
+          </div>
+          
+          {IsCaster(character.class) &&
+            <div className="block">
+              <Input 
+                type="number" 
+                id="tempspellcheck" 
+                label="Spellcasting Bonus" 
+                value={character.temporary.spellcheck} 
+                change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                  ...character,
+                  temporary: {
+                    ...character.temporary,
+                    spellcheck: event.target.value
+                  }
+                })}
+                min={0}
+              />            
+            </div>
+          }
+          
         </Dialog>
         
       </nav>
@@ -629,6 +752,7 @@ export default function Creator() {
                 {Total(
                   Modifier(character.attributes.con), 
                   character.hit_points, 
+                  character.temporary.hit_points,
                   character.ancestry === "Dwarf" ? "2" : "0", 
                   HitPoints(character.talents_feats), 
                   HitPoints(character.equipment)
@@ -654,6 +778,7 @@ export default function Creator() {
                   ...character,
                   hit_points: event.target.value
                 })}
+                min={0}
               />
               <button className="btn" button="icon primary" onClick={(e) => characterUpdate({
                 ...character,
@@ -835,7 +960,8 @@ export default function Creator() {
                     character.class,
                     character.attributes,
                     character.talents_feats,
-                    character.equipment
+                    character.equipment,
+                    character.temporary.spellcheck
                   )}
                 </div>
               </div>
@@ -908,7 +1034,8 @@ export default function Creator() {
                   Armors(ArmorData, character.equipment.armor, "dex"),
                   Armors(ShieldData, character.equipment.shield, "ac"),
                   character.equipment,
-                  character.talents_feats
+                  character.talents_feats,
+                  character.temporary.ac
                 )}
               </div>
               <div className="block__item block__item--full">
@@ -968,7 +1095,8 @@ export default function Creator() {
                   character.class, 
                   character.level,
                   character.equipment,
-                  character.talents_feats
+                  character.talents_feats,
+                  character.temporary.attack
                 )}
               </div>
               <div className="block__item block__item--tiny" heading="5">Dmg</div>
@@ -979,7 +1107,8 @@ export default function Creator() {
                   character.equipment.hands_primary,
                   Weapons(WeaponData, character.equipment.hands_primary, "base"),
                   Weapons(WeaponData, character.equipment.hands_primary, "damage"),
-                  character.equipment
+                  character.equipment,
+                  character.temporary.damage
                 )}
               </div>
             </div>
@@ -1031,7 +1160,8 @@ export default function Creator() {
                   character.class, 
                   character.level,
                   character.equipment,
-                  character.talents_feats
+                  character.talents_feats,
+                  character.temporary.attack
                 )}
               </div>
               <div className="block__item block__item--tiny" heading="5">Dmg</div>
@@ -1042,7 +1172,8 @@ export default function Creator() {
                   character.equipment.hands_secondary,
                   Weapons(WeaponData, character.equipment.hands_secondary, "base"),
                   Weapons(WeaponData, character.equipment.hands_secondary, "damage"),
-                  character.equipment
+                  character.equipment,
+                  character.temporary.damage
                 )}
               </div>
             </div>

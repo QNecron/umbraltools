@@ -67,15 +67,19 @@ export const ArmorClass = (
   dex: string, 
   shield: string, 
   items?: {},
-  talents?: {}
+  talents?: {},
+  temporary?: string
 ) => {
   let bonus = 0;
   let ac = 0;
   let mod = 0;
+  let temp = temporary ? temporary : "0";
   
   if (armor === "0") ac = 10;
   
   if (dex === "true") mod += parseInt(modifier);
+  
+  
   
   // @TODO - not sure I like this..
   if (items) {
@@ -96,7 +100,7 @@ export const ArmorClass = (
     ));
   }
   
-  ac += parseInt(armor) + parseInt(shield) + mod + bonus;
+  ac += parseInt(armor) + parseInt(shield) + mod + bonus + parseInt(temp);
     
   return ac;
   
@@ -136,12 +140,14 @@ export const Attack = (
   role: string, 
   level: string,
   items?: {},
-  talents?: {}
+  talents?: {},
+  temporary?: string
 ) => {
   let bonus = 0;
   let posneg = "+";
   let attribute = str;
   let profession = 0;
+  let temp = temporary ? temporary : "0";
   
   if (weapon_type === "R") attribute = dex;
   else if (weapon_type === "M/R") attribute = dex > str ? dex : str;
@@ -171,7 +177,7 @@ export const Attack = (
     ));
   }
   
-  bonus += parseInt(attribute) + profession;
+  bonus += parseInt(attribute) + profession + parseInt(temp);
   
   if (bonus < 0) posneg = "";
   
@@ -185,13 +191,15 @@ export const Damage = (
   weaponName: string, 
   weaponBase: string, 
   weaponDamage: string,
-  data: {}
+  data: {},
+  temporary?: string
 ) => {
   
   let damageTotal = weaponDamage;
   let damageBonus = "";
   let isRanged = false;
   let profession = 0;
+  let temp = temporary ? temporary : "0";
       
   if (role === "Fighter") {
     profession = Math.floor(((parseInt(level) + 1) / 2));
@@ -221,6 +229,8 @@ export const Damage = (
     value === "Cloak of Minor Missiles" && isRanged === true ? damageBonus += " + 1" : "",
     value === "Ioun Stone, Amber" ? damageBonus += " + 1" : "" 
   ));
+  
+  if (temp !== "0") damageBonus += " + " + parseInt(temp);
   
   return damageTotal + damageBonus;
   
@@ -272,12 +282,14 @@ export const Spellcasting = (
   role: string, 
   attributes: any, 
   talents: {}, 
-  items: {}
+  items: {},
+  temporary?: string
 ) => {
   let attribute = 10;
   let bonus = 0;
   let modifier = "0";
   let total = 0;
+  let temp = temporary ? temporary : "0";
   
   if (role === "Priest") attribute = attributes.wis;
   if (role === "Wizard") attribute = attributes.int;
@@ -301,7 +313,7 @@ export const Spellcasting = (
   
   modifier = Modifier(attribute.toString(), "0", "0");
   
-  total = parseInt(modifier) + bonus;
+  total = parseInt(modifier) + bonus + parseInt(temp);
   
   return "+" + total.toString();
 }
@@ -349,13 +361,14 @@ export const DiceRoll = (dice: string, count: number) => {
 }
 
 // generic
-export const Total = (a: string, b: string, c?: string, d?: string, e?: string) => {
+export const Total = (a: string, b: string, c?: string, d?: string, e?: string, f?: string) => {
   let one = a ? parseInt(a) : 0;
   let two = b ? parseInt(b) : 0;
   let three = c ? parseInt(c) : 0;
   let four = d ? parseInt(d) : 0;
   let five = e ? parseInt(e) : 0;
-  const add = one + two + three + four + five;
+  let six = f ? parseInt(f) : 0;
+  const add = one + two + three + four + five + six;
 
   return add.toString();
 }

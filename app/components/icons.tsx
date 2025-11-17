@@ -10,6 +10,9 @@ import Save from "../images/save.svg";
 import Delete from "../images/skull.svg";
 import Search from "../images/search.svg";
 import Reader from "../images/reader.svg";
+import Character from "../images/characters.svg";
+import Items from "../images/items.svg";
+import Temporary from "../images/temporary.svg";
 
 interface propsIcons {
   icon: string;
@@ -39,6 +42,9 @@ export default function Icons({
     if (type === "flame") url = Flame
     if (type === "reader") url = Reader
     if (type === "save") url = Save
+    if (type === "characters") url = Character
+    if (type === "items") url = Items
+    if (type === "temporary") url = Temporary
 
     return url;
 
