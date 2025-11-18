@@ -154,7 +154,7 @@
   {
     "name": "Healing Hands",
     "description": "These well made leather gloves have a rose symbol on their palms, even when cleaned they appear as if stained by blood.",
-    "benefit": "Healing spell restores and additional 3 hit points.",
+    "benefit": "Healing spells restore an additional 3 hit points.",
     "source": "custom",
     "base": "arms",
     "filter": "arms"
@@ -420,53 +420,6 @@
     "filter": "misc"
   },
   {
-    "name": "Apprentice's Tome",
-    "description": "This tome has minimal wear and tear.. only a few dried up splotches of blood on the cover.",
-    "benefit": "The DC to learn spells from this spell book are reduce by 1.",
-    "additional": "You can learn or cast any of the spells contained as if they were scrolls.",
-    "curse": "Only useable by Wizards.",
-    "spells": [
-      {
-        "tier": "1",
-        "list": "Detect Magic, Floating Disk, Light"
-      },
-      {
-        "tier": "2",
-        "list": "Knock, Silence"
-      },
-      {
-        "tier": "3",
-        "list": "Fabricate"
-      }
-    ],
-    "source": "custom",
-    "base": "misc",
-    "filter": "misc"
-  },
-  {
-    "name": "Acolyte's Primer",
-    "description": "The cover appears to be made of mummified skin, covered in dust and dried blood.",
-    "additional": "You can cast any of the spells contained as if they were scrolls.",
-    "curse": "Only useable by Priests.",
-    "spells": [
-      {
-        "tier": "1",
-        "list": "Command Undead, Inflict Wounds, (Un)Holy Weapon"
-      },
-      {
-        "tier": "2",
-        "list": "Aid, Prayer"
-      },
-      {
-        "tier": "3",
-        "list": "Mass Inflict"
-      }
-    ],
-    "source": "custom",
-    "base": "misc",
-    "filter": "misc"
-  },
-  {
     "name": "Vambraces of Focused Strikes",
     "description": "Once equipped these vambraces appear ethereal and resonate with psionic energies.",
     "benefit": "Three times per day you may expend up to 3 focus points on your next successful weapon attack.",
@@ -494,7 +447,7 @@
   {
     "name": "Circlet of Fading Life",
     "description": "Once this silver circlet is placed on your head your eyes begin glowing a beautiful and soothing blue hue.",
-    "benefit": "Three times per day you and your allies within near are healed 3d4 hit points if they're below 50% life. Allies above 50% life regenerate 1 hit point for 3 rounds.",
+    "benefit": "Three times per day you and your allies within near are healed 1d6 hit points if they're below 50% life. Allies above 50% life regenerate 1 hit point for 3 rounds.",
     "source": "custom",
     "base": "head",
     "filter": "head"

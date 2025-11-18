@@ -1,7 +1,7 @@
 [
   {
     "name": "Shield Block",
-    "description": "Reduces physical damage equal to your shield's AC + STR modifier for one round.",
+    "description": "Reduces physical damage equal to your shield's AC for one round.",
     "action": "action",
     "type": "combat",
     "stacking": false
