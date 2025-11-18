@@ -1,0 +1,22 @@
+[
+  {
+    "id" :"hit_points",
+    "name": "Hit Points"
+  },
+  {
+    "id": "ac",
+    "name": "Armor"
+  },
+  {
+    "id": "attack",
+    "name": "Attack"
+  },
+  {
+    "id": "damage",
+    "name": "Damage"
+  },
+  {
+    "id": "spellcheck",
+    "name": "Spellcasting"
+  }
+]

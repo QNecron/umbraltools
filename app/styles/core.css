@@ -916,6 +916,10 @@ body {
     
   }
   
+  &.block__intro {
+    margin-bottom: var(--block-margin);
+  }
+  
   ~ .block {
     margin-top: var(--block-margin);
   }

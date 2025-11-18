@@ -18,6 +18,8 @@ import WeaponData from "../data/item_weapons.json";
 import ArmorData from "../data/item_armors.json";
 import ShieldData from "../data/item_shields.json";
 import WondrousData from "../data/item_wondrous.json";
+import RewardsData from "../data/rewards.json";
+import TemporaryData from "../data/temporary.json";
 
 import BackgroundData from "../data/backgrounds.json";
 import AncestryData from "../data/ancestries.json";
@@ -39,7 +41,6 @@ import {
   Spellcasting, 
   IsCaster, 
   HitPoints, 
-  Augmentations,
   SavingThrows,
   DiceRoll, 
   Total, 
@@ -263,24 +264,12 @@ export default function Creator() {
       {/* @TODO - abstract to component ??? */}
       <nav className="filters" aria-label="Manage characters" role="navigation">
       
-        <button 
-          className="btn" 
-          button="icon primary" 
-          onClick={() => {
-            SaveCharacter(character, character.name);
-            CharacterList();
-          }}
-        >
-          <span className="srt">Save character</span>
-          <Icons icon="upload" />
-        </button>
-        
-        <Dialog 
-          type="secondary" 
-          triggerIcon="items" 
-          triggerCopy="Items" 
-          triggerButton="icon primary"
-        >
+        {/* equipment */}
+        <Dialog type="secondary" triggerIcon="items" triggerCopy="Items" triggerButton="icon primary">
+          
+          <div className="block block__intro">
+            <div className="block__item block__item--full" heading="5">Equipment</div>
+          </div>
           
           {EquipmentDataFull.map((item, index) => {
             
@@ -345,12 +334,56 @@ export default function Creator() {
           
         </Dialog>
         
-        <Dialog 
-          type="secondary" 
-          triggerIcon="characters" 
-          triggerCopy="Characters" 
-          triggerButton="icon primary"
-        >
+        {/* temporary */}
+        <Dialog type="secondary" triggerIcon="temporary" triggerCopy="Temporary Buffs/Debuffs" triggerButton="icon primary">
+          
+          <div className="block block__intro">
+            <div className="block__item block__item--full" heading="5">Temporary</div>
+          </div>
+          
+          {TemporaryData.map((bonus, index) => {
+            
+            function Temp(prop: string) {
+              if (prop == "hit_points") return character.temporary.hit_points;
+              else if (prop == "ac") return character.temporary.ac;
+              else if (prop == "attack") return character.temporary.attack;
+              else if (prop == "damage") return character.temporary.damage;
+              else if (prop == "spellcheck") return character.temporary.spellcheck;
+              else return "error";
+            }
+            
+            {/* spell casters */}
+            if (bonus.id == "spellcheck" && !IsCaster(character.class)) return;
+            
+            return (
+              <div className="block" key={index}>
+                <Input 
+                  type="number" 
+                  id={bonus.id} 
+                  label={bonus.name} 
+                  value={Temp(bonus.id)} 
+                  change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                    ...character,
+                    temporary: {
+                      ...character.temporary,
+                      [bonus.id]: event.target.value
+                    }
+                  })}
+                  min={0}
+                />                
+              </div>
+            );
+          
+          })}
+
+        </Dialog>
+
+        {/* characters */}
+        <Dialog  type="secondary"  triggerIcon="characters" triggerCopy="Characters" triggerButton="icon primary">
+          
+          <div className="block block__intro">
+            <div className="block__item block__item--full" heading="5">Characters</div>
+          </div>
   
           {characterSaved.length !== 0  && 
             <ul className="character-list">
@@ -415,13 +448,9 @@ export default function Creator() {
             title="Change Log"
             button="full primary"
           >
-            
             <p>Downloading character added (as JSON), must load character first.</p>
-            
             <p>Uploading character added, still in testing.</p>
-            
-            <p>Some talents accounted for in stats (ATK, AC, etc), but not all - yet.</p>
-            
+            <p>Some talents accounted for in stats (ATK, AC, etc), but not all - yet.</p>           
           </Accordion>
           
           <Input 
@@ -441,105 +470,18 @@ export default function Creator() {
  
         </Dialog>
         
-        <Dialog 
-          type="secondary" 
-          triggerIcon="temporary" 
-          triggerCopy="Temporary Buffs/Debuffs" 
-          triggerButton="icon primary"
+        {/* save */}
+        <button 
+          className="btn" 
+          button="icon primary" 
+          onClick={() => {
+            SaveCharacter(character, character.name);
+            CharacterList();
+          }}
         >
-          
-          <div className="block">
-            <div className="block__item block__item--full" heading="5">Temporary</div>
-          </div>
-          
-          <div className="block">
-            <Input 
-              type="number" 
-              id="temphitpoints" 
-              label="Hit Points" 
-              value={character.temporary.hit_points} 
-              change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
-                ...character,
-                temporary: {
-                  ...character.temporary,
-                  hit_points: event.target.value
-                }
-              })}
-              min={0}
-            />
-          </div>
-          
-          <div className="block">
-            <Input 
-              type="number" 
-              id="temparmor" 
-              label="Armor Bonus" 
-              value={character.temporary.ac} 
-              change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
-                ...character,
-                temporary: {
-                  ...character.temporary,
-                  ac: event.target.value
-                }
-              })}
-              min={0}
-            />
-          </div>
-          
-          <div className="block">
-            <Input 
-              type="number" 
-              id="tempattack" 
-              label="Attack Bonus" 
-              value={character.temporary.attack} 
-              change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
-                ...character,
-                temporary: {
-                  ...character.temporary,
-                  attack: event.target.value
-                }
-              })}
-              min={0}
-            />
-          </div>
-          
-          <div className="block">
-            <Input 
-              type="number" 
-              id="tempdamage" 
-              label="Damage Bonus" 
-              value={character.temporary.damage} 
-              change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
-                ...character,
-                temporary: {
-                  ...character.temporary,
-                  damage: event.target.value
-                }
-              })}
-              min={0}
-            />
-          </div>
-          
-          {IsCaster(character.class) &&
-            <div className="block">
-              <Input 
-                type="number" 
-                id="tempspellcheck" 
-                label="Spellcasting Bonus" 
-                value={character.temporary.spellcheck} 
-                change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
-                  ...character,
-                  temporary: {
-                    ...character.temporary,
-                    spellcheck: event.target.value
-                  }
-                })}
-                min={0}
-              />            
-            </div>
-          }
-          
-        </Dialog>
+          <span className="srt">Save character</span>
+          <Icons icon="upload" />
+        </button>
         
       </nav>
       
@@ -653,7 +595,7 @@ export default function Creator() {
                 else if (stat === "int") return character.attributes.int;
                 else if (stat === "wis") return character.attributes.wis;
                 else if (stat === "chr") return character.attributes.chr;
-                else return "E";                
+                else return "error";                
               }
     
               return(
@@ -1237,7 +1179,7 @@ export default function Creator() {
           <Section padding="creator" title="Inventory">
             
             <div className="block">
-
+            
               <div className="block__item" heading="5">LT</div>
               <Input 
                 type="number" 
@@ -1250,54 +1192,39 @@ export default function Creator() {
                   luck_tokens: event.target.value
                 })}
               />
-
-              <div className="block__item" heading="5">GP</div>
-              <Input 
-                type="number" 
-                id="money_gp"
-                label="GP" 
-                minimal={true} 
-                value={character.money.gp} 
-                change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
-                  ...character,
-                  money: {
-                    ...character.money,
-                    gp: event.target.value
-                  }
-                })}
-              />
+            
+              {RewardsData.map((reward, index) => {
+                
+                function Funds(prop: string) {
+                  if (prop == "gp") return character.money.gp;
+                  else if (prop == "sp") return character.money.sp;
+                  else if (prop == "cp") return character.money.cp;
+                  else return "error";
+                }
+                
+                return (
+                  <Fragment key={index}>
+                    <div className="block__item" heading="5">{reward.name}</div>
+                    <Input 
+                      type="number" 
+                      id={reward.id} 
+                      label={reward.name} 
+                      minimal={true} 
+                      value={Funds(reward.id)} 
+                      change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                        ...character,
+                        money: {
+                          ...character.money,
+                          [reward.id]: event.target.value
+                        }
+                      })}
+                      min={0}
+                    />
+                  </Fragment>
+                );
               
-              <div className="block__item" heading="5">SP</div>
-              <Input 
-                type="number" 
-                id="money_sp"
-                label="SP" 
-                minimal={true} 
-                value={character.money.sp} 
-                change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
-                  ...character,
-                  money: {
-                    ...character.money,
-                    sp: event.target.value
-                  }
-                })}
-              />
+              })}
               
-              <div className="block__item" heading="5">CP</div>
-              <Input 
-                type="number" 
-                id="money_cp"
-                label="CP" 
-                minimal={true} 
-                value={character.money.cp} 
-                change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
-                  ...character,
-                  money: {
-                    ...character.money,
-                    cp: event.target.value
-                  }
-                })}
-              />
             </div>
             
             <div className="block">
