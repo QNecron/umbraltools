@@ -18,5 +18,29 @@
   {
     "id": "spellcheck",
     "name": "Spellcasting"
+  },
+  {
+    "id": "str",
+    "name": "Str"
+  },
+  {
+    "id": "dex",
+    "name": "Dex"
+  },
+  {
+    "id": "con",
+    "name": "Con"
+  },
+  {
+    "id": "int",
+    "name": "Int"
+  },
+  {
+    "id": "wis",
+    "name": "Wis"
+  },
+  {
+    "id": "chr",
+    "name": "Chr"
   }
 ]

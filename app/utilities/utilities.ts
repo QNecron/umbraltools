@@ -137,6 +137,7 @@ export const Attack = (
   weapons: {}[], 
   weapon_name: string,
   weapon_type: string, 
+  weapon_properties: string,
   role: string, 
   level: string,
   items?: {},
@@ -149,8 +150,10 @@ export const Attack = (
   let profession = 0;
   let temp = temporary ? temporary : "0";
   
-  if (weapon_type === "R") attribute = dex;
-  else if (weapon_type === "M/R") attribute = dex > str ? dex : str;
+  if (
+    weapon_type === "R" || 
+    weapon_properties === "F, Th" || 
+    weapon_properties === "F") attribute = dex;
   else attribute = str;
   
   if (role === "Fighter") profession = Math.floor(((parseInt(level) + 1) / 2));
@@ -283,19 +286,27 @@ export const Spellcasting = (
   attributes: any, 
   talents: {}, 
   items: {},
-  temporary?: string
+  temporary?: any,
 ) => {
   let attribute = 10;
   let bonus = 0;
   let modifier = "0";
   let total = 0;
-  let temp = temporary ? temporary : "0";
+  let tempAttribute = "0";
+  let tempSpellcheck = temporary.spellcheck ? temporary.spellcheck : "0";
   
-  if (role === "Priest") attribute = attributes.wis;
-  if (role === "Wizard") attribute = attributes.int;
-  if (role === "Cursed Knight") attribute = attributes.chr;
-  if (role === "Witch") attribute = attributes.chr;
-  if (role === "Cipher") attribute = attributes.chr;
+  if (role === "Priest") { 
+    attribute = attributes.wis;
+    tempAttribute = temporary.wis;
+  }
+  else if (role === "Wizard") {
+    attribute = attributes.int;
+    tempAttribute = temporary.int;
+  }
+  else { 
+    attribute = attributes.chr;
+    tempAttribute = temporary.chr;
+  }
   
   Object.entries(talents).map(([key, value]) => (
     value === "+1 to priest spellcasting checks" ? bonus += 1 : 0,
@@ -311,9 +322,9 @@ export const Spellcasting = (
     value === "Ioun Stone, Iolite" ? bonus += 1 : 0
   ));
   
-  modifier = Modifier(attribute.toString(), "0", "0");
+  modifier = Modifier(attribute.toString(), tempAttribute.toString());
   
-  total = parseInt(modifier) + bonus + parseInt(temp);
+  total = parseInt(modifier) + bonus + parseInt(tempSpellcheck);
   
   return "+" + total.toString();
 }

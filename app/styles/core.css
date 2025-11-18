@@ -121,6 +121,12 @@ body {
     --input-background: var(--color-white-02);
     pointer-events: none;
   }
+  
+  &.input--max {
+    flex: 1 0 var(--input-width);
+    max-width: var(--input-width);
+  }
+  
 }
 
 .input__field {
@@ -535,6 +541,10 @@ body {
   --dialog-close-right: 0;
   --dialog-close-left: auto;
   --dialog-close-transform: translate(50%, 0);
+  
+  --dialog-backdrop-background-color: var(--color-black-64);
+  --dialog-backdrop-filter: var(--size-xs);
+  --dialog-backdrop-top: var(--size-72);
     
   backdrop-filter: var(--dialog-backdrop-filter);
   background: var(--dialog-background-color);
@@ -560,11 +570,28 @@ body {
     --dialog-transform: translate(0, 0);
   }
   
+  &[open]::backdrop {
+    opacity: 1;
+  }
+  
+  &::backdrop {
+    background: var(--dialog-backdrop-background-color);
+    backdrop-filter: blur(var(--dialog-backdrop-filter));
+    opacity: 0;
+    height: calc(100vh - var(--dialog-backdrop-top));
+    top: var(--dialog-backdrop-top);
+    transition: var(--timing-display);
+  }
+  
 }
 
 @starting-style {
   
   [dialog][open] {
+    opacity: 0;
+  }
+  
+  [dialog][open]::backdrop {
     opacity: 0;
   }
   
@@ -909,8 +936,8 @@ body {
   
   &.block__wrap {
     --block-flex-wrap: wrap;
-    
-    > .input {
+
+    .input:not(.input--max) {
       max-width: calc(50% - var(--size-xs));
     }
     
@@ -1000,8 +1027,6 @@ body {
   gap: var(--character-list-gap);
   margin: var(--character-list-margin);
 }
-
-
 
 /* table */
 .table {

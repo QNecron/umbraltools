@@ -10,9 +10,15 @@ export default function Header() {
 
   return(
     <header id="header" className="header" role="banner">
+    
       <Wrapper type="structure">
+
         <nav className="header__nav" aria-label="Site navigation" role="navigation">
-          <Icons icon="logo" height={40} width={40} />
+
+          <Link to="/" reloadDocument>
+            <Icons icon="logo" height={40} width={40} />
+          </Link>
+
           <Dialog type="primary" triggerCopy="Menu" triggerButton="primary">
             <ul className="nav">
               {MenuData.map((menu, index) => {
@@ -26,8 +32,11 @@ export default function Header() {
               })}
             </ul>
           </Dialog>
+
         </nav>
+
       </Wrapper>
+
     </header>
   );
 

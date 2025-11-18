@@ -30,6 +30,8 @@
   --size-40: 2.5rem;
   --size-48: 3rem;
   --size-56: 3.5rem;
+  --size-64: 4rem;
+  --size-72: 4.5rem;
   
   /* semantic : sizes */
   --size-xxs: var(--size-02);

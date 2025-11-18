@@ -1,5 +1,6 @@
 interface propsInput {
   id: string;
+  classes?: string;
   type: string;
   accept?: string;
   value?: string;
@@ -16,6 +17,7 @@ interface propsInput {
 
 export default function Input({
   id,
+  classes,
   type,
   accept,
   value,
@@ -30,9 +32,11 @@ export default function Input({
   minimal
 }: propsInput) {
 
+  let classList = classes ? "input " + classes : "input";
+
   if (type == "select") {
     return(
-      <div className="input" input={type}>
+      <div className={classList} input={type}>
         <select
           id={id}
           value={value}
@@ -54,7 +58,7 @@ export default function Input({
   }
   else if (type == "textarea") {
     return(
-      <div className="input" input={type}>
+      <div className={classList} input={type}>
         <textarea
           id={id}
           value={value}
@@ -73,7 +77,7 @@ export default function Input({
   }
   else {
     return(
-      <div className="input" input={type}>
+      <div className={classList} input={type}>
         <input
           id={id}
           type={type}

@@ -119,7 +119,13 @@ export default function Creator() {
       ac: "0",
       attack: "0",
       damage: "0",
-      spellcheck: "0"
+      spellcheck: "0",
+      str: "0",
+      dex: "0",
+      con: "0",
+      int: "0",
+      wis: "0",
+      chr: "0"
     }
   });
   
@@ -188,11 +194,18 @@ export default function Creator() {
       inventory: data.inventory,
       notes: data.notes,
       temporary: {
-        hit_points: data.hit_points,
-        ac: data.ac,
-        attack: data.attack,
-        damage: data.damage,
-        spellcheck: data.spellcheck
+        ...character.temporary,
+        hit_points: data.temporary.hit_points,
+        ac: data.temporary.ac,
+        attack: data.temporary.attack,
+        damage: data.temporary.damage,
+        spellcheck: data.temporary.spellcheck,
+        str: data.temporary.str,
+        dex: data.temporary.dex,
+        con: data.temporary.con,
+        int: data.temporary.int,
+        wis: data.temporary.wis,
+        chr: data.temporary.chr
       }
     });
     
@@ -341,40 +354,49 @@ export default function Creator() {
             <div className="block__item block__item--full" heading="5">Temporary</div>
           </div>
           
-          {TemporaryData.map((bonus, index) => {
-            
-            function Temp(prop: string) {
-              if (prop == "hit_points") return character.temporary.hit_points;
-              else if (prop == "ac") return character.temporary.ac;
-              else if (prop == "attack") return character.temporary.attack;
-              else if (prop == "damage") return character.temporary.damage;
-              else if (prop == "spellcheck") return character.temporary.spellcheck;
-              else return "error";
-            }
-            
-            {/* spell casters */}
-            if (bonus.id == "spellcheck" && !IsCaster(character.class)) return;
-            
-            return (
-              <div className="block" key={index}>
-                <Input 
-                  type="number" 
-                  id={bonus.id} 
-                  label={bonus.name} 
-                  value={Temp(bonus.id)} 
-                  change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
-                    ...character,
-                    temporary: {
-                      ...character.temporary,
-                      [bonus.id]: event.target.value
-                    }
-                  })}
-                  min={0}
-                />                
-              </div>
-            );
-          
-          })}
+          <div className="block block__wrap">
+            {TemporaryData.map((bonus, index) => {
+              
+              function Temp(prop: string) {
+                if (prop == "hit_points") return character.temporary.hit_points;
+                else if (prop == "ac") return character.temporary.ac;
+                else if (prop == "attack") return character.temporary.attack;
+                else if (prop == "damage") return character.temporary.damage;
+                else if (prop == "spellcheck") return character.temporary.spellcheck;
+                else if (prop == "str") return character.temporary.str;
+                else if (prop == "dex") return character.temporary.dex;
+                else if (prop == "con") return character.temporary.con;
+                else if (prop == "int") return character.temporary.int;
+                else if (prop == "wis") return character.temporary.wis;
+                else if (prop == "chr") return character.temporary.chr;
+                else return "error";
+              }
+              
+              {/* spell casters */}
+              if (bonus.id == "spellcheck" && !IsCaster(character.class)) return;
+              
+              return (
+                <Fragment key={index}>
+                  <Input
+                    type="number"
+                    id={bonus.id}
+                    classes={bonus.id == "spellcheck" ? "input--max" : ""}
+                    label={bonus.name}
+                    value={Temp(bonus.id)}
+                    change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
+                      ...character,
+                      temporary: {
+                        ...character.temporary,
+                        [bonus.id]: event.target.value
+                      }
+                    })}
+                    min={0}
+                  />
+                </Fragment>
+              );
+        
+            })}
+          </div>
 
         </Dialog>
 
@@ -597,11 +619,24 @@ export default function Creator() {
                 else if (stat === "chr") return character.attributes.chr;
                 else return "error";                
               }
+              
+              function Temp(stat: string) {
+                if (stat === "str") return character.temporary.str;
+                else if (stat === "dex") return character.temporary.dex;
+                else if (stat === "con") return character.temporary.con;
+                else if (stat === "int") return character.temporary.int;
+                else if (stat === "wis") return character.temporary.wis;
+                else if (stat === "chr") return character.temporary.chr;
+                else return "error";                
+              }
     
               return(
                 <div className="block" key={index}>
                   <div className="block__item block__item--tiny" heading="5">
                     {stat}
+                  </div>
+                  <div className="block__item">
+                    {Total(Ability(stat), Temp(stat))}
                   </div>
                   <Input 
                     type="number" 
@@ -619,12 +654,12 @@ export default function Creator() {
                   />
                   <div className="block__item">
                     <span className="block__label">Mod</span>
-                    {Modifier(Ability(stat))}
+                    {Modifier(Ability(stat), Temp(stat))}
                   </div>
                   <div className="block__item">
                     <span className="block__label">Save</span>
                     {Total(
-                      Modifier(Ability(stat)),
+                      Modifier(Ability(stat), Temp(stat)),
                       SavingThrows(character.class, character.equipment)
                     )}
                   </div>
@@ -692,7 +727,7 @@ export default function Creator() {
             <div className="block">
               <div className="block__item">
                 {Total(
-                  Modifier(character.attributes.con), 
+                  Modifier(character.attributes.con, character.temporary.con), 
                   character.hit_points, 
                   character.temporary.hit_points,
                   character.ancestry === "Dwarf" ? "2" : "0", 
@@ -903,7 +938,7 @@ export default function Creator() {
                     character.attributes,
                     character.talents_feats,
                     character.equipment,
-                    character.temporary.spellcheck
+                    character.temporary
                   )}
                 </div>
               </div>
@@ -971,7 +1006,7 @@ export default function Creator() {
               <div className="block__item block__item--tiny" heading="5">AC</div>
               <div className="block__item">
                 {ArmorClass(
-                  Modifier(character.attributes.dex),
+                  Modifier(character.attributes.dex, character.temporary.dex),
                   Armors(ArmorData, character.equipment.armor, "ac"), 
                   Armors(ArmorData, character.equipment.armor, "dex"),
                   Armors(ShieldData, character.equipment.shield, "ac"),
@@ -1029,11 +1064,12 @@ export default function Creator() {
               <div className="block__item block__item--tiny" heading="5">Atk</div>
               <div className="block__item">
                 {Attack(
-                  Modifier(character.attributes.str), 
-                  Modifier(character.attributes.dex), 
+                  Modifier(character.attributes.str, character.temporary.str), 
+                  Modifier(character.attributes.dex, character.temporary.dex), 
                   WeaponData, 
                   character.equipment.hands_primary, 
                   Weapons(WeaponData, character.equipment.hands_primary, "type"), 
+                  Weapons(WeaponData, character.equipment.hands_primary, "properties"), 
                   character.class, 
                   character.level,
                   character.equipment,
@@ -1094,11 +1130,12 @@ export default function Creator() {
               <div className="block__item block__item--tiny" heading="5">Atk</div>
               <div className="block__item">
                 {Attack(
-                  Modifier(character.attributes.str), 
-                  Modifier(character.attributes.dex), 
+                  Modifier(character.attributes.str, character.temporary.str), 
+                  Modifier(character.attributes.dex, character.temporary.dex), 
                   WeaponData, 
                   character.equipment.hands_secondary, 
                   Weapons(WeaponData, character.equipment.hands_secondary, "type"), 
+                  Weapons(WeaponData, character.equipment.hands_secondary, "properties"),
                   character.class, 
                   character.level,
                   character.equipment,
