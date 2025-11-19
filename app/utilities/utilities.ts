@@ -62,6 +62,7 @@ export const Modifier = (a: string, b?: string, c?: string) => {
 }
 
 export const ArmorClass = (
+  ancestry: string,
   modifier: string, 
   armor: string, 
   dex: string, 
@@ -78,13 +79,14 @@ export const ArmorClass = (
   if (armor === "0") ac = 10;
   
   if (dex === "true") mod += parseInt(modifier);
-  
-  
-  
+
+  if (ancestry === "Dwarf") bonus += 1;
+
   // @TODO - not sure I like this..
   if (items) {
     Object.entries(items).map(([key, value]) => (
       value === "Steadfast" ? bonus += 1 : 0,
+      value === "Saint's Cudgel" ? bonus += 1 : 0,
       value === "The Spine of Thicket Green" ? bonus += 1 : 0,
       value === "Pilgrims Lasting Vigil" ? bonus += 1 : 0,
       value === "Cape of Withdrawl" ? bonus += 1 : 0,
@@ -134,6 +136,7 @@ export const HitDie = (role: string) => {
 export const Attack = (
   str: string, 
   dex: string, 
+  chr: string,
   weapons: {}[], 
   weapon_name: string,
   weapon_type: string, 
@@ -142,7 +145,7 @@ export const Attack = (
   level: string,
   items?: {},
   talents?: {},
-  temporary?: string
+  temporary?: string,
 ) => {
   let bonus = 0;
   let posneg = "+";
@@ -154,6 +157,9 @@ export const Attack = (
     weapon_type === "R" || 
     weapon_properties === "F, Th" || 
     weapon_properties === "F") attribute = dex;
+  else if (
+    weapon_properties === "Ps" || 
+    weapon_properties === "Ps, Th") attribute = chr;
   else attribute = str;
   
   if (role === "Fighter") profession = Math.floor(((parseInt(level) + 1) / 2));

@@ -1006,6 +1006,7 @@ export default function Creator() {
               <div className="block__item block__item--tiny" heading="5">AC</div>
               <div className="block__item">
                 {ArmorClass(
+                  character.ancestry,
                   Modifier(character.attributes.dex, character.temporary.dex),
                   Armors(ArmorData, character.equipment.armor, "ac"), 
                   Armors(ArmorData, character.equipment.armor, "dex"),
@@ -1066,6 +1067,7 @@ export default function Creator() {
                 {Attack(
                   Modifier(character.attributes.str, character.temporary.str), 
                   Modifier(character.attributes.dex, character.temporary.dex), 
+                  Modifier(character.attributes.chr, character.temporary.chr),
                   WeaponData, 
                   character.equipment.hands_primary, 
                   Weapons(WeaponData, character.equipment.hands_primary, "type"), 
@@ -1132,6 +1134,7 @@ export default function Creator() {
                 {Attack(
                   Modifier(character.attributes.str, character.temporary.str), 
                   Modifier(character.attributes.dex, character.temporary.dex), 
+                  Modifier(character.attributes.chr, character.temporary.chr),
                   WeaponData, 
                   character.equipment.hands_secondary, 
                   Weapons(WeaponData, character.equipment.hands_secondary, "type"), 

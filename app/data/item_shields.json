@@ -58,7 +58,7 @@
     "properties": "Occupies one hand",
     "bonus": 1,
     "description": "This simple wooden shield far from ordinary, the shield is in fact thousands of years old.",
-    "benefit": "When wielded by a Priest or Ranger the shield grants +1 to all saving throws.",
+    "benefit": "When wielded by a Priest or Ranger the shield increases saving throws by 1.",
     "source": "custom",
     "filter": "shields"
   },

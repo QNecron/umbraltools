@@ -340,6 +340,22 @@
     "filter": "weapons"
   },
   {
+    "name": "Shame or Glory",
+    "base": "Bastard Sword",
+    "type": "M",
+    "range": "C",
+    "damage": "1d8/1d10 + 1",
+    "damage_1": "1d8",
+    "damage_2": "1d10",
+    "properties": "V, 2 slots",
+    "bonus": 1,
+    "description": "This guilded sword, when held aloft, rallies allies to victory. When fait wanes, it bolsters the weilder giving more focus and tenacity.",
+    "benefit": "Enhancement increased by 1 when below 50% life.",
+    "additional": "Attack rolls increased by 1 if attacking the same creature as an ally.",
+    "source": "custom",
+    "filter": "weapons"
+  },
+  {
     "name": "Gorum's Labor",
     "base": "Club",
     "type": "M",
@@ -362,6 +378,20 @@
     "bonus": 2,
     "description": "Rumored to have been crafted in Andoran, the club is stained from the blood of the ruling elite.",
     "benefit": "Deals an additional 1d6 damage to humans and elves.",
+    "source": "custom",
+    "filter": "weapons"
+  },
+  {
+    "name": "Saint's Cudgel",
+    "base": "Club",
+    "type": "M",
+    "range": "C",
+    "damage": "1d4 + 1",
+    "properties": "-",
+    "bonus": 1,
+    "description": "Saint's Cudgel is a simple spiked club with a leather-wrapped handle. The wood itself is irreversibly stained reddish brown from blood.",
+    "benefit": "Armor increased by 1.",
+    "additional": "Target's armor reduced by 1 when hit.",
     "source": "custom",
     "filter": "weapons"
   },
@@ -392,6 +422,20 @@
     "filter": "weapons"
   },
   {
+    "name": "Hold-Wall",
+    "base": "Crossbow",
+    "type": "R",
+    "range": "F",
+    "damage": "1d4 + 1",
+    "properties": "2H, L",
+    "bonus": 1,
+    "description": "A masterwork of dwarven craftsmanship, this sturdy crossbow earned its name during countless battles with ogres.",
+    "benefit": "Critical hits push target close distance.",
+    "additional": "When wielded by a Dwarf the crossbow increases armor by 1.",
+    "source": "custom",
+    "filter": "weapons"
+  },
+  {
     "name": "Drawn in Spring",
     "base": "Dagger",
     "type": "M/R",
@@ -418,6 +462,19 @@
     "filter": "weapons"
   },
   {
+    "name": "Reaping Knife",
+    "base": "Dagger",
+    "type": "M/R",
+    "range": "C/N",
+    "damage": "1d4 + 1",
+    "properties": "Ps, Th",
+    "bonus": 1,
+    "description": "There is an uneasy energy about the Reaping Knife, many claim they feel something tugging at their soul while hold it.",
+    "benefit": "Uses Charisma instead of Dexterity for attack rolls.",
+    "source": "custom",
+    "filter": "weapons"
+  },
+  {
     "name": "Edge of Reason",
     "base": "Greataxe",
     "type": "M",
@@ -428,7 +485,7 @@
     "properties": "V, 2 slots",
     "bonus": 1,
     "description": "A dark iron greataxe that weighs twice that of other greataxes. Distortions appear around the wielder when drawn.",
-    "benefit": "Critical hits casts Disguise Self on you (automatically).",
+    "benefit": "Critical hits cast Disguise Self on you (automatically).",
     "additional": "You can cast Color Spray once per day (+4 bonus).",
     "source": "custom",
     "filter": "weapons"
@@ -445,6 +502,21 @@
     "bonus": 1,
     "description": "This silver greataxe feel warm to the tough, weilding it grants the warmth of a blazing hearth.",
     "benefit": "Deals an additional 1d4 fire damage.",
+    "source": "custom",
+    "filter": "weapons"
+  },
+  {
+    "name": "Oathbreaker's End",
+    "base": "Greataxe",
+    "type": "M",
+    "range": "C",
+    "damage": "1d8/1d10 + 1 + 1d6 (vs Chaotic)",
+    "damage_1": "1d8",
+    "damage_2": "1d10",
+    "properties": "V, 2 slots",
+    "bonus": 1,
+    "description": "This axe forged to ward against any who would undermine authority. It brings a swift end to beings of chaos.",
+    "benefit": "Deals an additional 1d6 damage to chaotic creatures.",
     "source": "custom",
     "filter": "weapons"
   },
@@ -476,6 +548,19 @@
     "filter": "weapons"
   },
   {
+    "name": "Tidefall",
+    "base": "Greatsword",
+    "type": "M",
+    "range": "C",
+    "damage": "1d12 + 1",
+    "properties": "2H, 2 slots",
+    "bonus": 1,
+    "description": "Commissioned by a master dwarven smith, the Tidefall continually is a formitable blade. Once its edge has been felt, the pain lingers.",
+    "benefit": "Deals an additional 1 point of damage on the creatures turn for 5 rounds.",
+    "source": "custom",
+    "filter": "weapons"
+  },
+  {
     "name": "Tall Grass",
     "base": "Javelin",
     "type": "M/R",
@@ -503,6 +588,20 @@
     "filter": "weapons"
   },
   {
+    "name": "Lost Reach",
+    "base": "Javelin",
+    "type": "M/R",
+    "range": "C/F",
+    "damage": "1d4 + 2",
+    "properties": "Th",
+    "bonus": 2,
+    "description": "The wicked, hooked blade of this javelin causes severe pain. It said the pain is so intense that you can loose your vision briefly.",
+    "benefit": "Critical hits blind target for 3 rounds.",
+    "additional": "",
+    "source": "custom",
+    "filter": "weapons"
+  },
+  {
     "name": "Borresaine",
     "base": "Longbow",
     "type": "R",
@@ -525,6 +624,19 @@
     "bonus": 2,
     "description": "This weapon is suffused with energies enabling the wielder to stand his ground against incorporeal creatures of all kinds.",
     "benefit": "Deals an additional 1d6 damage to incorporeal creatures.",
+    "source": "custom",
+    "filter": "weapons"
+  },
+  {
+    "name": "Saint's Mercy",
+    "base": "Longbow",
+    "type": "R",
+    "range": "F",
+    "damage": "1d8 + 1",
+    "properties": "2H",
+    "bonus": 1,
+    "description": "This bow represents both life and death, predator and prey, and culling and healing with one notched arrow.",
+    "benefit": "Critical hits heal allies within near 1d6 hit points.",
     "source": "custom",
     "filter": "weapons"
   },
@@ -598,6 +710,20 @@
     "filter": "weapons"
   },
   {
+    "name": "Starcaller",
+    "base": "Mace",
+    "type": "M",
+    "range": "C",
+    "damage": "1d8 + 1",
+    "properties": "Ps",
+    "bonus": 1,
+    "description": "Starcaller, a mace of such quality that it was said to have fallen from the heavens themselves.",
+    "benefit": "Uses Charisma instead of Strength for attack rolls.",
+    "additional": "Critical hits cast Magic Missile on the target.",
+    "source": "custom",
+    "filter": "weapons"
+  },
+  {
     "name": "Stormcaller",
     "base": "Shortbow",
     "type": "R",
@@ -621,6 +747,19 @@
     "bonus": 1,
     "description": "Fangs, claws, teeth and bones can be seen interlocking throughout the weapon's blood stained structure.",
     "benefit": "Attack rolls increased by 2.",
+    "source": "custom",
+    "filter": "weapons"
+  },
+  {
+    "name": "Persistance",
+    "base": "Shortbow",
+    "type": "R",
+    "range": "F",
+    "damage": "1d4 + 1",
+    "properties": "2H",
+    "bonus": 1,
+    "description": "Arrows fired from the bow, it's said, would find their way unfailingly to a vulnerable point and fell their target.",
+    "benefit": "Deals an additional 1 point of damage on the creatures turn for 5 rounds.",
     "source": "custom",
     "filter": "weapons"
   },
@@ -651,6 +790,19 @@
     "filter": "weapons"
   },
   {
+    "name": "Measured Restraint",
+    "base": "Shortsword",
+    "type": "M",
+    "range": "C",
+    "damage": "1d6 + 1",
+    "properties": "F",
+    "bonus": 1,
+    "description": "This blade was not often seen in use, for its bearer was much more concerned with restraint and felt weapons should be the final resort.",
+    "benefit": "Uses Dexterity instead of Strength for attack rolls.",
+    "source": "custom",
+    "filter": "weapons"
+  },
+  {
     "name": "The Vile Loner's Lance",
     "base": "Spear",
     "type": "M/R",
@@ -659,7 +811,7 @@
     "properties": "Th",
     "bonus": 1,
     "description": "This weapon inspire awe on the battlefield, while it appears to be simple spear it has devastating power at its tip.",
-    "benefit": "Critical hits reduce target's AC by 4 for 3 rounds.",
+    "benefit": "Critical hits reduce target's AC by 3 for 3 rounds.",
     "source": "custom",
     "filter": "weapons"
   },
@@ -673,6 +825,19 @@
     "bonus": 2,
     "description": "The barbed spearhead grants prey a swift end, fitting as it's likly they won't hear or see the wielder coming.",
     "benefit": "Gains advantage on stealth checks.",
+    "source": "custom",
+    "filter": "weapons"
+  },
+  {
+    "name": "Conqueror's Spear",
+    "base": "Spear",
+    "type": "M/R",
+    "range": "C/N",
+    "damage": "1d6 + 1 + 1d4 (Fire)",
+    "properties": "Th",
+    "bonus": 1,
+    "description": "The tip of this spear is hardened obsidian, it radiates an intense heat at all times. Its touch scorches all.",
+    "benefit": "Deals an additional 1d4 fire damage.",
     "source": "custom",
     "filter": "weapons"
   },
@@ -705,6 +870,20 @@
     "filter": "weapons"
   },
   {
+    "name": "Wind-Walker",
+    "base": "Staff",
+    "type": "M",
+    "range": "C",
+    "damage": "1d4 + 1 + 1d4 (Cold)",
+    "properties": "2H",
+    "bonus": 1,
+    "description": "This white iron wood staff embodies the death-cold gales of the Crown of the World.",
+    "benefit": "Deals an additional 1d4 cold damage.",
+    "additional": "You can cast Chilling Touch, Ice Slick, and Witness once per day (+4 bonus).",
+    "source": "custom",
+    "filter": "weapons"
+  },
+  {
     "name": "Shatterstar",
     "base": "Warhammer",
     "type": "M",
@@ -727,6 +906,19 @@
     "bonus": 2,
     "description": "Made from solid skymetal, this hammer is capable of dealing massive concussive damage to foes.",
     "benefit": "Critical hits deal 3x damage.",
+    "source": "custom",
+    "filter": "weapons"
+  },
+  {
+    "name": "Last Word",
+    "base": "Warhammer",
+    "type": "M",
+    "range": "C",
+    "damage": "1d10 + 1",
+    "properties": "2H",
+    "bonus": 1,
+    "description": "It's said this warhammer could unhorse an armored rider with a single blow to the breastplate, breaking steel and bone.",
+    "benefit": "Critical hits stun target for 1 round.",
     "source": "custom",
     "filter": "weapons"
   }
