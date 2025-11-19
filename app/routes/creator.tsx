@@ -114,6 +114,20 @@ export default function Creator() {
     },
     inventory: "",
     notes: "",
+    augments: {
+      hit_points: "0",
+      ac: "0",
+      saving_throws: "0",
+      attack: "0",
+      damage: "0",
+      spellcheck: "0",
+      str: "0",
+      dex: "0",
+      con: "0",
+      int: "0",
+      wis: "0",
+      chr: "0"
+    },
     temporary: {
       hit_points: "0",
       ac: "0",
@@ -193,6 +207,21 @@ export default function Creator() {
       },
       inventory: data.inventory,
       notes: data.notes,
+      augments: {
+        ...character.augments,
+        hit_points: data.augments.hit_points,
+        ac: data.augments.ac,
+        saving_throws: data.augments.saving_throws,
+        attack: data.augments.attack,
+        damage: data.augments.damage,
+        spellcheck: data.augments.spellcheck,
+        str: data.augments.str,
+        dex: data.augments.dex,
+        con: data.augments.con,
+        int: data.augments.int,
+        wis: data.augments.wis,
+        chr: data.augments.chr
+      },
       temporary: {
         ...character.temporary,
         hit_points: data.temporary.hit_points,
@@ -610,40 +639,50 @@ export default function Creator() {
                         
             {AttributeData.map((stat, index) => {
               
-              function Ability(stat: string) {
-                if (stat === "str") return character.attributes.str;
-                else if (stat === "dex") return character.attributes.dex;
-                else if (stat === "con") return character.attributes.con;
-                else if (stat === "int") return character.attributes.int;
-                else if (stat === "wis") return character.attributes.wis;
-                else if (stat === "chr") return character.attributes.chr;
-                else return "error";                
-              }
+              function Attribute(stat: string, prop: string) {
+                let state: {
+                  str: string, 
+                  dex: string, 
+                  con: string, 
+                  int: string, 
+                  wis: string, 
+                  chr: string
+                };
+                let attribute = "0";
+                
+                if (prop === "augments") state = character.augments;
+                else if (prop === "temporary") state = character.temporary;
+                else state = character.attributes;
+                
+                if (stat === "str") attribute = state.str;
+                if (stat === "dex") attribute = state.dex;
+                if (stat === "con") attribute = state.con;
+                if (stat === "int") attribute = state.int;
+                if (stat === "wis") attribute = state.wis;
+                if (stat === "chr") attribute = state.chr;
+                
+                return attribute;
               
-              function Temp(stat: string) {
-                if (stat === "str") return character.temporary.str;
-                else if (stat === "dex") return character.temporary.dex;
-                else if (stat === "con") return character.temporary.con;
-                else if (stat === "int") return character.temporary.int;
-                else if (stat === "wis") return character.temporary.wis;
-                else if (stat === "chr") return character.temporary.chr;
-                else return "error";                
               }
     
               return(
-                <div className="block" key={index}>
+                <div className="block block__confined" key={index}>
                   <div className="block__item block__item--tiny" heading="5">
                     {stat}
                   </div>
                   <div className="block__item">
-                    {Total(Ability(stat), Temp(stat))}
+                    {Total(
+                      Attribute(stat, "attributes"), 
+                      Attribute(stat, "temporary"),
+                      Attribute(stat, "augments")
+                    )}
                   </div>
                   <Input 
                     type="number" 
                     id={stat}
                     label={stat} 
                     minimal={true} 
-                    value={Ability(stat)} 
+                    value={Attribute(stat, "attributes")} 
                     change={(event: ChangeEvent<HTMLInputElement>) => characterUpdate({
                       ...character,
                       attributes: {
@@ -654,13 +693,25 @@ export default function Creator() {
                   />
                   <div className="block__item">
                     <span className="block__label">Mod</span>
-                    {Modifier(Ability(stat), Temp(stat))}
+                    {Modifier(
+                      Attribute(stat, "attributes"),
+                      Attribute(stat, "temporary"),
+                      Attribute(stat, "augments")
+                    )}
                   </div>
                   <div className="block__item">
                     <span className="block__label">Save</span>
                     {Total(
-                      Modifier(Ability(stat), Temp(stat)),
-                      SavingThrows(character.class, character.equipment)
+                      Modifier(
+                        Attribute(stat, "attributes"), 
+                        Attribute(stat, "temporary"), 
+                        Attribute(stat, "augments")
+                      ),
+                      SavingThrows(
+                        character.class, 
+                        character.equipment, 
+                        character.augments.saving_throws
+                      )
                     )}
                   </div>
                   <button className="btn" button="icon primary" onClick={(e) => characterUpdate({
@@ -727,7 +778,7 @@ export default function Creator() {
             <div className="block">
               <div className="block__item">
                 {Total(
-                  Modifier(character.attributes.con, character.temporary.con), 
+                  Modifier(character.attributes.con, character.temporary.con, character.augments.con), 
                   character.hit_points, 
                   character.temporary.hit_points,
                   character.ancestry === "Dwarf" ? "2" : "0", 
@@ -938,6 +989,7 @@ export default function Creator() {
                     character.attributes,
                     character.talents_feats,
                     character.equipment,
+                    character.augments,
                     character.temporary
                   )}
                 </div>
@@ -1007,13 +1059,14 @@ export default function Creator() {
               <div className="block__item">
                 {ArmorClass(
                   character.ancestry,
-                  Modifier(character.attributes.dex, character.temporary.dex),
+                  Modifier(character.attributes.dex, character.temporary.dex, character.augments.dex),
                   Armors(ArmorData, character.equipment.armor, "ac"), 
                   Armors(ArmorData, character.equipment.armor, "dex"),
                   Armors(ShieldData, character.equipment.shield, "ac"),
                   character.equipment,
                   character.talents_feats,
-                  character.temporary.ac
+                  character.temporary.ac,
+                  character.augments.ac
                 )}
               </div>
               <div className="block__item block__item--full">
@@ -1065,9 +1118,9 @@ export default function Creator() {
               <div className="block__item block__item--tiny" heading="5">Atk</div>
               <div className="block__item">
                 {Attack(
-                  Modifier(character.attributes.str, character.temporary.str), 
-                  Modifier(character.attributes.dex, character.temporary.dex), 
-                  Modifier(character.attributes.chr, character.temporary.chr),
+                  Modifier(character.attributes.str, character.temporary.str, character.augments.str), 
+                  Modifier(character.attributes.dex, character.temporary.dex, character.augments.dex), 
+                  Modifier(character.attributes.chr, character.temporary.chr, character.augments.chr),
                   WeaponData, 
                   character.equipment.hands_primary, 
                   Weapons(WeaponData, character.equipment.hands_primary, "type"), 
@@ -1076,6 +1129,7 @@ export default function Creator() {
                   character.level,
                   character.equipment,
                   character.talents_feats,
+                  character.augments.attack,
                   character.temporary.attack
                 )}
               </div>
@@ -1088,6 +1142,7 @@ export default function Creator() {
                   Weapons(WeaponData, character.equipment.hands_primary, "base"),
                   Weapons(WeaponData, character.equipment.hands_primary, "damage"),
                   character.equipment,
+                  character.augments.damage,
                   character.temporary.damage
                 )}
               </div>
@@ -1132,9 +1187,9 @@ export default function Creator() {
               <div className="block__item block__item--tiny" heading="5">Atk</div>
               <div className="block__item">
                 {Attack(
-                  Modifier(character.attributes.str, character.temporary.str), 
-                  Modifier(character.attributes.dex, character.temporary.dex), 
-                  Modifier(character.attributes.chr, character.temporary.chr),
+                  Modifier(character.attributes.str, character.temporary.str, character.augments.str), 
+                  Modifier(character.attributes.dex, character.temporary.dex, character.augments.dex), 
+                  Modifier(character.attributes.chr, character.temporary.chr, character.augments.chr),
                   WeaponData, 
                   character.equipment.hands_secondary, 
                   Weapons(WeaponData, character.equipment.hands_secondary, "type"), 
@@ -1143,6 +1198,7 @@ export default function Creator() {
                   character.level,
                   character.equipment,
                   character.talents_feats,
+                  character.augments.attack,
                   character.temporary.attack
                 )}
               </div>
@@ -1155,6 +1211,7 @@ export default function Creator() {
                   Weapons(WeaponData, character.equipment.hands_secondary, "base"),
                   Weapons(WeaponData, character.equipment.hands_secondary, "damage"),
                   character.equipment,
+                  character.augments.damage,
                   character.temporary.damage
                 )}
               </div>

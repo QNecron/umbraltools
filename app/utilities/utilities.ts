@@ -69,11 +69,13 @@ export const ArmorClass = (
   shield: string, 
   items?: {},
   talents?: {},
-  temporary?: string
+  temporary?: string,
+  augments?: string
 ) => {
   let bonus = 0;
   let ac = 0;
   let mod = 0;
+  let aug = augments ? augments : "0";
   let temp = temporary ? temporary : "0";
   
   if (armor === "0") ac = 10;
@@ -102,7 +104,7 @@ export const ArmorClass = (
     ));
   }
   
-  ac += parseInt(armor) + parseInt(shield) + mod + bonus + parseInt(temp);
+  ac += parseInt(armor) + parseInt(shield) + mod + bonus + parseInt(temp) + parseInt(aug);
     
   return ac;
   
@@ -145,12 +147,14 @@ export const Attack = (
   level: string,
   items?: {},
   talents?: {},
+  augments?: string,
   temporary?: string,
 ) => {
   let bonus = 0;
   let posneg = "+";
   let attribute = str;
   let profession = 0;
+  let aug = augments ? augments : ")";
   let temp = temporary ? temporary : "0";
   
   if (
@@ -186,7 +190,7 @@ export const Attack = (
     ));
   }
   
-  bonus += parseInt(attribute) + profession + parseInt(temp);
+  bonus += parseInt(attribute) + profession + parseInt(temp) + parseInt(aug);
   
   if (bonus < 0) posneg = "";
   
@@ -201,6 +205,7 @@ export const Damage = (
   weaponBase: string, 
   weaponDamage: string,
   data: {},
+  augments?: string,
   temporary?: string
 ) => {
   
@@ -208,6 +213,7 @@ export const Damage = (
   let damageBonus = "";
   let isRanged = false;
   let profession = 0;
+  let aug = augments ? augments : "0";
   let temp = temporary ? temporary : "0";
       
   if (role === "Fighter") {
@@ -224,6 +230,10 @@ export const Damage = (
     // weapon not found
   }
   
+  if (aug !== "0") damageBonus += " + " + aug;
+  
+  if (temp !== "0") damageBonus += " + " + temp;
+  
   Object.entries(data).map(([key, value]) => (
     value === "Executioner's Hood" ? damageBonus += " + 1" : "",
     value === "One Dozen Stood" && isRanged === false ? damageBonus += " + 1d4 (Fire)" : "",
@@ -238,8 +248,6 @@ export const Damage = (
     value === "Cloak of Minor Missiles" && isRanged === true ? damageBonus += " + 1" : "",
     value === "Ioun Stone, Amber" ? damageBonus += " + 1" : "" 
   ));
-  
-  if (temp !== "0") damageBonus += " + " + parseInt(temp);
   
   return damageTotal + damageBonus;
   
@@ -271,8 +279,9 @@ export const Augmentations = (data: {}, augs: {}, bonus: string) => {
   return "0";
 }
 
-export const SavingThrows = (role: string, items: {}) => {
+export const SavingThrows = (role: string, items: {}, augments?: string) => {
   let bonus = 0;
+  let aug = augments ? augments : "0";
   
   // @TODO - not sure I like this..
   Object.entries(items).map(([key, value]) => (
@@ -283,34 +292,42 @@ export const SavingThrows = (role: string, items: {}) => {
     value === "Tempered Helm" ? bonus += 1 : 0
   ));
   
+  bonus += parseInt(aug);
+  
   return bonus.toString();
   
 }
 
+// @ TODO - clean up these "any" props
 export const Spellcasting = (
-  role: string, 
-  attributes: any, 
-  talents: {}, 
+  role: string,
+  attributes: any,
+  talents: {},
   items: {},
+  augments?: any,
   temporary?: any,
 ) => {
   let attribute = 10;
   let bonus = 0;
   let modifier = "0";
   let total = 0;
+  let augAttribute = "0";
   let tempAttribute = "0";
   let tempSpellcheck = temporary.spellcheck ? temporary.spellcheck : "0";
   
   if (role === "Priest") { 
     attribute = attributes.wis;
+    augAttribute = augments.wis;
     tempAttribute = temporary.wis;
   }
   else if (role === "Wizard") {
     attribute = attributes.int;
+    augAttribute = augments.int;
     tempAttribute = temporary.int;
   }
   else { 
     attribute = attributes.chr;
+    augAttribute = augments.chr;
     tempAttribute = temporary.chr;
   }
   
@@ -328,7 +345,7 @@ export const Spellcasting = (
     value === "Ioun Stone, Iolite" ? bonus += 1 : 0
   ));
   
-  modifier = Modifier(attribute.toString(), tempAttribute.toString());
+  modifier = Modifier(attribute.toString(), tempAttribute.toString(), augAttribute.toString());
   
   total = parseInt(modifier) + bonus + parseInt(tempSpellcheck);
   

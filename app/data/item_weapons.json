@@ -728,7 +728,7 @@
     "base": "Shortbow",
     "type": "R",
     "range": "F",
-    "damage": "1d4 + 1 + 1d4 (Electical)",
+    "damage": "1d4 + 1 + 1d4 (Electrical)",
     "properties": "2H",
     "bonus": 1,
     "description": "This pearl white wooden bow radiates energy. The air crackles with electricity when drawn.",
