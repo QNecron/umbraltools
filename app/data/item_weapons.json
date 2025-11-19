@@ -462,14 +462,14 @@
     "filter": "weapons"
   },
   {
-    "name": "Reaping Knife",
+    "name": "Reaping Dagger",
     "base": "Dagger",
     "type": "M/R",
     "range": "C/N",
     "damage": "1d4 + 1",
     "properties": "Ps, Th",
     "bonus": 1,
-    "description": "There is an uneasy energy about the Reaping Knife, many claim they feel something tugging at their soul while hold it.",
+    "description": "There is an uneasy energy about the Reaping Dagger, many claim they feel something tugging at their soul while hold it.",
     "benefit": "Uses Charisma instead of Dexterity for attack rolls.",
     "source": "custom",
     "filter": "weapons"
