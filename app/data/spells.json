@@ -262,7 +262,7 @@
     "class": "Wizard",
     "duration": "Instant",
     "range": "Self",
-    "description_1": "A whirlwind form around you. Creature within one-half of near must make a STR check vs your spell casting check or be pushed to near distance and knocked prone.",
+    "description_1": "A whirlwind forms around you. Creature within one-half of near must make a STR check vs your spell casting check or be pushed to near distance and knocked prone.",
     "source": "custom"
   },
   {
