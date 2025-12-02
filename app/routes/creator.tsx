@@ -408,7 +408,7 @@ export default function Creator() {
                 <Fragment key={index}>
                   <Input
                     type="number"
-                    id={bonus.id}
+                    id={"temp_" + bonus.id}
                     classes={bonus.id == "spellcheck" ? "input--max" : ""}
                     label={bonus.name}
                     value={Temp(bonus.id)}
@@ -512,9 +512,103 @@ export default function Creator() {
             minimal={true} 
             change={async (event: ChangeEvent<HTMLInputElement>) => {
               if (event.target.files) {
-                const parseData = await LoadFile(event.target.files[0]);
-                // @ts-ignore: defined state object vs imported, need to think on this
-                characterUpdate(parseData);
+              
+                // @TODO : rethink how we update the character object state
+                let data: any = await LoadFile(event.target.files[0]);
+                
+                if (Object.hasOwn(data, "augments") && typeof data["augments"] === "object" && data["augments"] !== null) {
+                  // console.log("Has the augments object!");
+                  characterUpdate(data);
+                }
+                else { 
+                  // console.log("Does not have the augments object!");
+                  characterUpdate({
+                    ...character,
+                    name: data.name,
+                    ancestry: data.ancestry,
+                    background: data.background,
+                    deity: data.deity,
+                    alignment: data.alignment,
+                    class: data.class,
+                    title: data.title,
+                    level: data.level,
+                    hit_points: data.hit_points,
+                    attributes: {
+                      ...character.attributes,
+                      str: data.attributes.str,
+                      dex: data.attributes.dex,
+                      con: data.attributes.con,
+                      int: data.attributes.int,
+                      wis: data.attributes.wis,
+                      chr: data.attributes.chr,
+                    },
+                    talents_feats: {
+                      ...character.talents_feats,
+                      level_0: data.talents_feats.level_0,
+                      level_1: data.talents_feats.level_1,
+                      level_2: data.talents_feats.level_2,
+                      level_3: data.talents_feats.level_3,
+                      level_4: data.talents_feats.level_4,
+                      level_5: data.talents_feats.level_5,
+                      level_6: data.talents_feats.level_6,
+                      level_7: data.talents_feats.level_7,
+                      level_8: data.talents_feats.level_8,
+                      level_9: data.talents_feats.level_9,
+                      level_10: data.talents_feats.level_10,
+                    },
+                    spells: data.spells,
+                    xp: data.xp,
+                    luck_tokens: data.luck_tokens,
+                    money: {
+                      ...character.money,
+                      gp: data.money.gp,
+                      sp: data.money.sp,
+                      cp: data.money.cp
+                    },
+                    equipment: {
+                      ...character.equipment,
+                      head: data.equipment.head,
+                      back: data.equipment.back,
+                      neck: data.equipment.neck,
+                      armor: data.equipment.armor,
+                      shield: data.equipment.shield,
+                      arms: data.equipment.arms,
+                      hands_primary: data.equipment.hands_primary,
+                      hands_secondary: data.equipment.hands_secondary,
+                      waist: data.equipment.waist,
+                      feet: data.equipment.feet,
+                      accessory: data.equipment.accessory,
+                      misc: data.equipment.misc,
+                    },
+                    inventory: data.inventory,
+                    notes: data.notes,
+                    augments: {
+                      ...character.augments,
+                      hit_points: "0",
+                      ac: "0",
+                      saving_throws: "0",
+                      attack: "0",
+                      damage: "0",
+                      spellcheck: "0",
+                      str: "0",
+                      dex: "0",
+                      con: "0",
+                      int: "0",
+                      wis: "0",
+                      chr: "0"
+                    },
+                    temporary: {
+                      ...character.temporary,
+                      str: "0",
+                      dex: "0",
+                      con: "0",
+                      int: "0",
+                      wis: "0",
+                      chr: "0"                      
+                    }
+                  });
+                }
+                
               }
             }}
           />
@@ -641,11 +735,11 @@ export default function Creator() {
               
               function Attribute(stat: string, prop: string) {
                 let state: {
-                  str: string, 
-                  dex: string, 
-                  con: string, 
-                  int: string, 
-                  wis: string, 
+                  str: string,
+                  dex: string,
+                  con: string,
+                  int: string,
+                  wis: string,
                   chr: string
                 };
                 let attribute = "0";
@@ -654,7 +748,7 @@ export default function Creator() {
                 else if (prop === "temporary") state = character.temporary;
                 else state = character.attributes;
                 
-                if (stat === "str") attribute = state.str;
+                if (stat === "str") attribute = state.str ? state.str : "";
                 if (stat === "dex") attribute = state.dex;
                 if (stat === "con") attribute = state.con;
                 if (stat === "int") attribute = state.int;
