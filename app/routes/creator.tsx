@@ -450,7 +450,46 @@ export default function Creator() {
                     <button 
                       className="btn" 
                       button="icon primary" 
-                      onClick={() => CreatorUpdate(LoadCharacter(name))}
+                      onClick={() => {
+                        const data = LoadCharacter(name);
+                        
+                        if (Object.hasOwn(data, "augments") && typeof data["augments"] === "object" && data["augments"] !== null) {
+                          // console.log("Has the augments object!");
+                          characterUpdate(data);
+                        }
+                        else {
+                          // console.log("Does not have the augments object!");
+                          characterUpdate({
+                            ...data,
+                            ...character,
+                            augments: {
+                              ...character.augments,
+                              hit_points: "0",
+                              ac: "0",
+                              saving_throws: "0",
+                              attack: "0",
+                              damage: "0",
+                              spellcheck: "0",
+                              str: "0",
+                              dex: "0",
+                              con: "0",
+                              int: "0",
+                              wis: "0",
+                              chr: "0"
+                            },
+                            temporary: {
+                              ...character.temporary,
+                              str: "0",
+                              dex: "0",
+                              con: "0",
+                              int: "0",
+                              wis: "0",
+                              chr: "0"
+                            }
+                          });
+                        }
+
+                      }}
                     >
                       <span className="srt">Load character {name}</span>
                       <Icons icon="download" />
@@ -514,7 +553,7 @@ export default function Creator() {
               if (event.target.files) {
               
                 // @TODO : rethink how we update the character object state
-                let data: any = await LoadFile(event.target.files[0]);
+                let data: any = await LoadFile(event.target.files[0]) as string;
                 
                 if (Object.hasOwn(data, "augments") && typeof data["augments"] === "object" && data["augments"] !== null) {
                   // console.log("Has the augments object!");
