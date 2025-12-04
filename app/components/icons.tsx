@@ -7,12 +7,13 @@ import Download from "../images/cloud-download.svg";
 import Upload from "../images/cloud-upload.svg";
 import Flame from "../images/flame.svg";
 import Save from "../images/save.svg";
-import Delete from "../images/skull.svg";
+import Delete from "../images/trash.svg";
 import Search from "../images/search.svg";
 import Reader from "../images/reader.svg";
 import Character from "../images/characters.svg";
-import Items from "../images/items.svg";
-import Temporary from "../images/temporary.svg";
+import Shield from "../images/shield.svg";
+import Timer from "../images/timer.svg";
+import Settings from "../images/settings.svg";
 
 interface propsIcons {
   icon: string;
@@ -43,8 +44,9 @@ export default function Icons({
     if (type === "reader") url = Reader
     if (type === "save") url = Save
     if (type === "characters") url = Character
-    if (type === "items") url = Items
-    if (type === "temporary") url = Temporary
+    if (type === "shield") url = Shield
+    if (type === "timer") url = Timer
+    if (type === "settings") url = Settings
 
     return url;
 

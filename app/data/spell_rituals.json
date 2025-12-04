@@ -1,0 +1,55 @@
+[
+  {
+    "name": "Rites of Demonology",
+    "description": "",
+    "group_1_name": "Abyssal Inhabitants",
+    "group_1": [
+      "Low Demons", 
+      "Middle Demons",
+      "High Demons",
+      "Great Demons"
+    ],
+    "group_1_augment": {
+      "1": ["+3 Hit Points", "Detect Magic"],
+      "2": ["+1 Attack/Spellcasting", "Invisibility"],
+      "3": ["+1 Armor Class", "Dispel Magic"],
+      "4": ["+2 to any Stat", "Divination"]
+    },
+    "group_2_name": "Abyssal Influence",
+    "group_2": [
+      "The Abyss", 
+      "The Corruption, Fauna",
+      "The Corruption, Flora"
+    ],
+    "group_2_augment": {
+      "1": ["3 Fire Resistance", "Burning Hands"],
+      "2": ["+1 Saving Throws", "Scorching Ray"],
+      "3": ["Fire Resistant", "Fireball"]
+    },
+    "group_3_name": "Abyssal Safeguards",
+    "group_3": [
+      "The Virtuous", 
+      "The Restoration"
+    ],
+    "group_3_augment": {
+      "1": ["Protection vs Chaos"],
+      "2": ["Restoration"]
+    }
+  },
+  {
+    "name": "Blood Rites",
+    "description": "",
+    "group_1_name": "Hemotheurgy",
+    "group_1_augment": {
+      "1": ["Blood Siphon"]
+    },
+    "group_2_name": "Hemotheurgy",
+    "group_2_augment": {
+      "1": ["Blood Rage"]
+    },
+    "group_3_name": "Hemotheurgy",
+    "group_3_augment": {
+      "1": ["Blood Blaze"]
+    }
+  }
+]
