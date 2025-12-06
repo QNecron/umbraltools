@@ -437,8 +437,8 @@
   },
   {
     "name": "Lord in Iron's Banner Cape",
-    "description": "After donning the cape your armor begins to grow fearsome looking spikes.",
-    "benefit": "Three times per day you grant yourself and allies within near +1 weapon damage and 1d4 temporary hit points for 3 rounds.",
+    "description": "After donning the cape your armor begins to grow fearsome looking spikes, rusted from dried blood.",
+    "benefit": "Three times per day you grant yourself and allies within near +1 armor, +1 weapon damage, and 1d4 temporary hit points for 3 rounds.",
     "additional": "Enemy morale checks reduced to DC12 within near.",
     "source": "custom",
     "base": "back",

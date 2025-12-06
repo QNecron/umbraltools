@@ -45,7 +45,6 @@ export default function Spells() {
       imgMobileWidth={1080} 
       title="Spells" 
       logo={false} 
-      animation={false} 
     />
 
     <Section padding="bottom">
@@ -92,10 +91,6 @@ export default function Spells() {
             let sourceFilter = spell.source;
             let casterFilter = spell.class;
             let levelFilter = spell.tier.toString();
-
-            let spellClass = <> <strong>Class:</strong> {spell.class} </>;
-            let spellDuration = <> <strong>Duration:</strong> {spell.duration} </>;
-            let spellRange = <> <strong>Range:</strong> {spell.range} </>;
             
             // alphabetical filter
             if (alphaFilter !== alpha && alpha !== "*") return null;
@@ -108,6 +103,10 @@ export default function Spells() {
             
             // level filter
             if (levelFilter !== level && level !== "*") return null;
+
+            let spellClass = <> <strong>Class:</strong> {spell.class} </>;
+            let spellDuration = <> <strong>Duration:</strong> {spell.duration} </>;
+            let spellRange = <> <strong>Range:</strong> {spell.range} </>;
             
             return(
               <Card 

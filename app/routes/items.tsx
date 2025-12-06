@@ -49,7 +49,6 @@ export default function Feats() {
       imgMobileWidth={1080} 
       title="Magic Items" 
       logo={false} 
-      animation={false} 
     />
 
     <Section padding="bottom">

@@ -30,7 +30,6 @@ export default function Codex() {
       imgMobileWidth={1080} 
       title="Cipher" 
       logo={false} 
-      animation={false} 
     />
     
     <Section padding="top">

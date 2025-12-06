@@ -31,7 +31,6 @@ export default function Codex() {
       imgMobileWidth={1080} 
       title="Codex" 
       logo={false} 
-      animation={false} 
     />
 
     <Section>

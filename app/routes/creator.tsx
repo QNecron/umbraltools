@@ -218,7 +218,7 @@ export default function Creator() {
           </div>
           
           {EquipmentDataFull.map((item, index) => {
-            
+                        
             function MatchProp(prop: string) {
               if (prop == "hands_primary") return character.equipment.hands_primary;
               else if (prop == "hands_secondary") return character.equipment.hands_secondary;
@@ -256,6 +256,8 @@ export default function Creator() {
             let itemDescription = ItemInformation(MatchData(item), MatchProp(item), "description");
             let itemBenefit = ItemInformation(MatchData(item), MatchProp(item), "benefit");
             let itemAdditional = ItemInformation(MatchData(item), MatchProp(item), "additional");
+            
+            if (MatchProp(item) === "None") return;
             
             return(
               <Fragment key={index}>
