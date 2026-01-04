@@ -48,7 +48,7 @@
     "range": "C",
     "damage": "1d8/1d10",
     "damage_1": "1d8",
-    "damage_2": "1d10",    
+    "damage_2": "1d10",
     "properties": "V, 2 slots",
     "bonus": 0,
     "source": "core"
@@ -202,7 +202,7 @@
     "range": "C",
     "damage": "1d8/1d10 + 1",
     "damage_1": "1d8",
-    "damage_2": "1d10",    
+    "damage_2": "1d10",
     "properties": "V, 2 slots",
     "bonus": 1,
     "source": "core"
@@ -500,7 +500,7 @@
     "damage_2": "1d10",
     "properties": "V, 2 slots",
     "bonus": 1,
-    "description": "This silver greataxe feel warm to the tough, weilding it grants the warmth of a blazing hearth.",
+    "description": "This silver greataxe feel warm to the touch, weilding it grants the warmth of a blazing hearth.",
     "benefit": "Deals an additional 1d4 fire damage.",
     "source": "custom",
     "filter": "weapons"
