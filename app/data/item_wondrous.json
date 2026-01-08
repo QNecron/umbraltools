@@ -190,7 +190,7 @@
     "benefit": "You deal a critical hit if you roll a 19 or better on an attack roll with daggers.",
     "source": "custom",
     "base": "accessory",
-    "filter": "accessory"    
+    "filter": "accessory"
   },
   {
     "name": "Seal of Faith",
@@ -329,6 +329,39 @@
     "filter": "waist"
   },
   {
+    "name": "The Undying Burden",
+    "description": "This heavy broad belt with intricate copper clasps is said to reinforce one's will to live, even in dire circumstances.",
+    "benefit": "Once a per day when you've been reduced to 0 hit points you instead roll a wisdom check. On a DC12 or greater you heal 1 hit point.",
+    "source": "custom",
+    "base": "waist",
+    "filter": "waist"
+  },
+  {
+    "name": "Wildstrike Belt",
+    "description": "A crystal buckle secures this oddly fashioned belt, the material remains a mystery even to this day.",
+    "benefit": "When casting psionic spells that deal damage roll 1d4. On 4 the spell deals the maximum damage, on 1 the spell deals the minimum damage. On a 2-3 the spell functions as normal.",
+    "source": "custom",
+    "base": "waist",
+    "filter": "waist"
+  },
+  {
+    "name": "Sentinel's Girdle",
+    "description": "This broad belt has several eyes etched into the leather, even the mithril buckle is in the shape of a strange looking eye.",
+    "benefit": "Spending one round in combat to observe rather than attack or move reveals the magical aura of all creatures within near.",
+    "additional": "Once per day you may roll a Perception check with advantage.",
+    "source": "custom",
+    "base": "waist",
+    "filter": "waist"
+  },
+  {
+    "name": "Coil of Resourcefulness",
+    "description": "Small pockets line the front of this magnificently crafted belt, each with a simple, yet elegant, copper clip.",
+    "benefit": "When reaching into one of the pockets roll 1d4. On a 4 something very helpful will manifest on your hand. On a 2-3 something mundane will appear in your hand. On a 1 you might loose something important temporarily.",
+    "source": "custom",
+    "base": "waist",
+    "filter": "waist"
+  },
+  {
     "name": "Mantle of Wreathing Flame",
     "description": "This crimson red cloak with golden trim radiates warmth when worn.",
     "benefit": "Fire damage is reduced by 3 points.",
@@ -370,7 +403,33 @@
     "source": "custom",
     "base": "back",
     "filter": "back"
-  },  
+  },
+  {
+    "name": "Cape of the Falling Star",
+    "description": "This cloak has been enchanted by Desna herself, imbuing it with dazzling stars to reflect the heavens above.",
+    "benefit": "Fire and Electrical damage are reduced by 3 points.",
+    "additional": "You can cast Augury once per day (+4 bonus).",
+    "source": "custom",
+    "base": "back",
+    "filter": "back"
+  },
+  {
+    "name": "Mirrorback",
+    "description": "This reflective cloak is a bane to all those who practice magic. They're often found covered in the blood of their owners who die mysteriously.",
+    "benefit": "Single target spell are reflected should the wearer beat the caster's roll (same attribute).",
+    "source": "custom",
+    "base": "back",
+    "filter": "back"
+  },
+  {
+    "name": "Stormturner Cloak",
+    "description": "This particular cloak bears the signs of years of hard use, its stitching frayed and edges ragged. Despite the obvious wear, the mantle's metalic clasps crackle with energy.",
+    "benefit": "Electrical damage is reduced by 3 points.",
+    "additional": "Physical attacks deal an extra 1d4 electrical damage.",
+    "source": "custom",
+    "base": "back",
+    "filter": "back"
+  },
   {
     "name": "Ioun Stone, Garnet",
     "description": "A strangly shaped gemstone the size of a pebble that resembles garnet.",
@@ -422,7 +481,8 @@
   {
     "name": "Vambraces of Focused Strikes",
     "description": "Once equipped these vambraces appear ethereal and resonate with psionic energies.",
-    "benefit": "Three times per day you may expend up to 3 focus points on your next successful weapon attack.",
+    "benefit": "Three times per day you may expend up to 3 focus points on your next successful weapon attack damage roll.",
+    "additional": "The next successful weapon attack against the creature deals max damage.",
     "source": "custom",
     "base": "arms",
     "filter": "arms"
@@ -430,7 +490,7 @@
   {
     "name": "Cloak Devious Withdrawal",
     "description": "Once donned the cloak creates a magical darkness that shrouds the wearer's shoulders.",
-    "benefit": "Three times per day after a successful backstab you may choose to become invisible for 1 round.",
+    "benefit": "Three times per day after a successful backstab you may choose to become invisible while also being able to see invisible creatures for 1 round.",
     "source": "custom",
     "base": "back",
     "filter": "back"
@@ -439,7 +499,7 @@
     "name": "Lord in Iron's Banner Cape",
     "description": "After donning the cape your armor begins to grow fearsome looking spikes, rusted from dried blood.",
     "benefit": "Three times per day you grant yourself and allies within near +1 armor, +1 weapon damage, and 1d4 temporary hit points for 3 rounds.",
-    "additional": "Enemy morale checks reduced to DC12 within near.",
+    "additional": "Enemy morale checks to stay in battle reduced to DC12 within near.",
     "source": "custom",
     "base": "back",
     "filter": "back"
@@ -448,6 +508,7 @@
     "name": "Circlet of Fading Life",
     "description": "Once this silver circlet is placed on your head your eyes begin glowing a beautiful and soothing blue hue.",
     "benefit": "Three times per day you and your allies within near are healed 1d6 hit points if they're below 50% life. Allies above 50% life regenerate 1 hit point for 3 rounds.",
+    "additional": "If you critically cast Cure Wounds or Mass Cure Wounds the target(s) gain a permanent 1 hit point.",
     "source": "custom",
     "base": "head",
     "filter": "head"
