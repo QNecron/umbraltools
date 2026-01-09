@@ -139,7 +139,7 @@
     "duration": "Instant",
     "range": "Far",
     "description_1": "You call down a holy pillar of fire, immolating one creature you can see within range. The target takes 3d6 damage.",
-    "source": "custom"    
+    "source": "custom"
   },
   {
     "name": "Adhesive",
@@ -320,7 +320,7 @@
     "class": "Wizard",
     "duration": "Instant",
     "range": "Close",
-    "description_1": "You release a burst of barbed nettles in near circle around you. Creatures within the area take 2d6 damage.",
+    "description_1": "You release a burst of barbed nettles circle around you. Creatures within double close take 2d6 damage.",
     "description_2": "For the next 3 rounds creatures hit take an additional 1d4 damage on their turn.",
     "source": "custom"
   },
@@ -541,7 +541,7 @@
     "duration": "Instant",
     "range": "Far",
     "description_1": "You focus all your will through a single target creature within far distance, the resulting energy wave deals 2d12 points of damage to all enemy creatures within near.",
-    "description_2": "Creatures hit must make a DC15 DEX check or be knocked prone for 3 rounds.",
+    "description_2": "Creatures hit must make a DC15 DEX check or be knocked prone for 1 round.",
     "source": "custom"
   },
   {

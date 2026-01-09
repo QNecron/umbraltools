@@ -92,6 +92,49 @@
     "filter": "head"
   },
   {
+    "name": "Blackend Plate Helm",
+    "description": "This dark steel great helm looks eerily familiar. It's been fashioned to resemble a jawless skull.",
+    "benefit": "All damage is reduced by 1 point.",
+    "additional": "When struck by a critical, you and your allies within near gain advantage on your next attack or spellcasting check.",
+    "source": "custom",
+    "base": "head",
+    "filter": "head"
+  },
+  {
+    "name": "Death's Maw",
+    "description": "The personification of death in material form, or so it's said. This helm was designed to inspire fear across an already chaotic battlefield.",
+    "benefit": "Upon slaying a sentient creature you gain resistance to all physical attacks for 1 round.",
+    "source": "custom",
+    "base": "head",
+    "filter": "head"
+  },
+  {
+    "name": "Heaven's Cacophony",
+    "description": "This crested helmet pays tribute to the goddess, Sarenrae, The Cleansing Light. The steel is etched with glyphs of holy fire.",
+    "benefit": "Scoring a critical hit with a weapon casts the Smite spell (automatic).",
+    "source": "custom",
+    "base": "head",
+    "filter": "head"
+  },
+  {
+    "name": "Howling Death's Maw",
+    "description": "The head of Howling Death fashioned into a fearsome headpiece. This once great dire wolf stalked the Shudderwood, preying on any who dare enter.",
+    "benefit": "Spellcasting checks and attack rolls increased by 1.",
+    "additional": "You can cast Misty Step once per day (+4 bonus).",
+    "source": "custom",
+    "base": "head",
+    "filter": "head"
+  },
+  {
+    "name": "The Whitewitch Mask",
+    "description": "Carved from an ancient birch tree, this mask resembles a terrifying visage of a dryad combined with a dread wraith.",
+    "benefit": "Enemy morale checks to stay in battle increased to DC18 within near.",
+    "additional": "You can cast Mirror Image once per day (+4 bonus).",
+    "source": "custom",
+    "base": "head",
+    "filter": "head"
+  },
+  {
     "name": "Amulet of Summer Solstice",
     "description": "This bronze amulet depicts an embossed sun emblem emanating rays of light.",
     "benefit": "Fire damage is reduced by 3 points.",
@@ -129,6 +172,41 @@
     "name": "Soulward Amulet",
     "description": "This brilliant bloodstone amulet has a strange aura about it. Holding it close to your ear you think you hear a soft, calming voice.",
     "benefit": "Drain abilities can be resisted with a constitution saving throw of DC15.",
+    "source": "custom",
+    "base": "neck",
+    "filter": "neck"
+  },
+  {
+    "name": "Claim and Refusal",
+    "description": "This pendant bears an unknown creast, lost to time. It depicts two hands, one open and one closed in the center of a shield.",
+    "benefit": "Attack rolls increased by 1.",
+    "additional": "Physical damage is reduced by 1 point.",
+    "source": "custom",
+    "base": "neck",
+    "filter": "neck"
+  },
+  {
+    "name": "Aberrant Finger",
+    "description": "Tied to a simple leather cord, this finger once belonged to a creature from the void. You hear eerie voices in an unknown language as soon as you touch it.",
+    "benefit": "Hit points increased by 3.",
+    "additional": "You can cast Fractured Volition once per day (+4 bonus).",
+    "source": "custom",
+    "base": "neck",
+    "filter": "neck"
+  },
+  {
+    "name": "Spellward Amulet",
+    "description": "A large amethyst in the shape of a heart decorates the pendant.",
+    "benefit": "Spell damage is reduced by 3 points.",
+    "source": "custom",
+    "base": "neck",
+    "filter": "neck"
+  },
+  {
+    "name": "Charm of Bones",
+    "description": "Since it is comprised of various small bones affixed to a cord of sinew, this macabre necklace stinks of the grave.",
+    "benefit": "Weapons deal an additional 1d6 damage to undead creatures.",
+    "additional": "You can cast Animate Dead once per day (+4 bonus).",
     "source": "custom",
     "base": "neck",
     "filter": "neck"
@@ -172,6 +250,48 @@
     "name": "Desna's Vambraces",
     "description": "Vambraces blessed by Desna's herald, The Night Monarch. These vambraces are fashonied from black leather and bear Dena's symbol.",
     "benefit": "Scoring a critical hit grants 1 Luck Token.",
+    "source": "custom",
+    "base": "arms",
+    "filter": "arms"
+  },
+  {
+    "name": "Firethrower's Gloves",
+    "description": "These leather gloves are cracked and discolored from contact with alchemical compounds and searing flame.",
+    "benefit": "Fire spells deal an additional 1 point of damage.",
+    "source": "custom",
+    "base": "arms",
+    "filter": "arms"
+  },
+  {
+    "name": "Gauntlets of Reliability",
+    "description": "The weight of the armguards seems specifically designed to help counterbalance that of a weapon.",
+    "benefit": "Misses still deal your weapon's enhancement bonus in damage.",
+    "source": "custom",
+    "base": "arms",
+    "filter": "arms"
+  },
+  {
+    "name": "Gatecrashers",
+    "description": "These heavy gauntlets easily outweigh any similar pair of plated gloves. The scalloped knuckles are lined with lead and the steel wrist guards are many times thicker than they ought to be for any practical purpose.",
+    "benefit": "Scoring a critical hit with a weapon knocks the target creature prone.",
+    "additional": "Once per day you may perform a cleaving attack as per the feat.",
+    "source": "custom",
+    "base": "arms",
+    "filter": "arms"
+  },
+  {
+    "name": "Bracers of Spiritual Power",
+    "description": "These copper bracers have an etechings of fire encircling a symbol of Sarenrae.",
+    "benefit": "The Smite and Flamestrike spells deal an additional 3 points of damage.",
+    "source": "custom",
+    "base": "arms",
+    "filter": "arms"
+  },
+  {
+    "name": "The Left Hand of the Obscured",
+    "description": "Excised from the writhing mass of tentacles that once formed an aberrant abomination, this tarnished gauntlet bears an eye etched into the palm.",
+    "benefit": "Spellcasting checks increased by 1.",
+    "additional": "Spells deal an additional 1 point of damage.",
     "source": "custom",
     "base": "arms",
     "filter": "arms"
@@ -281,6 +401,41 @@
     "description": "These leather boots were deeply stained with green dye to give them their distinctive appearance.",
     "benefit": "Immune to flora entanglement.",
     "additional": "You can cast Good Berry once per day (+4 bonus).",
+    "source": "custom",
+    "base": "feet",
+    "filter": "feet"
+  },
+  {
+    "name": "Boots of the Long March",
+    "description": "These boots bear a symbol of the rising sun, they're extremely comfortable and just as durable.",
+    "benefit": "Hit points increased by 3.",
+    "additional": "You can go four days without consuming a ration.",
+    "source": "custom",
+    "base": "feet",
+    "filter": "feet"
+  },
+  {
+    "name": "Shod-in-Faith",
+    "description": "The priestess who first wore these boots was a devotee of Pharasma and so steadfast in her faith that she eschewed the use of healing spells and potions in battle.",
+    "benefit": "When struck by a critical, you and your allies within near are healed 1d6 hit points.",
+    "source": "custom",
+    "base": "feet",
+    "filter": "feet"
+  },
+  {
+    "name": "Boots of Stone",
+    "description": "These heavy plate boots are noticeably unpolished, resembling rock more than steel. The joints are well oiled, however, and they do not inhibit movement.",
+    "benefit": "Saving throws increased by 1.",
+    "additional": "",
+    "source": "custom",
+    "base": "feet",
+    "filter": "feet"
+  },
+  {
+    "name": "Nymph's Silk Slippers",
+    "description": "Smooth, soft, and supple, these slippers are nearly weightless.",
+    "benefit": "Upon casting a spell roll 1d20, if the result is equal your level the spell is cast twice.",
+    "additional": "",
     "source": "custom",
     "base": "feet",
     "filter": "feet"
@@ -416,7 +571,7 @@
   {
     "name": "Mirrorback",
     "description": "This reflective cloak is a bane to all those who practice magic. They're often found covered in the blood of their owners who die mysteriously.",
-    "benefit": "Single target spell are reflected should the wearer beat the caster's roll (same attribute).",
+    "benefit": "Single target spells are reflected should the wearer beat the caster's roll (same attribute).",
     "source": "custom",
     "base": "back",
     "filter": "back"

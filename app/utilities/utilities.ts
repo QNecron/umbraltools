@@ -184,6 +184,8 @@ export const Attack = (
         value === "Prey Maker" ? (bonus += 2) : 0,
         value === "Stag Helm" ? (bonus += 1) : 0,
         value === "Pilgrims Lasting Vigil" ? (bonus += 1) : 0,
+        value === "Howling Death's Maw" ? (bonus += 1) : 0,
+        value === "Claim and Refusal" ? (bonus += 1) : 0,
         value === "Ioun Stone, Garnet" ? (bonus += 1) : 0
       )
     );
@@ -244,6 +246,7 @@ export const Damage = (
       value === "One Dozen Stood" && isRanged === false
         ? (damageBonus += " + 1d4 (Fire)")
         : "",
+      value === "Charm of Bones" ? (damageBonus += " + 1d6 (vs Undead)") : "",
       value === "Scâth Gwannek" && isRanged === false
         ? (damageBonus += " + 1d4 (Cold)")
         : "",
@@ -284,8 +287,10 @@ export const HitPoints = (data: {}) => {
       value === "Toughness" ? (bonus += 3) : 0,
       value === "Wyrmwull" ? (bonus += 3) : 0,
       value === "Warding Staff" ? (bonus += 3) : 0,
+      value === "Aberrant Finger" ? (bonus += 3) : 0,
       value === "Cloak of Comfort" ? (bonus += 3) : 0,
       value === "Ring of Toughness" ? (bonus += 3) : 0,
+      value === "Boots of the Long March" ? (bonus += 3) : 0,
       value === "Ioun Stone, Alexandrite" ? (bonus += 3) : 0,
       value === "Amulet of Vitality" ? (bonus += 3) : 0,
       value === "+1 focus at the beginning of combat and +1 hit point"
@@ -315,7 +320,8 @@ export const SavingThrows = (role: string, items: {}, augments?: string) => {
       value === "Outworn Shield" && role === "Ranger" ? (bonus += 1) : 0,
       value === "Cloak of Protection" ? (bonus += 1) : 0,
       value === "Ring of Protection" ? (bonus += 1) : 0,
-      value === "Tempered Helm" ? (bonus += 1) : 0
+      value === "Tempered Helm" ? (bonus += 1) : 0,
+      value === "Boots of Stone" ? (bonus += 1) : 0
     )
   );
 
@@ -373,8 +379,10 @@ export const Spellcasting = (
 
   Object.entries(items).map(
     ([key, value]) => (
+      value === "Howling Death's Maw" ? (bonus += 1) : 0,
       value === "Cabalist's Gambeson" ? (bonus += 1) : 0,
       value === "High Harbinger's Robes" ? (bonus += 1) : 0,
+      value === "The Left Hand of the Obscured" ? (bonus += 1) : 0,
       value === "Ioun Stone, Iolite" ? (bonus += 1) : 0
     )
   );
