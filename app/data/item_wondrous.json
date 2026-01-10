@@ -365,7 +365,7 @@
   {
     "name": "Ring of Boundless Stars",
     "description": "The gem at the heart of this ring looks like a dark reflection of the firmament above the world. The metal band is as cold as the night sky, while the gem is nearly hot enough to burn.",
-    "benefit": "Weapons deal an additional 1 point of fire and eletrical damage.",
+    "benefit": "Weapons deal an additional 1 point of cold and fire damage.",
     "source": "custom",
     "base": "accessory",
     "filter": "accessory"

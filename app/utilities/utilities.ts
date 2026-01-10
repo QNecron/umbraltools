@@ -260,7 +260,7 @@ export const Damage = (
       value === "Ring of Frigid Claim" ? (damageBonus += " + 1 (Cold)") : "",
       value === "Ring of Searing Flames" ? (damageBonus += " + 1 (Fire)") : "",
       value === "Ring of Boundless Stars"
-        ? (damageBonus += " + 1 (Fire) + 1 (Electical)")
+        ? (damageBonus += " + 1 (Cold) + 1 (Fire)")
         : "",
       value === "Berserker's Belt" && isRanged === false
         ? (damageBonus += " + 2")
