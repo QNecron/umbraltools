@@ -363,10 +363,44 @@
     "filter": "accessory"
   },
   {
+    "name": "Ring of Boundless Stars",
+    "description": "The gem at the heart of this ring looks like a dark reflection of the firmament above the world. The metal band is as cold as the night sky, while the gem is nearly hot enough to burn.",
+    "benefit": "Weapons deal an additional 1 point of fire and eletrical damage.",
+    "source": "custom",
+    "base": "accessory",
+    "filter": "accessory"
+  },
+  {
+    "name": "Ring of Prosperity's Fortune",
+    "description": "This heavy gold band has several precious gems adorning it, each seemingly priceless. Oddly, after wearing it a few seconds your coin purse seems lighter.",
+    "benefit": "Upon rolling a 19 on an attack or spellcasting check you may choose to sacrifice 10gp to turn it into a critical.",
+    "source": "custom",
+    "base": "accessory",
+    "filter": "accessory"
+  },
+  {
+    "name": "Bramble Ring",
+    "description": "The ring resembles vines and roots intertwined. While it appears to be made of regular wood at first glance, in reality it's made of magically imbued iron wood.",
+    "benefit": "Piercing damage is reduced by 3 points.",
+    "additional": "You can cast Barkskin once per day (+4 bonus).",
+    "source": "custom",
+    "base": "accessory",
+    "filter": "accessory"
+  },
+  {
+    "name": "Wyrwood Ring",
+    "description": "Carved from the trunk of an ancient tree no doubt, this strange ring is one of kind as it was blessed by a majestic unicorn.",
+    "benefit": "Acid and cold damage is reduced by 3 points.",
+    "additional": "Immune to Entangle and Web.",
+    "source": "custom",
+    "base": "accessory",
+    "filter": "accessory"
+  },
+  {
     "name": "Bilestompers",
     "description": "The edges of these leather boots show signs of corrosion, but not enough to have damaged them.",
     "benefit": "Acid damage is reduced by 3 points.",
-    "additional": "Additionally you can walk on acidic surfaces without taking damage.",
+    "additional": "You can walk on acidic surfaces without taking damage.",
     "source": "custom",
     "base": "feet",
     "filter": "feet"
