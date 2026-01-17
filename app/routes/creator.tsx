@@ -1416,7 +1416,7 @@ export default function Creator() {
                   </div>
                   <Input
                     type="checkbox"
-                    id="specialization"
+                    id="specializationA"
                     label="Class Bonus"
                     minimal={true}
                     checked={characterClassAttackBonusA}
@@ -1557,7 +1557,7 @@ export default function Creator() {
                   </div>
                   <Input
                     type="checkbox"
-                    id="specialization"
+                    id="specializationB"
                     label="Class Bonus"
                     minimal={true}
                     checked={characterClassAttackBonusB}
