@@ -561,6 +561,20 @@
     "filter": "weapons"
   },
   {
+    "name": "Burden",
+    "base": "Greatsword",
+    "type": "M",
+    "range": "C",
+    "damage": "1d12 + 1",
+    "properties": "2H, 2 slots",
+    "bonus": 1,
+    "description": "This sword weight is due to its improbable lead blade. Blade is decorated with small glyphs that begin to glow once an ally falters in combat.",
+    "benefit": "Critical hits knock targets prone.",
+    "additional": "Enhancement bonus increases by +1 for each downed ally within far.",
+    "source": "custom",
+    "filter": "weapons"
+  },
+  {
     "name": "Tall Grass",
     "base": "Javelin",
     "type": "M/R",
@@ -838,6 +852,20 @@
     "bonus": 1,
     "description": "The tip of this spear is hardened obsidian, it radiates an intense heat at all times. Its touch scorches all.",
     "benefit": "Deals an additional 1d4 fire damage.",
+    "source": "custom",
+    "filter": "weapons"
+  },
+  {
+    "name": "Spear of the Shudderwood Stag",
+    "base": "Spear",
+    "type": "M/R",
+    "range": "C/N",
+    "damage": "1d6 + 1",
+    "properties": "F, Th",
+    "bonus": 1,
+    "description": "A pair of antlers adorn the silver spearhead, they're magical nature becomes aparent as soon as the spear is wielded as they glow an subtle green hue.",
+    "benefit": "Uses Dexterity instead of Strength for attack rolls.",
+    "additional": "You can cast Barkskin once per day (+4 bonus).",
     "source": "custom",
     "filter": "weapons"
   },

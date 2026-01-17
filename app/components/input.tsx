@@ -9,6 +9,7 @@ interface propsInput {
   cols?: number;
   rows?: number;
   change?: (e: any) => void;
+  checked?: boolean;
   disabled?: boolean;
   children?: React.ReactNode;
   label: string;
@@ -26,16 +27,16 @@ export default function Input({
   cols,
   rows = 8,
   change,
+  checked,
   disabled,
   children,
   label,
-  minimal
+  minimal,
 }: propsInput) {
-
   let classList = classes ? "input " + classes : "input";
 
   if (type == "select") {
-    return(
+    return (
       <div className={classList} input={type}>
         <select
           id={id}
@@ -44,20 +45,20 @@ export default function Input({
           onChange={change}
           className="input__field"
           disabled={disabled}
-          >
-            {children}
+        >
+          {children}
         </select>
-        <div className="input__icon">
-          &rsaquo;
-        </div>
-        <label htmlFor={id} className={"input__label" + (minimal === true ? " srt" : "")}>
+        <div className="input__icon">&rsaquo;</div>
+        <label
+          htmlFor={id}
+          className={"input__label" + (minimal === true ? " srt" : "")}
+        >
           {label}
         </label>
       </div>
     );
-  }
-  else if (type == "textarea") {
-    return(
+  } else if (type == "textarea") {
+    return (
       <div className={classList} input={type}>
         <textarea
           id={id}
@@ -69,14 +70,16 @@ export default function Input({
           className="input__field"
           disabled={disabled}
         />
-        <label htmlFor={id} className={"input__label" + (minimal === true ? " srt" : "")}>
+        <label
+          htmlFor={id}
+          className={"input__label" + (minimal === true ? " srt" : "")}
+        >
           {label}
         </label>
       </div>
     );
-  }
-  else {
-    return(
+  } else {
+    return (
       <div className={classList} input={type}>
         <input
           id={id}
@@ -88,13 +91,16 @@ export default function Input({
           max={max}
           onChange={change}
           className="input__field"
+          checked={checked}
           disabled={disabled}
         />
-        <label htmlFor={id} className={"input__label" + (minimal === true ? " srt" : "")}>
+        <label
+          htmlFor={id}
+          className={"input__label" + (minimal === true ? " srt" : "")}
+        >
           {label}
         </label>
       </div>
     );
   }
-
 }

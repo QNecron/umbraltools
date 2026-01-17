@@ -150,7 +150,8 @@ export const Attack = (
   items?: {},
   talents?: {},
   augments?: string,
-  temporary?: string
+  temporary?: string,
+  class_bonus?: boolean
 ) => {
   let bonus = 0;
   let posneg = "+";
@@ -169,9 +170,10 @@ export const Attack = (
     attribute = chr;
   else attribute = str;
 
-  if (role === "Fighter") profession = Math.floor((parseInt(level) + 1) / 2);
-
-  if (role === "Cipher") profession = Math.floor((parseInt(level) + 1) / 2);
+  if (class_bonus === true) {
+    if (role === "Fighter") profession = Math.floor((parseInt(level) + 1) / 2);
+    if (role === "Cipher") profession = Math.floor((parseInt(level) + 1) / 2);
+  }
 
   weapons.map((weapon: any) => {
     if (weapon.name === weapon_name) bonus += weapon.bonus;
@@ -204,6 +206,15 @@ export const Attack = (
   return posneg + bonus.toString();
 };
 
+export const IsSpecialized = (role: string) => {
+  let attacker = false;
+
+  if (role === "Fighter") attacker = true;
+  if (role === "Cipher") attacker = true;
+
+  return attacker;
+};
+
 export const Damage = (
   role: string,
   level: string,
@@ -212,7 +223,8 @@ export const Damage = (
   weaponDamage: string,
   data: {},
   augments?: string,
-  temporary?: string
+  temporary?: string,
+  class_bonus?: boolean
 ) => {
   let damageTotal = weaponDamage;
   let damageBonus = "";
@@ -221,7 +233,7 @@ export const Damage = (
   let aug = augments ? augments : "0";
   let temp = temporary ? temporary : "0";
 
-  if (role === "Fighter") {
+  if (class_bonus === true && role === "Fighter") {
     profession = Math.floor((parseInt(level) + 1) / 2);
     damageBonus += " + " + profession.toString();
   }
