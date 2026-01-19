@@ -1,29 +1,32 @@
 :root {
-
   /* primitive : colors */
   --color-black-100: #111;
-  --color-black-88: hsla(0, 0%, 7%, .88);
-  --color-black-64: hsla(0, 0%, 7%, .64);
+  --color-black-88: hsla(0, 0%, 7%, 0.88);
+  --color-black-64: hsla(0, 0%, 7%, 0.64);
   --color-white-100: #eee;
-  --color-white-88: hsla(0, 0%, 93%, .88);
-  --color-white-48: hsla(0, 0%, 93%, .48);
-  --color-white-32: hsla(0, 0%, 93%, .32);
-  --color-white-08: hsla(0, 0%, 93%, .08);
-  --color-white-02: hsla(0, 0%, 93%, .02);
+  --color-white-88: hsla(0, 0%, 93%, 0.88);
+  --color-white-48: hsla(0, 0%, 93%, 0.48);
+  --color-white-32: hsla(0, 0%, 93%, 0.32);
+  --color-white-08: hsla(0, 0%, 93%, 0.08);
+  --color-white-02: hsla(0, 0%, 93%, 0.02);
   --color-white-0: hsla(0, 0%, 93%, 0);
-  
+
   /* semantic : patterns */
-  --color-pattern-dots: radial-gradient(var(--color-white-08) .031rem, transparent 0);
-  --color-pattern-size: .313rem;
-  
+  --color-pattern-dots: radial-gradient(
+    var(--color-white-08) 0.031rem,
+    transparent 0
+  );
+  --color-pattern-size: 0.313rem;
+
   /* semantic : shadows */
-  --shadow-box: 0 1px .125rem rgba(0, 0, 0, .16), 0 .1875rem .25rem rgba(0, 0, 0, .32);
-  
+  --shadow-box: 0 1px 0.125rem rgba(0, 0, 0, 0.16),
+    0 0.1875rem 0.25rem rgba(0, 0, 0, 0.32);
+
   /* primitive : sizes */
-  --size-02: .125rem;
-  --size-04: .25rem;
-  --size-08: .50rem;
-  --size-12: .75rem;
+  --size-02: 0.125rem;
+  --size-04: 0.25rem;
+  --size-08: 0.5rem;
+  --size-12: 0.75rem;
   --size-16: 1rem;
   --size-24: 1.5rem;
   --size-32: 2rem;
@@ -32,7 +35,8 @@
   --size-56: 3.5rem;
   --size-64: 4rem;
   --size-72: 4.5rem;
-  
+  --size-80: 5rem;
+
   /* semantic : sizes */
   --size-xxs: var(--size-02);
   --size-xs: var(--size-04);
@@ -44,19 +48,20 @@
   --size-xl: var(--size-40);
   --size-xxl: var(--size-48);
   --size-xxxl: var(--size-56);
-  
+
   /* semantic : shadows */
-  --shadow-level-1: 0 1px .125rem rgba(0, 0, 0, .16), 0 .1875rem .25rem rgba(0, 0, 0, .32);
-  
+  --shadow-level-1: 0 1px 0.125rem rgba(0, 0, 0, 0.16),
+    0 0.1875rem 0.25rem rgba(0, 0, 0, 0.32);
+
   /* semantic : timings */
-  --timing-basic: all .24s ease-in-out 0s;
-  --timing-display: display .48s allow-discrete, .48s cubic-bezier(.5,.25,0,1) 0s;
-  
+  --timing-basic: all 0.24s ease-in-out 0s;
+  --timing-display: display 0.48s allow-discrete,
+    0.48s cubic-bezier(0.5, 0.25, 0, 1) 0s;
+
   /* primitive : fonts */
   --font-oswald: "Oswald", sans-serif;
-  
+
   /* semantic : fonts */
   --font-body: sans-serif;
   --font-heading: var(--font-oswald);
-  
 }

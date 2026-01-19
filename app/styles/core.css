@@ -180,26 +180,35 @@ body {
 
 [input~="checkbox"] {
   --input-padding: 0;
-  --input-width: 80px;
+  --input-width: var(--size-xl);
 
-  --input-check-background-color: var(--color-white-08);
-  --input-check-size: var(--size-xl);
+  --input-check-background-color: var(--color-white-02);
+  --input-check-font-color: transparent;
+  --input-check-size: var(--size-ml);
 
   &:after {
-    content: "";
+    content: "\2714";
+    align-items: center;
     background: var(--input-check-background-color);
+    border: solid 1px var(--input-border-color);
+    box-shadow: inset 0px 0px 0px 0px red;
+    /*border-radius: 50%;*/
+    color: var(--input-check-font-color);
+    display: flex;
+    justify-content: center;
     pointer-events: none;
-    height: var(--input-check-size);
-    width: var(--input-check-size);
+    padding-left: 1px;
+    height: calc(var(--input-check-size) - var(--size-xxs));
+    width: calc(var(--input-check-size) - var(--size-xxs));
     position: absolute;
-    top: 0;
-    left: 0;
+    top: var(--size-s);
+    left: var(--size-s);
     transition: var(--timing-basic);
   }
 
   &:has(.input__field:checked):after {
     --input-check-background-color: var(--color-white-100);
-    transform: translate(100%, 0);
+    --input-check-font-color: var(--color-black-100);
   }
 
   .input__field {
