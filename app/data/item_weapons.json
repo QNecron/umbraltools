@@ -568,7 +568,7 @@
     "damage": "1d12 + 2",
     "properties": "2H, 2 slots",
     "bonus": 2,
-    "description": "This sword weight is due to its improbable lead blade. Blade is decorated with small glyphs that begin to glow once an ally falters in combat.",
+    "description": "This sword weight is due to its improbable lead blade. The blade is decorated with small glyphs that begin to glow once an ally falters in combat.",
     "benefit": "Critical hits knock targets prone.",
     "additional": "Enhancement bonus increases by +1 for each downed ally within far.",
     "source": "custom",
