@@ -20,6 +20,7 @@ import ShieldData from "../data/item_shields.json";
 import WondrousData from "../data/item_wondrous.json";
 import RewardsData from "../data/rewards.json";
 import TemporaryData from "../data/temporary.json";
+import AugmentationsData from "../data/augmentations.json";
 
 import BackgroundData from "../data/backgrounds.json";
 import AncestryData from "../data/ancestries.json";
@@ -151,6 +152,8 @@ export default function Creator() {
   const [characterClassAttackBonusA, characterClassAttackBonusAUpdate] =
     useState<boolean>(true);
   const [characterClassAttackBonusB, characterClassAttackBonusBUpdate] =
+    useState<boolean>(true);
+  const [characterClassArmorBonus, characterClassArmorBonusUpdate] =
     useState<boolean>(true);
 
   const CharacterList = () => {
@@ -373,7 +376,68 @@ export default function Creator() {
                           },
                         })
                       }
-                      min={0}
+                    />
+                  </Fragment>
+                );
+              })}
+            </div>
+          </Dialog>
+
+          {/* augments */}
+          <Dialog
+            type="secondary"
+            triggerIcon="wand"
+            triggerCopy="Augmentations"
+            triggerButton="icon primary"
+          >
+            <div className="block block__intro">
+              <div className="block__item block__item--full" heading="5">
+                Augmentations
+              </div>
+            </div>
+
+            <div className="block block__wrap">
+              {AugmentationsData.map((bonus, index) => {
+                function Augments(prop: string) {
+                  if (prop == "hit_points")
+                    return character.augments.hit_points;
+                  else if (prop == "ac") return character.augments.ac;
+                  else if (prop == "attack") return character.augments.attack;
+                  else if (prop == "damage") return character.augments.damage;
+                  else if (prop == "spellcheck")
+                    return character.augments.spellcheck;
+                  else if (prop == "str") return character.augments.str;
+                  else if (prop == "dex") return character.augments.dex;
+                  else if (prop == "con") return character.augments.con;
+                  else if (prop == "int") return character.augments.int;
+                  else if (prop == "wis") return character.augments.wis;
+                  else if (prop == "chr") return character.augments.chr;
+                  else return "error";
+                }
+
+                {
+                  /* spell casters */
+                }
+                if (bonus.id == "spellcheck" && !IsCaster(character.class))
+                  return;
+
+                return (
+                  <Fragment key={index}>
+                    <Input
+                      type="number"
+                      id={"augment_" + bonus.id}
+                      classes={bonus.id == "spellcheck" ? "input--max" : ""}
+                      label={bonus.name}
+                      value={Augments(bonus.id)}
+                      change={(event: ChangeEvent<HTMLInputElement>) =>
+                        characterUpdate({
+                          ...character,
+                          augments: {
+                            ...character.augments,
+                            [bonus.id]: event.target.value,
+                          },
+                        })
+                      }
                     />
                   </Fragment>
                 );
@@ -1277,13 +1341,33 @@ export default function Creator() {
                     character.equipment,
                     character.talents_feats,
                     character.temporary.ac,
-                    character.augments.ac
+                    character.augments.ac,
+                    characterClassArmorBonus
                   )}
                 </div>
                 <div className="block__item block__item--full">
                   {Armors(ArmorData, character.equipment.armor, "properties")}
                 </div>
               </div>
+
+              {/* armor class : specialization */}
+              {IsSpecialized(character.class, true) && (
+                <div className="block">
+                  <div className="block__item block__item--medium" heading="5">
+                    Class Bonuses
+                  </div>
+                  <Input
+                    type="checkbox"
+                    id="specializationAC"
+                    label="Class Bonus"
+                    minimal={true}
+                    checked={characterClassArmorBonus}
+                    change={(event: ChangeEvent<HTMLSelectElement>) =>
+                      characterClassArmorBonusUpdate(!characterClassArmorBonus)
+                    }
+                  />
+                </div>
+              )}
             </Section>
 
             {/* weapons */}
@@ -1409,7 +1493,7 @@ export default function Creator() {
               </div>
 
               {/* weapon : specialization */}
-              {IsSpecialized(character.class) && (
+              {IsSpecialized(character.class, false) && (
                 <div className="block">
                   <div className="block__item block__item--medium" heading="5">
                     Class Bonuses
@@ -1550,7 +1634,7 @@ export default function Creator() {
               </div>
 
               {/* weapon : specialization */}
-              {IsSpecialized(character.class) && (
+              {IsSpecialized(character.class, false) && (
                 <div className="block">
                   <div className="block__item block__item--medium" heading="5">
                     Class Bonuses

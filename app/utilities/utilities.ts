@@ -65,7 +65,8 @@ export const ArmorClass = (
   items?: {},
   talents?: {},
   temporary?: string,
-  augments?: string
+  augments?: string,
+  class_bonus?: boolean
 ) => {
   let bonus = 0;
   let ac = 0;
@@ -95,7 +96,7 @@ export const ArmorClass = (
     );
   }
 
-  if (talents) {
+  if (talents && class_bonus === true) {
     Object.entries(talents).map(([key, value]) =>
       value === "Choose one kind of armor. You get +1 AC from that armor"
         ? (bonus += 1)
@@ -206,13 +207,18 @@ export const Attack = (
   return posneg + bonus.toString();
 };
 
-export const IsSpecialized = (role: string) => {
-  let attacker = false;
+export const IsSpecialized = (role: string, armor: boolean) => {
+  let bonus = false;
 
-  if (role === "Fighter") attacker = true;
-  if (role === "Cipher") attacker = true;
+  if (role === "Fighter" && armor === true) {
+    bonus = true;
+  } else if (role === "Fighter" || (role === "Cipher" && armor === false)) {
+    bonus = true;
+  } else {
+    /* error */
+  }
 
-  return attacker;
+  return bonus;
 };
 
 export const Damage = (
