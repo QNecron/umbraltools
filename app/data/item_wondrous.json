@@ -397,6 +397,24 @@
     "filter": "accessory"
   },
   {
+    "name": "Mind Hunter's Ring",
+    "description": "A small, sparkling amethyst decorates this rather mundane silver ring.",
+    "benefit": "After a successful melee weapon attack you may choose to make a DC12 spellcasting check to cast the Mind Blast spell on your target.",
+    "additional": "Cipher only.",
+    "source": "custom",
+    "base": "accessory",
+    "filter": "accessory"
+  },
+  {
+    "name": "Ring of Focused Flame",
+    "description": "The garnet at the heart of this pewter band has been polished to the quality of a lens. It gleams just as bright by the light of a flickering candle as in direct sunlight.",
+    "benefit": "After a successful melee weapon attack you may choose to make a DC13 spellcasting check to cast the Smite spell on your target.",
+    "additional": "Priest only.",
+    "source": "custom",
+    "base": "accessory",
+    "filter": "accessory"
+  },
+  {
     "name": "Bilestompers",
     "description": "The edges of these leather boots show signs of corrosion, but not enough to have damaged them.",
     "benefit": "Acid damage is reduced by 3 points.",
