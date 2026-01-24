@@ -84,5 +84,29 @@
     "additional": "Melee weapons deal an additional 1d4 cold damage.",
     "source": "custom",
     "filter": "shields"
+  },
+  {
+    "name": "The Last Tower",
+    "base": "Shield",
+    "ac": 2,
+    "properties": "Occupies one hand",
+    "bonus": 1,
+    "description": "This shield is one of twelve fashioned for a small order of paladins calling themselves the Towers. They charged themselves with protecting the small outlying villages within the Dippelmere.",
+    "benefit": "Your movement speed is increased by 5ft.",
+    "additional": "You can cast Shield of Faith once per day (+4 bonus).",
+    "source": "custom",
+    "filter": "shields"
+  },
+  {
+    "name": "Dragon's Maw Shield",
+    "base": "Shield",
+    "ac": 2,
+    "properties": "Occupies one hand",
+    "bonus": 0,
+    "description": "This shield was traditionally passed between dragon hunters to honor exceptional feats and kills. Receiving the Dragon's Maw Shield is one of the highest honors among dragon hunters.",
+    "benefit": "Fire damage is reduced by 3 points.",
+    "additional": "After a successful melee weapon attack you may choose to make a DC12 spellcasting check to cast the Burning Hands spell towards your target (+4 bonus).",
+    "source": "custom",
+    "filter": "shields"
   }
 ]
