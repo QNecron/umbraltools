@@ -258,7 +258,7 @@
     "bonus": 1,
     "description": "This dark steel suit of armor looks eerily familiar. It bears a strange maker's mark resembling a jawless skull.",
     "benefit": "All damage is reduced by 1 point.",
-    "additional": "When struck by a critical, you and your allies within near heal 1d6 hit points.",
+    "additional": "When struck by a critical you and your allies within near heal 1d6 hit points.",
     "source": "custom",
     "filter": "armors"
   },

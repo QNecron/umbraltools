@@ -35,7 +35,7 @@
     "bonus": 0,
     "description": "A large blue crystal surrounded by hardened steel forms a remarkable shield.",
     "benefit": "Physical damage is reduced by 1 point.",
-    "additional": "When struck by a critical, you and your allies within near heal 1d6 hit points.",
+    "additional": "When struck by a critical you and your allies within near heal 1d6 hit points.",
     "source": "custom",
     "filter": "shields"
   },

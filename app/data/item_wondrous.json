@@ -95,7 +95,7 @@
     "name": "Blackend Plate Helm",
     "description": "This dark steel great helm looks eerily familiar. It's been fashioned to resemble a jawless skull.",
     "benefit": "All damage is reduced by 1 point.",
-    "additional": "When struck by a critical, you and your allies within near gain advantage on your next attack or spellcasting check.",
+    "additional": "When struck by a critical you and your allies within near gain advantage on your next attack or spellcasting check.",
     "source": "custom",
     "base": "head",
     "filter": "head"
@@ -410,6 +410,42 @@
     "description": "The garnet at the heart of this pewter band has been polished to the quality of a lens. It gleams just as bright by the light of a flickering candle as in direct sunlight.",
     "benefit": "After a successful melee weapon attack you may choose to make a DC13 spellcasting check to cast the Smite spell on your target.",
     "additional": "Priest only.",
+    "source": "custom",
+    "base": "accessory",
+    "filter": "accessory"
+  },
+  {
+    "name": "Ring of Clenched Muscle",
+    "description": "This unbroken loop of puckered meat lightly squeezes the wearer's finger at irregular intervals, as if pulsing with the beat of some unhealthy heart.",
+    "benefit": "Attack rolls crit on a 19 or better.",
+    "additional": "When struck by a critical you gain advantage on your next attack or spellcasting check.",
+    "source": "custom",
+    "base": "accessory",
+    "filter": "accessory"
+  },
+  {
+    "name": "Ring of Mule's Wit",
+    "description": "Falling into a stupor, you find yourself at peace, however when angered you becomed focused.",
+    "benefit": "You have advantage on all weapon damage rolls.",
+    "additional": "You have disadvantage on all Wisdom, Intelligence, and Charisma checks.",
+    "source": "custom",
+    "base": "accessory",
+    "filter": "accessory"
+  },
+  {
+    "name": "Ring of Reset",
+    "description": "This ring has saved the life of mages innumerable times. Those who encountered mages wearing this ring report being felled by fatal blows, only to see them rise again.",
+    "benefit": "Upon your death you cast Cure Wounds (automatic) on yourself.",
+    "additional": "The ring can only be used 3 times before it becomes crumbles and becomes useless.",
+    "source": "custom",
+    "base": "accessory",
+    "filter": "accessory"
+  },
+  {
+    "name": "Voidward",
+    "description": "This ring was created in secret by a priestess of Desna who fought several beings from the Void.",
+    "benefit": "You have advantage on savings throws against Void creature's spells and abilities.",
+    "additional": "Cold damage is reduced by 3 points.",
     "source": "custom",
     "base": "accessory",
     "filter": "accessory"
