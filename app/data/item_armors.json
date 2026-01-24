@@ -130,7 +130,7 @@
     "properties": "-",
     "bonus": 1,
     "description": "With a golden bell emblem on the chest, this reinforced leather armor has heavy wear and tear.",
-    "benefit": "Damage rolls increased by 1 for every ally within half near.",
+    "benefit": "Damage increased by 1 for every ally within half near.",
     "additional": "You can cast Shield of Faith once per day (+4 bonus).",
     "source": "custom",
     "filter": "armors"
