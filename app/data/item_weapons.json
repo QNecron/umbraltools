@@ -555,7 +555,7 @@
     "damage": "1d12 + 1",
     "properties": "2H, 2 slots",
     "bonus": 1,
-    "description": "Commissioned by a master dwarven smith, the Tidefall continually is a formitable blade. Once its edge has been felt, the pain lingers.",
+    "description": "Commissioned by a master dwarven smith, the Tidefall is a formitable blade. Once its edge has been felt, the pain lingers.",
     "benefit": "Deals an additional 1 point of damage on the creatures turn for 5 rounds.",
     "source": "custom",
     "filter": "weapons"
