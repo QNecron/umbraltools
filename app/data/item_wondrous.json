@@ -462,7 +462,7 @@
   {
     "name": "Dead Man Stands",
     "description": "These thick leather boots oddly show no sign of wear and tear or stains.",
-    "benefit": "Dying rolls reduced to 15 in order to stablize.",
+    "benefit": "Dying rolls reduced to DC15 in order to stablize.",
     "source": "custom",
     "base": "feet",
     "filter": "feet"
@@ -524,6 +524,24 @@
     "description": "Smooth, soft, and supple, these slippers are nearly weightless.",
     "benefit": "Upon casting a spell roll 1d20, if the result is equal your level the spell is cast twice.",
     "additional": "",
+    "source": "custom",
+    "base": "feet",
+    "filter": "feet"
+  },
+  {
+    "name": "Echoing Misery",
+    "description": "Originally designed and made to punish runaway halfling slaves, these boots shared the pain endured between multiple persons.",
+    "benefit": "Armor increased by 1.",
+    "additional": "You can cast Pain Link once per day (+4 bonus).",
+    "source": "custom",
+    "base": "feet",
+    "filter": "feet"
+  },
+  {
+    "name": "Redcap's Plated Greaves",
+    "description": "These heavy iron greaves are a weapon in and of themselves, while they restrict movement they're a formitable weapon when used correctly.",
+    "benefit": "Instead of moving you can perform a heavy kick attack. The greaves deal 1d4 damage and knock the creature prone for 1 round.",
+    "additional": "Your movement speed is decreased by 10ft.",
     "source": "custom",
     "base": "feet",
     "filter": "feet"
@@ -600,6 +618,22 @@
     "name": "Coil of Resourcefulness",
     "description": "Small pockets line the front of this magnificently crafted belt, each with a simple, yet elegant, copper clip.",
     "benefit": "When reaching into one of the pockets roll 1d4. On a 4 something very helpful will manifest on your hand. On a 2-3 something mundane will appear in your hand. On a 1 you might loose something important temporarily.",
+    "source": "custom",
+    "base": "waist",
+    "filter": "waist"
+  },
+  {
+    "name": "Broad Belt of Power",
+    "description": "Arcane spells have been forged into the material which grants those who wear it undeniable strength and a newfound sense of determination.",
+    "benefit": "Attack and spellcasting checks increased by 1.",
+    "source": "custom",
+    "base": "waist",
+    "filter": "waist"
+  },
+  {
+    "name": "Unstable Coil",
+    "description": "Copper wiring and finely beveled cogs have been sewn throughout this broad leather belt.",
+    "benefit": "You deal an additonal 1 point of electrical damage with weapons and spells.",
     "source": "custom",
     "base": "waist",
     "filter": "waist"

@@ -91,7 +91,8 @@ export const ArmorClass = (
         value === "Cape of Withdrawl" ? (bonus += 1) : 0,
         value === "Ioun Stone, Peridot" ? (bonus += 1) : 0,
         value === "Cloak of Protection" ? (bonus += 1) : 0,
-        value === "Ring of Protection" ? (bonus += 1) : 0
+        value === "Ring of Protection" ? (bonus += 1) : 0,
+        value === "Echoing Misery" ? (bonus += 1) : 0
       )
     );
   }
@@ -189,7 +190,8 @@ export const Attack = (
         value === "Pilgrims Lasting Vigil" ? (bonus += 1) : 0,
         value === "Howling Death's Maw" ? (bonus += 1) : 0,
         value === "Claim and Refusal" ? (bonus += 1) : 0,
-        value === "Ioun Stone, Garnet" ? (bonus += 1) : 0
+        value === "Ioun Stone, Garnet" ? (bonus += 1) : 0,
+        value === "Broad Belt of Power" ? (bonus += 1) : 0
       )
     );
   }
@@ -283,6 +285,7 @@ export const Damage = (
       value === "Berserker's Belt" && isRanged === false
         ? (damageBonus += " + 2")
         : "",
+      value === "Unstable Coil" ? (damageBonus += " + 1 (Electrical)") : "",
       value === "Mantle of Wreathing Flame"
         ? (damageBonus += " + 1d4 (Fire)")
         : "",
@@ -404,7 +407,8 @@ export const Spellcasting = (
       value === "Cabalist's Gambeson" ? (bonus += 1) : 0,
       value === "High Harbinger's Robes" ? (bonus += 1) : 0,
       value === "The Left Hand of the Obscured" ? (bonus += 1) : 0,
-      value === "Ioun Stone, Iolite" ? (bonus += 1) : 0
+      value === "Ioun Stone, Iolite" ? (bonus += 1) : 0,
+      value === "Broad Belt of Power" ? (bonus += 1) : 0
     )
   );
 
