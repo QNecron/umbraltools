@@ -173,8 +173,8 @@ export const Attack = (
   else attribute = str;
 
   if (class_bonus === true) {
-    if (role === "Fighter") profession = Math.floor((parseInt(level) + 1) / 2);
-    if (role === "Cipher") profession = Math.floor((parseInt(level) + 1) / 2);
+    if (role === "Fighter") profession = Math.floor(parseInt(level) / 2) + 1;
+    if (role === "Cipher") profession = Math.floor(parseInt(level) / 2);
   }
 
   weapons.map((weapon: any) => {
@@ -242,7 +242,7 @@ export const Damage = (
   let temp = temporary ? temporary : "0";
 
   if (class_bonus === true && role === "Fighter") {
-    profession = Math.floor((parseInt(level) + 1) / 2);
+    profession = Math.floor(parseInt(level) / 2) + 1;
     damageBonus += " + " + profession.toString();
   }
 
