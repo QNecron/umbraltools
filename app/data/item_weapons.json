@@ -457,7 +457,7 @@
     "properties": "F, Th",
     "bonus": 1,
     "description": "It's said this blade could slip so easily and effectively into a sleeping man's spine that he would stumble into a new life none the wiser.",
-    "benefit": "Attack rolls against prone and stunned creatures gain advantage.",
+    "benefit": "Weapon damage rolls against prone and stunned creatures gain advantage.",
     "source": "custom",
     "filter": "weapons"
   },
