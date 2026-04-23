@@ -758,7 +758,7 @@
     "range": "F",
     "damage": "1d4 + 1",
     "properties": "2H",
-    "bonus": 1,
+    "bonus": 3,
     "description": "Fangs, claws, teeth and bones can be seen interlocking throughout the weapon's blood stained structure.",
     "benefit": "Attack rolls increased by 2.",
     "source": "custom",

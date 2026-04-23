@@ -185,7 +185,6 @@ export const Attack = (
   if (items) {
     Object.entries(items).map(
       ([key, value]) => (
-        value === "Prey Maker" ? (bonus += 2) : 0,
         value === "Stag Helm" ? (bonus += 1) : 0,
         value === "Pilgrims Lasting Vigil" ? (bonus += 1) : 0,
         value === "Howling Death's Maw" ? (bonus += 1) : 0,
