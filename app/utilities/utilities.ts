@@ -178,7 +178,9 @@ export const Attack = (
   }
 
   weapons.map((weapon: any) => {
-    if (weapon.name === weapon_name) bonus += weapon.bonus;
+    if (weapon.name === weapon_name) {
+      bonus += weapon.bonus + (weapon.attack || 0);
+    }
   });
 
   // @TODO - not sure I like this..
